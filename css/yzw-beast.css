@@ -20,11 +20,32 @@ body {
   margin-left: 5px;
 }
 
+.descriptionwrapper {
+margin-left: 30px;
+}
+
+.description {
+text-align: left; /*--@ center @--*/
+padding-top: 10px;
+padding-left: 0px;  /*--@ 20px @--*/
+}
+
+.sidebar h2 {
+  font-weight: bold;
+  font-size: 120%; /*--@ 150% @--*/
+  color: #000000;
+}
+
 h1 {
-  font-size: 300%;
+  font-size: 260%;
   font-weight: bold;
   line-height: 120%;
   text-align: center;
+}
+h3 {
+  font-size: 200%;
+  font-weight: bold;
+  padding: 0px 0px 0px 22px;
 }
 h4 {
   font-size: 120%;
@@ -36,7 +57,7 @@ h4 {
   font-weight: normal;
 }
 .post-info .date-header {
-  font-size: 125%;
+  margin-right: 12px;
   padding: 1px 50px 1px 20px;
   color: Gray;
 }
@@ -44,6 +65,16 @@ h4 {
   font-size: 100%;
   padding: 1px;
   margin-left: 15px;
+}
+
+.post-timestamp{
+  color: #808080;
+  padding: 1px 50px 1px 20px;
+  margin-right: 12px;
+}
+
+.post-config-buttons {
+float: right;
 }
 
 .post {
@@ -59,12 +90,13 @@ h4 {
   margin-bottom: 10px;
   padding: 0px 0px 0px 22px;
 }
+
 .post h3 {
   font-size: 120%;
   font-weight: bold;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 0px 0px 0px 22px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 0px 0px 0px 24px;
 }
 .post h4 {
   font-size: 110%;
