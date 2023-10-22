@@ -43,25 +43,25 @@ let track_list = [
   {
     name: "A Thousand Miles",
     artist: "Vanessa Carlton",
-    image: "https://github.com/yzwbeast/comfort-zone/blob/gh-pages/A%20Thousand%20Miles.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/A-Thousand-Miles.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/A Thousand Miles.mp3"
   },
   {
     name: "Adore You",
     artist: "Harry Styles",
-    image: "https://yzwbeast.github.io/comfort-zone/Adore You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Adore-You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Adore You.mp3"
   },
   {
     name: "All of Me",
     artist: "John Legend",
-    image: "https://yzwbeast.github.io/comfort-zone/All of Me.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/All-of-Me.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/All of Me.mp3"
   },
   {
     name: "Another Love",
     artist: "Tom Odell",
-    image: "https://yzwbeast.github.io/comfort-zone/Another Love.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Another-Love.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Another Love.mp3"
   },
   {
@@ -85,13 +85,13 @@ let track_list = [
   {
     name: "Be Alright",
     artist: "Dean Lewis",
-    image: "https://yzwbeast.github.io/comfort-zone/Be Alright.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Be-Alright.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Be Alright.mp3"
   },
   {
     name: "Beautiful Mistakes (feat. Megan Thee Stallion)",
     artist: "Maroon 5/Megan Thee Stallion",
-    image: "https://yzwbeast.github.io/comfort-zone/Beautiful Mistakes (feat. Megan Thee Stallion).jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Beautiful-Mistakes.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Beautiful Mistakes (feat. Megan Thee Stallion).mp3"
   },
   {
@@ -109,7 +109,7 @@ let track_list = [
   {
     name: "Chasing Cars",
     artist: "Snow Patrol",
-    image: "https://yzwbeast.github.io/comfort-zone/Chasing Cars.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Chasing-Cars.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Chasing Cars.mp3"
   },
   {
@@ -127,37 +127,37 @@ let track_list = [
   {
     name: "Dancing On My Own",
     artist: "Calum Scott",
-    image: "https://yzwbeast.github.io/comfort-zone/Dancing On My Own.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Dancing-On-My-Own.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Dancing On My Own.mp3"
   },
   {
     name: "Die For You (with Ariana Grande) - Remix",
     artist: "The Weeknd/Ariana Grande",
-    image: "https://yzwbeast.github.io/comfort-zone/Die For You (with Ariana Grande) - Remix.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Die-For-You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Die For You (with Ariana Grande) - Remix.mp3"
   },
   {
     name: "drivers license",
     artist: "Olivia Rodrigo",
-    image: "https://yzwbeast.github.io/comfort-zone/drivers license.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/drivers-license.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/drivers license.mp3"
   },
   {
     name: "Drops of Jupiter (Tell Me)",
     artist: "Train",
-    image: "https://yzwbeast.github.io/comfort-zone/Drops of Jupiter (Tell Me).jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Drops-of-Jupiter.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Drops of Jupiter (Tell Me).mp3"
   },
   {
     name: "Eastside (with Halsey & Khalid)",
     artist: "benny blanco/Halsey/Khalid",
-    image: "https://yzwbeast.github.io/comfort-zone/Eastside (with Halsey & Khalid).jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Eastside.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Eastside (with Halsey & Khalid).mp3"
   },
   {
     name: "everything i wanted",
     artist: "Billie Eilish",
-    image: "https://yzwbeast.github.io/comfort-zone/everything i wanted.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/everything-i-wanted.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/everything i wanted.mp3"
   },
   {
@@ -211,37 +211,37 @@ let track_list = [
   {
     name: "Havana (feat. Young Thug)",
     artist: "Camila Cabello/Young Thug",
-    image: "https://yzwbeast.github.io/comfort-zone/Havana (feat. Young Thug).jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Havana.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Havana (feat. Young Thug).mp3"
   },
   {
     name: "Hey There Delilah",
     artist: "Plain White T's",
-    image: "https://yzwbeast.github.io/comfort-zone/Hey There Delilah.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Hey-There-Delilah.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Hey There Delilah.mp3"
   },
   {
     name: "Hey, Soul Sister",
     artist: "Train",
-    image: "https://yzwbeast.github.io/comfort-zone/Hey, Soul Sister.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Hey-Soul-Sister.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Hey, Soul Sister.mp3"
   },
   {
     name: "Ho Hey",
     artist: "The Lumineers",
-    image: "https://yzwbeast.github.io/comfort-zone/Ho Hey.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Ho-Hey.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Ho Hey.mp3"
   },
   {
     name: "Hold Me While You Wait",
     artist: "Lewis Capaldi",
-    image: "https://yzwbeast.github.io/comfort-zone/Hold Me While You Wait.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Hold-Me-While-You-Wait.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Hold Me While You Wait.mp3"
   },
   {
     name: "How to Save a Life",
     artist: "The Fray",
-    image: "https://yzwbeast.github.io/comfort-zone/How to Save a Life.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/How-to-Save-a-Life.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/How to Save a Life.mp3"
   },
   {
@@ -253,19 +253,19 @@ let track_list = [
   {
     name: "I Don’t Wanna Live Forever (Fifty Shades Darker)",
     artist: "ZAYN/Taylor Swift",
-    image: "https://yzwbeast.github.io/comfort-zone/I Don’t Wanna Live Forever (Fifty Shades Darker).jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/I-Dont-Wanna-Live-Forever.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/I Don’t Wanna Live Forever (Fifty Shades Darker).mp3"
   },
   {
     name: "I Feel It Coming",
     artist: "The Weeknd/Daft Punk",
-    image: "https://yzwbeast.github.io/comfort-zone/I Feel It Coming.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/I-Feel-It-Coming.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/I Feel It Coming.mp3"
   },
   {
     name: "i hate u, i love u (feat. olivia o'brien)",
     artist: "gnash/Olivia O'Brien",
-    image: "https://yzwbeast.github.io/comfort-zone/i hate u, i love u (feat. olivia o'brien).jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/i-hate-u-i-love-u.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/i hate u, i love u (feat. olivia o'brien).mp3"
   },
   {
@@ -283,13 +283,13 @@ let track_list = [
   {
     name: "I'm Not The Only One",
     artist: "Sam Smith",
-    image: "https://yzwbeast.github.io/comfort-zone/I'm Not The Only One.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/I-m-Not-The-Only-One.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/I'm Not The Only One.mp3"
   },
   {
     name: "I'm Yours",
     artist: "Jason Mraz",
-    image: "https://yzwbeast.github.io/comfort-zone/I'm Yours.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/I-m-Yours.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/I'm Yours.mp3"
   },
   {
@@ -301,79 +301,79 @@ let track_list = [
   {
     name: "If I Ain't Got You",
     artist: "Alicia Keys",
-    image: "https://yzwbeast.github.io/comfort-zone/If I Ain't Got You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/If-I-Ain-t-Got-You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/If I Ain't Got You.mp3"
   },
   {
     name: "It Must Have Been Love - From the Film 'Pretty Woman'",
     artist: "Roxette",
-    image: "https://yzwbeast.github.io/comfort-zone/It Must Have Been Love - From the Film 'Pretty Woman'.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/It-Must-Have-Been-Love.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/It Must Have Been Love - From the Film 'Pretty Woman'.mp3"
   },
   {
     name: "Just Give Me a Reason",
     artist: "P!nk/Nate Ruess",
-    image: "https://yzwbeast.github.io/comfort-zone/Just Give Me a Reason.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Just-Give-Me-a-Reason.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Just Give Me a Reason.mp3"
   },
   {
     name: "Just the Way You Are",
     artist: "Bruno Mars",
-    image: "https://yzwbeast.github.io/comfort-zone/Just the Way You Are.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Just-the-Way-You-Are.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Just the Way You Are.mp3"
   },
   {
     name: "Lavender Haze",
     artist: "Taylor Swift",
-    image: "https://yzwbeast.github.io/comfort-zone/Lavender Haze.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Lavender-Haze.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Lavender Haze.mp3"
   },
   {
     name: "Let Me Down Slowly",
     artist: "Alec Benjamin",
-    image: "https://yzwbeast.github.io/comfort-zone/Let Me Down Slowly.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Let-Me-Down-Slowly.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Let Me Down Slowly.mp3"
   },
   {
     name: "Let Me Love You",
     artist: "DJ Snake/Justin Bieber",
-    image: "https://yzwbeast.github.io/comfort-zone/Let Me Love You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Let-Me-Love-You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Let Me Love You.mp3"
   },
   {
     name: "Let You Down",
     artist: "NF",
-    image: "https://yzwbeast.github.io/comfort-zone/Let You Down.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Let-You-Down.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Let You Down.mp3"
   },
   {
     name: "Lose You To Love Me",
     artist: "Selena Gomez",
-    image: "https://yzwbeast.github.io/comfort-zone/Lose You To Love Me.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Lose-You-To-Love-Mee.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Lose You To Love Me.mp3"
   },
   {
     name: "Love Me Like You Do - From ‘Fifty Shades Of Grey’",
     artist: "Ellie Goulding",
-    image: "https://yzwbeast.github.io/comfort-zone/Love Me Like You Do - From ‘Fifty Shades Of Grey’.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Love-Me-Like-You-Do---From--Fifty-Shades-Of-Grey-.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Love Me Like You Do - From ‘Fifty Shades Of Grey’.mp3"
   },
   {
     name: "Love On The Brain",
     artist: "Rihanna",
-    image: "https://yzwbeast.github.io/comfort-zone/Love On The Brain.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Love-On-The-Brain.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Love On The Brain.mp3"
   },
   {
     name: "Love Yourself",
     artist: "Justin Bieber",
-    image: "https://yzwbeast.github.io/comfort-zone/Love Yourself.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Love-Yourself.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Love Yourself.mp3"
   },
   {
     name: "lovely (with Khalid)",
     artist: "Billie Eilish/Khalid",
-    image: "https://yzwbeast.github.io/comfort-zone/lovely (with Khalid).jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/lovely-(with-Khalid).jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/lovely (with Khalid).mp3"
   },
   {
@@ -391,7 +391,7 @@ let track_list = [
   {
     name: "Night Changes",
     artist: "One Direction",
-    image: "https://yzwbeast.github.io/comfort-zone/Night Changes.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Night-Changes.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Night Changes.mp3"
   },
   {
@@ -421,7 +421,7 @@ let track_list = [
   {
     name: "Rewrite The Stars (with James Arthur & Anne-Marie)",
     artist: "James Arthur/Anne-Marie",
-    image: "https://yzwbeast.github.io/comfort-zone/Rewrite The Stars (with James Arthur & Anne-Marie).jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Rewrite-The-Stars-(with-James-Arthur-&-Anne-Marie).jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Rewrite The Stars (with James Arthur & Anne-Marie).mp3"
   },
   {
@@ -445,7 +445,7 @@ let track_list = [
   {
     name: "Say You Won't Let Go",
     artist: "James Arthur",
-    image: "https://yzwbeast.github.io/comfort-zone/Say You Won't Let Go.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Say-You-Won-t-Let-Go.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Say You Won't Let Go.mp3"
   },
   {
@@ -457,7 +457,7 @@ let track_list = [
   {
     name: "See You Again (feat. Charlie Puth)",
     artist: "Wiz Khalifa/Charlie Puth",
-    image: "https://yzwbeast.github.io/comfort-zone/See You Again (feat. Charlie Puth).jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/See-You-Again-(feat-Charlie-Puth).jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/See You Again (feat. Charlie Puth).mp3"
   },
   {
@@ -469,7 +469,7 @@ let track_list = [
   {
     name: "Sign of the Times",
     artist: "Harry Styles",
-    image: "https://yzwbeast.github.io/comfort-zone/Sign of the Times.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Sign-of-the-Times.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Sign of the Times.mp3"
   },
   {
@@ -481,37 +481,37 @@ let track_list = [
   {
     name: "Slow Hands",
     artist: "Niall Horan",
-    image: "https://yzwbeast.github.io/comfort-zone/Slow Hands.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Slow-Hands.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Slow Hands.mp3"
   },
   {
     name: "Someone Like You",
     artist: "Adele",
-    image: "https://yzwbeast.github.io/comfort-zone/Someone Like You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Someone-Like-You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Someone Like You.mp3"
   },
   {
     name: "Someone You Loved",
     artist: "Lewis Capaldi",
-    image: "https://yzwbeast.github.io/comfort-zone/Someone You Loved.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Someone-You-Loved.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Someone You Loved.mp3"
   },
   {
     name: "Stay With Me",
     artist: "Sam Smith",
-    image: "https://yzwbeast.github.io/comfort-zone/Stay With Me.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Stay-With-Me.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Stay With Me.mp3"
   },
   {
     name: "Story of My Life",
     artist: "One Direction",
-    image: "https://yzwbeast.github.io/comfort-zone/Story of My Life.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Story-of-My-Life.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Story of My Life.mp3"
   },
   {
     name: "Stuck with U (with Justin Bieber)",
     artist: "Ariana Grande/Justin Bieber",
-    image: "https://yzwbeast.github.io/comfort-zone/Stuck with U (with Justin Bieber).jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Stuck-with-U-(with-Justin-Bieber).jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Stuck with U (with Justin Bieber).mp3"
   },
   {
@@ -523,61 +523,61 @@ let track_list = [
   {
     name: "Sunflower - Spider-Man: Into the Spider-Verse",
     artist: "Post Malone/Swae Lee",
-    image: "https://yzwbeast.github.io/comfort-zone/Sunflower - Spider-Man: Into the Spider-Verse.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Sunflower---Spider-Man--Into-the-Spider-Verse.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Sunflower - Spider-Man: Into the Spider-Verse.mp3"
   },
   {
     name: "The Scientist",
     artist: "Coldplay",
-    image: "https://yzwbeast.github.io/comfort-zone/The Scientist.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/The-Scientist.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/The Scientist.mp3"
   },
   {
     name: "Thinking out Loud",
     artist: "Ed Sheeran",
-    image: "https://yzwbeast.github.io/comfort-zone/Thinking out Loud.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Thinking-out-Loud.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Thinking out Loud.mp3"
   },
   {
     name: "Too Good At Goodbyes",
     artist: "Sam Smith",
-    image: "https://yzwbeast.github.io/comfort-zone/Too Good At Goodbyes.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Too-Good-At-Goodbyes.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Too Good At Goodbyes.mp3"
   },
   {
     name: "Until I Found You (with Em Beihold) - Em Beihold Version",
     artist: "Stephen Sanchez/Em Beihold",
-    image: "https://yzwbeast.github.io/comfort-zone/Until I Found You (with Em Beihold) - Em Beihold Version.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Until-I-Found-You-(with-Em-Beihold)---Em-Beihold-Version.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Until I Found You (with Em Beihold) - Em Beihold Version.mp3"
   },
   {
     name: "Watermelon Sugar",
     artist: "Harry Styles",
-    image: "https://yzwbeast.github.io/comfort-zone/Watermelon Sugar.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Watermelon-Sugar.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Watermelon Sugar.mp3"
   },
   {
     name: "What A Time (feat. Niall Horan)",
     artist: "Julia Michaels/Niall Horan",
-    image: "https://yzwbeast.github.io/comfort-zone/What A Time (feat. Niall Horan).jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/What-A-Time-(feat--Niall-Horan).jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/What A Time (feat. Niall Horan).mp3"
   },
   {
     name: "When I Was Your Man",
     artist: "Bruno Mars",
-    image: "https://yzwbeast.github.io/comfort-zone/When I Was Your Man.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/When-I-Was-Your-Man.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/When I Was Your Man.mp3"
   },
   {
     name: "when the party's over",
     artist: "Billie Eilish",
-    image: "https://yzwbeast.github.io/comfort-zone/when the party's over.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/when-the-party-s-over.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/when the party's over.mp3"
   },
   {
     name: "Where Is The Love?",
     artist: "Black Eyed Peas",
-    image: "https://yzwbeast.github.io/comfort-zone/Where Is The Love?.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Where-Is-The-Love?.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Where Is The Love?.mp3"
   },
   {
@@ -589,7 +589,7 @@ let track_list = [
   {
     name: "Wish You The Best",
     artist: "Lewis Capaldi",
-    image: "https://yzwbeast.github.io/comfort-zone/Wish You The Best.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Wish-You-The-Best.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Wish You The Best.mp3"
   },
   {
@@ -601,7 +601,7 @@ let track_list = [
   {
     name: "Wrecking Ball",
     artist: "Miley Cyrus",
-    image: "https://yzwbeast.github.io/comfort-zone/Wrecking Ball.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Wrecking-Ball.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Wrecking Ball.mp3"
   },
   {
@@ -613,13 +613,13 @@ let track_list = [
   {
     name: "you broke me first",
     artist: "Tate McRae",
-    image: "https://yzwbeast.github.io/comfort-zone/you broke me first.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/you-broke-me-first.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/you broke me first.mp3"
   },
   {
     name: "Young Dumb & Broke",
     artist: "Khalid",
-    image: "https://yzwbeast.github.io/comfort-zone/Young Dumb & Broke.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Young-Dumb-&-Broke.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Young Dumb & Broke.mp3"
   },
   // {
