@@ -43,7 +43,7 @@ let track_list = [
   {
     name: "A Thousand Miles",
     artist: "Vanessa Carlton",
-    image: "https://yzwbeast.github.io/comfort-zone/A Thousand Miles.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://github.com/yzwbeast/comfort-zone/blob/gh-pages/A%20Thousand%20Miles.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/A Thousand Miles.mp3"
   },
   {
