@@ -349,7 +349,7 @@ let track_list = [
   {
     name: "Lose You To Love Me",
     artist: "Selena Gomez",
-    image: "https://yzwbeast.github.io/comfort-zone/Lose-You-To-Love-Mee.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Lose-You-To-Love-Me.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Lose You To Love Me.mp3"
   },
   {
@@ -373,7 +373,7 @@ let track_list = [
   {
     name: "lovely (with Khalid)",
     artist: "Billie Eilish/Khalid",
-    image: "https://yzwbeast.github.io/comfort-zone/lovely-(with-Khalid).jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/lovely-with-Khalid.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/lovely (with Khalid).mp3"
   },
   {
@@ -421,7 +421,7 @@ let track_list = [
   {
     name: "Rewrite The Stars (with James Arthur & Anne-Marie)",
     artist: "James Arthur/Anne-Marie",
-    image: "https://yzwbeast.github.io/comfort-zone/Rewrite-The-Stars-(with-James-Arthur-&-Anne-Marie).jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Rewrite-The-Stars-with-James-Arthur-Anne-Marie.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Rewrite The Stars (with James Arthur & Anne-Marie).mp3"
   },
   {
@@ -457,7 +457,7 @@ let track_list = [
   {
     name: "See You Again (feat. Charlie Puth)",
     artist: "Wiz Khalifa/Charlie Puth",
-    image: "https://yzwbeast.github.io/comfort-zone/See-You-Again-(feat-Charlie-Puth).jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/See-You-Again-feat-Charlie-Puth.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/See You Again (feat. Charlie Puth).mp3"
   },
   {
@@ -511,7 +511,7 @@ let track_list = [
   {
     name: "Stuck with U (with Justin Bieber)",
     artist: "Ariana Grande/Justin Bieber",
-    image: "https://yzwbeast.github.io/comfort-zone/Stuck-with-U-(with-Justin-Bieber).jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Stuck-with-U-with-Justin-Bieber.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Stuck with U (with Justin Bieber).mp3"
   },
   {
@@ -547,7 +547,7 @@ let track_list = [
   {
     name: "Until I Found You (with Em Beihold) - Em Beihold Version",
     artist: "Stephen Sanchez/Em Beihold",
-    image: "https://yzwbeast.github.io/comfort-zone/Until-I-Found-You-(with-Em-Beihold)---Em-Beihold-Version.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Until-I-Found-You-with-Em-Beihold-Em-Beihold-Version.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Until I Found You (with Em Beihold) - Em Beihold Version.mp3"
   },
   {
@@ -559,7 +559,7 @@ let track_list = [
   {
     name: "What A Time (feat. Niall Horan)",
     artist: "Julia Michaels/Niall Horan",
-    image: "https://yzwbeast.github.io/comfort-zone/What-A-Time-(feat--Niall-Horan).jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/What-A-Time-feat-Niall-Horan.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/What A Time (feat. Niall Horan).mp3"
   },
   {
@@ -577,7 +577,7 @@ let track_list = [
   {
     name: "Where Is The Love?",
     artist: "Black Eyed Peas",
-    image: "https://yzwbeast.github.io/comfort-zone/Where-Is-The-Love?.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Where-Is-The-Love.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Where Is The Love?.mp3"
   },
   {
