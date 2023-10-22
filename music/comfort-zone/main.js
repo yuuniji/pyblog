@@ -451,7 +451,7 @@ let track_list = [
   {
     name: "Scared to Be Lonely",
     artist: "Martin Garrix/Dua Lipa",
-    image: "https://yzwbeast.github.io/comfort-zone/Scared to Be Lonely.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/Scared-to-Be-Lonely.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/Scared to Be Lonely.mp3"
   },
   {
