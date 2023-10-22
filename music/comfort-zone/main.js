@@ -271,13 +271,13 @@ let track_list = [
   {
     name: "I Like Me Better",
     artist: "Lauv",
-    image: "https://yzwbeast.github.io/comfort-zone/I Like Me Better.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/I-Like-Me-Better.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/I Like Me Better.mp3"
   },
   {
     name: "I Want It That Way",
     artist: "Backstreet Boys",
-    image: "https://yzwbeast.github.io/comfort-zone/I Want It That Way.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    image: "https://yzwbeast.github.io/comfort-zone/I-Want-It-That-Way.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
     path: "https://yzwbeast.github.io/comfort-zone/I Want It That Way.mp3"
   },
   {
