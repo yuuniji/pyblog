@@ -1,48 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="google-site-verification" content="WYnSViiPTdCJiOVOgZ384Wi2A5R-Aj3UVrOCjaUO7C8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>音乐播放器 - 叶泽伟的博客</title>
-  <!-- Load FontAwesome icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-  <!-- <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"> -->
-  <link href="https://yzwbeast.github.io/images/yzwer.jpg" rel="icon" type="image/x-icon">
-  <!-- Load the custom CSS style file -->
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-  <div class="player">
-    <div class="details">
-      <div class="sidebar"><h1><a href="https://yzwbeast.github.io/" title="跳转到俺的博客">舒适区：您熟悉的冷酷歌曲 - 不足为奇！</a></h1></div>
-      <!-- <h2><a href="https://yzwbeast.github.io/" title="跳转到俺的博客"></a></h2> -->
-      <!-- 正在播放 x 中的 y -->
-      <!-- PLAYING x OF y -->
-      <div></div>
-      <div class="now-playing">正在播放 y 首歌中的第 x 首</div>
-      <div class="track-art"></div>
-      <div class="track-name">Track Name</div>
-      <div class="track-artist">Track Artist</div>
-    </div>
-    <div class="buttons">
-      <div class="prev-track" onclick="prevTrack()"><i class="fa fa-step-backward fa-2x"></i></div>
-      <div class="playpause-track" onclick="playpauseTrack()"><i class="fa fa-play-circle fa-5x"></i></div>
-      <div class="next-track" onclick="nextTrack()"><i class="fa fa-step-forward fa-2x"></i></div>
-    </div>
-    <div class="slider_container">
-      <div class="current-time">00:00</div>
-      <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
-      <div class="total-duration">00:00</div>
-    </div>
-    <div class="slider_container">
-      <i class="fa fa-volume-down"></i>
-      <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
-      <i class="fa fa-volume-up"></i>
-    </div>
-  </div>
 
-  <!-- Load the main script for the player -->
-  <script src="main.js"></script>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="google-site-verification" content="WYnSViiPTdCJiOVOgZ384Wi2A5R-Aj3UVrOCjaUO7C8" />
+    <meta name="generator" content="Python script by yzw.beast@gmail.com" />
+    <meta name="provider" content="yzwbeast.github.io" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link type="text/css" rel="stylesheet" href="../../css/yzw-beast.css" />
+    <link href="https://yzwbeast.github.io/images/yzwer.jpg" rel="icon" type="image/x-icon">
+    <!--@ Change blog title @-->
+    <title>概述 - 叶泽伟的博客</title>
+</head>
+
+<body>
+    <div id="outer-wrapper">
+        <div id="content-wrapper">
+            <div id="main" style="width:67%;">
+                <div id="part1">
+                    <h1><a href="https://yzwbeast.github.io/" title="跳转到俺的博客">叶泽伟的博客</a></h1>
+                    <div class="descriptionwrapper">
+                        <p class="description">
+                            这些（监狱的）围墙很有趣——起初你痛恨它；然后你逐渐习惯它；足够长时间后，你开始依赖它...<br>这就是体制化！
+                            <br>
+                            ——电影《肖申克的救赎》
+                        </p>
+                        <hr>
+                    </div>
+                </div>
+                <span class="post-config-buttons" onclick="fn()">
+                    <!-- 按钮1 -->
+                    <div id="partmax">
+                        <button>
+                            <a title="进入全屏模式" style="display: inline;"><img src="../../images/maximize_32x32.png" alt="进入全屏"></a>
+                            <!-- <span class="text">进入全屏模式</span> -->
+                        </button>
+                    </div>
+                    <!-- 按钮2 -->
+                    <div id="partmin" style="display: none;">
+                        <button>
+                            <a title="退出全屏模式"><img src="../../images/minimize_32x32.png" alt="退出全屏"></a>
+                            <!-- <span class="text">退出全屏模式</span> -->
+                        </button>
+                    </div>
+                </span>
+                <div class="post-toolbar">
+                    <span class="post-timestamp" data="2023-10-21T00:00:00+08:00">2023年10月21日</span>
+                    <span class="post-labels">
+                        标签：
+                        <a href="../../tags/music.html" class="tag">音乐</a>
+                    </span>
+                </div>
+                <h3><a href="../../index.html" title="回到首页">舒适区：您熟悉的冷酷歌曲 - 不足为奇！</a></h3>
+                <div class="player">
+                    <div class="details">
+                        <div class="now-playing">正在播放 y 首歌中的第 x 首</div>
+                        <div class="track-name">Track Name</div>
+                        <div class="track-artist">Track Artist</div>
+                    </div>
+                    <div class="buttons">
+                        <div class="details">
+                            <div class="track-art"></div>
+                        </div>
+                        <div class="details">
+                            <div class="prev-track" onclick="prevTrack()"><i class="fa fa-step-backward fa-2x"></i></div>
+                            <div class="playpause-track" onclick="playpauseTrack()"><i class="fa fa-play-circle fa-5x"></i></div>
+                            <div class="next-track" onclick="nextTrack()"><i class="fa fa-step-forward fa-2x"></i></div>
+                        </div>
+                    </div>
+                    <div class="slider_container">
+                        <div class="current-time">00:00</div>
+                        <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+                        <div class="total-duration">00:00</div>
+                    </div>
+                    <div class="slider_container">
+                        <i class="fa fa-volume-down"></i>
+                        <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+                        <i class="fa fa-volume-up"></i>
+                    </div>
+                </div>
+            </div>
+            <div id="part2">
+                <div id="sidebar-wrapper">
+                    <div class="sidebar section" id="sidebar">
+                        <div class="widget HTML" id="BlogAbout">
+                            <div class="widget-content">
+                                <img src="../../images/yzwer.jpg" alt="叶泽伟" title="叶泽伟"><br>
+                                <br>
+                                <img src="../../images/favicon/githubpage.ico" height="16" width="16" />
+                                <a href="https://yzwbeast.github.io/" target="_blank">博客主站点 (GitHub Pages)</a><br>
+                                <img src="../../images/favicon/gmail.ico" height="16" width="16" />
+                                <a href="mailto:yzw.beast@gmail.com" target="_blank">俺的邮箱 (Gmail)</a><br>
+                                <img src="../../images/favicon/github.ico" height="16" width="16" />
+                                <a href="https://github.com/yzwbeast" target="_blank">俺的收藏 (GitHub)</a><br>
+                                <img src="../../images/favicon/twitter.ico" height="16" width="16" />
+                                <a href="https://twitter.com/yzwbeast" target="_blank">俺的推特 (@yzwbeast)</a><br>
+                            </div>
+                        </div>
+                        <div class="widget HTML" id="BlogFeed">
+                            <h2 class="title">订阅博客</h2>
+                            <div class="widget-content">
+                                <a href="https://rss.app/feeds/KwO2NNll1LqwB5Tl.xml" target="_blank" title="RSS 订阅">
+                                    <img src="../../images/feed-icon-animated.gif" alt="RSS 订阅" border="0"></a>
+                            </div>
+                        </div>
+                        <div class="widget Text" id="BlogDesc">
+                            <h2 class="title">博客主要内容</h2>
+                            <div class="widget-content">
+                                ★提升思维能力<br>
+                                ★408个人笔记<br>
+                                ★软件开发技术
+                            </div>
+                        </div>
+                        <div class="widget Label" id="BlogTags">
+                            <h2>分类标签</h2>
+                            <div class="widget-content list-label-widget-content">
+                                <ul>
+                                    <li><a href="../../tags/408-ComputerNetwork.html" class="tag">计算机网络</a> (0)</li>
+                                    <li><a href="../../tags/408-ComputerOrganization.html" class="tag">计算机组成原理</a> (0)</li>
+                                    <li><a href="../../tags/408-DataStructure.html" class="tag">数据结构</a> (1)</li>
+                                    <li><a href="../../tags/408-OperatingSystem.html" class="tag">操作系统</a> (0)</li>
+                                    <li><a href="../../tags/music.html" class="tag">音乐</a> (1)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="widget Label" id="BlogRecommend">
+                            <div class="widget-content">
+                                <h2>推荐帖子（数据结构）</h2>
+                                <ul>
+                                    <li><a href='../../2023/10/DS-1-Introduction.html'>概述</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="widget HTML" id="BlogSearch">
+                            <h2 class="title">博客站内搜索 (需联网)</h2>
+                            <div class="widget-content">
+                                <img src="../../images/search/google.png" alt="Google" border="0"><br>
+                                <form method="GET" action="https://encrypted.google.com/search" target="_blank">
+                                    <input name="ie" value="UTF-8" type="hidden">
+                                    <input name="oe" value="UTF-8" type="hidden">
+                                    <input name="sitesearch" value="site:yzw.github.io" type="hidden">
+                                    <input name="q" size="32" maxlength="128" type="text">
+                                    <input name="search" value="Google" type="submit">
+                                </form>
+                                <br>
+                                <img src="../../images/search/bing.png" alt="Bing" border="0"><br>
+                                <form method="GET" action="http://www.bing.com/search" target="_blank">
+                                    <input name="q1" value="site:yzw.github.io" type="hidden">
+                                    <input name="q" size="32" maxlength="128" type="text">
+                                    <input name="search" value="Bing" type="submit">
+                                </form>
+                            </div>
+                        </div>
+                        <div class="widget BlogArchive" id="BlogArchive">
+                            <h2>历史归档</h2>
+                            <div class="widget-content">
+                                <ul>
+                                    <li><a href="../../archive/2023.html">2023</a> (1)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--sidebar-->
+                </div>
+                <!--sidebar-wrapper-->
+            </div>
+        </div> <!-- end content-wrapper -->
+    </div> <!-- end outer-wrapper -->
+    <script src="../../js/yzwbeast.js"></script>
 </body>
+
 </html>
