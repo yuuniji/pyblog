@@ -8,20 +8,60 @@
     <link type="text/css" rel="stylesheet" href="../css/yzw-beast.css" />
     <link href="https://yzwbeast.github.io/images/yzwer.jpg" rel="icon" type="image/x-icon">
     <title>分类标签：操作系统 - 叶泽伟的博客</title>
+    <script type="text/javascript">
+    function fn() {
+        var w = document.getElementById('main');
+        var ta = document.getElementById('part1');
+        var tb = document.getElementById('part2');
+        var t1 = document.getElementById('partmax');
+        var t2 = document.getElementById('partmin');
+        if (ta.style.display === 'none') {
+            w.style.width = '67%';
+            ta.style.display = 'block'; // 以块级元素显示
+            tb.style.display = 'block'; // 以块级元素显示
+            t1.style.display = 'block';
+            t2.style.display = 'none';
+        } else {
+            w.style.width = '100%';
+            ta.style.display = 'none'; // 隐藏
+            tb.style.display = 'none'; // 隐藏
+            t1.style.display = 'none';
+            t2.style.display = 'block';
+        }
+    }
+    </script>
 </head>
 
 <body>
     <div id="outer-wrapper">
         <div id="content-wrapper">
             <div id="main" style="width:67%;">
-                <h1><a href="../index.html" title="回到首页">分类标签：操作系统</a></h1>
-                <div class="descriptionwrapper">
-                    <p class="description">
-                        做奴隶虽然不幸，但并不可怕，因为知道挣扎，毕竟还有挣脱的希望；<br>若是从奴隶生活中寻出美来，赞叹，陶醉，就是万劫不复的奴才了！<br>——鲁迅<br>
-                    </p>
-                    <hr>
+                <div id="part1">
+                    <h1><a href="../index.html" title="回到首页">分类标签：操作系统</a></h1>
+                    <div class="descriptionwrapper">
+                        <p class="description">
+                            做奴隶虽然不幸，但并不可怕，因为知道挣扎，毕竟还有挣脱的希望；<br>若是从奴隶生活中寻出美来，赞叹，陶醉，就是万劫不复的奴才了！<br>——鲁迅<br>
+                        </p>
+                        <hr>
+                    </div>
                 </div>
-                <div class="post">
+                <span class="post-config-buttons" onclick="fn()">
+                    <!-- 按钮1 -->
+                    <div id="partmax">
+                        <button>
+                            <a title="进入全屏模式" style="display: inline;"><img src="../images/maximize_32x32.png" alt="进入全屏"></a>
+                            <!-- <span class="text">进入全屏模式</span> -->
+                        </button>
+                    </div>
+                    <!-- 按钮2 -->
+                    <div id="partmin" style="display: none;">
+                        <button>
+                            <a title="退出全屏模式"><img src="../images/minimize_32x32.png" alt="退出全屏"></a>
+                            <!-- <span class="text">退出全屏模式</span> -->
+                        </button>
+                    </div>
+                </span>
+                <div class="post-toolbar">
                     <h3><a href="../2023/10/888.html">888</a></h3>
                     <div class="post-info" style="margin-bottom:30px;"><span class="date-header">2023-10-17</span><a href="../tags/408-OperatingSystem.html" class="tag">操作系统</a></div>
                     <h3><a href="../2023/010/888.html">888</a></h3>
@@ -30,89 +70,91 @@
                     <div class="post-info" style="margin-bottom:30px;"><span class="date-header">2023-10-18</span><a href="../tags/408-OperatingSystem.html" class="tag">操作系统</a></div>
                 </div>
             </div>
-            <div id="sidebar-wrapper">
-                <div class="sidebar section" id="sidebar">
-                    <div class="widget HTML" id="BlogAbout">
-                        <div class="widget-content">
-                            <img src="../images/yzwer.jpg" alt="叶泽伟" title="叶泽伟"><br>
-                            <br>
-                            <img src="../images/favicon/githubpage.ico" height="16" width="16" />
-                            <a href="https://yzwbeast.github.io/" target="_blank">博客主站点 (GitHub Pages)</a><br>
-                            <img src="../images/favicon/gmail.ico" height="16" width="16" />
-                            <a href="mailto:yzw.beast@gmail.com" target="_blank">俺的邮箱 (Gmail)</a><br>
-                            <img src="../images/favicon/github.ico" height="16" width="16" />
-                            <a href="https://github.com/yzwbeast" target="_blank">俺的收藏 (GitHub)</a><br>
-                            <img src="../images/favicon/twitter.ico" height="16" width="16" />
-                            <a href="https://twitter.com/yzwbeast" target="_blank">俺的推特 (@yzwbeast)</a><br>
+            <div id="part2">
+                <div id="sidebar-wrapper">
+                    <div class="sidebar section" id="sidebar">
+                        <div class="widget HTML" id="BlogAbout">
+                            <div class="widget-content">
+                                <img src="../images/yzwer.jpg" alt="叶泽伟" title="叶泽伟"><br>
+                                <br>
+                                <img src="../images/favicon/githubpage.ico" height="16" width="16" />
+                                <a href="https://yzwbeast.github.io/" target="_blank">博客主站点 (GitHub Pages)</a><br>
+                                <img src="../images/favicon/gmail.ico" height="16" width="16" />
+                                <a href="mailto:yzw.beast@gmail.com" target="_blank">俺的邮箱 (Gmail)</a><br>
+                                <img src="../images/favicon/github.ico" height="16" width="16" />
+                                <a href="https://github.com/yzwbeast" target="_blank">俺的收藏 (GitHub)</a><br>
+                                <img src="../images/favicon/twitter.ico" height="16" width="16" />
+                                <a href="https://twitter.com/yzwbeast" target="_blank">俺的推特 (@yzwbeast)</a><br>
+                            </div>
+                        </div>
+                        <div class="widget HTML" id="BlogFeed">
+                            <h2 class="title">订阅博客</h2>
+                            <div class="widget-content">
+                                <a href="https://rss.app/feeds/KwO2NNll1LqwB5Tl.xml" target="_blank" title="RSS 订阅">
+                                    <img src="../images/feed-icon-animated.gif" alt="RSS 订阅" border="0"></a>
+                            </div>
+                        </div>
+                        <div class="widget Text" id="BlogDesc">
+                            <h2 class="title">博客主要内容</h2>
+                            <div class="widget-content">
+                                ★提升思维能力<br>
+                                ★408个人笔记<br>
+                                ★软件开发技术
+                            </div>
+                        </div>
+                        <div class="widget Label" id="BlogTags">
+                            <h2>分类标签</h2>
+                            <div class="widget-content list-label-widget-content">
+                                <ul>
+                                    <li><a href="408-ComputerNetwork.html" class="tag">计算机网络</a> (0)</li>
+                                    <li><a href="408-ComputerOrganization.html" class="tag">计算机组成原理</a> (0)</li>
+                                    <li><a href="408-DataStructure.html" class="tag">数据结构</a> (1)</li>
+                                    <li><a href="408-OperatingSystem.html" class="tag">操作系统</a> (0)</li>
+                                    <li><a href="music.html" class="tag">音乐</a> (1)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="widget Label" id="BlogRecommend">
+                            <div class="widget-content">
+                                <h2>推荐帖子（数据结构）</h2>
+                                <ul>
+                                    <li><a href='../2023/10/DS-1-Introduction.html'>概述</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="widget HTML" id="BlogSearch">
+                            <h2 class="title">博客站内搜索 (需联网)</h2>
+                            <div class="widget-content">
+                                <img src="../images/search/google.png" alt="Google" border="0"><br>
+                                <form method="GET" action="https://encrypted.google.com/search" target="_blank">
+                                    <input name="ie" value="UTF-8" type="hidden">
+                                    <input name="oe" value="UTF-8" type="hidden">
+                                    <input name="sitesearch" value="site:yzw.github.io" type="hidden">
+                                    <input name="q" size="32" maxlength="128" type="text">
+                                    <input name="search" value="Google" type="submit">
+                                </form>
+                                <br>
+                                <img src="../images/search/bing.png" alt="Bing" border="0"><br>
+                                <form method="GET" action="http://www.bing.com/search" target="_blank">
+                                    <input name="q1" value="site:yzw.github.io" type="hidden">
+                                    <input name="q" size="32" maxlength="128" type="text">
+                                    <input name="search" value="Bing" type="submit">
+                                </form>
+                            </div>
+                        </div>
+                        <div class="widget BlogArchive" id="BlogArchive">
+                            <h2>历史归档</h2>
+                            <div class="widget-content">
+                                <ul>
+                                    <li><a href="../archive/2023.html">2023</a> (1)</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <div class="widget HTML" id="BlogFeed">
-                        <h2 class="title">订阅博客</h2>
-                        <div class="widget-content">
-                            <a href="https://rss.app/feeds/KwO2NNll1LqwB5Tl.xml" target="_blank" title="RSS 订阅">
-                                <img src="../images/feed-icon-animated.gif" alt="RSS 订阅" border="0"></a>
-                        </div>
-                    </div>
-                    <div class="widget Text" id="BlogDesc">
-                        <h2 class="title">博客主要内容</h2>
-                        <div class="widget-content">
-                            ★提升思维能力<br>
-                            ★408个人笔记<br>
-                            ★软件开发技术
-                        </div>
-                    </div>
-                    <div class="widget Label" id="BlogTags">
-                        <h2>分类标签</h2>
-                        <div class="widget-content list-label-widget-content">
-                            <ul>
-                                <li><a href="../tags/408-ComputerNetwork.html" class="tag">计算机网络</a> (0)</li>
-                                <li><a href="../tags/408-ComputerOrganization.html" class="tag">计算机组成原理</a> (0)</li>
-                                <li><a href="../tags/408-DataStructure.html" class="tag">数据结构</a> (1)</li>
-                                <li><a href="../tags/408-OperatingSystem.html" class="tag">操作系统</a> (0)</li>
-                                <li><a href="tags/music.html" class="tag">音乐</a> (1)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="widget Label" id="BlogRecommend">
-                        <div class="widget-content">
-                            <h2>推荐帖子（数据结构）</h2>
-                            <ul>
-                                <li><a href='../2023/10/DS-1-Introduction.html'>概述</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="widget HTML" id="BlogSearch">
-                        <h2 class="title">博客站内搜索 (需联网)</h2>
-                        <div class="widget-content">
-                            <img src="../images/search/google.png" alt="Google" border="0"><br>
-                            <form method="GET" action="https://encrypted.google.com/search" target="_blank">
-                                <input name="ie" value="UTF-8" type="hidden">
-                                <input name="oe" value="UTF-8" type="hidden">
-                                <input name="sitesearch" value="site:yzw.github.io" type="hidden">
-                                <input name="q" size="32" maxlength="128" type="text">
-                                <input name="search" value="Google" type="submit">
-                            </form>
-                            <br>
-                            <img src="../images/search/bing.png" alt="Bing" border="0"><br>
-                            <form method="GET" action="http://www.bing.com/search" target="_blank">
-                                <input name="q1" value="site:yzw.github.io" type="hidden">
-                                <input name="q" size="32" maxlength="128" type="text">
-                                <input name="search" value="Bing" type="submit">
-                            </form>
-                        </div>
-                    </div>
-                    <div class="widget BlogArchive" id="BlogArchive">
-                        <h2>历史归档</h2>
-                        <div class="widget-content">
-                            <ul>
-                                <li><a href="../archive/2023.html">2023</a> (1)</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <!--sidebar-->
                 </div>
-                <!--sidebar-->
+                <!--sidebar-wrapper-->
             </div>
-            <!--sidebar-wrapper-->
         </div> <!-- end content-wrapper -->
     </div> <!-- end outer-wrapper -->
 </body>
