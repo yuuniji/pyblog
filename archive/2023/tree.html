@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+
+<HEAD>
+    <TITLE> ZTREE DEMO </TITLE>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="zTreeStyle.css" type="text/css">
+    <style>
+        body {
+      background-color: white;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    div, p, table, th, td {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      font-size: 12px;
+      font-family: dotum, Verdana, Arial, Helvetica, AppleGothic, sans-serif;
+    }
+
+    #testIframe {
+      margin-left: 10px;
+    }
+  </style>
+    <script type="text/javascript" src="jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="jquery.ztree.core.js"></script>
+    <SCRIPT type="text/javascript">
+    <!--
+    var zTree;
+    var demoIframe;
+
+    var setting = {
+        view: {
+            dblClickExpand: false,
+            showLine: false,
+            selectedMulti: false
+        },
+        data: {
+            simpleData: {
+                enable: true,
+                idKey: "id",
+                pIdKey: "pId",
+                rootPId: ""
+            }
+        },
+        callback: {
+            beforeClick: function(treeId, treeNode) {
+                var zTree = $.fn.zTree.getZTreeObj("tree");
+                if (treeNode.isParent) {
+                    zTree.expandNode(treeNode);
+                    return false;
+                } else {
+                    demoIframe.attr("src", treeNode.file + ".html");
+                    return true;
+                }
+            }
+        }
+    };
+
+    var zNodes = [
+        { id: 1, pId: 0, name: "2042 - 没有子节点", isParent: true },
+
+
+        { id: 2, pId: 0, name: "2041 - 没有子节点", isParent: true },
+
+        { id: 3, pId: 0, name: "2040 - 没有子节点", isParent: true },
+
+        { id: 4, pId: 0, name: "2039 - 没有子节点", isParent: true },
+
+        { id: 5, pId: 0, name: "2038 - 没有子节点", isParent: true },
+
+        { id: 6, pId: 0, name: "2037 - 没有子节点", isParent: true },
+
+        { id: 7, pId: 0, name: "2036 - 没有子节点", isParent: true },
+
+        { id: 8, pId: 0, name: "2035 - 没有子节点", isParent: true },
+
+        { id: 9, pId: 0, name: "2034 - 没有子节点", isParent: true },
+
+        { id: 10, pId: 0, name: "2033 - 没有子节点", isParent: true },
+
+        { id: 11, pId: 0, name: "2032 - 没有子节点", isParent: true },
+
+        { id: 12, pId: 0, name: "2031 - 没有子节点", isParent: true },
+
+        { id: 13, pId: 0, name: "2030 - 没有子节点", isParent: true },
+
+        { id: 14, pId: 0, name: "2029 - 没有子节点", isParent: true },
+
+        { id: 15, pId: 0, name: "2028 - 没有子节点", isParent: true },
+
+        { id: 16, pId: 0, name: "2027 - 没有子节点", isParent: true },
+
+        { id: 17, pId: 0, name: "2026 - 没有子节点", isParent: true },
+
+        { id: 18, pId: 0, name: "2025 - 没有子节点", isParent: true },
+
+        { id: 19, pId: 0, name: "2024 - 没有子节点", isParent: true },
+
+        { id: 20, pId: 0, name: "2023（2）", open: true },
+        { id: 21, pId: 20, name: "10月（2）" },//这里ID只要是两位就行，无所谓其他
+        { pId: 21, name: "叶子节点1", file: "core/standardData" },
+        { pId: 21, name: "叶子节点2", file: "core/standardData" },
+        { id: 22, pId: 20, name: "11月（）" },
+        { pId: 22, name: "叶子节点1" },
+        { pId: 22, name: "叶子节点2" },
+    ];
+
+    $(document).ready(function() {
+        var t = $("#tree");
+        t = $.fn.zTree.init(t, setting, zNodes);
+        demoIframe = $("#testIframe");
+        demoIframe.bind("load", loadReady);
+        var zTree = $.fn.zTree.getZTreeObj("tree");
+        zTree.selectNode(zTree.getNodeByParam("id", 101));
+
+    });
+
+    function loadReady() {
+        var bodyH = demoIframe.contents().find("body").get(0).scrollHeight,
+            htmlH = demoIframe.contents().find("html").get(0).scrollHeight,
+            maxH = Math.max(bodyH, htmlH),
+            minH = Math.min(bodyH, htmlH),
+            h = demoIframe.height() >= maxH ? minH : maxH;
+        if (h < 530) h = 530;
+        demoIframe.height(h);
+    }
+
+    //-->
+    </SCRIPT>
+</HEAD>
+
+<BODY>
+    <!--     <TD width=260px align=left valign=top style="BORDER-RIGHT: #999999 1px dashed">
+        <ul id="tree" class="ztree" style="width:260px; overflow:auto;"></ul>
+    </TD> -->
+    <TABLE border=0 height=600px align=left>
+        <TR>
+            <TD width=260px align=left valign=top style="BORDER-RIGHT: #999999 1px dashed">
+                <ul id="tree" class="ztree" style="width:260px; overflow:auto;"></ul>
+            </TD>
+            <TD width=770px align=left valign=top>
+                <IFRAME ID="testIframe" Name="testIframe" FRAMEBORDER=0 SCROLLING=AUTO width=100% height=600px SRC="core/standardData.html"></IFRAME>
+            </TD>
+        </TR>
+    </TABLE>
+</BODY>
+
+</HTML>
