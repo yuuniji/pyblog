@@ -10,12 +10,14 @@ body {
     color: white;
 }
 
-@media (prefers-color-scheme: dark) {
+/*@media (prefers-color-scheme: dark) {
     body {
-        background: black;
-        color: white;
+        background: #000000;
+        color: #8D8D93;
     }
-}
+}*/
+
+/*        专注：#18160D #FEFAEC 纸张：#1C1C1E #F2F2F0 平静：#413B31 #F7ECDD 安静：#000000 #8D8D93*/
 
 #main {
     float: left;
@@ -280,7 +282,7 @@ a:visited {
 
 #sidebar {
     text-transform: none;
-    background-color: transparent;
+    background-color: white;
     /*    color: black;*/
     padding-left: 20px;
     width: 30%;
