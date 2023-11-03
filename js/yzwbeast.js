@@ -91,6 +91,15 @@ window.onload = function() {
     var t4 = $("tooltip4");
     var t5 = $("tooltip5");
     var t6 = $("tooltip6");
+    var t7 = $("tooltip7");
+    var t8 = $("tooltip8");
+    var t9 = $("tooltip9");
+    var t10 = $("tooltip10");
+    var t11 = $("tooltip11");
+    var t12 = $("tooltip12");
+    var t13 = $("tooltip13");
+    var t14 = $("tooltip14");
+    var t15 = $("tooltip15");
     t1.onmouseenter = function() {
         showTooltip(this, "t1", '进入全屏模式', 88);
     };
@@ -99,6 +108,42 @@ window.onload = function() {
     };
     t3.onmouseenter = function() {
         showTooltip(this, "t3", 'RSS 订阅', 88);
+    };
+    t4.onmouseenter = function() {
+        showTooltip(this, "t4", '研究来源1', 88);
+    };
+    t5.onmouseenter = function() {
+        showTooltip(this, "t5", '研究来源2', 88);
+    };
+    t6.onmouseenter = function() {
+        showTooltip(this, "t6", '研究来源3', 88);
+    };
+    t7.onmouseenter = function() {
+        showTooltip(this, "t7", '研究来源4', 88);
+    };
+    t8.onmouseenter = function() {
+        showTooltip(this, "t8", '研究来源5', 88);
+    };
+    t9.onmouseenter = function() {
+        showTooltip(this, "t9", '研究来源6', 88);
+    };
+    t10.onmouseenter = function() {
+        showTooltip(this, "t10", '研究来源7', 88);
+    };
+    t11.onmouseenter = function() {
+        showTooltip(this, "t11", '研究来源8', 88);
+    };
+    t12.onmouseenter = function() {
+        showTooltip(this, "t12", '研究来源8', 88);
+    };
+    t13.onmouseenter = function() {
+        showTooltip(this, "t13", '研究来源10', 88);
+    };
+    t14.onmouseenter = function() {
+        showTooltip(this, "t14", '研究来源11', 88);
+    };
+    t15.onmouseenter = function() {
+        showTooltip(this, "t15", '研究来源12', 88);
     };
 }
 
