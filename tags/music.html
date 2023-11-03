@@ -1,37 +1,15 @@
 <!DOCTYPE html>
 
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7750869963691633"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7750869963691633" crossorigin="anonymous"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="google-site-verification" content="WYnSViiPTdCJiOVOgZ384Wi2A5R-Aj3UVrOCjaUO7C8" />
     <meta name="generator" content="Python script by yzw.beast@gmail.com" />
     <meta name="provider" content="yzwbeast.github.io" />
     <link type="text/css" rel="stylesheet" href="../css/yzw-beast.css" />
+    <script src="../js/yzwbeast.js"></script>
     <link href="https://yzwbeast.github.io/images/yzwer.jpg" rel="icon" type="image/x-icon">
     <title>分类标签：音乐 - 叶泽伟的博客</title>
-    <script type="text/javascript">
-    function fn() {
-        var w = document.getElementById('main');
-        var ta = document.getElementById('part1');
-        var tb = document.getElementById('part2');
-        var t1 = document.getElementById('partmax');
-        var t2 = document.getElementById('partmin');
-        if (ta.style.display === 'none') {
-            w.style.width = '67%';
-            ta.style.display = 'block'; // 以块级元素显示
-            tb.style.display = 'block'; // 以块级元素显示
-            t1.style.display = 'block';
-            t2.style.display = 'none';
-        } else {
-            w.style.width = '100%';
-            ta.style.display = 'none'; // 隐藏
-            tb.style.display = 'none'; // 隐藏
-            t1.style.display = 'none';
-            t2.style.display = 'block';
-        }
-    }
-    </script>
 </head>
 
 <body>
@@ -48,20 +26,8 @@
                     </div>
                 </div>
                 <span class="post-config-buttons" onclick="fn()">
-                    <!-- 按钮1 -->
-                    <div id="partmax">
-                        <button>
-                            <a class="tooltip" id="tooltip1"><img src="../images/maximize_32x32.png" alt="进入全屏"></a>
-                            <!-- <span class="text">进入全屏模式</span> -->
-                        </button>
-                    </div>
-                    <!-- 按钮2 -->
-                    <div id="partmin" style="display: none;">
-                        <button>
-                            <a title="退出全屏模式"><img src="../images/minimize_32x32.png" alt="退出全屏"></a>
-                            <!-- <span class="text">退出全屏模式</span> -->
-                        </button>
-                    </div>
+                    <div id="partmax"><a class="tooltip" id="tooltip1"><img src="../images/maximize_32x32.png" alt="进入全屏"></a></div>
+                    <div id="partmin" style="display: none;"><a class="tooltip" id="tooltip2"><img src="../images/minimize_32x32.png" alt="退出全屏"></a></div>
                 </span>
                 <div class="post-toolbar">
                     <h3><a href="../music/comfort-zone/index.html">舒适区：您熟悉的冷酷歌曲 - 不足为奇！</a></h3>
@@ -73,7 +39,18 @@
                     <div class="sidebar section" id="sidebar">
                         <div class="widget HTML" id="BlogAbout">
                             <div class="widget-content">
-                                <img src="../images/yzwer.jpg" alt="叶泽伟" title="叶泽伟"><br>
+                                <!-- <img src="../images/yzwer.jpg" alt="叶泽伟" title="叶泽伟"><br> -->
+                                <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                            <img src="../images/yzwbeast.png" style="height:144px;">
+                                        </div>
+                                        <div class="flip-card-back">
+                                            <!-- <img src="images/gzhh.jpg" style="width:116px;"> -->
+                                            <h1 class="glow">欢迎</h1>
+                                        </div>
+                                    </div>
+                                </div>
                                 <br>
                                 <img src="../images/favicon/githubpage.ico" height="16" width="16" />
                                 <a href="https://yzwbeast.github.io/" target="_blank">博客主站点 (GitHub Pages)</a><br>
@@ -88,7 +65,7 @@
                         <div class="widget HTML" id="BlogFeed">
                             <h2 class="title">订阅博客</h2>
                             <div class="widget-content">
-                                <a href="https://rss.app/feeds/KwO2NNll1LqwB5Tl.xml" target="_blank" title="RSS 订阅">
+                                <a href="https://rss.app/feeds/KwO2NNll1LqwB5Tl.xml" class="tooltip" id="tooltip3">
                                     <img src="../images/feed-icon-animated.gif" alt="RSS 订阅" border="0"></a>
                             </div>
                         </div>
@@ -109,6 +86,7 @@
                                     <li><a href="408-DataStructure.html" class="tag">数据结构</a> (1)</li>
                                     <li><a href="408-OperatingSystem.html" class="tag">操作系统</a> (0)</li>
                                     <li><a href="music.html" class="tag">音乐</a> (1)</li>
+                                    <li><a href="travel.html" class="tag">旅游</a> (1)</li>
                                 </ul>
                             </div>
                         </div>

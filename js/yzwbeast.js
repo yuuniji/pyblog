@@ -24,6 +24,9 @@ function fn() {
     }
 }
 
+
+//tip
+
 window.onload = function() {
     //绑定事件的函数
     function addEvent(obj, event, fn) { //要绑定的元素对象，要绑定的事件，触发的回调函数
@@ -93,6 +96,9 @@ window.onload = function() {
     };
     t2.onmouseenter = function() {
         showTooltip(this, "t2", '退出全屏模式', 88);
+    };
+    t3.onmouseenter = function() {
+        showTooltip(this, "t3", 'RSS 订阅', 88);
     };
 }
 
