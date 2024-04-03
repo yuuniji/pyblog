@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7750869963691633" crossorigin="anonymous"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="google-site-verification" content="WYnSViiPTdCJiOVOgZ384Wi2A5R-Aj3UVrOCjaUO7C8" />
+	<meta name="generator" content="Python script by yzw.beast@gmail.com" />
+	<meta name="provider" content="yzwbeast.github.io" />
+	<link type="text/css" rel="stylesheet" href="../../css/yzw-beast.css" />
+	<script src="../../js/yzwbeast.js"></script>
+	<link href="https://yzwbeast.github.io/images/yzwer.jpg" rel="icon" type="image/x-icon">
+	<!--@ Change blog title @-->
+	<title>Python编程中的常见错误和最佳实践 - 叶泽伟的博客</title>
+
+</head>
+
+<body>
+	<div id="outer-wrapper">
+		<div id="content-wrapper">
+			<div id="main" style="width:67%;">
+				<div id="part1">
+					<h1><a href="https://yzwbeast.github.io/" title="跳转到俺的博客">叶泽伟的博客</a></h1>
+					<div class="descriptionwrapper">
+						<script language="JavaScript">
+							document.write(quote)
+						</script>
+						<hr>
+					</div>
+				</div>
+				<span class="post-config-buttons" onclick="fn()">
+					<div id="partmax"><a class="tooltip" id="tooltip1"><img src="../../images/maximize_32x32.png" alt="进入全屏"></a></div>
+					<div id="partmin" style="display: none;"><a class="tooltip" id="tooltip2"><img src="../../images/minimize_32x32.png" alt="退出全屏"></a></div>
+				</span>
+				<div class="post-toolbar">
+					<span class="post-timestamp" data="2024-4-3T00:00:00+08:00">2024年4月3日</span>
+					<span class="post-labels">
+						标签：
+						<a href="../../tags/编程.html" classPython="tag">编程</a>,
+						<a href="../../tags/编程.Python.html" classPython="tag">编程.Python</a>
+					</span>
+				</div>
+				<h3><a href="../../index.html" title="回到首页">Python编程中的常见错误和最佳实践</a></h3>
+
+				<div class="post" style="padding-bottom: 2em;">
+					<div>
+						<b style="font-size: 120%;">文章目录</b>
+					</div>
+					<a href="#head-1">★TOP1-返回值处理</a><br>
+					<a href="#head-2">★TOP2-断言的使用</a><br>
+					<a href="#head-3">★TOP3-系统资源使用</a><br>
+					<a href="#head-4">★TOP4-内存释放</a><br>
+					<a href="#head-5">★TOP5-内存越界</a><br>
+					<a href="#head-6">★TOP6-空野指针</a><br>
+					<a href="#head-7">★TOP7-未初始化</a><br>
+					<a href="#head-8">★TOP8-代码元余</a><br>
+					<a href="#head-9">★TOP9-编程接口</a><br>
+					<a href="#head-10">★TOP10-资源型接口设计</a><br>
+				</div>
+
+
+				<div class="post">
+					&#12288;&#12288;请根据以下TOP10情况，
+					挑选三个TOP，编写每种情况对应的示例，格式参照SFT示例，总数要求15个：<br />
+
+					<h2 id="head-1">★TOP1-返回值处理</h2><br />
+					<div class="source">
+						<pre>
+							<span></span>
+							<span class="c1">#zhushi</span>
+							<span class="n">ans</span>
+							<span class="p">,</span>
+							<span class="n">unans</span>
+							<span class="o">=</span>
+							<span class="s2">"ff:ff:ff"</span>
+							<span class="mi">2</span>
+						</pre>
+					</div>
+					&#12288;&#12288;A. 被调函数执行结果对业务流程有影响时，调用者却没有处理其返回值，包括：可能导致空指针访问、缺少回退处理(资源泄漏等)。<br />
+					&#12288;&#12288;B. 处理函数的返回值不准确,导致有隐患或问题，包括：返回值数据类型被错误转换、返回值比较的目标不是该函数的返回值系列。<br /><br />
+					<h3>◇ 被调函数执行结果对业务流程有影响时，调用者却没有处理其返回值，包括：可能导致空指针访问、缺少回退处理(资源泄漏等)。</h3><br />
+
+					&#12288;&#12288;1133<br /><br /><br />
+					<h3>◇ 处理函数的返回值不准确,导致有隐患或问题，包括：返回值数据类型被错误转换、返回值比较的目标不是该函数的返回值系列。</h3><br />
+					&#12288;&#12288;1133<sup>①</sup> 1133<br />
+					<center>
+						<img src="../../images/2023/10/图 1.2 井字棋对弈“树”.png" alt="图 1.2 井字棋对弈“树”">
+						<div>图 1.2 1133</div>
+						<div>(a) 1133；(b) 1133</div><br /><br />
+					</center>
+					&#12288;&#12288;1133<br /><br />
+					<HR align=left width=300>
+					&#12288;&#12288;①&#12288;1133<br /><br /><br />
+					<h3>◇1133</h3><br />
+					&#12288;&#12288;1133<br />
+					&#12288;&#12288;1133&rarr;1133&#8594;1133&#8594;1133&rarr;1133<br />
+					<center>
+						<img src="../../images/2023/10/图 1.3 五叉路口交通管理示意图.png" alt="图 1.3 五叉路口交通管理示意图">
+						<div>图 1.3 1133</div>
+						<div>(a) 1133；(b) 1133</div><br /><br />
+					</center>
+					&#12288;&#12288;1133<br />
+					&#12288;&#12288;1133&rarr;1133&rarr;1133<br /><br />
+					<h3>◇1133</h3><br />
+					&#12288;&#12288;1133<br /><br /><br />
+
+					<h2 id="head-2">★TOP2-断言的使用</h2><br />
+
+					<h2 id="head-3">★TOP3-系统资源使用</h2><br />
+
+					<h2 id="head-4">★TOP4-内存释放</h2><br />
+
+					<h2 id="head-5">★TOP5-内存越界</h2><br />
+
+					<h2 id="head-6">★TOP6-空野指针</h2><br />
+
+					<h2 id="head-7">★TOP7-未初始化</h2><br />
+
+					<h2 id="head-8">★TOP8-代码元余</h2><br />
+
+					<h2 id="head-9">★TOP9-编程接口</h2><br />
+
+					<h2 id="head-10">★TOP10-资源型接口设计</h2><br />
+					
+				</div>
+			</div>
+			<div id="part2">
+				<div id="sidebar-wrapper">
+					<div class="sidebar section" id="sidebar">
+						<div class="widget HTML" id="BlogAbout">
+							<div class="widget-content">
+								<!-- <img src="../../images/yzwer.jpg" alt="叶泽伟" title="叶泽伟"><br> -->
+								<div class="flip-card">
+									<div class="flip-card-inner">
+										<div class="flip-card-front">
+											<img src="../../images/yzwbeast.png" style="height:144px;">
+										</div>
+										<div class="flip-card-back">
+											<!-- <img src="images/gzhh.jpg" style="width:116px;"> -->
+											<h1 class="glow">欢迎</h1>
+										</div>
+									</div>
+								</div>
+								<br>
+								<img src="../../images/favicon/githubpage.ico" height="16" width="16" />
+								<a href="https://yzwbeast.github.io/" target="_blank">博客主站点 (GitHub Pages)</a><br>
+								<img src="../../images/favicon/gmail.ico" height="16" width="16" />
+								<a href="mailto:yzw.beast@gmail.com" target="_blank">俺的邮箱 (Gmail)</a><br>
+								<img src="../../images/favicon/github.ico" height="16" width="16" />
+								<a href="https://github.com/yzwbeast" target="_blank">俺的收藏 (GitHub)</a><br>
+								<img src="../../images/favicon/twitter.ico" height="16" width="16" />
+								<a href="https://twitter.com/yzwbeast" target="_blank">俺的推特 (@YzwBeast)</a><br>
+								<img src="../../images/favicon/xiaohongshu.ico" height="16" width="16" />
+								<a href="https://www.xiaohongshu.com/user/profile/5f4a70a3000000000101d0a5" target="_blank">俺的小红书 (@YzwBeast)</a><br>
+								<img src="../../images/favicon/zhihu.ico" height="16" width="16" />
+								<a href="https://www.zhihu.com/people/er-yue-xie-52" target="_blank">俺的知乎 (@YzwBeast)</a><br>
+							</div>
+						</div>
+						<div class="widget HTML" id="BlogFeed">
+							<h2 class="title">订阅博客</h2>
+							<div class="widget-content">
+								<a href="https://rss.app/feeds/KwO2NNll1LqwB5Tl.xml" class="tooltip" id="tooltip3">
+									<img src="../../images/feed-icon-animated.gif" alt="RSS 订阅" border="0"></a>
+								</div>
+							</div>
+							<div class="widget Text" id="BlogDesc">
+								<h2 class="title">博客主要内容</h2>
+								<div class="widget-content">
+									★提升思维能力<br>
+									★软件开发技术
+								</div>
+							</div>
+							<div class="widget Label" id="BlogTags">
+								<h2>分类标签</h2>
+								<div class="widget-content list-label-widget-content">
+									<ul>
+										<li><a href="../../tags/编程.html" class="tag">编程</a></li>
+										<li><a href="../../tags/编程.Python.html" class="tag">编程.Python</a></li>
+										<li><a href="../../tags/408-DataStructure.html" class="tag">数据结构</a></li>
+										<li><a href="../../tags/music.html" class="tag">音乐</a></li>
+										<li><a href="../../tags/travel.html" class="tag">旅游</a></li>
+										<li><a href="../../tags/movies.html" class="tag">电影</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="widget Label" id="BlogRecommend">
+								<div class="widget-content">
+									<h2>推荐帖子（数据结构）</h2>
+									<ul>
+										<li><a href='../../2023/10/DS-1-Introduction.html'>概述</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="widget HTML" id="BlogSearch">
+								<h2 class="title">博客站内搜索 (需联网)</h2>
+								<div class="widget-content">
+									<img src="../../images/search/google.png" alt="Google" border="0"><br>
+									<form method="GET" action="https://encrypted.google.com/search" target="_blank">
+										<input name="ie" value="UTF-8" type="hidden">
+										<input name="oe" value="UTF-8" type="hidden">
+										<input name="sitesearch" value="site:yzw.github.io" type="hidden">
+										<input name="q" size="32" maxlength="128" type="text">
+										<input name="search" value="Google" type="submit">
+									</form>
+									<br>
+									<img src="../../images/search/bing.png" alt="Bing" border="0"><br>
+									<form method="GET" action="http://www.bing.com/search" target="_blank">
+										<input name="q1" value="site:yzw.github.io" type="hidden">
+										<input name="q" size="32" maxlength="128" type="text">
+										<input name="search" value="Bing" type="submit">
+									</form>
+								</div>
+							</div>
+							<div class="widget BlogArchive" id="BlogArchive">
+								<h2>历史归档</h2>
+								<div class="widget-content">
+									<ul>
+										<li><a href="../../archive/2024.html">2024</a></li>
+										<li><a href="../../archive/2023.html">2023</a></li>
+									</ul>
+								</div>
+								<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+							</div>
+						</div>
+						<!--sidebar-->
+					</div>
+					<!--sidebar-wrapper-->
+				</div>
+			</div> <!-- end content-wrapper -->
+		</div> <!-- end outer-wrapper -->
+	</body>
+
+	</html>
