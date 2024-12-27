@@ -9,20 +9,90 @@ function fn() {
     var tb = document.getElementById('part2');
     var t1 = document.getElementById('partmax');
     var t2 = document.getElementById('partmin');
-    if (ta.style.display === 'none') {
-        w.style.width = '67%';
-        ta.style.display = 'block'; // 以块级元素显示
-        tb.style.display = 'block'; // 以块级元素显示
+
+    // 获取实际样式
+    var taStyle = window.getComputedStyle(ta);
+    
+    if (taStyle.display === 'none') {
+        // 显示部分内容
+        w.style.width = '100%';
+        ta.style.display = 'block';
+        tb.style.display = 'block';
         t1.style.display = 'block';
         t2.style.display = 'none';
     } else {
+        // 隐藏部分内容
         w.style.width = '100%';
-        ta.style.display = 'none'; // 隐藏
-        tb.style.display = 'none'; // 隐藏
+        ta.style.display = 'none';
+        tb.style.display = 'none';
         t1.style.display = 'none';
         t2.style.display = 'block';
     }
 }
+
+function enterFullScreen() {
+    const enter = document.getElementById('enter');
+    const exit = document.getElementById('exit');
+
+    enter.style.display = 'none';
+    exit.style.display = 'block';
+
+    if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+    }
+}
+
+function exitFullScreen() {
+    const enter = document.getElementById('enter');
+    const exit = document.getElementById('exit');
+
+    enter.style.display = 'block';
+    exit.style.display = 'none';
+
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    }
+}
+
+// // 动态加载 part1.html 并插入到页面中
+// fetch('part1.html')
+//     .then(response => {
+//         if (!response.ok) throw new Error('Network response was not ok');
+//         return response.text();
+//     })
+//     .then(data => {
+//         document.getElementById('part1').innerHTML = data;
+//     })
+//     .catch(error => console.error('Error loading part1:', error));
+
+
+// 计算相对路径
+const getPart2Path = () => {
+    // 获取当前页面的路径并拆分
+    const pathParts = window.location.pathname.split('/');
+    
+    // 计算当前文件所在的目录层级
+    const depth = pathParts.filter(part => part !== '').length - 1;
+
+    // 返回相对路径，根据深度向上回退目录
+    return '../'.repeat(depth) + 'part2.html';
+};
+
+// 动态加载 part2.html 内容
+fetch(getPart2Path())  // 使用动态路径来引用 part2.html
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    })
+    .then(data => {
+        // 将内容插入到 id 为 part2 的元素中
+        document.getElementById('part2').innerHTML = data;
+    })
+    .catch(error => {
+        console.error('Error loading part2:', error);
+    });
 
 // quotes.js
 var a = Math.random() + "";
@@ -208,50 +278,58 @@ window.onload = function() {
     var t13 = $("tooltip13");
     var t14 = $("tooltip14");
     var t15 = $("tooltip15");
+    var t16 = $("tooltip14");
+    var t17 = $("tooltip15");
     t1.onmouseenter = function() {
-        showTooltip(this, "t1", '进入全屏模式', 88);
+        showTooltip(this, "t1", '进入页面全屏模式', 88);
     };
     t2.onmouseenter = function() {
-        showTooltip(this, "t2", '退出全屏模式', 88);
+        showTooltip(this, "t2", '退出页面全屏模式', 88);
     };
     t3.onmouseenter = function() {
-        showTooltip(this, "t3", 'RSS 订阅', 88);
+        showTooltip(this, "t3", '进入全屏模式', 88);
     };
     t4.onmouseenter = function() {
-        showTooltip(this, "t4", '研究来源1', 88);
+        showTooltip(this, "t4", '退出全屏模式', 88);
     };
     t5.onmouseenter = function() {
-        showTooltip(this, "t5", '研究来源2', 88);
+        showTooltip(this, "t5", 'RSS 订阅', 88);
     };
     t6.onmouseenter = function() {
-        showTooltip(this, "t6", '研究来源3', 88);
+        showTooltip(this, "t6", '研究来源1', 88);
     };
     t7.onmouseenter = function() {
-        showTooltip(this, "t7", '研究来源4', 88);
+        showTooltip(this, "t7", '研究来源2', 88);
     };
     t8.onmouseenter = function() {
-        showTooltip(this, "t8", '研究来源5', 88);
+        showTooltip(this, "t8", '研究来源3', 88);
     };
     t9.onmouseenter = function() {
-        showTooltip(this, "t9", '研究来源6', 88);
+        showTooltip(this, "t9", '研究来源4', 88);
     };
     t10.onmouseenter = function() {
-        showTooltip(this, "t10", '研究来源7', 88);
+        showTooltip(this, "t10", '研究来源5', 88);
     };
     t11.onmouseenter = function() {
-        showTooltip(this, "t11", '研究来源8', 88);
+        showTooltip(this, "t11", '研究来源6', 88);
     };
     t12.onmouseenter = function() {
-        showTooltip(this, "t12", '研究来源8', 88);
+        showTooltip(this, "t12", '研究来源7', 88);
     };
     t13.onmouseenter = function() {
-        showTooltip(this, "t13", '研究来源10', 88);
+        showTooltip(this, "t13", '研究来源8', 88);
     };
     t14.onmouseenter = function() {
-        showTooltip(this, "t14", '研究来源11', 88);
+        showTooltip(this, "t14", '研究来源8', 88);
     };
     t15.onmouseenter = function() {
-        showTooltip(this, "t15", '研究来源12', 88);
+        showTooltip(this, "t15", '研究来源10', 88);
+    };
+    t16.onmouseenter = function() {
+        showTooltip(this, "t16", '研究来源11', 88);
+    };
+    t17.onmouseenter = function() {
+        showTooltip(this, "t17", '研究来源12', 88);
     };
 }
 
