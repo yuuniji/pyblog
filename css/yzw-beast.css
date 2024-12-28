@@ -391,6 +391,12 @@ a:visited {
     animation: glow 1s ease-in-out infinite alternate;
 }
 
+.countdown {
+    font-size: 20px;
+    margin-top: 20px;
+    color: #004d40; /* Dark green */
+  }
+
 /* 默认的浅色模式样式（已经定义好在你的代码中） */
 
 @media (prefers-color-scheme: dark) {
@@ -453,4 +459,8 @@ a:visited {
         background-color: #444;
         color: #e0e0e0;
     }
+
+    .countdown {
+        color: #004d40;
+      }
 }
