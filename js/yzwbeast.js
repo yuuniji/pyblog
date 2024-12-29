@@ -66,6 +66,38 @@ function exitFullScreen() {
 //     .catch(error => console.error('Error loading part1:', error));
 
 
+// 使用 JavaScript 动态加载 suns.html
+fetch('/components/suns.html')
+.then(response => response.text())
+.then(html => {
+    document.getElementById('suns-container').innerHTML = html;
+
+    // 重新加载 suns.html 的样式和脚本
+    const cssLink = document.querySelector('link[href="/css/sun.css"]');
+    if (!cssLink) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = '/css/sun.css';
+        document.head.appendChild(link);
+    }
+
+    const script = document.createElement('script');
+    script.src = '/js/sun.js';
+    script.type = 'text/javascript';
+    document.body.appendChild(script);
+})
+.catch(err => console.error('Failed to load suns.html:', err));
+
+
+// 使用 JavaScript 动态加载 part2.html
+fetch('/components/part2.html')
+.then(response => response.text())
+.then(html => {
+    document.getElementById('part2').innerHTML = html;
+})
+.catch(err => console.error('Failed to load part2.html:', err));
+
 // 计算相对路径
 const getPart2Path = () => {
     // 获取当前页面的路径并拆分

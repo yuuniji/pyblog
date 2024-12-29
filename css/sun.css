@@ -1,15 +1,14 @@
-/* 固定黑色背景正方形的样式 */
-.solar-system {
+.solart {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     /* background-color: black; */
-    width: 400px;
-    height: 400px;
-    padding: 15px;
+    width: 100px;
+    height: 80px;
+    padding: 25px;
     margin: auto;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     /* 居中显示 */
     overflow: hidden;
     /* 防止内容溢出 */
@@ -17,11 +16,12 @@
     /* 可选：增加边框方便观察范围 */
 }
 
+
 /* 太阳的样式 */
-.sun {
-    width: 70px;
+.sunt {
+    width: 10px;
     /* 默认太阳大小 */
-    height: 70px;
+    height: 10px;
     background: radial-gradient(circle, #ffd700, #ff8c00);
     border-radius: 50%;
     box-shadow: 0 0 30px rgba(255, 223, 0, 0.8), inset 0 0 15px rgba(255, 223, 0, 0.5);
@@ -46,21 +46,20 @@
     }
 }
 
-/* 行星的样式 */
-.planet {
+
+.plt {
     position: absolute;
-    width: 20px;
+    width: 5px;
     /* 默认行星大小 */
-    height: 20px;
+    height: 5px;
     /* background: blue; */
     border-radius: 50%;
     animation: orbit linear infinite;
 }
 
-/* 设置行星的轨道半径（调整为正方形范围内的值） */
-#planet1 {
+#plt1 {
     background: radial-gradient(circle, #fff, #fd060e); /* 行星1的背景颜色渐变 */
-    --orbit-radius: 60px; /* 行星1的轨道半径 */
+    --orbit-radius: 15px; /* 行星1的轨道半径 */
     animation-duration: 5s; /* 行星1的轨道动画时长 */
     box-shadow: 0 0 15px rgba(253, 6, 14, 0.8), inset 0 0 10px rgba(253, 6, 14, 0.5); /* 行星1的阴影效果 */
     border: 2px solid rgba(253, 6, 14, 0.7); /* 行星1的边框颜色 */
@@ -69,9 +68,9 @@
     transition: transform 0.5s; /* 行星1的变换过渡效果 */
 }
 
-#planet2 {
+#plt2 {
     background: radial-gradient(circle, #fff, #0077cc);
-    --orbit-radius: 90px;
+    --orbit-radius: 25px;
     animation-duration: 6s;
     box-shadow: 0 0 15px rgba(0, 119, 204, 0.8), inset 0 0 10px rgba(0, 119, 204, 0.5);
     border: 2px solid rgba(0, 119, 204, 0.7);
@@ -80,9 +79,9 @@
     transition: transform 0.5s;
 }
 
-#planet3 {
+#plt3 {
     background: radial-gradient(circle, #fff, #ff9203);
-    --orbit-radius: 120px;
+    --orbit-radius: 35px;
     animation-duration: 7s;
     box-shadow: 0 0 15px rgba(255, 146, 3, 0.8), inset 0 0 10px rgba(255, 146, 3, 0.5);
     border: 2px solid rgba(255, 146, 3, 0.7);
@@ -91,9 +90,9 @@
     transition: transform 0.5s;
 }
 
-#planet4 {
+#plt4 {
     background: radial-gradient(circle, #fff, #f0d315);
-    --orbit-radius: 150px;
+    --orbit-radius: 45px;
     animation-duration: 8s;
     box-shadow: 0 0 15px rgba(240, 211, 21, 0.8), inset 0 0 10px rgba(240, 211, 21, 0.5);
     border: 2px solid rgba(240, 211, 21, 0.7);
@@ -102,9 +101,9 @@
     transition: transform 0.5s;
 }
 
-#planet5 {
+#plt5 {
     background: radial-gradient(circle, #fff, #21d026);
-    --orbit-radius: 180px;
+    --orbit-radius: 55px;
     animation-duration: 9s;
     box-shadow: 0 0 15px rgba(33, 208, 38, 0.8), inset 0 0 10px rgba(33, 208, 38, 0.5);
     border: 2px solid rgba(33, 208, 38, 0.7);
@@ -121,88 +120,5 @@
 
     to {
         transform: rotate(360deg) translateX(var(--orbit-radius)) rotate(-360deg);
-    }
-}
-
-/* 响应式设计 */
-@media (max-width: 768px) {
-    .solar-system {
-        width: 300px;
-        /* 调整为更小的尺寸 */
-        height: 300px;
-    }
-
-    .sun {
-        width: 45px;
-        /* 太阳尺寸缩小 */
-        height: 45px;
-    }
-
-    .planet {
-        width: 15px;
-        /* 行星尺寸缩小 */
-        height: 15px;
-    }
-
-    /* 调整行星的轨道半径 */
-    #planet1 {
-        --orbit-radius: 45px;
-    }
-
-    #planet2 {
-        --orbit-radius: 70px;
-    }
-
-    #planet3 {
-        --orbit-radius: 95px;
-    }
-
-    #planet4 {
-        --orbit-radius: 120px;
-    }
-
-    #planet5 {
-        --orbit-radius: 145px;
-    }
-}
-
-@media (max-width: 480px) {
-    .solar-system {
-        width: 200px;
-        /* 更小尺寸 */
-        height: 200px;
-    }
-
-    .sun {
-        width: 30px;
-        /* 太阳进一步缩小 */
-        height: 30px;
-    }
-
-    .planet {
-        width: 10px;
-        /* 行星进一步缩小 */
-        height: 10px;
-    }
-
-    /* 调整行星的轨道半径 */
-    #planet1 {
-        --orbit-radius: 30px;
-    }
-
-    #planet2 {
-        --orbit-radius: 45px;
-    }
-
-    #planet3 {
-        --orbit-radius: 60px;
-    }
-
-    #planet4 {
-        --orbit-radius: 75px;
-    }
-
-    #planet5 {
-        --orbit-radius: 90px;
     }
 }

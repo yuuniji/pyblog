@@ -28,6 +28,17 @@ body {
     transition: opacity 0.3s ease;
 }
 
+#suns-container {
+    margin: 0;
+    padding: 0;
+    position: absolute; /* 或者 absolute */
+    top: 35px;
+    /* right: 0px; */
+    z-index: 10; /* 确保其叠放在其他元素之上 */
+    pointer-events: none; /* 如果不需要鼠标交互，可以避免遮挡 */
+}
+
+
 /* 容器样式 */
 .container {
     margin: 0;
@@ -161,11 +172,58 @@ body {
     color: #0c7a91;
 }
 
-/* 响应式设计：当屏幕宽度小于768px时 */
-@media (max-width: 768px) {
+/* 响应式设计：当屏幕宽度大于768px时 */
+@media (min-width: 768px) {
+    #suns-container {
+        left:0px;
+    }
+}
+
+@media (max-width: 532px){
     .container {
         flex-direction: column;
         /* 改为垂直布局 */
+    }
+
+    #suns-container {
+        right: 0px;
+    }
+
+    .sidebar {
+        width: 100%;
+        /* 让侧边栏宽度适配屏幕 */
+        margin-top: 20px;
+        /* 添加顶部间距 */
+        border-left: none;
+        /* 去掉左侧分隔线 */
+        border-top: 1px solid #ddd;
+        /* 改为顶部分隔线 */
+    }
+
+    .post-card {
+        padding: 12px;
+    }
+
+    .post-card h3 {
+        font-size: 16px;
+    }
+
+    .meta {
+        font-size: 12px;
+    }
+}
+
+
+/* 响应式设计：当屏幕宽度小于768px时 */
+@media (min-width: 532px) and (max-width: 768px)  {
+/* @media (max-width: 768px) { */
+    .container {
+        flex-direction: column;
+        /* 改为垂直布局 */
+    }
+
+    #suns-container {
+        left: 290px;
     }
 
     .sidebar {
