@@ -3,24 +3,35 @@
     padding: 0;
 }
 
+/* Timeline Layout */
 .timeline-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 自动适配列宽 */
+    gap: 2rem; /* 设置网格之间的间距 */
+    justify-content: center;
+    align-items: start; /* 水平和垂直对齐 */
+  }
+
+/* Timeline Items */
+.timeline-item {
+    display: grid;
+    grid-template-rows: auto auto; /* 两行布局：Dot 和文字 */
+    justify-items: center; /* 子元素水平居中 */
+    align-items: center; /* 子元素垂直居中 */
+    gap: 1rem; /* Dot 与文字之间的间距 */
+    text-align: center;
+  }
+
+/* Dot Wrapper */
+.dot-wrapper {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    position: relative;
-    overflow-x: auto;
-    padding: 5rem 0;
-    gap: 3rem;
-}
-
-/* Flex 布局容器 */
-.timeline-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 3rem;
-}
+    width: 40px; /* 统一固定尺寸，确保 dot 居中 */
+    height: 40px;
+  }
+  
+  
 
 .timeline-item:hover {
     transform: scale(1.1);
@@ -31,34 +42,34 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    margin: 0 auto;
-    /* box-shadow: 0 0 10px rgba(0, 119, 204, 0.5); */
-}
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
 
+/* 各种颜色 Dot */
 .dot1 {
     background-color: #fd060e;
     box-shadow: 0 0 10px rgba(205, 3, 3, 0.5);
-}
-
-.dot2 {
+  }
+  
+  .dot2 {
     background-color: #0077cc;
     box-shadow: 0 0 10px rgba(0, 119, 204, 0.5);
-}
-
-.dot3 {
+  }
+  
+  .dot3 {
     background-color: #ff9203;
     box-shadow: 0 0 10px rgba(190, 121, 2, 0.5);
-}
-
-.dot4 {
+  }
+  
+  .dot4 {
     background-color: #f0d315;
     box-shadow: 0 0 10px rgba(190, 194, 3, 0.5);
-}
-
-.dot5 {
+  }
+  
+  .dot5 {
     background-color: #21d026;
     box-shadow: 0 0 10px rgba(0, 143, 57, 0.5);
-}
+  }
 
 
 
@@ -72,11 +83,12 @@
     color: #0056b3;
 }
 
-.timeline-item p {
+.timeline-content p {
     display: none; /* Hidden by default */
-    font-size: 1rem;
     margin: 0.5rem 0 0;
-}
+    font-size: 0.9rem;
+    color: #555;
+  }
 
 /* Timeline Active State */
 .timeline-item.active p {
@@ -84,9 +96,18 @@
 }
 
 /* Responsive Design */
+/* 响应式布局 */
 @media (max-width: 768px) {
+    .timeline-container {
+      grid-template-columns: 1fr; /* 小屏幕每行一个 */
+      gap: 1.5rem;
+    }
+  }
+
+/* @media (max-width: 768px) {
     .timeline-container {
         flex-direction: column;
         gap: 2rem;
     }
-}
+} */
+
