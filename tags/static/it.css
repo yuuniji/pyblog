@@ -1,0 +1,83 @@
+/* Timeline Container */
+#timeline {
+    padding: 0;
+}
+
+.timeline-container {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    /* align-items: center; */
+    position: relative;
+    overflow-x: auto;
+    padding: 2rem 0;
+    gap: 3rem;
+}
+
+/* Timeline Items */
+.timeline-item {
+    position: relative;
+    text-align: center;
+    max-width: 200px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.timeline-item:hover {
+    transform: scale(1.1);
+}
+
+/* Dots */
+.timeline {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 119, 204, 0.5);
+}
+
+.dot1 {
+    background-color: #fd060e;
+}
+
+.dot2 {
+    background-color: #0077cc;
+}
+
+.dot3 {
+    background-color: #cc7400;
+}
+
+.dot4 {
+    background-color: #efef10;
+}
+
+.dot5 {
+    background-color: #11de17;
+}
+
+
+
+.timeline-item h3 {
+    margin: 1rem 0 0.5rem;
+    font-size: 1.2rem;
+}
+
+.timeline-item p {
+    display: none; /* Hidden by default */
+    font-size: 1rem;
+    margin: 0.5rem 0 0;
+}
+
+/* Timeline Active State */
+.timeline-item.active p {
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timeline-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
