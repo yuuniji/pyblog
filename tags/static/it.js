@@ -1,10 +1,21 @@
-// Select all timeline items
-const timelineItems = document.querySelectorAll(".timeline-item");
+const planets = document.querySelectorAll('.planet');
+const contentBox = document.getElementById('planet-content');
 
-// Add click event listeners
-timelineItems.forEach((item) => {
-  item.addEventListener("click", () => {
-    // Toggle active class to show/hide content
-    item.classList.toggle("active");
-  });
+planets.forEach(planet => {
+    planet.addEventListener('click', () => {
+        contentBox.textContent = planet.dataset.content;
+        contentBox.style.display = 'block';
+    });
+
+    planet.addEventListener('mouseover', () => {
+        planet.style.animationPlayState = 'paused';
+    });
+
+    planet.addEventListener('mouseleave', () => {
+        planet.style.animationPlayState = 'running';
+    });
+});
+
+contentBox.addEventListener('click', () => {
+    contentBox.style.display = 'none';
 });
