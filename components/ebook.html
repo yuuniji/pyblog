@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bookshelf Module</title>
+        <style>
+            body {
+                margin: 0;
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+            }
+
+            .bookshelf-module {
+                display: flex;
+                flex-direction: row;
+                background-color: #ffffff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                margin: 20px;
+            }
+
+            .bookshelf-module .sidebar {
+                width: 250px;
+                background-color: #2c3e50;
+                color: white;
+                display: flex;
+                flex-direction: column;
+                padding: 15px;
+                border-radius: 8px;
+            }
+
+            .bookshelf-module .sidebar h2 {
+                margin: 0 0 15px;
+            }
+
+            .bookshelf-module .sidebar input {
+                padding: 8px;
+                margin-bottom: 15px;
+                border: none;
+                border-radius: 4px;
+                width: 100%;
+            }
+
+            .bookshelf-module .sidebar ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .bookshelf-module .sidebar ul li {
+                margin: 10px 0;
+            }
+
+            .bookshelf-module .sidebar ul li a {
+                color: white;
+                text-decoration: none;
+                font-size: 16px;
+                transition: color 0.3s;
+            }
+
+            .bookshelf-module .sidebar ul li a:hover {
+                color: #1abc9c;
+            }
+
+            .bookshelf-module .main {
+                flex: 1;
+                padding: 20px;
+                overflow-y: auto;
+            }
+
+            .bookshelf-module .books-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+                gap: 20px;
+            }
+
+            .bookshelf-module .book {
+                background: white;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                transition:
+                    transform 0.3s,
+                    box-shadow 0.3s;
+            }
+
+            .bookshelf-module .book:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            }
+
+            .bookshelf-module .book img {
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+            }
+
+            .bookshelf-module .book .details {
+                padding: 10px;
+            }
+
+            .bookshelf-module .book .details h3 {
+                margin: 0 0 10px;
+                font-size: 16px;
+            }
+
+            .bookshelf-module .book .details p {
+                margin: 0;
+                font-size: 14px;
+                color: #666;
+            }
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const searchInput = document.querySelector(".sidebar input");
+                const books = document.querySelectorAll(".book");
+
+                searchInput.addEventListener("input", (e) => {
+                    const query = e.target.value.toLowerCase();
+                    books.forEach((book) => {
+                        const title = book
+                            .querySelector("h3")
+                            .textContent.toLowerCase();
+                        book.style.display = title.includes(query)
+                            ? "block"
+                            : "none";
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="bookshelf-module">
+            <div class="sidebar">
+                <h2>Library</h2>
+                <input type="text" placeholder="Search books..." />
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Want to Read</a></li>
+                    <li><a href="#">Finished</a></li>
+                    <li><a href="#">Study Materials</a></li>
+                    <li><a href="#">Novels</a></li>
+                    <li><a href="#">Psychology</a></li>
+                    <li><a href="#">Economics</a></li>
+                </ul>
+            </div>
+
+            <div class="main">
+                <h3>All Books</h3>
+                <div class="books-grid">
+                    <div class="book">
+                        <img
+                            src="https://via.placeholder.com/150x200"
+                            alt="Book Cover"
+                        />
+                        <div class="details">
+                            <h3>JavaScript for Web Developers</h3>
+                            <p>Progress: 6%</p>
+                        </div>
+                    </div>
+                    <div class="book">
+                        <img
+                            src="https://via.placeholder.com/150x200"
+                            alt="Book Cover"
+                        />
+                        <div class="details">
+                            <h3>Python Learning</h3>
+                            <p>Progress: 5%</p>
+                        </div>
+                    </div>
+                    <div class="book">
+                        <img
+                            src="https://via.placeholder.com/150x200"
+                            alt="Book Cover"
+                        />
+                        <div class="details">
+                            <h3>Why We Sleep</h3>
+                            <p>Progress: 2%</p>
+                        </div>
+                    </div>
+                    <!-- Add more books here -->
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
