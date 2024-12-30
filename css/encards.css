@@ -1,18 +1,11 @@
 .bodycard {
-    /* font-family: Arial, sans-serif; */
-    /* background-color: #f5f5f5; */
     margin-top: 10px;
     padding-left: 20px;
-    /* padding: 20px; */
     display: flex;
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* height: 100vh; */
 }
 
 .card-container {
     position: relative;
-    /* width: 300px; */
     height: 350px;
 }
 
@@ -25,9 +18,7 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    transition:
-        transform 0.4s ease,
-        z-index 0.4s ease;
+    transition: transform 0.4s ease, z-index 0.4s ease;
     cursor: pointer;
 }
 
@@ -45,12 +36,12 @@
     box-sizing: border-box; /* 包括内边距在高度计算内 */
 }
 
+/* 每张卡片的标题样式 */
 .card-header {
     position: absolute; /* 绝对定位 */
     left: 0;
     right: 0;
     bottom: 0; /* 固定在容器底部 */
-    background: #007acc;
     color: white;
     padding: 10px;
     text-align: right;
@@ -59,35 +50,65 @@
     box-sizing: border-box;
 }
 
-
-/* 定义每个颜色 */
+/* 星期一到星期天配色 */
 .card:nth-child(1) .card-header {
-    background: #007acc; /* 蓝色 */
+    background: #5B9BD5; /* 柔和海蓝 */
+}
+.card:nth-child(1) .card-content {
+    background: #E6F1FA; /* 浅蓝背景 */
+    color: #003366; /* 深蓝字体 */
 }
 
 .card:nth-child(2) .card-header {
-    background: #28a745; /* 绿色 */
+    background: #F57C42; /* 活力珊瑚橙 */
+}
+.card:nth-child(2) .card-content {
+    background: #FDE8DD; /* 浅橙背景 */
+    color: #A84300; /* 深橙字体 */
 }
 
 .card:nth-child(3) .card-header {
-    background: #dc3545; /* 红色 */
+    background: #FFD700; /* 明亮金黄 */
+    color: #444444; /* 黑灰标题 */
+}
+.card:nth-child(3) .card-content {
+    background: #FFF9CC; /* 浅黄背景 */
+    color: #665700; /* 深黄字体 */
 }
 
 .card:nth-child(4) .card-header {
-    background: #ffc107; /* 黄色 */
+    background: #A285E3; /* 优雅薰衣紫 */
+}
+.card:nth-child(4) .card-content {
+    background: #EDEAF7; /* 浅紫背景 */
+    color: #4D3880; /* 深紫字体 */
 }
 
 .card:nth-child(5) .card-header {
-    background: #17a2b8; /* 青色 */
+    background: #82C91E; /* 清新草绿色 */
+    color: #333333; /* 黑灰标题 */
+}
+.card:nth-child(5) .card-content {
+    background: #E8F6D3; /* 浅绿背景 */
+    color: #4A6300; /* 深绿字体 */
 }
 
 .card:nth-child(6) .card-header {
-    background: #6c757d; /* 灰色 */
+    background: #46B3A6; /* 温暖湖水青 */
+}
+.card:nth-child(6) .card-content {
+    background: #DFF4F2; /* 浅青背景 */
+    color: #084C42; /* 深青字体 */
 }
 
 .card:nth-child(7) .card-header {
-    background: #343a40; /* 黑色 */
+    background: #E57373; /* 柔暖暮霞红 */
 }
+.card:nth-child(7) .card-content {
+    background: #FCE5E5; /* 浅红背景 */
+    color: #8B2A2A; /* 深红字体 */
+}
+
 
 /* 默认位置与层次 */
 .card:nth-child(1) {
