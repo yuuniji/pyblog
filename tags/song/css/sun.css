@@ -1,0 +1,124 @@
+.solart {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: black; */
+    width: 100px;
+    height: 80px;
+    padding: 25px;
+    margin: auto;
+    /* margin-top: 50px; */
+    /* 居中显示 */
+    overflow: hidden;
+    /* 防止内容溢出 */
+    /* border: 2px solid #444; */
+    /* 可选：增加边框方便观察范围 */
+}
+
+
+/* 太阳的样式 */
+.sunt {
+    width: 10px;
+    /* 默认太阳大小 */
+    height: 10px;
+    background: radial-gradient(circle, #ffd700, #ff8c00);
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(255, 223, 0, 0.8), inset 0 0 15px rgba(255, 223, 0, 0.5);
+    animation: pulse 2s infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 3px solid rgba(255, 140, 0, 0.7); /* 增加边框 */
+}
+
+/* 太阳的脉动动画 */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+
+.plt {
+    position: absolute;
+    width: 5px;
+    /* 默认行星大小 */
+    height: 5px;
+    /* background: blue; */
+    border-radius: 50%;
+    animation: orbit linear infinite;
+}
+
+#plt1 {
+    background: radial-gradient(circle, #fff, #fd060e); /* 行星1的背景颜色渐变 */
+    --orbit-radius: 15px; /* 行星1的轨道半径 */
+    animation-duration: 5s; /* 行星1的轨道动画时长 */
+    box-shadow: 0 0 15px rgba(253, 6, 14, 0.8), inset 0 0 10px rgba(253, 6, 14, 0.5); /* 行星1的阴影效果 */
+    border: 2px solid rgba(253, 6, 14, 0.7); /* 行星1的边框颜色 */
+    animation-timing-function: ease-in-out; /* 行星1的动画时间函数 */
+    transform-origin: center; /* 行星1的变换原点 */
+    transition: transform 0.5s; /* 行星1的变换过渡效果 */
+}
+
+#plt2 {
+    background: radial-gradient(circle, #fff, #0077cc);
+    --orbit-radius: 25px;
+    animation-duration: 6s;
+    box-shadow: 0 0 15px rgba(0, 119, 204, 0.8), inset 0 0 10px rgba(0, 119, 204, 0.5);
+    border: 2px solid rgba(0, 119, 204, 0.7);
+    animation-timing-function: ease-in-out;
+    transform-origin: center;
+    transition: transform 0.5s;
+}
+
+#plt3 {
+    background: radial-gradient(circle, #fff, #ff9203);
+    --orbit-radius: 35px;
+    animation-duration: 7s;
+    box-shadow: 0 0 15px rgba(255, 146, 3, 0.8), inset 0 0 10px rgba(255, 146, 3, 0.5);
+    border: 2px solid rgba(255, 146, 3, 0.7);
+    animation-timing-function: ease-in-out;
+    transform-origin: center;
+    transition: transform 0.5s;
+}
+
+#plt4 {
+    background: radial-gradient(circle, #fff, #f0d315);
+    --orbit-radius: 45px;
+    animation-duration: 8s;
+    box-shadow: 0 0 15px rgba(240, 211, 21, 0.8), inset 0 0 10px rgba(240, 211, 21, 0.5);
+    border: 2px solid rgba(240, 211, 21, 0.7);
+    animation-timing-function: ease-in-out;
+    transform-origin: center;
+    transition: transform 0.5s;
+}
+
+#plt5 {
+    background: radial-gradient(circle, #fff, #21d026);
+    --orbit-radius: 55px;
+    animation-duration: 9s;
+    box-shadow: 0 0 15px rgba(33, 208, 38, 0.8), inset 0 0 10px rgba(33, 208, 38, 0.5);
+    border: 2px solid rgba(33, 208, 38, 0.7);
+    animation-timing-function: ease-in-out;
+    transform-origin: center;
+    transition: transform 0.5s;
+}
+
+/* 行星的轨道动画 */
+@keyframes orbit {
+    from {
+        transform: rotate(0deg) translateX(var(--orbit-radius)) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg) translateX(var(--orbit-radius)) rotate(-360deg);
+    }
+}

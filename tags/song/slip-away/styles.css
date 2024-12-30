@@ -1,0 +1,140 @@
+.player {
+  text-align: center;
+  /* width: 80%;
+  max-width: 600px;
+  background-color: #ffffff; 
+  border: 1px solid #b0bec5; 
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px; */
+}
+
+audio {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.lyrics {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #004d40; /* Dark green */
+  overflow-y: auto;
+  height: 300px;
+  background: #e0f2f1; /* Light icy blue */
+  border: 1px solid #b0bec5; /* Silver */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+
+
+.lyric-line {
+  margin: 0;
+  padding: 5px 0;
+  transition: color 0.2s, font-size 0.2s;
+}
+
+.lyric-line.active {
+  color: #1b5e20; /* Dark green */
+  font-size: 18px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #b2fab4 0%, #4caf50 100%);
+  border-left: 4px solid #1b5e20;
+  padding-left: 15px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.5px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.05);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('snowy-forest.jpg') no-repeat center center/cover;
+  z-index: -1;
+  perspective: 1000px;
+}
+
+.snowflake {
+  position: absolute;
+  top: -10px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+  }
+}
+
+@keyframes sway {
+  0%, 100% {
+      transform: translateX(0);
+  }
+  50% {
+      transform: translateX(20px);
+  }
+}
+
+.snowflake:nth-child(odd) {
+  animation: fall 10s linear infinite, sway 5s ease-in-out infinite;
+}
+
+.snowflake:nth-child(even) {
+  animation: fall 8s linear infinite, sway 4s ease-in-out infinite;
+}
+
+.countdown {
+  font-size: 20px;
+  margin-top: 20px;
+  color: #004d40; /* Dark green */
+}
+
+/* 默认的浅色模式样式（已经定义好在你的代码中） */
+
+@media (prefers-color-scheme: dark) {
+
+  .lyrics {
+      background: #263238; /* Dark blue-gray */
+      color: #eceff1; /* Light icy blue */
+  }
+
+  .lyric-line.active {
+      background: linear-gradient(135deg, #b2fab4 0%, #4caf50 100%);
+      border-left: 4px solid #1b5e20;
+      color: #1b5e20; /* Dark green */
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .countdown {
+    color: #eceff1;
+  }
+
+}
