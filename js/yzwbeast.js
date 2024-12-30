@@ -56,7 +56,7 @@ function exitFullScreen() {
 
 
 // 使用 JavaScript 动态加载 ebook.html
-fetch('./components/ebook.html')
+fetch('../components/ebook.html')
 .then(response => response.text())
 .then(html => {
     document.getElementById('ebook-container').innerHTML = html;
