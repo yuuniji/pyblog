@@ -54,16 +54,29 @@ function exitFullScreen() {
     }
 }
 
-// // 动态加载 part1.html 并插入到页面中
-// fetch('part1.html')
-//     .then(response => {
-//         if (!response.ok) throw new Error('Network response was not ok');
-//         return response.text();
-//     })
-//     .then(data => {
-//         document.getElementById('part1').innerHTML = data;
-//     })
-//     .catch(error => console.error('Error loading part1:', error));
+
+// 使用 JavaScript 动态加载 ebook.html
+fetch('/components/ebook.html')
+.then(response => response.text())
+.then(html => {
+    document.getElementById('ebook-container').innerHTML = html;
+
+    // 重新加载 ebook.html 的样式和脚本
+    const cssLink = document.querySelector('link[href="/css/ebook.css"]');
+    if (!cssLink) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = '/css/ebook.css';
+        document.head.appendChild(link);
+    }
+
+    const script = document.createElement('script');
+    script.src = '/js/ebook.js';
+    script.type = 'text/javascript';
+    document.body.appendChild(script);
+})
+.catch(err => console.error('Failed to load ebook.html:', err));
 
 
 // 使用 JavaScript 动态加载 encards.html
