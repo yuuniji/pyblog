@@ -1,0 +1,318 @@
+.bodycard {
+    /* font-family: Arial, sans-serif; */
+    /* background-color: #f5f5f5; */
+    margin-top: 10px;
+    padding-left: 20px;
+    /* padding: 20px; */
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* height: 100vh; */
+}
+
+.card-container {
+    position: relative;
+    /* width: 300px; */
+    height: 350px;
+}
+
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition:
+        transform 0.4s ease,
+        z-index 0.4s ease;
+    cursor: pointer;
+}
+
+.card-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 40px; /* 留出标题的高度 */
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1.2;
+    font: normal normal 100% 'Trebuchet MS', verdana, sans-serif;
+    overflow-y: auto; /* 启用滚动条 */
+    box-sizing: border-box; /* 包括内边距在高度计算内 */
+}
+
+.card-header {
+    position: absolute; /* 绝对定位 */
+    left: 0;
+    right: 0;
+    bottom: 0; /* 固定在容器底部 */
+    background: #007acc;
+    color: white;
+    padding: 10px;
+    text-align: right;
+    font-size: 14px; /* 调整字体大小 */
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+
+/* 定义每个颜色 */
+.card:nth-child(1) .card-header {
+    background: #007acc; /* 蓝色 */
+}
+
+.card:nth-child(2) .card-header {
+    background: #28a745; /* 绿色 */
+}
+
+.card:nth-child(3) .card-header {
+    background: #dc3545; /* 红色 */
+}
+
+.card:nth-child(4) .card-header {
+    background: #ffc107; /* 黄色 */
+}
+
+.card:nth-child(5) .card-header {
+    background: #17a2b8; /* 青色 */
+}
+
+.card:nth-child(6) .card-header {
+    background: #6c757d; /* 灰色 */
+}
+
+.card:nth-child(7) .card-header {
+    background: #343a40; /* 黑色 */
+}
+
+/* 默认位置与层次 */
+.card:nth-child(1) {
+    top: 0;
+    left: 0;
+    z-index: 7;
+    transform: translateY(0);
+}
+.card:nth-child(2) {
+    top: 20px;
+    left: 40px;
+    z-index: 6;
+    transform: translateY(-20px);
+}
+.card:nth-child(3) {
+    top: 40px;
+    left: 80px;
+    z-index: 5;
+    transform: translateY(-40px);
+}
+.card:nth-child(4) {
+    top: 60px;
+    left: 120px;
+    z-index: 4;
+    transform: translateY(-60px);
+}
+.card:nth-child(5) {
+    top: 80px;
+    left: 160px;
+    z-index: 3;
+    transform: translateY(-80px);
+}
+.card:nth-child(6) {
+    top: 100px;
+    left: 200px;
+    z-index: 2;
+    transform: translateY(-100px);
+}
+.card:nth-child(7) {
+    top: 120px;
+    left: 240px;
+    z-index: 1;
+    transform: translateY(-120px);
+}
+
+.card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 激活卡片的样式 */
+.card.active {
+    z-index: 4;
+    transform: translate(0, 0);
+}
+
+@media (min-width: 1024px) {
+    .card-container {
+        width: 380px;
+        /* height: 800px; */
+    }
+
+    .card {
+        width: 100%;
+        height: 100%;
+    }
+
+    .card:nth-child(1) {
+        top: 0;
+        left: 0;
+        z-index: 7;
+        transform: translateY(0);
+    }
+    .card:nth-child(2) {
+        top: 20px;
+        left: 40px;
+        z-index: 6;
+        transform: translateY(-20px);
+    }
+    .card:nth-child(3) {
+        top: 40px;
+        left: 80px;
+        z-index: 5;
+        transform: translateY(-40px);
+    }
+    .card:nth-child(4) {
+        top: 60px;
+        left: 120px;
+        z-index: 4;
+        transform: translateY(-60px);
+    }
+    .card:nth-child(5) {
+        top: 80px;
+        left: 160px;
+        z-index: 3;
+        transform: translateY(-80px);
+    }
+    .card:nth-child(6) {
+        top: 100px;
+        left: 200px;
+        z-index: 2;
+        transform: translateY(-100px);
+    }
+    .card:nth-child(7) {
+        top: 120px;
+        left: 240px;
+        z-index: 1;
+        transform: translateY(-120px);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .card-container {
+        width: 240px;
+        /* height: 800px; */
+    }
+
+    .card {
+        width: 100%;
+        height: 100%;
+    }
+
+    .card:nth-child(1) {
+        top: 0;
+        left: 0;
+        z-index: 7;
+        transform: translateY(0);
+    }
+    .card:nth-child(2) {
+        top: 20px;
+        left: 40px;
+        z-index: 6;
+        transform: translateY(-20px);
+    }
+    .card:nth-child(3) {
+        top: 40px;
+        left: 80px;
+        z-index: 5;
+        transform: translateY(-40px);
+    }
+    .card:nth-child(4) {
+        top: 60px;
+        left: 120px;
+        z-index: 4;
+        transform: translateY(-60px);
+    }
+    .card:nth-child(5) {
+        top: 80px;
+        left: 160px;
+        z-index: 3;
+        transform: translateY(-80px);
+    }
+    .card:nth-child(6) {
+        top: 100px;
+        left: 200px;
+        z-index: 2;
+        transform: translateY(-100px);
+    }
+    .card:nth-child(7) {
+        top: 120px;
+        left: 240px;
+        z-index: 1;
+        transform: translateY(-120px);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .bodycard {
+        margin-top: 10px;
+        /* padding: 20px; */
+        display: flex;
+        /* justify-content: center; */
+        /* align-items: center; */
+        height: 600px;
+    }
+    .card-container {
+        width: 420px;
+        /* height: 800px; */
+    }
+
+    .card {
+        width: 100%;
+        height: 100%;
+    }
+
+    .card:nth-child(1) {
+        top: 0; /* 第一张卡片的初始位置 */
+        left: 0;
+        z-index: 7; /* 保证第一张卡片在最上层 */
+        transform: translateY(0);
+    }
+    .card:nth-child(2) {
+        top: 40px; /* 第二张卡片向下偏移 */
+        left: 0;
+        z-index: 6; /* 第二张卡片层级较低 */
+        transform: translateY(0);
+    }
+    .card:nth-child(3) {
+        top: 80px; /* 第三张卡片向下偏移更多 */
+        left: 0;
+        z-index: 5;
+        transform: translateY(0);
+    }
+    .card:nth-child(4) {
+        top: 120px;
+        left: 0;
+        z-index: 4;
+        transform: translateY(0);
+    }
+    .card:nth-child(5) {
+        top: 160px;
+        left: 0;
+        z-index: 3;
+        transform: translateY(0);
+    }
+    .card:nth-child(6) {
+        top: 200px;
+        left: 0;
+        z-index: 2;
+        transform: translateY(0);
+    }
+    .card:nth-child(7) {
+        top: 240px;
+        left: 0;
+        z-index: 1;
+        transform: translateY(0);
+    }
+}

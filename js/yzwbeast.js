@@ -66,6 +66,30 @@ function exitFullScreen() {
 //     .catch(error => console.error('Error loading part1:', error));
 
 
+// 使用 JavaScript 动态加载 encards.html
+fetch('/components/encards.html')
+.then(response => response.text())
+.then(html => {
+    document.getElementById('encards-container').innerHTML = html;
+
+    // 重新加载 encards.html 的样式和脚本
+    const cssLink = document.querySelector('link[href="/css/encards.css"]');
+    if (!cssLink) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = '/css/encards.css';
+        document.head.appendChild(link);
+    }
+
+    const script = document.createElement('script');
+    script.src = '/js/encards.js';
+    script.type = 'text/javascript';
+    document.body.appendChild(script);
+})
+.catch(err => console.error('Failed to load encards.html:', err));
+
+
 // 使用 JavaScript 动态加载 suns.html
 fetch('/components/suns.html')
 .then(response => response.text())

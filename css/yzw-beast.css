@@ -45,7 +45,7 @@ body {
     padding: 0;
     display: flex;
     min-height: 100vh; /* 确保内容至少占满一屏 */
-    gap: 20px; /* 左右间距 */
+    gap: 10px; /* 左右间距 */
     box-sizing: border-box;
 }
 
@@ -53,8 +53,8 @@ body {
 .content {
     flex: 67; /* 左侧占 67 份 */
     background-color: rgb(255, 252, 245);
-    /* padding: 4px 8px 0px 0px; */
-    padding: 15px;
+    padding: 4px 8px 0px 0px;
+    /* padding: 15px; */
     /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
 }
 
