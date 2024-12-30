@@ -2,7 +2,7 @@ body {
     margin: 0;
     /* padding: 0; */
     font-size: small;
-    background-color: WhiteSmoke;
+    background-color: rgb(255, 252, 245);
     color: Black;
     /* font-size: 16px; */
     /* line-height: 1.5; */
@@ -32,8 +32,8 @@ body {
     margin: 0;
     padding: 0;
     position: absolute; /* 或者 absolute */
-    top: 35px;
-    /* right: 0px; */
+    left:-60px;
+    top: -50px;
     z-index: 10; /* 确保其叠放在其他元素之上 */
     pointer-events: none; /* 如果不需要鼠标交互，可以避免遮挡 */
 }
@@ -52,7 +52,7 @@ body {
 /* 左侧内容区域 */
 .content {
     flex: 67; /* 左侧占 67 份 */
-    background-color: WhiteSmoke;
+    background-color: rgb(255, 252, 245);
     /* padding: 4px 8px 0px 0px; */
     padding: 15px;
     /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
@@ -174,9 +174,10 @@ body {
 
 /* 响应式设计：当屏幕宽度大于768px时 */
 @media (min-width: 768px) {
-    #suns-container {
+    /* #suns-container {
         left:0px;
-    }
+        top: 0px;
+    } */
 }
 
 @media (max-width: 532px){
@@ -185,9 +186,10 @@ body {
         /* 改为垂直布局 */
     }
 
-    #suns-container {
-        right: 0px;
-    }
+    /* #suns-container {
+        left:0px;
+        top: 0px;
+    } */
 
     .sidebar {
         width: 100%;
@@ -222,9 +224,10 @@ body {
         /* 改为垂直布局 */
     }
 
-    #suns-container {
-        left: 290px;
-    }
+    /* #suns-container {
+        left:0px;
+        top: 0px;
+    } */
 
     .sidebar {
         width: 100%;
@@ -308,7 +311,7 @@ tr:nth-child(odd) {
 }
 
 .dark-mode {
-    background-color: black;
+    background-color: rgb(24, 22, 13);
     color: white;
 }
 
@@ -343,7 +346,7 @@ tr:nth-child(odd) {
 }
 
 .flip-card-front {
-    background-color: whitesmoke;
+    background-color: rgb(255, 252, 245);
 }
 
 .flip-card-back {
@@ -459,16 +462,16 @@ a:visited {
 
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #1C1C1E;
+        background-color: rgb(24, 22, 13);
         color: #e0e0e0;
     }
 
     .content {
-        background-color: #1C1C1E;
+        background-color: rgb(24, 22, 13);
     }
 
     .sidebar {
-        background-color: #1C1C1E;
+        background-color: rgb(24, 22, 13);
         border-left-color: #444; /* 边框颜色适配深色 */
     }
 
