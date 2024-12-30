@@ -6,7 +6,7 @@
     <meta name="generator" content="Python script by yzw.beast@gmail.com" />
     <meta name="provider" content="pylove.us.kg" />
     <link type="text/css" rel="stylesheet" href="/css/yzw-beast.css">
-    <!-- <link rel="stylesheet" href="/css/ebook.css" /> -->
+    <link rel="stylesheet" href="/css/ebook.css" />
     <script src="/js/yzwbeast.js" type="text/javascript"></script>
     <link href="https://pylove.us.kg/images/yzwer.jpg" rel="icon" type="image/x-icon">
     <!--@ Change blog title @-->
@@ -53,7 +53,56 @@
         <aside id="part2" class="sidebar"></aside>
     </div> <!-- end content-wrapper -->
     <script src="/js/countdown.js" type="text/javascript"></script>
-    <script src="/js/ebook.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const searchInput = document.querySelector(".sidebar input");
+            const books = document.querySelectorAll(".book");
+            const categoryList = document.querySelector("#categoryList");
+            const categoryTitle = document.querySelector("#category-title");
+
+            // 默认激活的分类
+            const defaultCategory = "all";
+            let activeCategory = defaultCategory;
+            updateCategory(defaultCategory);
+
+            // 分类过滤功能
+            categoryList.addEventListener("click", (event) => {
+                const link = event.target;
+                if (link.tagName === "A") {
+                    event.preventDefault();
+                    activeCategory = link.dataset.category;
+
+                    // 更新激活样式
+                    document.querySelector(".sidebar ul li a.active").classList.remove("active");
+                    link.classList.add("active");
+
+                    // 更新分类标题和书籍显示
+                    updateCategory(activeCategory);
+                }
+            });
+
+            function updateCategory(category) {
+                activeCategory = category;
+                categoryTitle.textContent = category === "all" ? "All Books" : category.replace("-", " ");
+                filterBooks();
+            }
+
+            // 搜索功能
+            searchInput.addEventListener("input", filterBooks);
+
+            function filterBooks() {
+                const query = searchInput.value.toLowerCase();
+                books.forEach((book) => {
+                    const title = book.querySelector(".details h3").textContent.toLowerCase();
+                    const matchesCategory = activeCategory === "all" || book.dataset.category === activeCategory;
+                    const matchesSearch = title.includes(query);
+
+                    // 书籍显示规则：必须同时匹配当前分类和搜索内容
+                    book.style.display = matchesCategory && matchesSearch ? "block" : "none";
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
