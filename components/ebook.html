@@ -2,16 +2,17 @@
 <div class="bookshelf-module">
     <div class="sidebar">
         <h2>Library</h2>
-        <input type="text" placeholder="Search books..." id="searchInput" />
+        <!-- <input type="text" placeholder="Search books..." id="searchInput" /> -->
+        <input type="text" placeholder="Search books..." id="searchInput" oninput="searchBooks()" />
         <ul id="categoryList">
-            <li><a href="#home" class="active" data-category="all">All Books</a></li>
-            <li><a href="#it" data-category="it">IT 类</a></li>
-            <li><a href="#novels" data-category="novels">小说类</a></li>
-            <li><a href="#management" data-category="management">管理类</a></li>
-            <li><a href="#psychology" data-category="psychology">心理学类</a></li>
-            <li><a href="#literature" data-category="literature">文艺类</a></li>
-            <li><a href="#history" data-category="history">历史类</a></li>
-            <li><a href="#economics" data-category="economics">经济类</a></li>
+            <li><a href="#home" class="active" data-category="all" onclick="filterBooksByCategory('all'); return false;">All Books</a></li>
+            <li><a href="#it" data-category="it" onclick="filterBooksByCategory('it'); return false;">IT 类</a></li>
+            <li><a href="#novels" data-category="novels" onclick="filterBooksByCategory('novels'); return false;">小说类</a></li>
+            <li><a href="#management" data-category="management" onclick="filterBooksByCategory('management'); return false;">管理类</a></li>
+            <li><a href="#psychology" data-category="psychology" onclick="filterBooksByCategory('psychology'); return false;">心理学类</a></li>
+            <li><a href="#literature" data-category="literature" onclick="filterBooksByCategory('literature'); return false;">文艺类</a></li>
+            <li><a href="#history" data-category="history" onclick="filterBooksByCategory('history'); return false;">历史类</a></li>
+            <li><a href="#economics" data-category="economics" onclick="filterBooksByCategory('economics'); return false;">经济类</a></li>
         </ul>
     </div>
 
