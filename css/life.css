@@ -1,0 +1,68 @@
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(52, 1fr); /* 每行 52 列 */
+    grid-gap: 1px;
+    background-color: #ccc;
+    border: 1px solid #999;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.cell {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.cell-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: background-color 0.3s, outline 0.3s;
+}
+
+.cell-inner:hover {
+    background-color: #e0e0e0;
+}
+
+.highlight {
+    outline: 2px solid #ff0000;
+}
+
+#details {
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 600px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    #details {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    #details {
+        padding: 5px;
+    }
+}
