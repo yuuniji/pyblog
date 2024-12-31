@@ -51,7 +51,7 @@
     border-radius: 5px;
     width: 100%;
     max-width: 600px;
-    background-color: #f9f9f9;
+    /* background-color: #f9f9f9; */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -64,5 +64,29 @@
 @media (max-width: 480px) {
     #details {
         padding: 5px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    #grid {
+        background-color: #333;
+        border: 1px solid #666;
+    }
+
+    .cell {
+        background-color: #444;
+    }
+
+    .cell-inner:hover {
+        background-color: #555;
+    }
+
+    .highlight {
+        outline: 2px solid #ff6666;
+    }
+
+    #details {
+        border: 1px solid #666;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     }
 }
