@@ -54,6 +54,29 @@ function exitFullScreen() {
     }
 }
 
+// 使用 JavaScript 动态加载 it.html
+fetch('../components/it.html')
+.then(response => response.text())
+.then(html => {
+    document.getElementById('it-container').innerHTML = html;
+
+    // 重新加载 it.html 的样式和脚本
+    const cssLink = document.querySelector('link[href="/css/it.css"]');
+    if (!cssLink) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = '/css/it.css';
+        document.head.appendChild(link);
+    }
+
+    const script = document.createElement('script');
+    script.src = '/js/it.js';
+    script.type = 'text/javascript';
+    document.body.appendChild(script);
+})
+.catch(err => console.error('Failed to load it.html:', err));
+
 // 使用 JavaScript 动态加载 vocabulary.html
 fetch('../components/vocabulary.html')
 .then(response => response.text())

@@ -23,6 +23,54 @@ const vocabulary = [
         meaning: "Producing strong, clear images in the mind.",
         example: "She described the scene in vivid detail.",
     },
+    {
+        word: "Intricate",
+        category: "adjective",
+        meaning: "Very complicated or detailed.",
+        example: "The engineer explained the intricate details of the machine.",
+    },
+    {
+        word: "Persevere",
+        category: "verb",
+        meaning: "Continue in a course of action even in the face of difficulty.",
+        example: "She decided to persevere with her studies despite challenges.",
+    },
+    {
+        word: "Harmony",
+        category: "noun",
+        meaning: "A pleasing combination of elements in a whole.",
+        example: "The song achieved perfect harmony among instruments.",
+    },
+    {
+        word: "Vivid",
+        category: "adjective",
+        meaning: "Producing strong, clear images in the mind.",
+        example: "She described the scene in vivid detail.",
+    },
+    {
+        word: "Intricate",
+        category: "adjective",
+        meaning: "Very complicated or detailed.",
+        example: "The engineer explained the intricate details of the machine.",
+    },
+    {
+        word: "Persevere",
+        category: "verb",
+        meaning: "Continue in a course of action even in the face of difficulty.",
+        example: "She decided to persevere with her studies despite challenges.",
+    },
+    {
+        word: "Harmony",
+        category: "noun",
+        meaning: "A pleasing combination of elements in a whole.",
+        example: "The song achieved perfect harmony among instruments.",
+    },
+    {
+        word: "Vivid",
+        category: "adjective",
+        meaning: "Producing strong, clear images in the mind.",
+        example: "She described the scene in vivid detail.",
+    },
 ];
 
 function renderWords(category = "all", searchQuery = "") {
