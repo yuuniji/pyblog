@@ -94,3 +94,61 @@ footer {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+
+/* 深色模式 */
+@media (prefers-color-scheme: dark) {
+  header {
+    background: #1e3a8a; /* 深色调蓝色 */
+    color: #fff;
+  }
+
+  .vocsidebar {
+    background: #2e2e2e;
+    border-right: 1px solid #444;
+    color: #ddd;
+  }
+
+  .vocsidebar li {
+    background: #444;
+    color: #ccc;
+    box-shadow: none;
+  }
+
+  .vocsidebar li:hover,
+  .vocsidebar li.active {
+    background: #1e3a8a;
+    color: #fff;
+  }
+
+  .voccontent {
+    background: #1c1c1c;
+    color: #ddd;
+    box-shadow: none;
+  }
+
+  .word-card {
+    background: #333;
+    color: #ddd;
+    border: 1px solid #555;
+    box-shadow: none;
+  }
+
+  .word-card h3 {
+    color: #80d8ff; /* 明亮的蓝色 */
+  }
+
+  footer {
+    background: #222;
+    color: #aaa;
+  }
+
+  .search-bar input {
+    background: #2c2c2c;
+    color: #ddd;
+    border: 1px solid #444;
+  }
+
+  .search-bar input::placeholder {
+    color: #666;
+  }
+}
