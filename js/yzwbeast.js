@@ -54,28 +54,52 @@ function exitFullScreen() {
     }
 }
 
-// 使用 JavaScript 动态加载 it.html
-fetch('../components/it.html')
-.then(response => response.text())
-.then(html => {
-    document.getElementById('it-container').innerHTML = html;
+// 动态加载组件函数
+function loadComponent(url, containerId) {
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Failed to load ${url}: ${response.statusText}`);
+            }
+            return response.text();
+        })
+        .then(html => {
+            const container = document.getElementById(containerId);
 
-    // 重新加载 it.html 的样式和脚本
-    const cssLink = document.querySelector('link[href="/css/it.css"]');
-    if (!cssLink) {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = '/css/it.css';
-        document.head.appendChild(link);
-    }
+            // 创建一个临时 DOM 来解析加载的 HTML 内容
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = html;
 
-    const script = document.createElement('script');
-    script.src = '/js/it.js';
-    script.type = 'text/javascript';
-    document.body.appendChild(script);
-})
-.catch(err => console.error('Failed to load it.html:', err));
+            // 提取并应用 <style> 元素
+            const styles = tempDiv.querySelectorAll('style');
+            styles.forEach(style => document.head.appendChild(style));
+
+            // 提取并执行 <script> 元素
+            const scripts = tempDiv.querySelectorAll('script');
+            scripts.forEach(script => {
+                const newScript = document.createElement('script');
+                if (script.src) {
+                    // 如果是外部脚本，设置 src 属性
+                    newScript.src = script.src;
+                } else {
+                    // 如果是内联脚本，复制其内容
+                    newScript.textContent = script.textContent;
+                }
+                document.body.appendChild(newScript);
+            });
+
+            // 插入主体内容（去掉 <style> 和 <script>）
+            container.innerHTML = tempDiv.innerHTML.replace(/<style[\s\S]*?<\/style>/g, '').replace(/<script[\s\S]*?<\/script>/g, '');
+        })
+        .catch(error => {
+            console.error('Error loading component:', error);
+        });
+}
+
+// 调用函数动态加载 ../components/it.html
+loadComponent('../components/it.html', 'it-container');
+
+
 
 // 使用 JavaScript 动态加载 vocabulary.html
 fetch('../components/vocabulary.html')

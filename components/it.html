@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Switcher with iframe</title>
+    <style>
+        .language-switcher {
+            display: flex;
+            max-width: max-content;
+            justify-content: center;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .language-switcher button {
+            padding: 10px 20px;
+            border: none;
+            background: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .language-switcher button:hover {
+            background: #e0e0e0;
+        }
+
+        .language-switcher button.active {
+            background: #007bff;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        iframe {
+            width: 100%;
+            height: 80vh;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <iframe> 是一种将完整的 HTML 文件嵌入到页面中的方式，能够独立加载 CSS 和 JS，不会与主页面冲突。
+        以下是实现语言切换的示例代码，使用 <iframe> 动态加载不同语言的 HTML 文件 -->
+
+    <div>
+        <!-- Language Selection -->
+        <div class="language-switcher">
+            <button id="btn-en" onclick="loadLanguage('en')">🇬🇧 English</button>
+            <button id="btn-zh" onclick="loadLanguage('zh')">🇨🇳 中文</button>
+        </div>
+
+        <!-- iframe for loading content -->
+        <iframe id="languageFrame" src=""></iframe>
+    </div>
+
+    <script>
+        // Function to load the selected language HTML file
+        function loadLanguage(language) {
+            const iframe = document.getElementById('languageFrame');
+
+            // Remove 'active' class from all buttons
+            document.getElementById('btn-en').classList.remove('active');
+            document.getElementById('btn-zh').classList.remove('active');
+
+            // Add 'active' class to the selected button
+            document.getElementById(`btn-${language}`).classList.add('active');
+
+            // Set iframe source to the corresponding HTML file
+            if (language === 'en') {
+                iframe.src = '/components/enit.html'; // Replace with your actual English HTML file path
+            } else if (language === 'zh') {
+                iframe.src = '/components/zhit.html'; // Replace with your actual Chinese HTML file path
+            }
+        }
+
+        // Load English by default
+        loadLanguage('en');
+    </script>
+
+</body>
+</html>
