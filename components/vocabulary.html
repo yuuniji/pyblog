@@ -1,0 +1,25 @@
+<link type="text/css" rel="stylesheet" href="/css/vocabulary.css">
+<header>
+    <h1>Vocabulary Library</h1>
+    <p>Organized and effective vocabulary management.</p>
+</header>
+<div class="voccontainer">
+    <!-- 左侧分类导航 -->
+    <aside class="vocsidebar">
+        <h2>Categories</h2>
+        <ul id="categories">
+            <li data-category="adjective" class="active">Adjectives</li>
+            <li data-category="verb">Verbs</li>
+            <li data-category="noun">Nouns</li>
+            <li data-category="all">All Words</li>
+        </ul>
+    </aside>
+    <!-- 右侧单词显示 -->
+    <main class="content">
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search for a word..." />
+        </div>
+        <div id="word-list"></div>
+    </main>
+</div>
+<script src="/js/vocabulary.js" type="text/javascript"></script>

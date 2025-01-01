@@ -1,0 +1,96 @@
+/* style.css */
+
+header {
+  background: #007BFF;
+  color: #fff;
+  padding: 20px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+.voccontainer {
+  display: flex;
+  min-height: 100vh;
+}
+
+.vocsidebar {
+  width: 25%;
+  background: #f4f4f4;
+  border-right: 1px solid #ddd;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.vocsidebar h2 {
+  margin-top: 0;
+}
+
+.vocsidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.vocsidebar li {
+  padding: 10px;
+  margin: 5px 0;
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+.vocsidebar li:hover,
+.vocsidebar li.active {
+  background: #007BFF;
+  color: #fff;
+}
+
+.voccontent {
+  width: 75%;
+  padding: 20px;
+  overflow-y: auto;
+  height: calc(100vh - 80px); /* Adjust for header height */
+  background: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.word-card {
+  border: 1px solid #ddd;
+  margin: 10px 0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #f9f9f9;
+}
+
+.word-card h3 {
+  margin-top: 0;
+  color: #007BFF;
+}
+
+footer {
+  text-align: center;
+  background: #333;
+  color: #fff;
+  padding: 10px 0;
+  margin-top: 20px;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.search-bar input {
+  width: 90%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
