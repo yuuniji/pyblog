@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flash Card App</title>
+  <style>
+    /* 全局基础样式 */
+    flabody {
+      font-family: "Arial", sans-serif;
+      margin: 20px;
+      text-align: center;
+      background: linear-gradient(to bottom, #f5faff, #ffffff);
+      color: #333;
+      transition: background 0.5s ease, color 0.5s ease;
+    }
+
+    /* 按钮样式 */
+    flabutton {
+      padding: 10px 10px;
+      font-size: 14px;
+      display: inline;
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(135deg, #0078d4, #0056a8);
+      border: none;
+      border-radius: 25px;
+      box-shadow: 0 4px 10px rgba(0, 120, 212, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 8px;
+    }
+
+    flabutton:hover {
+      background: linear-gradient(135deg, #0056a8, #003d7a);
+      box-shadow: 0 6px 15px rgba(0, 120, 212, 0.5);
+      transform: translateY(-3px);
+    }
+
+    flabutton:active {
+      transform: translateY(1px);
+      box-shadow: 0 2px 5px rgba(0, 120, 212, 0.2);
+    }
+
+    /* 单词卡网格布局 */
+    .flaword-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      height: 400px; /* 限制高度 */
+      overflow-y: scroll; /* 启用滚动 */
+    }
+
+    /* 单词卡片样式 */
+    .flaword-card {
+      perspective: 1000px;
+      margin: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .flaword-card:hover {
+      transform: scale(1.05);
+    }
+
+    .flacard-inner {
+      position: relative;
+      width: 180px;
+      height: 120px;
+      text-align: center;
+      transition: transform 0.6s ease;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+
+    .flacard-inner.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .flacard-front, .flacard-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      transition: background 0.5s ease, box-shadow 0.5s ease, border 0.5s ease;
+    }
+
+    .flacard-front {
+      background: linear-gradient(145deg, #f8fcff, #e6f3fa);
+      color: #333;
+    }
+
+    .flacard-back {
+      background: linear-gradient(145deg, #0078d4, #0056a8);
+      color: #fff;
+      transform: rotateY(180deg);
+    }
+
+    /* 深色模式支持 */
+    @media (prefers-color-scheme: dark) {
+      flabody {
+        background: linear-gradient(to bottom, #1a1a2e, #121212);
+        color: #eaeaea;
+      }
+
+      flabutton {
+        background: linear-gradient(135deg, #4fb3ff, #006bb3);
+        box-shadow: 0 4px 10px rgba(79, 179, 255, 0.3);
+      }
+
+      flabutton:hover {
+        background: linear-gradient(135deg, #006bb3, #004f85);
+        box-shadow: 0 6px 15px rgba(79, 179, 255, 0.5);
+      }
+
+      .flacard-front {
+        background: linear-gradient(145deg, #22263a, #1a1a2e);
+        color: #ddd;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      }
+
+      .flacard-back {
+        background: linear-gradient(145deg, #004c80, #003a60);
+        color: #e0f7ff;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+    }
+
+    /* 响应式优化 */
+    @media (max-width: 600px) {
+
+      flabutton {
+        display: block;
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+
+      .flacard-inner {
+        width: 140px;
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<flabody>
+  <flabutton id="btn-50k">从 50k 单词中随机展示 20 个</flabutton>
+  <flabutton id="btn-2k">从 2k 单词中随机展示 20 个</flabutton>
+  <div class="flaword-list" id="flaword-list"></div>
+
+  <script>
+    let words50k = [];
+    let words2k = [];
+
+    // 加载 CSV 文件
+    async function loadCSV(url) {
+      const response = await fetch(url);
+      const text = await response.text();
+      return parseCSV(text);
+    }
+
+    // 解析 CSV 数据
+    function parseCSV(text) {
+      const lines = text.trim().split("\n");
+      return lines.slice(1).map(line => {
+        const [English, Chinese] = line.split(",");
+        return { English, Chinese };
+      });
+    }
+
+    // 随机选择 20 个单词
+    function getRandomWords(words) {
+      const shuffled = words.sort(() => Math.random() - 0.5);
+      return shuffled.slice(0, 20);
+    }
+
+    // 显示单词
+    function displayWords(selectedWords) {
+      const wordList = document.getElementById("flaword-list");
+      wordList.innerHTML = ""; // 清空当前内容
+      selectedWords.forEach(word => {
+        const card = document.createElement("div");
+        card.className = "flaword-card";
+        card.innerHTML = `
+          <div class="flacard-inner">
+            <div class="flacard-front">${word.English}</div>
+            <div class="flacard-back">${word.Chinese}</div>
+          </div>
+        `;
+        card.addEventListener("click", () => {
+          card.querySelector(".flacard-inner").classList.toggle("flipped");
+        });
+        wordList.appendChild(card);
+      });
+    }
+
+    // 初始化
+    async function init() {
+      // 加载两个 CSV 文件的数据
+      words50k = await loadCSV("/components/en_50k.csv"); // 替换为 50,000 单词的 CSV 文件路径
+      words2k = await loadCSV("/components/en_2k.csv");  // 替换为 2,000 单词的 CSV 文件路径
+
+      // 为两个按钮添加点击事件
+      document.getElementById("btn-50k").addEventListener("click", () => {
+        const randomWords = getRandomWords(words50k);
+        displayWords(randomWords);
+      });
+
+      document.getElementById("btn-2k").addEventListener("click", () => {
+        const randomWords = getRandomWords(words2k);
+        displayWords(randomWords);
+      });
+    }
+
+    init();
+  </script>
+</flabody>
+</html>

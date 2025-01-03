@@ -99,6 +99,9 @@ function loadComponent(url, containerId) {
 // 调用函数动态加载 ../components/it.html
 loadComponent('../components/it.html', 'it-container');
 
+// 调用函数动态加载 ../components/flashcard.html
+loadComponent('../components/flashcard.html', 'flashcard-container');
+
 
 
 // 使用 JavaScript 动态加载 vocabulary.html
