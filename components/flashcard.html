@@ -1,91 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flash Card App</title>
   <style>
-    /* 自定义标签的全局样式重置 */
-    flabody, flabutton {
-      all: unset;
-      box-sizing: border-box;
-      border-radius: 25px;
+    /* 独立命名空间样式 */
+    .flash-card-mod {
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      color: #333;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      max-width: 600px;
+      margin: 20px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s, color 0.3s;
     }
 
-    /* flabody 的样式 */
-    flabody {
-      font-family: "Arial", sans-serif;
-      margin: 20px;
-      text-align: center;
-      background: linear-gradient(to bottom, #e1f8e4, #d2f5d7); /* 淡绿渐变 */
-      color: #2a2a2a;
-      display: block; 
-      transition: background 0.5s ease, color 0.5s ease;
+    .flash-card-mod h1 {
+      font-size: 1.5em;
+      color: #4CAF50;
+      margin-bottom: 15px;
     }
 
-    /* flabutton 的样式 */
-    flabutton {
-      padding: 12px 20px;
-      font-size: 16px;
-      font-weight: bold;
+    .flash-card-mod .controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .flash-card-mod button {
+      background: #4CAF50;
       color: #fff;
-      background: linear-gradient(135deg, #4caf50, #2e7d32); /* 绿色渐变 */
       border: none;
-      border-radius: 50px;
-      box-shadow: 0 4px 12px rgba(44, 159, 69, 0.3);
+      padding: 8px 16px;
+      border-radius: 5px;
       cursor: pointer;
-      transition: all 0.3s ease;
-      margin: 10px;
+      transition: background 0.3s;
     }
 
-    flabutton:hover {
-      background: linear-gradient(135deg, #388e3c, #1b5e20); /* 更深绿色 */
-      box-shadow: 0 6px 18px rgba(44, 159, 69, 0.5);
-      transform: translateY(-4px);
+    .flash-card-mod button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
     }
 
-    flabutton:active {
-      transform: translateY(2px);
-      box-shadow: 0 2px 6px rgba(44, 159, 69, 0.2);
+    .flash-card-mod button:hover:not(:disabled) {
+      background: #45a049;
     }
 
-    /* 单词卡网格布局 */
-    .flaword-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-      padding: 20px;
-      max-height: 400px; 
-      overflow-y: auto; 
-      margin: 0 auto;
-    }
-
-    /* 单词卡片样式 */
-    .flaword-card {
+    .flash-card-mod .word-container {
       perspective: 1000px;
-      margin: auto;
-      transition: transform 0.3s ease;
+      margin-bottom: 15px;
     }
 
-    .flaword-card:hover {
-      transform: scale(1.05);
-    }
-
-    .flacard-inner {
-      position: relative;
-      width: 180px;
+    .flash-card-mod .word-card {
+      width: 200px;
       height: 120px;
-      text-align: center;
-      transition: transform 0.6s ease;
+      margin: 0 auto;
+      position: relative;
       transform-style: preserve-3d;
+      transition: transform 0.6s;
       cursor: pointer;
     }
 
-    .flacard-inner.flipped {
+    .flash-card-mod .word-card.flipped {
       transform: rotateY(180deg);
     }
 
-    .flacard-front, .flacard-back {
+    .flash-card-mod .card-inner {
       position: absolute;
       width: 100%;
       height: 100%;
@@ -93,77 +80,116 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      transition: background 0.5s ease, box-shadow 0.5s ease, border 0.5s ease;
+      border: 1px solid #ddd;
+      border-radius: 8px;
     }
 
-    .flacard-front {
-      background: linear-gradient(145deg, #a5d6a7, #81c784); /* 浅绿色渐变 */
-      color: #2a2a2a;
+    .flash-card-mod .card-front {
+      background: #f4f4f4;
+      color: #333;
     }
 
-    .flacard-back {
-      background: linear-gradient(145deg, #388e3c, #2e7d32); /* 更深的绿色渐变 */
+    .flash-card-mod .card-back {
+      background: #4CAF50;
       color: #fff;
       transform: rotateY(180deg);
     }
 
-    /* 深色模式支持 */
-    @media (prefers-color-scheme: dark) {
-      flabody {
-        background: linear-gradient(to bottom, #1e2b1d, #121212); /* 深绿色调 */
-        color: #eaeaea;
-      }
-
-      flabutton {
-        background: linear-gradient(135deg, #4caf50, #388e3c); /* 更柔和的绿色 */
-        box-shadow: 0 4px 12px rgba(103, 181, 130, 0.3);
-      }
-
-      flabutton:hover {
-        background: linear-gradient(135deg, #388e3c, #2c6f3f);
-        box-shadow: 0 6px 18px rgba(103, 181, 130, 0.5);
-      }
-
-      .flacard-front {
-        background: linear-gradient(145deg, #3c6e3f, #334b30); /* 更深的绿色 */
-        color: #eaeaea;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-      }
-
-      .flacard-back {
-        background: linear-gradient(145deg, #388e3c, #2c6f3f);
-        color: #e0f7ff;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
+    .flash-card-mod .progress {
+      margin: 15px 0;
     }
 
-    /* 响应式优化 */
-    @media (max-width: 600px) {
-      flabutton {
-        display: block;
-        font-size: 14px;
-        padding: 10px 20px;
+    .flash-card-mod .progress-bar {
+      background: #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 10px;
+      width: 80%;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .flash-card-mod .progress-fill {
+      background: #4CAF50;
+      height: 100%;
+      width: 0%;
+      transition: width 0.3s;
+    }
+
+    .flash-card-mod .progress-text {
+      margin-top: 5px;
+      font-size: 0.9em;
+    }
+
+    /* 深色模式支持 */
+    @media (prefers-color-scheme: dark) {
+      .flash-card-mod {
+        background: #1e1e1e;
+        color: #e0e0e0;
+        border-color: #444;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
       }
 
-      .flacard-inner {
-        width: 140px;
-        height: 100px;
+      .flash-card-mod h1 {
+        color: #80d89b;
+      }
+
+      .flash-card-mod .card-front {
+        background: #2e2e2e;
+        color: #e0e0e0;
+      }
+
+      .flash-card-mod .progress-bar {
+        background: #444;
+      }
+
+      .flash-card-mod .progress-fill {
+        background: #80d89b;
       }
     }
   </style>
 </head>
-<flabody>
-  <flabutton id="btn-50k">从 50k 单词中随机展示 20 个</flabutton>
-  <flabutton id="btn-2k">从 2k 单词中随机展示 20 个</flabutton>
-  <div class="flaword-list" id="flaword-list"></div>
+
+<body>
+  <div class="flash-card-mod">
+    <!-- 标题 -->
+    <h1>Flash Card 模块</h1>
+
+    <!-- 控制按钮 -->
+    <div class="controls">
+      <button id="btn-50k">从 50,000 单词中随机展示 20 个</button>
+      <button id="btn-2k">从 2,000 单词中随机展示 20 个</button>
+      <button id="btn-learn">学习模式</button>
+      <button id="btn-restart" disabled>重新开始</button>
+      <button id="btn-prev" disabled>上一个</button>
+      <button id="btn-next" disabled>下一个</button>
+    </div>
+
+    <!-- 单词卡片容器 -->
+    <div class="word-container">
+      <div class="word-card" id="word-card">
+        <div class="card-inner card-front" id="word-english">English</div>
+        <div class="card-inner card-back" id="word-chinese">Chinese</div>
+      </div>
+    </div>
+
+    <!-- 进度条 -->
+    <div class="progress">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <div class="progress-text" id="progress-text">当前进度：0 / 0</div>
+    </div>
+  </div>
 
   <script>
+    // 全局变量
     let words50k = [];
     let words2k = [];
+    let currentWords = [];
+    let currentIndex = 0;
+    let learningMode = false;
+    let autoLearnInterval = null;
 
     // 加载 CSV 文件
     async function loadCSV(url) {
@@ -174,58 +200,173 @@
 
     // 解析 CSV 数据
     function parseCSV(text) {
-      const lines = text.trim().split("\n");
-      return lines.slice(1).map(line => {
+      return text.trim().split("\n").slice(1).map(line => {
         const [English, Chinese] = line.split(",");
         return { English, Chinese };
       });
     }
 
-    // 随机选择 20 个单词
-    function getRandomWords(words) {
-      const shuffled = words.sort(() => Math.random() - 0.5);
-      return shuffled.slice(0, 20);
+    // 随机选择单词
+    function getRandomWords(words, count = 20) {
+      return words.sort(() => Math.random() - 0.5).slice(0, count);
     }
 
-    // 显示单词
-    function displayWords(selectedWords) {
-      const wordList = document.getElementById("flaword-list");
-      wordList.innerHTML = ""; // 清空当前内容
-      selectedWords.forEach(word => {
-        const card = document.createElement("div");
-        card.className = "flaword-card";
-        card.innerHTML = `
-          <div class="flacard-inner">
-            <div class="flacard-front">${word.English}</div>
-            <div class="flacard-back">${word.Chinese}</div>
-          </div>
-        `;
-        card.addEventListener("click", () => {
-          card.querySelector(".flacard-inner").classList.toggle("flipped");
-        });
-        wordList.appendChild(card);
-      });
+    // 更新单词卡片
+    function updateCard(word) {
+      const wordCard = document.getElementById("word-card");
+      const wordEnglish = document.getElementById("word-english");
+      const wordChinese = document.getElementById("word-chinese");
+
+      wordCard.classList.remove("flipped");
+      wordEnglish.textContent = word.English;
+      wordChinese.textContent = word.Chinese;
+      updateProgress();
+      updateButtonState();
+    }
+
+    // 更新进度条
+    function updateProgress() {
+      const progressFill = document.getElementById("progress-fill");
+      const progressText = document.getElementById("progress-text");
+      const progress = ((currentIndex + 1) / currentWords.length) * 100;
+
+      progressFill.style.width = `${progress}%`;
+      progressText.textContent = `当前进度：${currentIndex + 1} / ${currentWords.length}`;
+    }
+
+    // 学习模式
+    function startLearning() {
+      if (learningMode) {
+        clearInterval(autoLearnInterval);
+        autoLearnInterval = null;
+        learningMode = false;
+        document.getElementById("btn-learn").textContent = "学习模式";
+      } else {
+        learningMode = true;
+        document.getElementById("btn-learn").textContent = "暂停学习";
+        autoLearnInterval = setInterval(() => {
+          if (currentIndex < currentWords.length - 1) {
+            currentIndex++;
+            updateCard(currentWords[currentIndex]);
+          } else {
+            clearInterval(autoLearnInterval);
+            learningMode = false;
+            document.getElementById("btn-learn").textContent = "学习模式";
+          }
+        }, 3000); // 每 3 秒切换一个单词
+      }
+    }
+
+    // 重新开始学习模式
+    function restartLearning() {
+      clearInterval(autoLearnInterval);
+      currentIndex = 0;
+      updateCard(currentWords[currentIndex]);
+      startLearning();
     }
 
     // 初始化
     async function init() {
-      // 加载两个 CSV 文件的数据
-      words50k = await loadCSV("/components/en_50k.csv"); // 替换为 50,000 单词的 CSV 文件路径
-      words2k = await loadCSV("/components/en_2k.csv");  // 替换为 2,000 单词的 CSV 文件路径
+      // 加载单词数据
+      words50k = await loadCSV("/components/en_50k.csv");
+      words2k = await loadCSV("/components/en_2k.csv");
 
-      // 为两个按钮添加点击事件
+      // 添加按钮事件监听
       document.getElementById("btn-50k").addEventListener("click", () => {
-        const randomWords = getRandomWords(words50k);
-        displayWords(randomWords);
+        currentWords = getRandomWords(words50k);
+        currentIndex = 0;
+        updateCard(currentWords[currentIndex]);
+        document.getElementById("btn-restart").disabled = false;
       });
 
       document.getElementById("btn-2k").addEventListener("click", () => {
-        const randomWords = getRandomWords(words2k);
-        displayWords(randomWords);
+        currentWords = getRandomWords(words2k);
+        currentIndex = 0;
+        updateCard(currentWords[currentIndex]);
+        document.getElementById("btn-restart").disabled = false;
+      });
+
+      document.getElementById("btn-learn").addEventListener("click", startLearning);
+
+      document.getElementById("btn-restart").addEventListener("click", restartLearning);
+
+      document.getElementById("word-card").addEventListener("click", () => {
+        document.getElementById("word-card").classList.toggle("flipped");
       });
     }
 
+    // 更新按钮状态
+    function updateButtonState() {
+      document.getElementById("btn-prev").disabled = currentIndex === 0;
+      document.getElementById("btn-next").disabled = currentIndex === currentWords.length - 1;
+    }
+
+    // “上一个”按钮功能
+    function showPreviousWord() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateCard(currentWords[currentIndex]);
+        updateButtonState();
+      }
+    }
+
+    // “下一个”按钮功能
+    function showNextWord() {
+      if (currentIndex < currentWords.length - 1) {
+        currentIndex++;
+        updateCard(currentWords[currentIndex]);
+        updateButtonState();
+      }
+    }
+
+    // 初始化
+    async function init() {
+      // 加载单词数据
+      words50k = await loadCSV("/components/en_50k.csv");
+      words2k = await loadCSV("/components/en_2k.csv");
+
+      // 添加按钮事件监听
+      document.getElementById("btn-50k").addEventListener("click", () => {
+        currentWords = getRandomWords(words50k);
+        currentIndex = 0;
+        updateCard(currentWords[currentIndex]);
+        document.getElementById("btn-restart").disabled = false;
+        updateButtonState();
+      });
+
+      document.getElementById("btn-2k").addEventListener("click", () => {
+        currentWords = getRandomWords(words2k);
+        currentIndex = 0;
+        updateCard(currentWords[currentIndex]);
+        document.getElementById("btn-restart").disabled = false;
+        updateButtonState();
+      });
+
+      document.getElementById("btn-learn").addEventListener("click", startLearning);
+
+      document.getElementById("btn-restart").addEventListener("click", restartLearning);
+
+      document.getElementById("word-card").addEventListener("click", () => {
+        const wordCard = document.getElementById("word-card");
+
+        // 翻转卡片
+        wordCard.classList.toggle("flipped");
+
+        // 如果已经翻转到背面，设置 1 秒后翻回正面
+        if (wordCard.classList.contains("flipped")) {
+          setTimeout(() => {
+            wordCard.classList.remove("flipped");
+          }, 1000); // 1 秒
+        }
+      });
+
+      document.getElementById("btn-prev").addEventListener("click", showPreviousWord);
+      document.getElementById("btn-next").addEventListener("click", showNextWord);
+    }
+
+    // 调用初始化函数
     init();
   </script>
-</flabody>
+</body>
+
 </html>
