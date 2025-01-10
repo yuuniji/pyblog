@@ -5,21 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flash Card App</title>
   <style>
-    /* 全局基础样式 */
+    /* 自定义标签的全局样式重置 */
+    flabody, flabutton {
+      all: unset;
+      box-sizing: border-box;
+      border-radius: 25px;
+    }
+
+    /* flabody 的样式 */
     flabody {
       font-family: "Arial", sans-serif;
       margin: 20px;
       text-align: center;
       background: linear-gradient(to bottom, #f5faff, #ffffff);
       color: #333;
+      display: block; /* 保持容器为块级元素 */
       transition: background 0.5s ease, color 0.5s ease;
     }
 
-    /* 按钮样式 */
+    /* flabutton 的样式 */
     flabutton {
       padding: 10px 10px;
       font-size: 14px;
-      display: inline;
+      display: inline-block;
       font-weight: bold;
       color: #fff;
       background: linear-gradient(135deg, #0078d4, #0056a8);
@@ -48,8 +56,9 @@
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 20px;
       padding: 20px;
-      height: 400px; /* 限制高度 */
-      overflow-y: scroll; /* 启用滚动 */
+      max-height: 400px; /* 限制高度 */
+      overflow-y: auto; /* 启用滚动 */
+      margin: 0 auto;
     }
 
     /* 单词卡片样式 */
@@ -135,7 +144,6 @@
 
     /* 响应式优化 */
     @media (max-width: 600px) {
-
       flabutton {
         display: block;
         font-size: 14px;
