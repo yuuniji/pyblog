@@ -181,7 +181,7 @@
       <div class="progress-text" id="progress-text">当前进度：0 / 0</div>
     </div>
   </div>
-
+  
   <script>
     // 全局变量
     let words50k = [];
@@ -190,14 +190,14 @@
     let currentIndex = 0;
     let learningMode = false;
     let autoLearnInterval = null;
-
+  
     // 加载 CSV 文件
     async function loadCSV(url) {
       const response = await fetch(url);
       const text = await response.text();
       return parseCSV(text);
     }
-
+  
     // 解析 CSV 数据
     function parseCSV(text) {
       return text.trim().split("\n").slice(1).map(line => {
@@ -205,35 +205,35 @@
         return { English, Chinese };
       });
     }
-
+  
     // 随机选择单词
     function getRandomWords(words, count = 20) {
       return words.sort(() => Math.random() - 0.5).slice(0, count);
     }
-
+  
     // 更新单词卡片
     function updateCard(word) {
       const wordCard = document.getElementById("word-card");
       const wordEnglish = document.getElementById("word-english");
       const wordChinese = document.getElementById("word-chinese");
-
+  
       wordCard.classList.remove("flipped");
       wordEnglish.textContent = word.English;
       wordChinese.textContent = word.Chinese;
       updateProgress();
       updateButtonState();
     }
-
+  
     // 更新进度条
     function updateProgress() {
       const progressFill = document.getElementById("progress-fill");
       const progressText = document.getElementById("progress-text");
       const progress = ((currentIndex + 1) / currentWords.length) * 100;
-
+  
       progressFill.style.width = `${progress}%`;
       progressText.textContent = `当前进度：${currentIndex + 1} / ${currentWords.length}`;
     }
-
+  
     // 学习模式
     function startLearning() {
       if (learningMode) {
@@ -256,7 +256,7 @@
         }, 3000); // 每 3 秒切换一个单词
       }
     }
-
+  
     // 重新开始学习模式
     function restartLearning() {
       clearInterval(autoLearnInterval);
@@ -264,43 +264,26 @@
       updateCard(currentWords[currentIndex]);
       startLearning();
     }
-
-    // 初始化
-    async function init() {
-      // 加载单词数据
-      words50k = await loadCSV("/components/en_50k.csv");
-      words2k = await loadCSV("/components/en_2k.csv");
-
-      // 添加按钮事件监听
-      document.getElementById("btn-50k").addEventListener("click", () => {
-        currentWords = getRandomWords(words50k);
-        currentIndex = 0;
-        updateCard(currentWords[currentIndex]);
-        document.getElementById("btn-restart").disabled = false;
-      });
-
-      document.getElementById("btn-2k").addEventListener("click", () => {
-        currentWords = getRandomWords(words2k);
-        currentIndex = 0;
-        updateCard(currentWords[currentIndex]);
-        document.getElementById("btn-restart").disabled = false;
-      });
-
-      document.getElementById("btn-learn").addEventListener("click", startLearning);
-
-      document.getElementById("btn-restart").addEventListener("click", restartLearning);
-
-      document.getElementById("word-card").addEventListener("click", () => {
-        document.getElementById("word-card").classList.toggle("flipped");
+  
+    // 键盘事件监听
+    function addKeyboardControl() {
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowLeft") {
+          // 按下左箭头键，显示上一个单词
+          showPreviousWord();
+        } else if (event.key === "ArrowRight") {
+          // 按下右箭头键，显示下一个单词
+          showNextWord();
+        }
       });
     }
-
+  
     // 更新按钮状态
     function updateButtonState() {
       document.getElementById("btn-prev").disabled = currentIndex === 0;
       document.getElementById("btn-next").disabled = currentIndex === currentWords.length - 1;
     }
-
+  
     // “上一个”按钮功能
     function showPreviousWord() {
       if (currentIndex > 0) {
@@ -309,7 +292,7 @@
         updateButtonState();
       }
     }
-
+  
     // “下一个”按钮功能
     function showNextWord() {
       if (currentIndex < currentWords.length - 1) {
@@ -318,13 +301,13 @@
         updateButtonState();
       }
     }
-
+  
     // 初始化
     async function init() {
       // 加载单词数据
       words50k = await loadCSV("/components/en_50k.csv");
       words2k = await loadCSV("/components/en_2k.csv");
-
+  
       // 添加按钮事件监听
       document.getElementById("btn-50k").addEventListener("click", () => {
         currentWords = getRandomWords(words50k);
@@ -333,7 +316,7 @@
         document.getElementById("btn-restart").disabled = false;
         updateButtonState();
       });
-
+  
       document.getElementById("btn-2k").addEventListener("click", () => {
         currentWords = getRandomWords(words2k);
         currentIndex = 0;
@@ -341,17 +324,17 @@
         document.getElementById("btn-restart").disabled = false;
         updateButtonState();
       });
-
+  
       document.getElementById("btn-learn").addEventListener("click", startLearning);
-
+  
       document.getElementById("btn-restart").addEventListener("click", restartLearning);
-
+  
       document.getElementById("word-card").addEventListener("click", () => {
         const wordCard = document.getElementById("word-card");
-
+  
         // 翻转卡片
         wordCard.classList.toggle("flipped");
-
+  
         // 如果已经翻转到背面，设置 1 秒后翻回正面
         if (wordCard.classList.contains("flipped")) {
           setTimeout(() => {
@@ -359,11 +342,14 @@
           }, 1000); // 1 秒
         }
       });
-
+  
       document.getElementById("btn-prev").addEventListener("click", showPreviousWord);
       document.getElementById("btn-next").addEventListener("click", showNextWord);
+  
+      // 添加键盘控制
+      addKeyboardControl();
     }
-
+  
     // 调用初始化函数
     init();
   </script>
