@@ -17,37 +17,36 @@
       font-family: "Arial", sans-serif;
       margin: 20px;
       text-align: center;
-      background: linear-gradient(to bottom, #f5faff, #ffffff);
-      color: #333;
-      display: block; /* 保持容器为块级元素 */
+      background: linear-gradient(to bottom, #e1f8e4, #d2f5d7); /* 淡绿渐变 */
+      color: #2a2a2a;
+      display: block; 
       transition: background 0.5s ease, color 0.5s ease;
     }
 
     /* flabutton 的样式 */
     flabutton {
-      padding: 10px 10px;
-      font-size: 14px;
-      display: inline-block;
+      padding: 12px 20px;
+      font-size: 16px;
       font-weight: bold;
       color: #fff;
-      background: linear-gradient(135deg, #0078d4, #0056a8);
+      background: linear-gradient(135deg, #4caf50, #2e7d32); /* 绿色渐变 */
       border: none;
-      border-radius: 25px;
-      box-shadow: 0 4px 10px rgba(0, 120, 212, 0.3);
+      border-radius: 50px;
+      box-shadow: 0 4px 12px rgba(44, 159, 69, 0.3);
       cursor: pointer;
       transition: all 0.3s ease;
-      margin: 8px;
+      margin: 10px;
     }
 
     flabutton:hover {
-      background: linear-gradient(135deg, #0056a8, #003d7a);
-      box-shadow: 0 6px 15px rgba(0, 120, 212, 0.5);
-      transform: translateY(-3px);
+      background: linear-gradient(135deg, #388e3c, #1b5e20); /* 更深绿色 */
+      box-shadow: 0 6px 18px rgba(44, 159, 69, 0.5);
+      transform: translateY(-4px);
     }
 
     flabutton:active {
-      transform: translateY(1px);
-      box-shadow: 0 2px 5px rgba(0, 120, 212, 0.2);
+      transform: translateY(2px);
+      box-shadow: 0 2px 6px rgba(44, 159, 69, 0.2);
     }
 
     /* 单词卡网格布局 */
@@ -56,8 +55,8 @@
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 20px;
       padding: 20px;
-      max-height: 400px; /* 限制高度 */
-      overflow-y: auto; /* 启用滚动 */
+      max-height: 400px; 
+      overflow-y: auto; 
       margin: 0 auto;
     }
 
@@ -101,12 +100,12 @@
     }
 
     .flacard-front {
-      background: linear-gradient(145deg, #f8fcff, #e6f3fa);
-      color: #333;
+      background: linear-gradient(145deg, #a5d6a7, #81c784); /* 浅绿色渐变 */
+      color: #2a2a2a;
     }
 
     .flacard-back {
-      background: linear-gradient(145deg, #0078d4, #0056a8);
+      background: linear-gradient(145deg, #388e3c, #2e7d32); /* 更深的绿色渐变 */
       color: #fff;
       transform: rotateY(180deg);
     }
@@ -114,29 +113,29 @@
     /* 深色模式支持 */
     @media (prefers-color-scheme: dark) {
       flabody {
-        background: linear-gradient(to bottom, #1a1a2e, #121212);
+        background: linear-gradient(to bottom, #1e2b1d, #121212); /* 深绿色调 */
         color: #eaeaea;
       }
 
       flabutton {
-        background: linear-gradient(135deg, #4fb3ff, #006bb3);
-        box-shadow: 0 4px 10px rgba(79, 179, 255, 0.3);
+        background: linear-gradient(135deg, #4caf50, #388e3c); /* 更柔和的绿色 */
+        box-shadow: 0 4px 12px rgba(103, 181, 130, 0.3);
       }
 
       flabutton:hover {
-        background: linear-gradient(135deg, #006bb3, #004f85);
-        box-shadow: 0 6px 15px rgba(79, 179, 255, 0.5);
+        background: linear-gradient(135deg, #388e3c, #2c6f3f);
+        box-shadow: 0 6px 18px rgba(103, 181, 130, 0.5);
       }
 
       .flacard-front {
-        background: linear-gradient(145deg, #22263a, #1a1a2e);
-        color: #ddd;
+        background: linear-gradient(145deg, #3c6e3f, #334b30); /* 更深的绿色 */
+        color: #eaeaea;
         border: 1px solid rgba(255, 255, 255, 0.1);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
       }
 
       .flacard-back {
-        background: linear-gradient(145deg, #004c80, #003a60);
+        background: linear-gradient(145deg, #388e3c, #2c6f3f);
         color: #e0f7ff;
         border: 1px solid rgba(255, 255, 255, 0.1);
       }
