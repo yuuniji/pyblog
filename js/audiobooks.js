@@ -596,16 +596,22 @@ let translationsVisible = true;
 let currentAudio = null;
 
 // 加载章节内容
-function loadChapter(chapterKey) {
+function loadChapter(chapterKey, contentContainer) {
   const chapter = book[chapterKey];
-  if (!chapter) return;
+  if (!chapter) {
+    console.error(`章节 ${chapterKey} 不存在`);
+    return;
+  }
 
+  // 清空内容容器
   contentContainer.innerHTML = `<h2>${chapter.chapterTitle}</h2>`;
 
+  // 遍历章节内容并生成句子和翻译
   chapter.content.forEach((item) => {
     const sentenceContainer = document.createElement("div");
     sentenceContainer.className = "sentence-container";
 
+    // 句子文本部分
     const sentenceText = document.createElement("p");
     sentenceText.className = "sentence";
     sentenceText.innerHTML = `
@@ -614,21 +620,17 @@ function loadChapter(chapterKey) {
     `;
     sentenceContainer.appendChild(sentenceText);
 
+    // 翻译部分
     const translationText = document.createElement("p");
     translationText.className = "translation";
     translationText.textContent = item.translation;
     sentenceContainer.appendChild(translationText);
 
+    // 添加到内容容器
     contentContainer.appendChild(sentenceContainer);
   });
-
-  // 同步翻译显示状态
-  if (!translationsVisible) {
-    document.querySelectorAll(".translation").forEach((element) => {
-      element.style.display = "none";
-    });
-  }
 }
+
 
 // 播放/暂停音频
 function toggleAudio(audioSrc, button) {
@@ -663,24 +665,37 @@ selector.onchange = function () {
   loadChapter(selector.value);
 };
 
-// 初始化章节选择器
+// 初始化选择器
 function initChapterSelector() {
-  Object.keys(book).forEach((chapterKey) => {
-    const chapter = book[chapterKey];
+  const chapterSelector = document.getElementById("chapter-selector");
+  const contentContainer = document.getElementById("book-content");
+
+  // 确保元素存在
+  if (!chapterSelector || !contentContainer) {
+    console.error("chapter-selector 或 book-content 未找到！");
+    return;
+  }
+
+  // 遍历 book 数据，生成下拉选项
+  for (const [key, chapter] of Object.entries(book)) {
     const option = document.createElement("option");
-    option.value = chapterKey;
+    option.value = key;
     option.textContent = chapter.chapterTitle;
-    selector.appendChild(option);
-  });
+    chapterSelector.appendChild(option);
+  }
 
-  selector.onchange = function () {
-    const selectedChapter = selector.value;
-    loadChapter(selectedChapter);
+  // 设置默认加载章节（自动选择第一个章节）
+  const defaultChapter = "1.0"; // 假设 "1.0" 是第一章
+  chapterSelector.value = defaultChapter; // 设置选择器的默认值
+  loadChapter(defaultChapter, contentContainer); // 自动加载第一章
+
+  // 添加选择器 onchange 事件
+  chapterSelector.onchange = function () {
+    const selectedChapter = chapterSelector.value;
+    loadChapter(selectedChapter, contentContainer);
   };
-
-  // 默认加载第一章
-  loadChapter("1.0");
 }
+
 
 // 调用初始化章节选择器函数
 initChapterSelector();
