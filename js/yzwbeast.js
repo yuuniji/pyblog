@@ -105,6 +105,9 @@ loadComponent('../components/flashcard.html', 'flashcard-container');
 // 调用函数动态加载 ../components/wordtracker.html
 loadComponent('../components/wordtracker.html', 'wordtracker-container');
 
+// 调用函数动态加载 ../components/audiobooks.html
+loadComponent('../components/audiobooks.html', 'audiobooks-container');
+
 
 
 // 使用 JavaScript 动态加载 vocabulary.html

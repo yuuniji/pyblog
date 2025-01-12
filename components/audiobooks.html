@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Chapter Navigation</title>
+  <style>
+    /* 模块容器 */
+    #book-reader-module {
+      max-width: 700px;
+      margin: 30px auto;
+      font-family: "Georgia", serif;
+      line-height: 1.8;
+    }
+
+    #book-reader-module h1 {
+      text-align: center;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    #book-reader-module .play-inline-button {
+      color: #007BFF;
+      /* 蓝色 */
+      text-decoration: none;
+      margin-left: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    #book-reader-module .play-inline-button:hover {
+      text-decoration: underline;
+    }
+
+    #book-reader-module .play-inline-button:visited {
+      color: #007BFF;
+      /* 保持蓝色 */
+    }
+
+    #book-reader-module .play-inline-button:active {
+      color: #0056b3;
+      /* 点击时的颜色 */
+    }
+
+    /* 下拉菜单样式 */
+    #chapter-selector {
+      display: block;
+      margin: 20px auto;
+      width: 100%;
+      max-width: 700px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #007BFF;
+      border-radius: 4px;
+      background-color: white;
+      color: #007BFF;
+    }
+
+    /* 内容样式 */
+    #book-content .sentence-container {
+      text-align: justify;
+      margin-bottom: 20px;
+    }
+
+    #book-content .sentence {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    #book-content .translation {
+      font-size: 16px;
+      color: #555;
+      margin-top: 5px;
+      display: block;
+    }
+
+    /* 切换翻译按钮 */
+    #toggleTranslations {
+      display: block;
+      margin: 20px auto;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    #toggleTranslations:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="book-reader-module">
+    <h1>The Wealth of Nations《国富论》</h1>
+    <!-- 下拉菜单 -->
+    <select id="chapter-selector">
+      <option disabled selected>Contents</option>
+      <optgroup label="总序">
+        <option value="1.0">Introduction and Plan of the Work</option>
+      </optgroup>
+      <optgroup label="第一卷 论劳动生产力改善的原因，并论劳动产出自然而然在各社会阶级间分配的次序">
+        <option value="1.1">Chapter I. Of the Division of Labour</option>
+        <option value="1.2">Chapter II. Of the Principle which gives occasion to the Division of Labour</option>
+        <option value="1.2.1">- Section 1: Basics</option>
+      </optgroup>
+      <optgroup label="第二卷 论物品积蓄的性质、累积与运用">
+        <option value="1.1">Chapter 1</option>
+        <option value="1.2">Chapter 2: Advanced Topics</option>
+        <option value="1.2.1">- Section 1: Basics</option>
+      </optgroup>
+      <optgroup label="第三卷 论不同国家财富增加的过程">
+        <option value="1.1">Chapter 1</option>
+        <option value="1.2">Chapter 2: Advanced Topics</option>
+        <option value="1.2.1">- Section 1: Basics</option>
+      </optgroup>
+      <optgroup label="第四卷 论政治经济学的思想体系">
+        <option value="1.1">Chapter 1</option>
+        <option value="1.2">Chapter 2: Advanced Topics</option>
+        <option value="1.2.1">- Section 1: Basics</option>
+      </optgroup>
+      <optgroup label="第五卷 论君主或国家的收入">
+        <option value="1.1">Chapter 1</option>
+        <option value="1.2">Chapter 2: Advanced Topics</option>
+        <option value="1.2.1">- Section 1: Basics</option>
+      </optgroup>
+    </select>
+    <button id="toggleTranslations">隐藏中文</button>
+    <!-- <button id="playAllAudio" disabled>播放全部音频</button> -->
+    <div id="book-content"></div>
+  </div>
+
+  <script src="/js/audiobooks.js" type="text/javascript"></script>
+</body>
+
+</html>
