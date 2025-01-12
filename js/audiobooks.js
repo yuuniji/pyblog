@@ -258,23 +258,335 @@ const book = {
     ]
   },
   "2.1": {
-    chapterTitle: "Chapter 1: Overview",
-    content: [
-      { text: "This chapter provides an overview.", translation: "这一章提供了概述。", audio: "/audio/p/volume2-chapter1-1.mp3" }
+    "chapterTitle": "Chapter I. Of the Division of Stock",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
     ]
   },
   "2.2": {
-    chapterTitle: "Chapter 2: Details",
-    content: [
-      { text: "This chapter goes into details.", translation: "这一章详细介绍了内容。", audio: "/audio/p/volume2-chapter2-1.mp3" }
+    "chapterTitle": "Chapter II. Of Money Considered as a Particular Branch of the General Stock of the Society, or of the Expense of Maintaining the National Capital",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
     ]
   },
   "2.3": {
-    chapterTitle: "Chapter 3: Summary",
-    content: [
-      { text: "This chapter summarizes key points.", translation: "这一章总结了关键点。", audio: "/audio/p/volume2-chapter3-1.mp3" }
+    "chapterTitle": "Chapter III. Of the Accumulation of Capital, or of Productive and Unproductive Labour",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
     ]
-  }
+  },
+  "2.4": {
+    "chapterTitle": "Chapter IV. Of Stock Lent at Interest",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "2.5": {
+    "chapterTitle": "Chapter V. Of the Different Employment of Capitals",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "3.1": {
+    "chapterTitle": "Chapter I. Of the Natural Progress of Opulence",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "3.2": {
+    "chapterTitle": "Chapter II. Of the Discouragement of Agriculture in the ancient State of Europe after the Fall of the Roman Empire",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "3.3": {
+    "chapterTitle": "Chapter III. Of the Rise and Progress of Cities and Towns after the Fall of the Roman Empire",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "3.4": {
+    "chapterTitle": "Chapter IV. How the Commerce of the Towns Contributed to the Improvement of the Country",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "4.1": {
+    "chapterTitle": "Chapter I. Of the Principle of the Commercial, or Mercantile System",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "4.2": {
+    "chapterTitle": "Chapter II. Of Restraints upon the Importation from Foreign Countries of such Goods as can be produced at Home",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "4.3": {
+    "chapterTitle": "Chapter III. Of the extraordinary Restraints upon the Importation of Goods of almost all kinds from those Countries with which the Balance is supposed to be disadvantageous",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "4.3.1": {
+    "chapterTitle": "Part 1 Of the Unreasonableness of those Restraints even upon the Principles of the Commercial System",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "4.3.2": {
+    "chapterTitle": "Part 2 Of the Unreasonableness of those extraordinary Restraints upon other Principles",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "4.4": {
+    "chapterTitle": "Chapter IV. Of Drawbacks",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "4.5": {
+    "chapterTitle": "Chapter V. Of Bounties",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "4.6": {
+    "chapterTitle": "Chapter VI. Of Treaties of Commerce",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "4.7": {
+    "chapterTitle": "Chapter VII. Of Colonies",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "4.7.1": {
+    "chapterTitle": "Part 1 Of the Motives for establishing new Colonies",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "4.7.2": {
+    "chapterTitle": "Part 2 Causes of Prosperity of New Colonies",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "4.7.3": {
+    "chapterTitle": "Part 3 Of the Advantages which Europe has derived from the Discovery of America, and from that of a Passage to the East Indies by the Cape of Good Hope",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "4.8": {
+    "chapterTitle": "Chapter VIII. Conclusion of the Mercantile System",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "4.9": {
+    "chapterTitle": "Chapter IX. Of the Agricultural Systems, or of those Systems of Political Economy which represent the Produce of Land as either the sole or the principal Source of the Revenue and Wealth every Country",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "4.10": {
+    "chapterTitle": "Appendix",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "5.1": {
+    "chapterTitle": "Chapter I. Of the Expenses of the Sovereign or Commonwealth",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "5.1.1": {
+    "chapterTitle": "Part 1 Of the Expense of Defence",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "5.1.2": {
+    "chapterTitle": "Part 2 Of the Expense of Justice",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "5.1.3": {
+    "chapterTitle": "Part 3 Of the Expense of Public Works and Public Institutions",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "5.1.4": {
+    "chapterTitle": "Part 4 Of the Expense of Supporting the Dignity of the Sovereign",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "5.2": {
+    "chapterTitle": "Chapter II. Of the Sources of the General or Public Revenue of the Society",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "5.2.1": {
+    "chapterTitle": "Part 1 Of the Funds or Sources of Revenue which may peculiarly belong to the Sovereign or Commonwealth",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "5.2.2": {
+    "chapterTitle": "Part 2 Of Taxes",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
+  "5.3": {
+    "chapterTitle": "Chapter III. Of Public Debts",
+    "content": [
+      {
+        "text": "....",
+        "translation": "....",
+        "audio": "/audio/.mp3"
+      }
+    ]
+  },
 };
 
 const selector = document.getElementById("chapter-selector");
