@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive IPA Categories</title>
+  <style>
+    /* 局部主题样式，仅影响IPA模块 */
+    .ipa-module {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+      align-items: start;
+    }
+
+    .ipa-category {
+      background: var(--secondary-color, #ffffff);
+      border: 1px solid var(--border-color, #ddd);
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ipa-category:hover {
+      transform: translateY(-3px);
+    }
+
+    .ipa-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      cursor: pointer;
+      background-color: var(--primary-color, #4caf50);
+      color: white;
+      transition: background-color 0.3s;
+    }
+
+    .ipa-header:hover {
+      background-color: #45a049; /* Hover時变深 */
+    }
+
+    .ipa-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .ipa-toggle {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .ipa-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.6s ease-in-out;
+    }
+
+    .ipa-content.show {
+      max-height: 500px;
+    }
+
+    .ipa-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .ipa-table td,
+    .ipa-table th {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid var(--border-color, #ddd);
+    }
+
+    .ipa-table th {
+      background-color: #f9f9f9;
+    }
+
+    .ipa-play {
+      color: var(--primary-color, #4caf50);
+      cursor: pointer;
+    }
+
+    .ipa-play:hover {
+      text-decoration: underline;
+    }
+
+    /* 深色模式样式 */
+    @media (prefers-color-scheme: dark) {
+      .ipa-module {
+        color: #e0e0e0; /* 设置文字颜色为浅色 */
+      }
+
+      .ipa-category {
+        background-color: #333; /* 暗色背景 */
+        border: 1px solid #444; /* 深色边框 */
+      }
+
+      .ipa-header {
+        background-color: #388e3c; /* 暗色模式下的头部背景 */
+      }
+
+      .ipa-header:hover {
+        background-color: #2c6f2f; /* 深色模式悬停效果 */
+      }
+
+      .ipa-table th {
+        background-color: #444; /* 表头背景 */
+      }
+
+      .ipa-play {
+        color: #76c7c0; /* 文字颜色改变为更适合深色模式的颜色 */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="ipa-module">
+    <!-- Vowels Category -->
+    <div class="ipa-category">
+      <div class="ipa-header" data-category="vowels">
+        <span class="ipa-title">Vowels</span>
+        <span class="ipa-toggle" id="vowels-toggle">+</span>
+      </div>
+      <div class="ipa-content" id="vowels">
+        <table class="ipa-table">
+          <tr>
+            <td>iː</td>
+            <td><span class="ipa-play" data-audio="uk/iː.mp3">UK</span> | <span class="ipa-play"
+                data-audio="us/iː.mp3">US</span></td>
+            <td>sheep</td>
+            <td><span class="ipa-play" data-audio="uk/sheep.mp3">UK</span> | <span class="ipa-play"
+                data-audio="us/sheep.mp3">US</span></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Consonants Category -->
+    <div class="ipa-category">
+      <div class="ipa-header" data-category="consonants">
+        <span class="ipa-title">Consonants</span>
+        <span class="ipa-toggle" id="consonants-toggle">+</span>
+      </div>
+      <div class="ipa-content" id="consonants">
+        <table class="ipa-table">
+          <tr>
+            <td>p</td>
+            <td><span class="ipa-play" data-audio="uk/p.mp3">UK</span> | <span class="ipa-play"
+                data-audio="us/p.mp3">US</span></td>
+            <td>pen</td>
+            <td><span class="ipa-play" data-audio="uk/pen.mp3">UK</span> | <span class="ipa-play"
+                data-audio="us/pen.mp3">US</span></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/ipa.js" type="text/javascript"></script>
+</body>
+
+</html>

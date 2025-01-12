@@ -108,6 +108,9 @@ loadComponent('../components/wordtracker.html', 'wordtracker-container');
 // 调用函数动态加载 ../components/audiobooks.html
 loadComponent('../components/audiobooks.html', 'audiobooks-container');
 
+// 调用函数动态加载 ../components/ipa.html
+loadComponent('../components/ipa.html', 'ipa-container');
+
 
 
 // 使用 JavaScript 动态加载 vocabulary.html
