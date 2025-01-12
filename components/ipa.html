@@ -16,6 +16,14 @@
       align-items: start;
     }
 
+    /* 在较小屏幕上调整为单列布局 */
+    @media (max-width: 768px) {
+      .ipa-module {
+        grid-template-columns: 1fr;
+        /* 一列布局 */
+      }
+    }
+
     .ipa-category {
       background: var(--secondary-color, #ffffff);
       border: 1px solid var(--border-color, #ddd);
