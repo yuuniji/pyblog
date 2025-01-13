@@ -462,21 +462,6 @@ window.onload = function () {
         }
     }
 
-    // function toggleTooltip(element, id, message) {
-    //     let tooltip = document.getElementById(id + "-tooltip");
-    //     if (!tooltip) {
-    //         tooltip = document.createElement("div");
-    //         tooltip.id = id + "-tooltip";
-    //         tooltip.className = "tooltip-content";
-    //         tooltip.textContent = message;
-    //         document.body.appendChild(tooltip);
-    //     }
-    //     const rect = element.getBoundingClientRect();
-    //     tooltip.style.left = rect.left + window.scrollX + "px";
-    //     tooltip.style.top = rect.bottom + window.scrollY + "px";
-    //     tooltip.style.display = tooltip.style.display === "block" ? "none" : "block";
-    // }
-
     var t1 = $("tooltip1");
     var t2 = $("tooltip2");
     var t3 = $("tooltip3");
