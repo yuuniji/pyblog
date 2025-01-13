@@ -193,7 +193,7 @@ header h1 {
 }
 
 .scrollable-list {
-  max-height: 198vh;
+  max-height: 220vh;
   overflow-y: auto;
   padding: 5px;
   background: rgba(255, 255, 255, 0.9);
