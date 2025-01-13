@@ -7,7 +7,7 @@ const toggleModeButton = document.getElementById('toggleMode');
 let lyrics = [];
 
 // 加载 LRC 文件
-fetch('lyrics.lrc')
+fetch('/tags/song/perfect/lyrics.lrc')
     .then(response => response.text())
     .then(data => {
         lyrics = parseLyrics(data);
@@ -132,34 +132,3 @@ function updateCountdown() {
 // 立即更新并启动倒计时
 updateCountdown();
 setInterval(updateCountdown, 1000);
-
-// // 打印当前时间和下一次至日
-// function debugSolsticeCountdown() {
-//     const now = new Date();
-//     const nextSolstice = getNextSolstice();
-//     const diff = calculateTimeDiff(nextSolstice);
-//     console.log("Current time:", now.toISOString());
-//     console.log("Next solstice:", nextSolstice.toISOString());
-//     console.log(`Countdown: ${diff.days}d ${diff.hours}h ${diff.minutes}m ${diff.seconds}s`);
-// }
-
-// debugSolsticeCountdown();
-
-// // 切换模式
-// function toggleMode() {
-//     const isDarkMode = document.body.classList.toggle('dark-mode');
-//     document.body.classList.toggle('light-mode', !isDarkMode);
-//     toggleModeButton.setAttribute('aria-pressed', isDarkMode);
-//     localStorage.setItem('mode', isDarkMode ? 'dark' : 'light');
-// }
-
-// toggleModeButton.addEventListener('click', toggleMode);
-
-// // 加载用户偏好
-// const savedMode = localStorage.getItem('mode');
-// if (savedMode) {
-//     document.body.classList.add(savedMode === 'dark' ? 'dark-mode' : 'light-mode');
-//     toggleModeButton.setAttribute('aria-pressed', savedMode === 'dark');
-// } else {
-//     document.body.classList.add('light-mode');
-// }

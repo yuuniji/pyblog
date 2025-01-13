@@ -3,6 +3,16 @@ function myFunction() {
     element.classList.toggle("dark-mode");
 }
 
+// 页面切换功能
+function navigateTo(pageId) {
+    // 隐藏所有内容
+    document.querySelectorAll('.content').forEach((content) => {
+        content.classList.remove('active');
+    });
+    // 显示当前内容
+    document.getElementById(pageId).classList.add('active');
+}
+
 function fn() {
     var w = document.getElementById('main');
     var ta = document.getElementById('part1');
@@ -110,6 +120,9 @@ loadComponent('../components/audiobooks.html', 'audiobooks-container');
 
 // 调用函数动态加载 ../components/ipa.html
 loadComponent('../components/ipa.html', 'ipa-container');
+
+// 调用函数动态加载 ../components/enmusic.html
+loadComponent('../components/enmusic.html', 'enmusic-container');
 
 
 
