@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>点击提示信息</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .content {
+      text-align: center;
+      position: relative;
+    }
+
+    .clickable-text {
+      font-size: 18px;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .popup-message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -150%);
+      background-color: #fff;
+      padding: 10px 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+      display: none;
+      z-index: 10;
+    }
+
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.2);
+      display: none;
+      z-index: 5;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <p id="text" class="clickable-text">点击这段话显示提示信息</p>
+    <div id="popup" class="popup-message">这是弹出的提示信息。</div>
+  </div>
+  <div id="overlay" class="popup-overlay"></div>
+
+  <script>
+    const text = document.getElementById('text');
+    const popup = document.getElementById('popup');
+    const overlay = document.getElementById('overlay');
+
+    // 点击文字显示提示信息
+    text.addEventListener('click', () => {
+      popup.style.display = 'block';
+      overlay.style.display = 'block';
+    });
+
+    // 点击空白区域隐藏提示信息
+    overlay.addEventListener('click', () => {
+      popup.style.display = 'none';
+      overlay.style.display = 'none';
+    });
+  </script>
+</body>
+</html>

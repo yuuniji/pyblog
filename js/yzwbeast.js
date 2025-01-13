@@ -412,31 +412,30 @@ window.onload = function () {
     //html   -  ToolTip提示框HTML内容
     //width  -  ToolTip提示框宽度（可选）
     //height - ToolTip提示框高度（可选）
-
     function showTooltip(obj, id, html, width, height) {
         let toolTipBox = document.getElementById(id);
-
+    
         if (!toolTipBox) {
             // 创建 tooltip box
             toolTipBox = document.createElement('div');
             toolTipBox.className = "tooltip-box";
             toolTipBox.id = id;
             toolTipBox.innerHTML = html;
-
+    
             obj.appendChild(toolTipBox);
-
+    
             // 设置高度
             toolTipBox.style.height = height ? `${height}px` : "auto";
-
+    
             // 如果是 IE 浏览器且未设置宽度
             if (!width && isIE) {
                 toolTipBox.style.width = `${toolTipBox.offsetWidth}px`; // IE 不支持 auto 属性
             }
-
+    
             // 基本样式设置
             toolTipBox.style.position = 'absolute';
             toolTipBox.style.display = 'block';
-
+    
             const left = Math.max(
                 0,
                 Math.min(
@@ -444,12 +443,12 @@ window.onload = function () {
                     document.body.clientWidth - toolTipBox.offsetWidth
                 )
             );
-
+    
             const top = obj.offsetTop + 20;
-
+    
             toolTipBox.style.left = `${left}px`;
             toolTipBox.style.top = `${top}px`;
-
+    
             // 添加 mouseleave 事件
             obj.addEventListener("mouseleave", () => {
                 setTimeout(() => {
@@ -568,140 +567,6 @@ window.onload = function () {
     };
     t18.onmouseenter = function () {
         showTooltip(this, "t18", '原文：<br />At least 100 people died in Cuba alone.<br />1. 句子主干：<br />• At least 100 people died.<br />2. 注解：<br />• at least：至少，表最低估计。<br />• in Cuba alone：仅在古巴，表范围。<br />3. 翻译：仅在古巴，就有至少100人死亡。', 88);
-    };
-
-    // t6_1.onclick = function () {
-    //     toggleTooltip(
-    //         this,
-    //         "t6_1",
-    //         `步骤一：快速浏览<br />目标：抓住主题和结构。<br />
-    //      1. 快速阅读全文：先不查单词，尝试理解文章的大意和主旨。<br />
-    //      &nbsp;&nbsp;&nbsp;&nbsp;示例：这篇文章主要讲述的是 1910 年古巴飓风及其对古巴和美国的影响。<br />
-    //      2. 识别关键词：如 <i>hurricane</i>（飓风）、<i>damage</i>（破坏）、<i>Cuba</i>（古巴）。<br />
-    //      步骤二：精读与注解<br />目标：逐句深入理解文章内容。<br />
-    //      1. 逐句精读：找出句子主干（主语+谓语+宾语），结合上下文理解新单词。<br />
-    //      &nbsp;&nbsp;&nbsp;&nbsp;示例：<br />
-    //      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;原文：<i>The 1910 Cuba hurricane was said to be one of the worst tropical cyclones that has ever hit Cuba.</i><br />
-    //      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主干：<i>The 1910 Cuba hurricane was one of the worst tropical cyclones.</i><br />
-    //      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;理解：描述这次飓风是古巴最严重的热带气旋之一。<br />
-    //      2. 段落划分与标记：将文章分段，标记核心信息。<br />
-    //      &nbsp;&nbsp;&nbsp;&nbsp;示例：<br />
-    //      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一段：飓风的形成和路径。<br />
-    //      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二段：飓风的影响（古巴和佛罗里达的损失）。<br />
-    //      步骤三：总结与复述<br />目标：用自己的语言整理和表达文章内容。<br />
-    //      1. 写简短总结：用自己的语言概括主要内容。<br />
-    //      &nbsp;&nbsp;&nbsp;&nbsp;示例：<i>The 1910 Cuba hurricane caused serious damage in Cuba and Florida. Many homes were destroyed, and over 100 people died in Cuba.</i><br />
-    //      2. 尝试复述：用自己的语言复述文章内容，巩固记忆并提升语言表达能力。<br />
-    //      步骤四：词汇扩展<br />目标：积累和灵活运用高频词汇。<br />
-    //      1. 记录高频词汇：标记和整理常见单词。<br />
-    //      &nbsp;&nbsp;&nbsp;&nbsp;示例：<br />
-    //      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>hurricane</i>（飓风）<br />
-    //      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>damage</i>（破坏）<br />
-    //      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>flooding</i>（洪水）<br />
-    //      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>disaster</i>（灾难）<br />
-    //      2. 新词造句：用关键单词造句，强化记忆。<br />
-    //      &nbsp;&nbsp;&nbsp;&nbsp;示例：<br />
-    //      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>The hurricane caused severe damage to the city.</i><br />
-    //      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>After the storm made landfall, it caused heavy flooding.</i><br />
-    //      步骤五：结合听力与跟读<br />目标：通过听和说强化语感和发音。<br />
-    //      1. 寻找音频：尽量找到文章朗读音频或类似主题的新闻音频，练习听力。<br />
-    //      2. 模仿发音：跟随音频朗读，注意连读、重音和语调，提升发音准确性和语感。<br />
-    //      每日练习建议<br />每天坚持阅读一篇简短新闻，按照以上步骤操作，逐步提高单词量、阅读理解、听力和口语表达能力。坚持一段时间后，进步将会显而易见！`
-    //     );
-    // };
-    document.addEventListener("DOMContentLoaded", function () {
-        const tooltipElement = document.getElementById("tooltipt6_1");
-    
-        tooltipElement.addEventListener("click", function () {
-            toggleTooltip(
-                this,
-                "t6_1",
-                `步骤一：快速浏览<br />目标：抓住主题和结构。<br />
-                1. 快速阅读全文：先不查单词，尝试理解文章的大意和主旨。<br />
-                示例：这篇文章主要讲述的是 1910 年古巴飓风及其对古巴和美国的影响。<br />
-                2. 识别关键词：如 <i>hurricane</i>（飓风）、<i>damage</i>（破坏）、<i>Cuba</i>（古巴）。<br />
-                ...<br />`
-            );
-        });
-    
-        function toggleTooltip(element, id, message) {
-            let tooltip = document.getElementById(id + "-tooltip");
-    
-            // 创建 Tooltip 内容
-            if (!tooltip) {
-                tooltip = document.createElement("div");
-                tooltip.id = id + "-tooltip";
-                tooltip.className = "tooltip-content";
-                tooltip.innerHTML = message;
-                document.body.appendChild(tooltip);
-            }
-    
-            // 切换显示状态
-            const isVisible = tooltip.style.display === "block";
-            tooltip.style.display = isVisible ? "none" : "block";
-    
-            // 设置 Tooltip 位置
-            if (!isVisible) {
-                const rect = element.getBoundingClientRect();
-                tooltip.style.left = rect.left + window.scrollX + "px";
-                tooltip.style.top = rect.bottom + window.scrollY + "px";
-            }
-        }
-    });
-    
-    t6.onclick = function () {
-        toggleTooltip(this, "t6", '原文：<br />The 1910 Cuba hurricane was said to be one of the worst tropical cyclones that has ever hit Cuba.<br />1. 句子主干：<br />• The 1910 Cuba hurricane was one of the worst tropical cyclones.<br />• was said to be：被认为是（被动语态）。<br />2. 注解：<br />• hurricane：飓风，关键词。<br />• one of the worst：最严重的之一，表强调。<br />• tropical cyclones：热带气旋，科学术语，hurricane 的同义词。<br />• has ever hit Cuba：现在完成时，说明事件影响至今仍被提及。<br />3. 翻译：1910年的古巴飓风被认为是袭击古巴最严重的热带气旋之一。', 88);
-    };
-    t7.onclick = function () {
-        toggleTooltip(this, "t7", '原文：<br />The storm formed in the southern Caribbean Sea on October 9, 1910.<br />1. 句子主干：<br />• The storm formed in the southern Caribbean Sea.<br />2. 注解：<br />• formed：动词，形成。<br />• southern Caribbean Sea：地理位置，“加勒比海南部”。<br />• on October 9, 1910：具体时间，表示事件起点。<br />3. 翻译：这场风暴于1910年10月9日在加勒比海南部形成。', 88);
-    };
-    t8.onclick = function () {
-        toggleTooltip(this, "t8", '原文：<br />It grew stronger as it moved northwest.<br />1. 句子主干：<br />• It grew stronger as it moved northwest.<br />2. 注解：<br />• grew stronger：变得更强（比较级，表程度变化）。<br />• as it moved northwest：从句，表时间和过程，说明飓风路径和强度变化。<br />3. 翻译：它在向西北移动的过程中变得更加强烈。', 88);
-    };
-    t9.onclick = function () {
-        toggleTooltip(this, "t9", '原文：<br />It then made landfall on the western end of Cuba.<br />1. 句子主干：<br />• It made landfall on the western end of Cuba.<br />2. 注解：<br />• made landfall：动词短语，意为“登陆”。<br />• western end of Cuba：古巴的西端，表地理位置。<br />3. 翻译：随后，它在古巴的西端登陆。', 88);
-    };
-    t10.onclick = function () {
-        toggleTooltip(this, "t10", '原文：<br />The storm made a loop over open water, and then began moving towards the United States.<br />1. 句子主干：<br />• The storm made a loop, and then began moving towards the United States.<br />2. 注解：<br />• made a loop：动词短语，“形成一个环状路径”，强调飓风轨迹的特殊性。<br />• open water：意为“开阔水域”，指海洋区域。<br />• began moving：开始移动，表动作的开始。<br />3. 翻译：风暴在开阔水域形成了环状路径，然后开始向美国移动。', 88);
-    };
-    t11.onclick = function () {
-
-        toggleTooltip(this, "t11", '原文：<br />After crossing Florida, the storm moved near the rest of the southeastern United States and passed out to sea.<br />1. 句子主干：<br />• The storm moved near the southeastern United States and passed out to sea.<br />2. 注解：<br />• crossing Florida：现在分词短语，作时间状语，表示“穿过佛罗里达州”后。<br />• passed out to sea：动词短语，指“进入大海”。<br />3. 翻译：穿过佛罗里达州后，这场风暴接近了美国东南部的其他地区，然后进入了海洋。', 88);
-
-    };
-    t12.onclick = function () {
-
-        toggleTooltip(this, "t12", '原文：<br />Because of the storm\'s loop, some reports said it was actually two hurricanes.<br />1. 句子主干：<br />• Some reports said it was two hurricanes.<br />2. 注解：<br />• Because of：表原因。<br />• the storm\'s loop：飓风的环形路径，表特征。<br />• actually：副词，“实际上”，表强调。<br />3. 翻译：由于飓风的环形路径，有些报道称它实际上是两场飓风。', 88);
-
-    };
-    t13.onclick = function () {
-
-        toggleTooltip(this, "t13", '原文：<br />In Cuba, the storm was one of the worst disasters in the island\'s history.<br />1. 句子主干：<br />• The storm was one of the worst disasters.<br />2. 注解：<br />• in the island\'s history：表范围，指古巴历史中。<br />3. 翻译：在古巴，这场飓风是该岛历史上最严重的灾难之一。', 88);
-
-    };
-    t14.onclick = function () {
-
-        toggleTooltip(this, "t14", '原文：<br />There was bad damage and thousands of people lost their homes.<br />1. 句子主干：<br />• There was bad damage.<br />• Thousands of people lost their homes.<br />2. 注解：<br />• bad damage：严重破坏，表影响程度。<br />• lost their homes：失去家园，描述灾后影响。<br />3. 翻译：造成了严重的破坏，数千人失去了家园。', 88);
-
-    };
-    t15.onclick = function () {
-
-        toggleTooltip(this, "t15", '原文：<br />In Florida, the storm also caused damage and caused flooding in some areas.<br />1. 句子主干：<br />• The storm caused damage and caused flooding.<br />2. 注解：<br />• also：表示“也”，说明影响范围。<br />• flooding in some areas：部分地区的洪水，具体描述灾害类型。<br />3. 翻译：在佛罗里达州，这场飓风也造成了破坏，并引发了一些地区的洪水。', 88);
-
-    };
-    t16.onclick = function () {
-
-        toggleTooltip(this, "t16", '原文：<br />It is not known exactly how much damage the storm caused.<br />1. 句子主干：<br />• It is not known how much damage the storm caused.<br />2. 注解：<br />• It is not known：表被动，意为“目前尚不清楚”。<br />• how much damage：提问从句，表示破坏程度不明确。<br />3. 翻译：目前尚不清楚这场风暴究竟造成了多大的破坏。', 88);
-
-    };
-    t17.onclick = function () {
-
-        toggleTooltip(this, "t17", '原文：<br />However, losses in Havana, Cuba were over $1 million.<br />1. 句子主干：<br />• Losses were over $1 million.<br />2. 注解：<br />• losses：损失，表经济影响。<br />• Havana, Cuba：地名，指古巴的哈瓦那。<br />3. 翻译：然而，古巴哈瓦那的损失超过了100万美元。', 88);
-
-
-    };
-    t18.onclick = function () {
-        toggleTooltip(this, "t18", '原文：<br />At least 100 people died in Cuba alone.<br />1. 句子主干：<br />• At least 100 people died.<br />2. 注解：<br />• at least：至少，表最低估计。<br />• in Cuba alone：仅在古巴，表范围。<br />3. 翻译：仅在古巴，就有至少100人死亡。', 88);
     };
 }
 
