@@ -17,8 +17,8 @@ header h1 {
 
 .voccontainer {
   display: flex;
-  padding: 20px;
-  gap: 20px;
+  padding: 5px;
+  gap: 5px;
 }
 
 .vocsidebar {
@@ -37,8 +37,10 @@ header h1 {
   box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
 }
 
-.vocsidebar h2 {
+.voccc {
   margin-top: 0;
+  font-size: 14px;
+  font-weight: bolder;
 }
 
 .vocsidebar ul {
@@ -84,7 +86,7 @@ header h1 {
 .word-card {
   border: 1px solid rgba(221, 221, 221, 0.7);
   margin: 10px 0;
-  padding: 20px;
+  padding: 5px;
   border-radius: 12px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
   background: linear-gradient(145deg, rgba(249, 249, 249, 0.9), rgba(240, 240, 240, 0.8));
@@ -96,7 +98,7 @@ header h1 {
   background: linear-gradient(145deg, rgba(230, 230, 230, 1), rgba(220, 220, 220, 1));
 }
 
-.word-card h3 {
+.word-card voch3 {
   margin-top: 0;
   color: rgba(0, 200, 83, 0.9);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -162,7 +164,7 @@ header h1 {
   .vocsidebar {
     background: linear-gradient(135deg, rgba(46, 46, 46, 0.9), rgba(40, 40, 40, 0.7));
     border-right: 1px solid rgba(68, 68, 68, 0.5);
-    color: #fff;  /* 更改为白色字体 */
+    color: #137d34;  /* 更改为白色字体 */
   }
 
   .voccontent {
@@ -175,7 +177,7 @@ header h1 {
     color: #fff;  /* 确保文字颜色为白色 */
   }
 
-  .word-card h3 {
+  .word-card voch3 {
     color: rgba(128, 255, 216, 0.9);  /* 更改为更亮的颜色 */
   }
 
@@ -193,7 +195,7 @@ header h1 {
 .scrollable-list {
   max-height: 198vh;
   overflow-y: auto;
-  padding: 10px;
+  padding: 5px;
   background: rgba(255, 255, 255, 0.9);
   border-radius: 12px;
   box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1);

@@ -214,7 +214,7 @@ function renderWords(category = "all", searchQuery = "") {
         const card = document.createElement("div");
         card.classList.add("word-card");
         card.innerHTML = `
-            <h3>${word}</h3>
+            <voch3><strong>${word}</strong></voch3>
             <p><strong>Category:</strong> ${category}</p>
             <p><strong>Meaning:</strong> ${meaning}</p>
             <p><strong>Example:</strong> ${example}</p>
