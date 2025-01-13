@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>动态提示信息</title>
+  <title>格式化提示信息</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -34,14 +34,15 @@
       left: 50%;
       transform: translate(-50%, -50%);
       background-color: #fff;
-      padding: 10px 20px;
+      padding: 20px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       border-radius: 4px;
       display: none;
       z-index: 10;
-      max-width: 90%; /* 限制宽度不超过屏幕宽度的 90% */
-      word-wrap: break-word; /* 长单词自动换行 */
-      text-align: center; /* 居中文本 */
+      max-width: 90%;
+    min-width: 300px; /* 增加最小宽度 */
+    word-wrap: break-word; /* 自动换行 */
+      text-align: left;
     }
 
     .popup-overlay {
@@ -58,9 +59,7 @@
 </head>
 <body>
   <div class="content">
-    <p class="clickable-text" id="text-1">点击这里显示提示信息 1</p>
-    <p class="clickable-text" id="text-2">点击这里显示提示信息 2</p>
-    <p class="clickable-text" id="text-3">点击这里显示一段很长的提示信息，用来测试提示框的自适应宽度和内容排版。</p>
+    <p class="clickable-text" id="text-1">点击显示格式化提示信息</p>
     <div id="popup" class="popup-message"></div>
   </div>
   <div id="overlay" class="popup-overlay"></div>
@@ -70,16 +69,27 @@
     const popup = document.getElementById('popup');
     const overlay = document.getElementById('overlay');
 
-    // 定义提示内容
+    // 定义格式化的提示内容
     const messages = {
-      'text-1': '这是提示信息 1：欢迎使用我们的功能！',
-      'text-2': '这是提示信息 2：动态提示内容已经加载成功！',
-      'text-3': '这是一个非常长的提示信息，用于测试自适应宽度和换行的效果。如果内容过多，提示框应该能够自动调整宽度，保持美观。'
+      'text-1': `
+        <p><strong>原文：</strong><br />
+        The 1910 Cuba hurricane was said to be one of the worst tropical cyclones that has ever hit Cuba.</p>
+        <p><strong>1. 句子主干：</strong><br />
+        • <em>The 1910 Cuba hurricane was one of the worst tropical cyclones.</em><br />
+        • <em>was said to be：</em> 被认为是（被动语态）。</p>
+        <p><strong>2. 注解：</strong><br />
+        • <strong>hurricane：</strong> 飓风，关键词。<br />
+        • <strong>one of the worst：</strong> 最严重的之一，表强调。<br />
+        • <strong>tropical cyclones：</strong> 热带气旋，科学术语，hurricane 的同义词。<br />
+        • <strong>has ever hit Cuba：</strong> 现在完成时，说明事件影响至今仍被提及。</p>
+        <p><strong>3. 翻译：</strong><br />
+        1910年的古巴飓风被认为是袭击古巴最严重的热带气旋之一。</p>
+      `
     };
 
     // 显示提示框
     const showPopup = (textId) => {
-      popup.innerText = messages[textId]; // 动态设置提示内容
+      popup.innerHTML = messages[textId]; // 使用 innerHTML 允许解析 HTML 内容
       popup.style.display = 'block';
       overlay.style.display = 'block';
     };
