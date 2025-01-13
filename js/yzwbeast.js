@@ -412,20 +412,6 @@ window.onload = function () {
     //html   -  ToolTip提示框HTML内容
     //width  -  ToolTip提示框宽度（可选）
     //height - ToolTip提示框高度（可选）
-    function toggleTooltip(element, id, message) {
-        let tooltip = document.getElementById(id + "-tooltip");
-        if (!tooltip) {
-            tooltip = document.createElement("div");
-            tooltip.id = id + "-tooltip";
-            tooltip.className = "tooltip-content";
-            tooltip.innerHTML = message; // 支持HTML内容
-            document.body.appendChild(tooltip);
-        }
-        const rect = element.getBoundingClientRect();
-        tooltip.style.left = rect.left + window.scrollX + "px";
-        tooltip.style.top = rect.bottom + window.scrollY + "px";
-        tooltip.style.display = tooltip.style.display === "block" ? "none" : "block";
-    }
 
     function showTooltip(obj, id, html, width, height) {
         let toolTipBox = document.getElementById(id);
@@ -584,47 +570,85 @@ window.onload = function () {
         showTooltip(this, "t18", '原文：<br />At least 100 people died in Cuba alone.<br />1. 句子主干：<br />• At least 100 people died.<br />2. 注解：<br />• at least：至少，表最低估计。<br />• in Cuba alone：仅在古巴，表范围。<br />3. 翻译：仅在古巴，就有至少100人死亡。', 88);
     };
 
-    // 为点击事件绑定功能
-    var t6_1 = document.getElementById("tooltipt6_1");
-    t6_1.onclick = function () {
-        toggleTooltip(
-            this,
-            "t6_1",
-            `步骤一：快速浏览<br />目标：抓住主题和结构。<br />
-         1. 快速阅读全文：先不查单词，尝试理解文章的大意和主旨。<br />
-         &nbsp;&nbsp;&nbsp;&nbsp;示例：这篇文章主要讲述的是 1910 年古巴飓风及其对古巴和美国的影响。<br />
-         2. 识别关键词：如 <i>hurricane</i>（飓风）、<i>damage</i>（破坏）、<i>Cuba</i>（古巴）。<br />
-         步骤二：精读与注解<br />目标：逐句深入理解文章内容。<br />
-         1. 逐句精读：找出句子主干（主语+谓语+宾语），结合上下文理解新单词。<br />
-         &nbsp;&nbsp;&nbsp;&nbsp;示例：<br />
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;原文：<i>The 1910 Cuba hurricane was said to be one of the worst tropical cyclones that has ever hit Cuba.</i><br />
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主干：<i>The 1910 Cuba hurricane was one of the worst tropical cyclones.</i><br />
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;理解：描述这次飓风是古巴最严重的热带气旋之一。<br />
-         2. 段落划分与标记：将文章分段，标记核心信息。<br />
-         &nbsp;&nbsp;&nbsp;&nbsp;示例：<br />
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一段：飓风的形成和路径。<br />
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二段：飓风的影响（古巴和佛罗里达的损失）。<br />
-         步骤三：总结与复述<br />目标：用自己的语言整理和表达文章内容。<br />
-         1. 写简短总结：用自己的语言概括主要内容。<br />
-         &nbsp;&nbsp;&nbsp;&nbsp;示例：<i>The 1910 Cuba hurricane caused serious damage in Cuba and Florida. Many homes were destroyed, and over 100 people died in Cuba.</i><br />
-         2. 尝试复述：用自己的语言复述文章内容，巩固记忆并提升语言表达能力。<br />
-         步骤四：词汇扩展<br />目标：积累和灵活运用高频词汇。<br />
-         1. 记录高频词汇：标记和整理常见单词。<br />
-         &nbsp;&nbsp;&nbsp;&nbsp;示例：<br />
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>hurricane</i>（飓风）<br />
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>damage</i>（破坏）<br />
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>flooding</i>（洪水）<br />
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>disaster</i>（灾难）<br />
-         2. 新词造句：用关键单词造句，强化记忆。<br />
-         &nbsp;&nbsp;&nbsp;&nbsp;示例：<br />
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>The hurricane caused severe damage to the city.</i><br />
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>After the storm made landfall, it caused heavy flooding.</i><br />
-         步骤五：结合听力与跟读<br />目标：通过听和说强化语感和发音。<br />
-         1. 寻找音频：尽量找到文章朗读音频或类似主题的新闻音频，练习听力。<br />
-         2. 模仿发音：跟随音频朗读，注意连读、重音和语调，提升发音准确性和语感。<br />
-         每日练习建议<br />每天坚持阅读一篇简短新闻，按照以上步骤操作，逐步提高单词量、阅读理解、听力和口语表达能力。坚持一段时间后，进步将会显而易见！`
-        );
-    };
+    // t6_1.onclick = function () {
+    //     toggleTooltip(
+    //         this,
+    //         "t6_1",
+    //         `步骤一：快速浏览<br />目标：抓住主题和结构。<br />
+    //      1. 快速阅读全文：先不查单词，尝试理解文章的大意和主旨。<br />
+    //      &nbsp;&nbsp;&nbsp;&nbsp;示例：这篇文章主要讲述的是 1910 年古巴飓风及其对古巴和美国的影响。<br />
+    //      2. 识别关键词：如 <i>hurricane</i>（飓风）、<i>damage</i>（破坏）、<i>Cuba</i>（古巴）。<br />
+    //      步骤二：精读与注解<br />目标：逐句深入理解文章内容。<br />
+    //      1. 逐句精读：找出句子主干（主语+谓语+宾语），结合上下文理解新单词。<br />
+    //      &nbsp;&nbsp;&nbsp;&nbsp;示例：<br />
+    //      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;原文：<i>The 1910 Cuba hurricane was said to be one of the worst tropical cyclones that has ever hit Cuba.</i><br />
+    //      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主干：<i>The 1910 Cuba hurricane was one of the worst tropical cyclones.</i><br />
+    //      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;理解：描述这次飓风是古巴最严重的热带气旋之一。<br />
+    //      2. 段落划分与标记：将文章分段，标记核心信息。<br />
+    //      &nbsp;&nbsp;&nbsp;&nbsp;示例：<br />
+    //      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一段：飓风的形成和路径。<br />
+    //      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二段：飓风的影响（古巴和佛罗里达的损失）。<br />
+    //      步骤三：总结与复述<br />目标：用自己的语言整理和表达文章内容。<br />
+    //      1. 写简短总结：用自己的语言概括主要内容。<br />
+    //      &nbsp;&nbsp;&nbsp;&nbsp;示例：<i>The 1910 Cuba hurricane caused serious damage in Cuba and Florida. Many homes were destroyed, and over 100 people died in Cuba.</i><br />
+    //      2. 尝试复述：用自己的语言复述文章内容，巩固记忆并提升语言表达能力。<br />
+    //      步骤四：词汇扩展<br />目标：积累和灵活运用高频词汇。<br />
+    //      1. 记录高频词汇：标记和整理常见单词。<br />
+    //      &nbsp;&nbsp;&nbsp;&nbsp;示例：<br />
+    //      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>hurricane</i>（飓风）<br />
+    //      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>damage</i>（破坏）<br />
+    //      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>flooding</i>（洪水）<br />
+    //      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>disaster</i>（灾难）<br />
+    //      2. 新词造句：用关键单词造句，强化记忆。<br />
+    //      &nbsp;&nbsp;&nbsp;&nbsp;示例：<br />
+    //      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>The hurricane caused severe damage to the city.</i><br />
+    //      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>After the storm made landfall, it caused heavy flooding.</i><br />
+    //      步骤五：结合听力与跟读<br />目标：通过听和说强化语感和发音。<br />
+    //      1. 寻找音频：尽量找到文章朗读音频或类似主题的新闻音频，练习听力。<br />
+    //      2. 模仿发音：跟随音频朗读，注意连读、重音和语调，提升发音准确性和语感。<br />
+    //      每日练习建议<br />每天坚持阅读一篇简短新闻，按照以上步骤操作，逐步提高单词量、阅读理解、听力和口语表达能力。坚持一段时间后，进步将会显而易见！`
+    //     );
+    // };
+    document.addEventListener("DOMContentLoaded", function () {
+        const tooltipElement = document.getElementById("tooltipt6_1");
+    
+        tooltipElement.addEventListener("click", function () {
+            toggleTooltip(
+                this,
+                "t6_1",
+                `步骤一：快速浏览<br />目标：抓住主题和结构。<br />
+                1. 快速阅读全文：先不查单词，尝试理解文章的大意和主旨。<br />
+                示例：这篇文章主要讲述的是 1910 年古巴飓风及其对古巴和美国的影响。<br />
+                2. 识别关键词：如 <i>hurricane</i>（飓风）、<i>damage</i>（破坏）、<i>Cuba</i>（古巴）。<br />
+                ...<br />`
+            );
+        });
+    
+        function toggleTooltip(element, id, message) {
+            let tooltip = document.getElementById(id + "-tooltip");
+    
+            // 创建 Tooltip 内容
+            if (!tooltip) {
+                tooltip = document.createElement("div");
+                tooltip.id = id + "-tooltip";
+                tooltip.className = "tooltip-content";
+                tooltip.innerHTML = message;
+                document.body.appendChild(tooltip);
+            }
+    
+            // 切换显示状态
+            const isVisible = tooltip.style.display === "block";
+            tooltip.style.display = isVisible ? "none" : "block";
+    
+            // 设置 Tooltip 位置
+            if (!isVisible) {
+                const rect = element.getBoundingClientRect();
+                tooltip.style.left = rect.left + window.scrollX + "px";
+                tooltip.style.top = rect.bottom + window.scrollY + "px";
+            }
+        }
+    });
+    
     t6.onclick = function () {
         toggleTooltip(this, "t6", '原文：<br />The 1910 Cuba hurricane was said to be one of the worst tropical cyclones that has ever hit Cuba.<br />1. 句子主干：<br />• The 1910 Cuba hurricane was one of the worst tropical cyclones.<br />• was said to be：被认为是（被动语态）。<br />2. 注解：<br />• hurricane：飓风，关键词。<br />• one of the worst：最严重的之一，表强调。<br />• tropical cyclones：热带气旋，科学术语，hurricane 的同义词。<br />• has ever hit Cuba：现在完成时，说明事件影响至今仍被提及。<br />3. 翻译：1910年的古巴飓风被认为是袭击古巴最严重的热带气旋之一。', 88);
     };
