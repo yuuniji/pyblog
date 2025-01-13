@@ -22,7 +22,7 @@ function fn() {
 
     // 获取实际样式
     var taStyle = window.getComputedStyle(ta);
-    
+
     if (taStyle.display === 'none') {
         // 显示部分内容
         w.style.width = '100%';
@@ -128,135 +128,135 @@ loadComponent('../components/enmusic.html', 'enmusic-container');
 
 // 使用 JavaScript 动态加载 vocabulary.html
 fetch('../components/vocabulary.html')
-.then(response => response.text())
-.then(html => {
-    document.getElementById('vocabulary-container').innerHTML = html;
+    .then(response => response.text())
+    .then(html => {
+        document.getElementById('vocabulary-container').innerHTML = html;
 
-    // 重新加载 vocabulary.html 的样式和脚本
-    const cssLink = document.querySelector('link[href="/css/vocabulary.css"]');
-    if (!cssLink) {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = '/css/vocabulary.css';
-        document.head.appendChild(link);
-    }
+        // 重新加载 vocabulary.html 的样式和脚本
+        const cssLink = document.querySelector('link[href="/css/vocabulary.css"]');
+        if (!cssLink) {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = '/css/vocabulary.css';
+            document.head.appendChild(link);
+        }
 
-    const script = document.createElement('script');
-    script.src = '/js/vocabulary.js';
-    script.type = 'text/javascript';
-    document.body.appendChild(script);
-})
-.catch(err => console.error('Failed to load vocabulary.html:', err));
+        const script = document.createElement('script');
+        script.src = '/js/vocabulary.js';
+        script.type = 'text/javascript';
+        document.body.appendChild(script);
+    })
+    .catch(err => console.error('Failed to load vocabulary.html:', err));
 
 // 使用 JavaScript 动态加载 life.html
 fetch('../components/life.html')
-.then(response => response.text())
-.then(html => {
-    document.getElementById('life-container').innerHTML = html;
+    .then(response => response.text())
+    .then(html => {
+        document.getElementById('life-container').innerHTML = html;
 
-    // 重新加载 life.html 的样式和脚本
-    const cssLink = document.querySelector('link[href="/css/life.css"]');
-    if (!cssLink) {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = '/css/life.css';
-        document.head.appendChild(link);
-    }
+        // 重新加载 life.html 的样式和脚本
+        const cssLink = document.querySelector('link[href="/css/life.css"]');
+        if (!cssLink) {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = '/css/life.css';
+            document.head.appendChild(link);
+        }
 
-    const script = document.createElement('script');
-    script.src = '/js/life.js';
-    script.type = 'text/javascript';
-    document.body.appendChild(script);
-})
-.catch(err => console.error('Failed to load life.html:', err));
+        const script = document.createElement('script');
+        script.src = '/js/life.js';
+        script.type = 'text/javascript';
+        document.body.appendChild(script);
+    })
+    .catch(err => console.error('Failed to load life.html:', err));
 
 // 使用 JavaScript 动态加载 ebook.html
 fetch('../components/ebook.html')
-.then(response => response.text())
-.then(html => {
-    document.getElementById('ebook-container').innerHTML = html;
+    .then(response => response.text())
+    .then(html => {
+        document.getElementById('ebook-container').innerHTML = html;
 
-    // 重新加载 ebook.html 的样式和脚本
-    const cssLink = document.querySelector('link[href="/css/ebook.css"]');
-    if (!cssLink) {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = '/css/ebook.css';
-        document.head.appendChild(link);
-    }
+        // 重新加载 ebook.html 的样式和脚本
+        const cssLink = document.querySelector('link[href="/css/ebook.css"]');
+        if (!cssLink) {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = '/css/ebook.css';
+            document.head.appendChild(link);
+        }
 
-    const script = document.createElement('script');
-    script.src = '/js/ebook.js';
-    script.type = 'text/javascript';
-    document.body.appendChild(script);
-})
-.catch(err => console.error('Failed to load ebook.html:', err));
+        const script = document.createElement('script');
+        script.src = '/js/ebook.js';
+        script.type = 'text/javascript';
+        document.body.appendChild(script);
+    })
+    .catch(err => console.error('Failed to load ebook.html:', err));
 
 
 // 使用 JavaScript 动态加载 encards.html
 fetch('/components/encards.html')
-.then(response => response.text())
-.then(html => {
-    document.getElementById('encards-container').innerHTML = html;
+    .then(response => response.text())
+    .then(html => {
+        document.getElementById('encards-container').innerHTML = html;
 
-    // 重新加载 encards.html 的样式和脚本
-    const cssLink = document.querySelector('link[href="/css/encards.css"]');
-    if (!cssLink) {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = '/css/encards.css';
-        document.head.appendChild(link);
-    }
+        // 重新加载 encards.html 的样式和脚本
+        const cssLink = document.querySelector('link[href="/css/encards.css"]');
+        if (!cssLink) {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = '/css/encards.css';
+            document.head.appendChild(link);
+        }
 
-    const script = document.createElement('script');
-    script.src = '/js/encards.js';
-    script.type = 'text/javascript';
-    document.body.appendChild(script);
-})
-.catch(err => console.error('Failed to load encards.html:', err));
+        const script = document.createElement('script');
+        script.src = '/js/encards.js';
+        script.type = 'text/javascript';
+        document.body.appendChild(script);
+    })
+    .catch(err => console.error('Failed to load encards.html:', err));
 
 
 // 使用 JavaScript 动态加载 suns.html
 fetch('/components/suns.html')
-.then(response => response.text())
-.then(html => {
-    document.getElementById('suns-container').innerHTML = html;
+    .then(response => response.text())
+    .then(html => {
+        document.getElementById('suns-container').innerHTML = html;
 
-    // 重新加载 suns.html 的样式和脚本
-    const cssLink = document.querySelector('link[href="/css/sun.css"]');
-    if (!cssLink) {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = '/css/sun.css';
-        document.head.appendChild(link);
-    }
+        // 重新加载 suns.html 的样式和脚本
+        const cssLink = document.querySelector('link[href="/css/sun.css"]');
+        if (!cssLink) {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = '/css/sun.css';
+            document.head.appendChild(link);
+        }
 
-    const script = document.createElement('script');
-    script.src = '/js/sun.js';
-    script.type = 'text/javascript';
-    document.body.appendChild(script);
-})
-.catch(err => console.error('Failed to load suns.html:', err));
+        const script = document.createElement('script');
+        script.src = '/js/sun.js';
+        script.type = 'text/javascript';
+        document.body.appendChild(script);
+    })
+    .catch(err => console.error('Failed to load suns.html:', err));
 
 
 // 使用 JavaScript 动态加载 part2.html
 fetch('/components/part2.html')
-.then(response => response.text())
-.then(html => {
-    document.getElementById('part2').innerHTML = html;
-})
-.catch(err => console.error('Failed to load part2.html:', err));
+    .then(response => response.text())
+    .then(html => {
+        document.getElementById('part2').innerHTML = html;
+    })
+    .catch(err => console.error('Failed to load part2.html:', err));
 
 // 计算相对路径
 const getPart2Path = () => {
     // 获取当前页面的路径并拆分
     const pathParts = window.location.pathname.split('/');
-    
+
     // 计算当前文件所在的目录层级
     const depth = pathParts.filter(part => part !== '').length - 1;
 
@@ -391,7 +391,7 @@ var quote = quotes[rand1];
 
 //tip
 
-window.onload = function() {
+window.onload = function () {
     //绑定事件的函数
     function addEvent(obj, event, fn) { //要绑定的元素对象，要绑定的事件，触发的回调函数
         if (obj.addEventListener) { //非IE，支持冒泡和捕获
@@ -403,7 +403,7 @@ window.onload = function() {
     //通过用户代理的方式判断是否是IE的方法，不能判断出IE11
     var isIE = navigator.userAgent.indexOf("MSIE") > -1;
 
-    var $ = function(id) {
+    var $ = function (id) {
         return document.getElementById(id);
     }
     // var demo = $("demo");
@@ -413,42 +413,70 @@ window.onload = function() {
     //width  -  ToolTip提示框宽度（可选）
     //height - ToolTip提示框高度（可选）
     function showTooltip(obj, id, html, width, height) {
-        if ($(id) == null) {
-            //创建 <div class="tooltip-box" id="xx">xxxxxxxx</div>
-            var toolTipBox;
+        let toolTipBox = document.getElementById(id);
+    
+        if (!toolTipBox) {
+            // 创建 tooltip box
             toolTipBox = document.createElement('div');
             toolTipBox.className = "tooltip-box";
             toolTipBox.id = id;
             toolTipBox.innerHTML = html;
+    
             obj.appendChild(toolTipBox);
-            // toolTipBox.style.width = width ? width + 'px' : "auto";
-            toolTipBox.style.height = height ? height + 'px' : "auto";
+    
+            // 设置高度
+            toolTipBox.style.height = height ? `${height}px` : "auto";
+    
+            // 如果是 IE 浏览器且未设置宽度
             if (!width && isIE) {
-                toolTipBox.style.width = toolTipBox.offsetWidth; //因为IE不支持auto属性
+                toolTipBox.style.width = `${toolTipBox.offsetWidth}px`; // IE 不支持 auto 属性
             }
+    
+            // 基本样式设置
             toolTipBox.style.position = 'absolute';
             toolTipBox.style.display = 'block';
-            var left = obj.offsetLeft;
-            var top = obj.offsetTop + 20;
-            //当浏览器窗口缩小时不让提示框超出浏览器
-            if (left + toolTipBox.offsetWidth > document.body.clientWidth) {
-                var demoLeft = demo.offsetLeft;
-                left = document.body.clientWidth - toolTipBox.offsetWidth - demoLeft;
-                if (left < 0)
-                    left = 0;
-            }
-            toolTipBox.style.left = left + 'px';
-            toolTipBox.style.top = top + 'px';
-            addEvent(obj, "mouseleave", function() {
-                setTimeout(function() {
-                    $(id).style.display = 'none';
+    
+            const left = Math.max(
+                0,
+                Math.min(
+                    obj.offsetLeft,
+                    document.body.clientWidth - toolTipBox.offsetWidth
+                )
+            );
+    
+            const top = obj.offsetTop + 20;
+    
+            toolTipBox.style.left = `${left}px`;
+            toolTipBox.style.top = `${top}px`;
+    
+            // 添加 mouseleave 事件
+            obj.addEventListener("mouseleave", () => {
+                setTimeout(() => {
+                    const tooltip = document.getElementById(id);
+                    if (tooltip) tooltip.style.display = 'none';
                 }, 300);
             });
         } else {
-            //显示
-            $(id).style.display = 'block';
+            // 如果已经存在，直接显示
+            toolTipBox.style.display = 'block';
         }
     }
+
+    // function toggleTooltip(element, id, message) {
+    //     let tooltip = document.getElementById(id + "-tooltip");
+    //     if (!tooltip) {
+    //         tooltip = document.createElement("div");
+    //         tooltip.id = id + "-tooltip";
+    //         tooltip.className = "tooltip-content";
+    //         tooltip.textContent = message;
+    //         document.body.appendChild(tooltip);
+    //     }
+    //     const rect = element.getBoundingClientRect();
+    //     tooltip.style.left = rect.left + window.scrollX + "px";
+    //     tooltip.style.top = rect.bottom + window.scrollY + "px";
+    //     tooltip.style.display = tooltip.style.display === "block" ? "none" : "block";
+    // }
+
     var t1 = $("tooltip1");
     var t2 = $("tooltip2");
     var t3 = $("tooltip3");
@@ -464,58 +492,77 @@ window.onload = function() {
     var t13 = $("tooltip13");
     var t14 = $("tooltip14");
     var t15 = $("tooltip15");
-    var t16 = $("tooltip14");
-    var t17 = $("tooltip15");
-    t1.onmouseenter = function() {
+    var t16 = $("tooltip16");
+    var t17 = $("tooltip17");
+    var t18 = $("tooltip18");
+    t1.onmouseenter = function () {
         showTooltip(this, "t1", '进入页面全屏模式', 88);
     };
-    t2.onmouseenter = function() {
+    t2.onmouseenter = function () {
         showTooltip(this, "t2", '退出页面全屏模式', 88);
     };
-    t3.onmouseenter = function() {
+    t3.onmouseenter = function () {
         showTooltip(this, "t3", '进入全屏模式', 88);
     };
-    t4.onmouseenter = function() {
+    t4.onmouseenter = function () {
         showTooltip(this, "t4", '退出全屏模式', 88);
     };
-    t5.onmouseenter = function() {
+    t5.onmouseenter = function () {
         showTooltip(this, "t5", 'RSS 订阅', 88);
     };
-    t6.onmouseenter = function() {
-        showTooltip(this, "t6", '研究来源1', 88);
+    t6.onmouseenter = function () {
+        showTooltip(this, "t6", '原文：<br />The 1910 Cuba hurricane was said to be one of the worst tropical cyclones that has ever hit Cuba.<br />1. 句子主干：<br />• The 1910 Cuba hurricane was one of the worst tropical cyclones.<br />• was said to be：被认为是（被动语态）。<br />2. 注解：<br />• hurricane：飓风，关键词。<br />• one of the worst：最严重的之一，表强调。<br />• tropical cyclones：热带气旋，科学术语，hurricane 的同义词。<br />• has ever hit Cuba：现在完成时，说明事件影响至今仍被提及。<br />3. 翻译：1910年的古巴飓风被认为是袭击古巴最严重的热带气旋之一。', 88);
     };
-    t7.onmouseenter = function() {
-        showTooltip(this, "t7", '研究来源2', 88);
+    t7.onmouseenter = function () {
+        showTooltip(this, "t7", '原文：<br />The storm formed in the southern Caribbean Sea on October 9, 1910.<br />1. 句子主干：<br />• The storm formed in the southern Caribbean Sea.<br />2. 注解：<br />• formed：动词，形成。<br />• southern Caribbean Sea：地理位置，“加勒比海南部”。<br />• on October 9, 1910：具体时间，表示事件起点。<br />3. 翻译：这场风暴于1910年10月9日在加勒比海南部形成。', 88);
     };
-    t8.onmouseenter = function() {
-        showTooltip(this, "t8", '研究来源3', 88);
+    t8.onmouseenter = function () {
+        showTooltip(this, "t8", '原文：<br />It grew stronger as it moved northwest.<br />1. 句子主干：<br />• It grew stronger as it moved northwest.<br />2. 注解：<br />• grew stronger：变得更强（比较级，表程度变化）。<br />• as it moved northwest：从句，表时间和过程，说明飓风路径和强度变化。<br />3. 翻译：它在向西北移动的过程中变得更加强烈。', 88);
     };
-    t9.onmouseenter = function() {
-        showTooltip(this, "t9", '研究来源4', 88);
+    t9.onmouseenter = function () {
+        showTooltip(this, "t9", '原文：<br />It then made landfall on the western end of Cuba.<br />1. 句子主干：<br />• It made landfall on the western end of Cuba.<br />2. 注解：<br />• made landfall：动词短语，意为“登陆”。<br />• western end of Cuba：古巴的西端，表地理位置。<br />3. 翻译：随后，它在古巴的西端登陆。', 88);
     };
-    t10.onmouseenter = function() {
-        showTooltip(this, "t10", '研究来源5', 88);
+    t10.onmouseenter = function () {
+        showTooltip(this, "t10", '原文：<br />The storm made a loop over open water, and then began moving towards the United States.<br />1. 句子主干：<br />• The storm made a loop, and then began moving towards the United States.<br />2. 注解：<br />• made a loop：动词短语，“形成一个环状路径”，强调飓风轨迹的特殊性。<br />• open water：意为“开阔水域”，指海洋区域。<br />• began moving：开始移动，表动作的开始。<br />3. 翻译：风暴在开阔水域形成了环状路径，然后开始向美国移动。', 88);
     };
-    t11.onmouseenter = function() {
-        showTooltip(this, "t11", '研究来源6', 88);
+    t11.onmouseenter = function () {
+
+        showTooltip(this, "t11", '原文：<br />After crossing Florida, the storm moved near the rest of the southeastern United States and passed out to sea.<br />1. 句子主干：<br />• The storm moved near the southeastern United States and passed out to sea.<br />2. 注解：<br />• crossing Florida：现在分词短语，作时间状语，表示“穿过佛罗里达州”后。<br />• passed out to sea：动词短语，指“进入大海”。<br />3. 翻译：穿过佛罗里达州后，这场风暴接近了美国东南部的其他地区，然后进入了海洋。', 88);
+
     };
-    t12.onmouseenter = function() {
-        showTooltip(this, "t12", '研究来源7', 88);
+    t12.onmouseenter = function () {
+
+        showTooltip(this, "t12", '原文：<br />Because of the storm\'s loop, some reports said it was actually two hurricanes.<br />1. 句子主干：<br />• Some reports said it was two hurricanes.<br />2. 注解：<br />• Because of：表原因。<br />• the storm\'s loop：飓风的环形路径，表特征。<br />• actually：副词，“实际上”，表强调。<br />3. 翻译：由于飓风的环形路径，有些报道称它实际上是两场飓风。', 88);
+
     };
-    t13.onmouseenter = function() {
-        showTooltip(this, "t13", '研究来源8', 88);
+    t13.onmouseenter = function () {
+
+        showTooltip(this, "t13", '原文：<br />In Cuba, the storm was one of the worst disasters in the island\'s history.<br />1. 句子主干：<br />• The storm was one of the worst disasters.<br />2. 注解：<br />• in the island\'s history：表范围，指古巴历史中。<br />3. 翻译：在古巴，这场飓风是该岛历史上最严重的灾难之一。', 88);
+
     };
-    t14.onmouseenter = function() {
-        showTooltip(this, "t14", '研究来源8', 88);
+    t14.onmouseenter = function () {
+
+        showTooltip(this, "t14", '原文：<br />There was bad damage and thousands of people lost their homes.<br />1. 句子主干：<br />• There was bad damage.<br />• Thousands of people lost their homes.<br />2. 注解：<br />• bad damage：严重破坏，表影响程度。<br />• lost their homes：失去家园，描述灾后影响。<br />3. 翻译：造成了严重的破坏，数千人失去了家园。', 88);
+
     };
-    t15.onmouseenter = function() {
-        showTooltip(this, "t15", '研究来源10', 88);
+    t15.onmouseenter = function () {
+
+        showTooltip(this, "t15", '原文：<br />In Florida, the storm also caused damage and caused flooding in some areas.<br />1. 句子主干：<br />• The storm caused damage and caused flooding.<br />2. 注解：<br />• also：表示“也”，说明影响范围。<br />• flooding in some areas：部分地区的洪水，具体描述灾害类型。<br />3. 翻译：在佛罗里达州，这场飓风也造成了破坏，并引发了一些地区的洪水。', 88);
+
     };
-    t16.onmouseenter = function() {
-        showTooltip(this, "t16", '研究来源11', 88);
+    t16.onmouseenter = function () {
+
+        showTooltip(this, "t16", '原文：<br />It is not known exactly how much damage the storm caused.<br />1. 句子主干：<br />• It is not known how much damage the storm caused.<br />2. 注解：<br />• It is not known：表被动，意为“目前尚不清楚”。<br />• how much damage：提问从句，表示破坏程度不明确。<br />3. 翻译：目前尚不清楚这场风暴究竟造成了多大的破坏。', 88);
+
     };
-    t17.onmouseenter = function() {
-        showTooltip(this, "t17", '研究来源12', 88);
+    t17.onmouseenter = function () {
+
+        showTooltip(this, "t17", '原文：<br />However, losses in Havana, Cuba were over $1 million.<br />1. 句子主干：<br />• Losses were over $1 million.<br />2. 注解：<br />• losses：损失，表经济影响。<br />• Havana, Cuba：地名，指古巴的哈瓦那。<br />3. 翻译：然而，古巴哈瓦那的损失超过了100万美元。', 88);
+
+
+    };
+    t18.onmouseenter = function () {
+        showTooltip(this, "t18", '原文：<br />At least 100 people died in Cuba alone.<br />1. 句子主干：<br />• At least 100 people died.<br />2. 注解：<br />• at least：至少，表最低估计。<br />• in Cuba alone：仅在古巴，表范围。<br />3. 翻译：仅在古巴，就有至少100人死亡。', 88);
     };
 }
 
@@ -546,606 +593,606 @@ let curr_track = document.createElement('audio');
 
 // Define the tracks that have to be played
 let track_list = [{
-        name: "7 rings",
-        artist: "Ariana Grande",
-        image: "https://pylove.us.kg/comfort-zone/7-rings.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        // image: "https://images.pexels.com/photos/2264753/pexels-photo-2264753.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/7-rings.mp3"
-    },
-    {
-        name: "7 Years",
-        artist: "Lukas Graham",
-        image: "https://pylove.us.kg/comfort-zone/7-Years.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/7-Years.mp3"
-    },
-    {
-        name: "2002",
-        artist: "Anne-Marie",
-        image: "https://pylove.us.kg/comfort-zone/2002.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/2002.mp3"
-    },
-    {
-        name: "A Thousand Miles",
-        artist: "Vanessa Carlton",
-        image: "https://pylove.us.kg/comfort-zone/A-Thousand-Miles.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/A Thousand Miles.mp3"
-    },
-    {
-        name: "Adore You",
-        artist: "Harry Styles",
-        image: "https://pylove.us.kg/comfort-zone/Adore-You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Adore You.mp3"
-    },
-    {
-        name: "All of Me",
-        artist: "John Legend",
-        image: "https://pylove.us.kg/comfort-zone/All-of-Me.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/All of Me.mp3"
-    },
-    {
-        name: "Another Love",
-        artist: "Tom Odell",
-        image: "https://pylove.us.kg/comfort-zone/Another-Love.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Another Love.mp3"
-    },
-    {
-        name: "Arcade",
-        artist: "Duncan Laurence",
-        image: "https://pylove.us.kg/comfort-zone/Arcade.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Arcade.mp3"
-    },
-    {
-        name: "Attention",
-        artist: "Charlie Puth",
-        image: "https://pylove.us.kg/comfort-zone/Attention.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Attention.mp3"
-    },
-    {
-        name: "august",
-        artist: "Taylor Swift",
-        image: "https://pylove.us.kg/comfort-zone/august.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/august.mp3"
-    },
-    {
-        name: "Be Alright",
-        artist: "Dean Lewis",
-        image: "https://pylove.us.kg/comfort-zone/Be-Alright.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Be Alright.mp3"
-    },
-    {
-        name: "Beautiful Mistakes (feat. Megan Thee Stallion)",
-        artist: "Maroon 5/Megan Thee Stallion",
-        image: "https://pylove.us.kg/comfort-zone/Beautiful-Mistakes.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Beautiful Mistakes (feat. Megan Thee Stallion).mp3"
-    },
-    {
-        name: "Bruises",
-        artist: "Lewis Capaldi",
-        image: "https://pylove.us.kg/comfort-zone/Bruises.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Bruises.mp3"
-    },
-    {
-        name: "Budapest",
-        artist: "George Ezra",
-        image: "https://pylove.us.kg/comfort-zone/Budapest.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Budapest.mp3"
-    },
-    {
-        name: "Chasing Cars",
-        artist: "Snow Patrol",
-        image: "https://pylove.us.kg/comfort-zone/Chasing-Cars.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Chasing Cars.mp3"
-    },
-    {
-        name: "Circles",
-        artist: "Post Malone",
-        image: "https://pylove.us.kg/comfort-zone/Circles.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Circles.mp3"
-    },
-    {
-        name: "Closer",
-        artist: "Ane",
-        image: "https://pylove.us.kg/comfort-zone/Closer.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Closer.mp3"
-    },
-    {
-        name: "Dancing On My Own",
-        artist: "Calum Scott",
-        image: "https://pylove.us.kg/comfort-zone/Dancing-On-My-Own.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Dancing On My Own.mp3"
-    },
-    {
-        name: "Die For You (with Ariana Grande) - Remix",
-        artist: "The Weeknd/Ariana Grande",
-        image: "https://pylove.us.kg/comfort-zone/Die-For-You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Die For You (with Ariana Grande) - Remix.mp3"
-    },
-    {
-        name: "drivers license",
-        artist: "Olivia Rodrigo",
-        image: "https://pylove.us.kg/comfort-zone/drivers-license.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/drivers license.mp3"
-    },
-    {
-        name: "Drops of Jupiter (Tell Me)",
-        artist: "Train",
-        image: "https://pylove.us.kg/comfort-zone/Drops-of-Jupiter.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Drops of Jupiter (Tell Me).mp3"
-    },
-    {
-        name: "Eastside (with Halsey & Khalid)",
-        artist: "benny blanco/Halsey/Khalid",
-        image: "https://pylove.us.kg/comfort-zone/Eastside.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Eastside (with Halsey & Khalid).mp3"
-    },
-    {
-        name: "everything i wanted",
-        artist: "Billie Eilish",
-        image: "https://pylove.us.kg/comfort-zone/everything-i-wanted.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/everything i wanted.mp3"
-    },
-    {
-        name: "Faded",
-        artist: "Alan Walker",
-        image: "https://pylove.us.kg/comfort-zone/Faded.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Faded.mp3"
-    },
-    {
-        name: "Falling",
-        artist: "Harry Styles",
-        image: "https://pylove.us.kg/comfort-zone/Falling.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Falling.mp3"
-    },
-    {
-        name: "Fireflies",
-        artist: "Owl City",
-        image: "https://pylove.us.kg/comfort-zone/Fireflies.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Fireflies.mp3"
-    },
-    {
-        name: "Firestone",
-        artist: "Kygo/Conrad Sewell",
-        image: "https://pylove.us.kg/comfort-zone/Firestone.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Firestone.mp3"
-    },
-    {
-        name: "Flowers",
-        artist: "Miley Cyrus",
-        image: "https://pylove.us.kg/comfort-zone/Flowers.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Flowers.mp3"
-    },
-    {
-        name: "FourFiveSeconds",
-        artist: "Rihanna/Kanye West/Paul McCartney",
-        image: "https://pylove.us.kg/comfort-zone/FourFiveSeconds.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/FourFiveSeconds.mp3"
-    },
-    {
-        name: "Grenade",
-        artist: "Bruno Mars",
-        image: "https://pylove.us.kg/comfort-zone/Grenade.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Grenade.mp3"
-    },
-    {
-        name: "Happier",
-        artist: "Ed Sheeran",
-        image: "https://pylove.us.kg/comfort-zone/Happier.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Happier.mp3"
-    },
-    {
-        name: "Havana (feat. Young Thug)",
-        artist: "Camila Cabello/Young Thug",
-        image: "https://pylove.us.kg/comfort-zone/Havana.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Havana (feat. Young Thug).mp3"
-    },
-    {
-        name: "Hey There Delilah",
-        artist: "Plain White T's",
-        image: "https://pylove.us.kg/comfort-zone/Hey-There-Delilah.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Hey There Delilah.mp3"
-    },
-    {
-        name: "Hey, Soul Sister",
-        artist: "Train",
-        image: "https://pylove.us.kg/comfort-zone/Hey-Soul-Sister.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Hey, Soul Sister.mp3"
-    },
-    {
-        name: "Ho Hey",
-        artist: "The Lumineers",
-        image: "https://pylove.us.kg/comfort-zone/Ho-Hey.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Ho Hey.mp3"
-    },
-    {
-        name: "Hold Me While You Wait",
-        artist: "Lewis Capaldi",
-        image: "https://pylove.us.kg/comfort-zone/Hold-Me-While-You-Wait.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Hold Me While You Wait.mp3"
-    },
-    {
-        name: "How to Save a Life",
-        artist: "The Fray",
-        image: "https://pylove.us.kg/comfort-zone/How-to-Save-a-Life.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/How to Save a Life.mp3"
-    },
-    {
-        name: "Human",
-        artist: "Rag'n'Bone Man",
-        image: "https://pylove.us.kg/comfort-zone/Human.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Human.mp3"
-    },
-    {
-        name: "I Don’t Wanna Live Forever (Fifty Shades Darker)",
-        artist: "ZAYN/Taylor Swift",
-        image: "https://pylove.us.kg/comfort-zone/I-Dont-Wanna-Live-Forever.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/I Don’t Wanna Live Forever (Fifty Shades Darker).mp3"
-    },
-    {
-        name: "I Feel It Coming",
-        artist: "The Weeknd/Daft Punk",
-        image: "https://pylove.us.kg/comfort-zone/I-Feel-It-Coming.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/I Feel It Coming.mp3"
-    },
-    {
-        name: "i hate u, i love u (feat. olivia o'brien)",
-        artist: "gnash/Olivia O'Brien",
-        image: "https://pylove.us.kg/comfort-zone/i-hate-u-i-love-u.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/i hate u, i love u (feat. olivia o'brien).mp3"
-    },
-    {
-        name: "I Like Me Better",
-        artist: "Lauv",
-        image: "https://pylove.us.kg/comfort-zone/I-Like-Me-Better.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/I Like Me Better.mp3"
-    },
-    {
-        name: "I Want It That Way",
-        artist: "Backstreet Boys",
-        image: "https://pylove.us.kg/comfort-zone/I-Want-It-That-Way.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/I Want It That Way.mp3"
-    },
-    {
-        name: "I'm Not The Only One",
-        artist: "Sam Smith",
-        image: "https://pylove.us.kg/comfort-zone/I-m-Not-The-Only-One.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/I'm Not The Only One.mp3"
-    },
-    {
-        name: "I'm Yours",
-        artist: "Jason Mraz",
-        image: "https://pylove.us.kg/comfort-zone/I-m-Yours.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/I'm Yours.mp3"
-    },
-    {
-        name: "IDGAF",
-        artist: "Dua Lipa",
-        image: "https://pylove.us.kg/comfort-zone/IDGAF.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/IDGAF.mp3"
-    },
-    {
-        name: "If I Ain't Got You",
-        artist: "Alicia Keys",
-        image: "https://pylove.us.kg/comfort-zone/If-I-Ain-t-Got-You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/If I Ain't Got You.mp3"
-    },
-    {
-        name: "It Must Have Been Love - From the Film 'Pretty Woman'",
-        artist: "Roxette",
-        image: "https://pylove.us.kg/comfort-zone/It-Must-Have-Been-Love.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/It Must Have Been Love - From the Film 'Pretty Woman'.mp3"
-    },
-    {
-        name: "Just Give Me a Reason",
-        artist: "P!nk/Nate Ruess",
-        image: "https://pylove.us.kg/comfort-zone/Just-Give-Me-a-Reason.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Just Give Me a Reason.mp3"
-    },
-    {
-        name: "Just the Way You Are",
-        artist: "Bruno Mars",
-        image: "https://pylove.us.kg/comfort-zone/Just-the-Way-You-Are.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Just the Way You Are.mp3"
-    },
-    {
-        name: "Lavender Haze",
-        artist: "Taylor Swift",
-        image: "https://pylove.us.kg/comfort-zone/Lavender-Haze.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Lavender Haze.mp3"
-    },
-    {
-        name: "Let Me Down Slowly",
-        artist: "Alec Benjamin",
-        image: "https://pylove.us.kg/comfort-zone/Let-Me-Down-Slowly.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Let Me Down Slowly.mp3"
-    },
-    {
-        name: "Let Me Love You",
-        artist: "DJ Snake/Justin Bieber",
-        image: "https://pylove.us.kg/comfort-zone/Let-Me-Love-You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Let Me Love You.mp3"
-    },
-    {
-        name: "Let You Down",
-        artist: "NF",
-        image: "https://pylove.us.kg/comfort-zone/Let-You-Down.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Let You Down.mp3"
-    },
-    {
-        name: "Lose You To Love Me",
-        artist: "Selena Gomez",
-        image: "https://pylove.us.kg/comfort-zone/Lose-You-To-Love-Me.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Lose You To Love Me.mp3"
-    },
-    {
-        name: "Love Me Like You Do - From ‘Fifty Shades Of Grey’",
-        artist: "Ellie Goulding",
-        image: "https://pylove.us.kg/comfort-zone/Love-Me-Like-You-Do---From--Fifty-Shades-Of-Grey-.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Love Me Like You Do - From ‘Fifty Shades Of Grey’.mp3"
-    },
-    {
-        name: "Love On The Brain",
-        artist: "Rihanna",
-        image: "https://pylove.us.kg/comfort-zone/Love-On-The-Brain.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Love On The Brain.mp3"
-    },
-    {
-        name: "Love Yourself",
-        artist: "Justin Bieber",
-        image: "https://pylove.us.kg/comfort-zone/Love-Yourself.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Love Yourself.mp3"
-    },
-    {
-        name: "lovely (with Khalid)",
-        artist: "Billie Eilish/Khalid",
-        image: "https://pylove.us.kg/comfort-zone/lovely-with-Khalid.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/lovely (with Khalid).mp3"
-    },
-    {
-        name: "Lover",
-        artist: "Taylor Swift",
-        image: "https://pylove.us.kg/comfort-zone/Lover.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Lover.mp3"
-    },
-    {
-        name: "Memories",
-        artist: "Maroon 5",
-        image: "https://pylove.us.kg/comfort-zone/Memories.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Memories.mp3"
-    },
-    {
-        name: "Night Changes",
-        artist: "One Direction",
-        image: "https://pylove.us.kg/comfort-zone/Night-Changes.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Night Changes.mp3"
-    },
-    {
-        name: "Paradise",
-        artist: "Coldplay",
-        image: "https://pylove.us.kg/comfort-zone/Paradise.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Paradise.mp3"
-    },
-    {
-        name: "Perfect",
-        artist: "Ed Sheeran",
-        image: "https://pylove.us.kg/comfort-zone/Perfect.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Perfect.mp3"
-    },
-    {
-        name: "Photograph",
-        artist: "Ed Sheeran",
-        image: "https://pylove.us.kg/comfort-zone/Photograph.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Photograph.mp3"
-    },
-    {
-        name: "PILLOWTALK",
-        artist: "ZAYN",
-        image: "https://pylove.us.kg/comfort-zone/PILLOWTALK.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/PILLOWTALK.mp3"
-    },
-    {
-        name: "Rewrite The Stars (with James Arthur & Anne-Marie)",
-        artist: "James Arthur/Anne-Marie",
-        image: "https://pylove.us.kg/comfort-zone/Rewrite-The-Stars-with-James-Arthur-Anne-Marie.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Rewrite The Stars (with James Arthur & Anne-Marie).mp3"
-    },
-    {
-        name: "Riptide",
-        artist: "Vance Joy",
-        image: "https://pylove.us.kg/comfort-zone/Riptide.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Riptide.mp3"
-    },
-    {
-        name: "Royals",
-        artist: "Lorde",
-        image: "https://pylove.us.kg/comfort-zone/Royals.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Royals.mp3"
-    },
-    {
-        name: "Rude",
-        artist: "MAGIC!",
-        image: "https://pylove.us.kg/comfort-zone/Rude.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Rude.mp3"
-    },
-    {
-        name: "Say You Won't Let Go",
-        artist: "James Arthur",
-        image: "https://pylove.us.kg/comfort-zone/Say-You-Won-t-Let-Go.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Say You Won't Let Go.mp3"
-    },
-    {
-        name: "Scared to Be Lonely",
-        artist: "Martin Garrix/Dua Lipa",
-        image: "https://pylove.us.kg/comfort-zone/Scared-to-Be-Lonely.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Scared to Be Lonely.mp3"
-    },
-    {
-        name: "See You Again (feat. Charlie Puth)",
-        artist: "Wiz Khalifa/Charlie Puth",
-        image: "https://pylove.us.kg/comfort-zone/See-You-Again-feat-Charlie-Puth.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/See You Again (feat. Charlie Puth).mp3"
-    },
-    {
-        name: "Señorita",
-        artist: "Shawn Mendes/Camila Cabello",
-        image: "https://pylove.us.kg/comfort-zone/Señorita.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Señorita.mp3"
-    },
-    {
-        name: "Sign of the Times",
-        artist: "Harry Styles",
-        image: "https://pylove.us.kg/comfort-zone/Sign-of-the-Times.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Sign of the Times.mp3"
-    },
-    {
-        name: "Silence",
-        artist: "Marshmello/Khalid",
-        image: "https://pylove.us.kg/comfort-zone/Silence.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Silence.mp3"
-    },
-    {
-        name: "Slow Hands",
-        artist: "Niall Horan",
-        image: "https://pylove.us.kg/comfort-zone/Slow-Hands.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Slow Hands.mp3"
-    },
-    {
-        name: "Someone Like You",
-        artist: "Adele",
-        image: "https://pylove.us.kg/comfort-zone/Someone-Like-You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Someone Like You.mp3"
-    },
-    {
-        name: "Someone You Loved",
-        artist: "Lewis Capaldi",
-        image: "https://pylove.us.kg/comfort-zone/Someone-You-Loved.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Someone You Loved.mp3"
-    },
-    {
-        name: "Stay With Me",
-        artist: "Sam Smith",
-        image: "https://pylove.us.kg/comfort-zone/Stay-With-Me.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Stay With Me.mp3"
-    },
-    {
-        name: "Story of My Life",
-        artist: "One Direction",
-        image: "https://pylove.us.kg/comfort-zone/Story-of-My-Life.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Story of My Life.mp3"
-    },
-    {
-        name: "Stuck with U (with Justin Bieber)",
-        artist: "Ariana Grande/Justin Bieber",
-        image: "https://pylove.us.kg/comfort-zone/Stuck-with-U-with-Justin-Bieber.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Stuck with U (with Justin Bieber).mp3"
-    },
-    {
-        name: "Sugar",
-        artist: "Maroon 5",
-        image: "https://pylove.us.kg/comfort-zone/Sugar.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Sugar.mp3"
-    },
-    {
-        name: "Sunflower - Spider-Man: Into the Spider-Verse",
-        artist: "Post Malone/Swae Lee",
-        image: "https://pylove.us.kg/comfort-zone/Sunflower---Spider-Man--Into-the-Spider-Verse.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Sunflower - Spider-Man: Into the Spider-Verse.mp3"
-    },
-    {
-        name: "The Scientist",
-        artist: "Coldplay",
-        image: "https://pylove.us.kg/comfort-zone/The-Scientist.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/The Scientist.mp3"
-    },
-    {
-        name: "Thinking out Loud",
-        artist: "Ed Sheeran",
-        image: "https://pylove.us.kg/comfort-zone/Thinking-out-Loud.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Thinking out Loud.mp3"
-    },
-    {
-        name: "Too Good At Goodbyes",
-        artist: "Sam Smith",
-        image: "https://pylove.us.kg/comfort-zone/Too-Good-At-Goodbyes.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Too Good At Goodbyes.mp3"
-    },
-    {
-        name: "Until I Found You (with Em Beihold) - Em Beihold Version",
-        artist: "Stephen Sanchez/Em Beihold",
-        image: "https://pylove.us.kg/comfort-zone/Until-I-Found-You-with-Em-Beihold-Em-Beihold-Version.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Until I Found You (with Em Beihold) - Em Beihold Version.mp3"
-    },
-    {
-        name: "Watermelon Sugar",
-        artist: "Harry Styles",
-        image: "https://pylove.us.kg/comfort-zone/Watermelon-Sugar.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Watermelon Sugar.mp3"
-    },
-    {
-        name: "What A Time (feat. Niall Horan)",
-        artist: "Julia Michaels/Niall Horan",
-        image: "https://pylove.us.kg/comfort-zone/What-A-Time-feat-Niall-Horan.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/What A Time (feat. Niall Horan).mp3"
-    },
-    {
-        name: "When I Was Your Man",
-        artist: "Bruno Mars",
-        image: "https://pylove.us.kg/comfort-zone/When-I-Was-Your-Man.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/When I Was Your Man.mp3"
-    },
-    {
-        name: "when the party's over",
-        artist: "Billie Eilish",
-        image: "https://pylove.us.kg/comfort-zone/when-the-party-s-over.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/when the party's over.mp3"
-    },
-    {
-        name: "Where Is The Love?",
-        artist: "Black Eyed Peas",
-        image: "https://pylove.us.kg/comfort-zone/Where-Is-The-Love.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Where Is The Love?.mp3"
-    },
-    {
-        name: "willow",
-        artist: "Taylor Swift",
-        image: "https://pylove.us.kg/comfort-zone/willow.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/willow.mp3"
-    },
-    {
-        name: "Wish You The Best",
-        artist: "Lewis Capaldi",
-        image: "https://pylove.us.kg/comfort-zone/Wish-You-The-Best.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Wish You The Best.mp3"
-    },
-    {
-        name: "Wolves",
-        artist: "Selena Gomez/Marshmello",
-        image: "https://pylove.us.kg/comfort-zone/Wolves.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Wolves.mp3"
-    },
-    {
-        name: "Wrecking Ball",
-        artist: "Miley Cyrus",
-        image: "https://pylove.us.kg/comfort-zone/Wrecking-Ball.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Wrecking Ball.mp3"
-    },
-    {
-        name: "Yellow",
-        artist: "Coldplay",
-        image: "https://pylove.us.kg/comfort-zone/Yellow.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Yellow.mp3"
-    },
-    {
-        name: "you broke me first",
-        artist: "Tate McRae",
-        image: "https://pylove.us.kg/comfort-zone/you-broke-me-first.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/you broke me first.mp3"
-    },
-    {
-        name: "Young Dumb & Broke",
-        artist: "Khalid",
-        image: "https://pylove.us.kg/comfort-zone/Young-Dumb-&-Broke.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Young Dumb & Broke.mp3"
-    },
+    name: "7 rings",
+    artist: "Ariana Grande",
+    image: "https://pylove.us.kg/comfort-zone/7-rings.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    // image: "https://images.pexels.com/photos/2264753/pexels-photo-2264753.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/7-rings.mp3"
+},
+{
+    name: "7 Years",
+    artist: "Lukas Graham",
+    image: "https://pylove.us.kg/comfort-zone/7-Years.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/7-Years.mp3"
+},
+{
+    name: "2002",
+    artist: "Anne-Marie",
+    image: "https://pylove.us.kg/comfort-zone/2002.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/2002.mp3"
+},
+{
+    name: "A Thousand Miles",
+    artist: "Vanessa Carlton",
+    image: "https://pylove.us.kg/comfort-zone/A-Thousand-Miles.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/A Thousand Miles.mp3"
+},
+{
+    name: "Adore You",
+    artist: "Harry Styles",
+    image: "https://pylove.us.kg/comfort-zone/Adore-You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Adore You.mp3"
+},
+{
+    name: "All of Me",
+    artist: "John Legend",
+    image: "https://pylove.us.kg/comfort-zone/All-of-Me.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/All of Me.mp3"
+},
+{
+    name: "Another Love",
+    artist: "Tom Odell",
+    image: "https://pylove.us.kg/comfort-zone/Another-Love.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Another Love.mp3"
+},
+{
+    name: "Arcade",
+    artist: "Duncan Laurence",
+    image: "https://pylove.us.kg/comfort-zone/Arcade.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Arcade.mp3"
+},
+{
+    name: "Attention",
+    artist: "Charlie Puth",
+    image: "https://pylove.us.kg/comfort-zone/Attention.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Attention.mp3"
+},
+{
+    name: "august",
+    artist: "Taylor Swift",
+    image: "https://pylove.us.kg/comfort-zone/august.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/august.mp3"
+},
+{
+    name: "Be Alright",
+    artist: "Dean Lewis",
+    image: "https://pylove.us.kg/comfort-zone/Be-Alright.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Be Alright.mp3"
+},
+{
+    name: "Beautiful Mistakes (feat. Megan Thee Stallion)",
+    artist: "Maroon 5/Megan Thee Stallion",
+    image: "https://pylove.us.kg/comfort-zone/Beautiful-Mistakes.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Beautiful Mistakes (feat. Megan Thee Stallion).mp3"
+},
+{
+    name: "Bruises",
+    artist: "Lewis Capaldi",
+    image: "https://pylove.us.kg/comfort-zone/Bruises.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Bruises.mp3"
+},
+{
+    name: "Budapest",
+    artist: "George Ezra",
+    image: "https://pylove.us.kg/comfort-zone/Budapest.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Budapest.mp3"
+},
+{
+    name: "Chasing Cars",
+    artist: "Snow Patrol",
+    image: "https://pylove.us.kg/comfort-zone/Chasing-Cars.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Chasing Cars.mp3"
+},
+{
+    name: "Circles",
+    artist: "Post Malone",
+    image: "https://pylove.us.kg/comfort-zone/Circles.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Circles.mp3"
+},
+{
+    name: "Closer",
+    artist: "Ane",
+    image: "https://pylove.us.kg/comfort-zone/Closer.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Closer.mp3"
+},
+{
+    name: "Dancing On My Own",
+    artist: "Calum Scott",
+    image: "https://pylove.us.kg/comfort-zone/Dancing-On-My-Own.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Dancing On My Own.mp3"
+},
+{
+    name: "Die For You (with Ariana Grande) - Remix",
+    artist: "The Weeknd/Ariana Grande",
+    image: "https://pylove.us.kg/comfort-zone/Die-For-You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Die For You (with Ariana Grande) - Remix.mp3"
+},
+{
+    name: "drivers license",
+    artist: "Olivia Rodrigo",
+    image: "https://pylove.us.kg/comfort-zone/drivers-license.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/drivers license.mp3"
+},
+{
+    name: "Drops of Jupiter (Tell Me)",
+    artist: "Train",
+    image: "https://pylove.us.kg/comfort-zone/Drops-of-Jupiter.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Drops of Jupiter (Tell Me).mp3"
+},
+{
+    name: "Eastside (with Halsey & Khalid)",
+    artist: "benny blanco/Halsey/Khalid",
+    image: "https://pylove.us.kg/comfort-zone/Eastside.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Eastside (with Halsey & Khalid).mp3"
+},
+{
+    name: "everything i wanted",
+    artist: "Billie Eilish",
+    image: "https://pylove.us.kg/comfort-zone/everything-i-wanted.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/everything i wanted.mp3"
+},
+{
+    name: "Faded",
+    artist: "Alan Walker",
+    image: "https://pylove.us.kg/comfort-zone/Faded.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Faded.mp3"
+},
+{
+    name: "Falling",
+    artist: "Harry Styles",
+    image: "https://pylove.us.kg/comfort-zone/Falling.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Falling.mp3"
+},
+{
+    name: "Fireflies",
+    artist: "Owl City",
+    image: "https://pylove.us.kg/comfort-zone/Fireflies.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Fireflies.mp3"
+},
+{
+    name: "Firestone",
+    artist: "Kygo/Conrad Sewell",
+    image: "https://pylove.us.kg/comfort-zone/Firestone.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Firestone.mp3"
+},
+{
+    name: "Flowers",
+    artist: "Miley Cyrus",
+    image: "https://pylove.us.kg/comfort-zone/Flowers.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Flowers.mp3"
+},
+{
+    name: "FourFiveSeconds",
+    artist: "Rihanna/Kanye West/Paul McCartney",
+    image: "https://pylove.us.kg/comfort-zone/FourFiveSeconds.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/FourFiveSeconds.mp3"
+},
+{
+    name: "Grenade",
+    artist: "Bruno Mars",
+    image: "https://pylove.us.kg/comfort-zone/Grenade.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Grenade.mp3"
+},
+{
+    name: "Happier",
+    artist: "Ed Sheeran",
+    image: "https://pylove.us.kg/comfort-zone/Happier.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Happier.mp3"
+},
+{
+    name: "Havana (feat. Young Thug)",
+    artist: "Camila Cabello/Young Thug",
+    image: "https://pylove.us.kg/comfort-zone/Havana.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Havana (feat. Young Thug).mp3"
+},
+{
+    name: "Hey There Delilah",
+    artist: "Plain White T's",
+    image: "https://pylove.us.kg/comfort-zone/Hey-There-Delilah.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Hey There Delilah.mp3"
+},
+{
+    name: "Hey, Soul Sister",
+    artist: "Train",
+    image: "https://pylove.us.kg/comfort-zone/Hey-Soul-Sister.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Hey, Soul Sister.mp3"
+},
+{
+    name: "Ho Hey",
+    artist: "The Lumineers",
+    image: "https://pylove.us.kg/comfort-zone/Ho-Hey.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Ho Hey.mp3"
+},
+{
+    name: "Hold Me While You Wait",
+    artist: "Lewis Capaldi",
+    image: "https://pylove.us.kg/comfort-zone/Hold-Me-While-You-Wait.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Hold Me While You Wait.mp3"
+},
+{
+    name: "How to Save a Life",
+    artist: "The Fray",
+    image: "https://pylove.us.kg/comfort-zone/How-to-Save-a-Life.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/How to Save a Life.mp3"
+},
+{
+    name: "Human",
+    artist: "Rag'n'Bone Man",
+    image: "https://pylove.us.kg/comfort-zone/Human.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Human.mp3"
+},
+{
+    name: "I Don’t Wanna Live Forever (Fifty Shades Darker)",
+    artist: "ZAYN/Taylor Swift",
+    image: "https://pylove.us.kg/comfort-zone/I-Dont-Wanna-Live-Forever.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/I Don’t Wanna Live Forever (Fifty Shades Darker).mp3"
+},
+{
+    name: "I Feel It Coming",
+    artist: "The Weeknd/Daft Punk",
+    image: "https://pylove.us.kg/comfort-zone/I-Feel-It-Coming.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/I Feel It Coming.mp3"
+},
+{
+    name: "i hate u, i love u (feat. olivia o'brien)",
+    artist: "gnash/Olivia O'Brien",
+    image: "https://pylove.us.kg/comfort-zone/i-hate-u-i-love-u.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/i hate u, i love u (feat. olivia o'brien).mp3"
+},
+{
+    name: "I Like Me Better",
+    artist: "Lauv",
+    image: "https://pylove.us.kg/comfort-zone/I-Like-Me-Better.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/I Like Me Better.mp3"
+},
+{
+    name: "I Want It That Way",
+    artist: "Backstreet Boys",
+    image: "https://pylove.us.kg/comfort-zone/I-Want-It-That-Way.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/I Want It That Way.mp3"
+},
+{
+    name: "I'm Not The Only One",
+    artist: "Sam Smith",
+    image: "https://pylove.us.kg/comfort-zone/I-m-Not-The-Only-One.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/I'm Not The Only One.mp3"
+},
+{
+    name: "I'm Yours",
+    artist: "Jason Mraz",
+    image: "https://pylove.us.kg/comfort-zone/I-m-Yours.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/I'm Yours.mp3"
+},
+{
+    name: "IDGAF",
+    artist: "Dua Lipa",
+    image: "https://pylove.us.kg/comfort-zone/IDGAF.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/IDGAF.mp3"
+},
+{
+    name: "If I Ain't Got You",
+    artist: "Alicia Keys",
+    image: "https://pylove.us.kg/comfort-zone/If-I-Ain-t-Got-You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/If I Ain't Got You.mp3"
+},
+{
+    name: "It Must Have Been Love - From the Film 'Pretty Woman'",
+    artist: "Roxette",
+    image: "https://pylove.us.kg/comfort-zone/It-Must-Have-Been-Love.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/It Must Have Been Love - From the Film 'Pretty Woman'.mp3"
+},
+{
+    name: "Just Give Me a Reason",
+    artist: "P!nk/Nate Ruess",
+    image: "https://pylove.us.kg/comfort-zone/Just-Give-Me-a-Reason.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Just Give Me a Reason.mp3"
+},
+{
+    name: "Just the Way You Are",
+    artist: "Bruno Mars",
+    image: "https://pylove.us.kg/comfort-zone/Just-the-Way-You-Are.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Just the Way You Are.mp3"
+},
+{
+    name: "Lavender Haze",
+    artist: "Taylor Swift",
+    image: "https://pylove.us.kg/comfort-zone/Lavender-Haze.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Lavender Haze.mp3"
+},
+{
+    name: "Let Me Down Slowly",
+    artist: "Alec Benjamin",
+    image: "https://pylove.us.kg/comfort-zone/Let-Me-Down-Slowly.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Let Me Down Slowly.mp3"
+},
+{
+    name: "Let Me Love You",
+    artist: "DJ Snake/Justin Bieber",
+    image: "https://pylove.us.kg/comfort-zone/Let-Me-Love-You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Let Me Love You.mp3"
+},
+{
+    name: "Let You Down",
+    artist: "NF",
+    image: "https://pylove.us.kg/comfort-zone/Let-You-Down.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Let You Down.mp3"
+},
+{
+    name: "Lose You To Love Me",
+    artist: "Selena Gomez",
+    image: "https://pylove.us.kg/comfort-zone/Lose-You-To-Love-Me.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Lose You To Love Me.mp3"
+},
+{
+    name: "Love Me Like You Do - From ‘Fifty Shades Of Grey’",
+    artist: "Ellie Goulding",
+    image: "https://pylove.us.kg/comfort-zone/Love-Me-Like-You-Do---From--Fifty-Shades-Of-Grey-.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Love Me Like You Do - From ‘Fifty Shades Of Grey’.mp3"
+},
+{
+    name: "Love On The Brain",
+    artist: "Rihanna",
+    image: "https://pylove.us.kg/comfort-zone/Love-On-The-Brain.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Love On The Brain.mp3"
+},
+{
+    name: "Love Yourself",
+    artist: "Justin Bieber",
+    image: "https://pylove.us.kg/comfort-zone/Love-Yourself.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Love Yourself.mp3"
+},
+{
+    name: "lovely (with Khalid)",
+    artist: "Billie Eilish/Khalid",
+    image: "https://pylove.us.kg/comfort-zone/lovely-with-Khalid.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/lovely (with Khalid).mp3"
+},
+{
+    name: "Lover",
+    artist: "Taylor Swift",
+    image: "https://pylove.us.kg/comfort-zone/Lover.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Lover.mp3"
+},
+{
+    name: "Memories",
+    artist: "Maroon 5",
+    image: "https://pylove.us.kg/comfort-zone/Memories.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Memories.mp3"
+},
+{
+    name: "Night Changes",
+    artist: "One Direction",
+    image: "https://pylove.us.kg/comfort-zone/Night-Changes.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Night Changes.mp3"
+},
+{
+    name: "Paradise",
+    artist: "Coldplay",
+    image: "https://pylove.us.kg/comfort-zone/Paradise.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Paradise.mp3"
+},
+{
+    name: "Perfect",
+    artist: "Ed Sheeran",
+    image: "https://pylove.us.kg/comfort-zone/Perfect.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Perfect.mp3"
+},
+{
+    name: "Photograph",
+    artist: "Ed Sheeran",
+    image: "https://pylove.us.kg/comfort-zone/Photograph.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Photograph.mp3"
+},
+{
+    name: "PILLOWTALK",
+    artist: "ZAYN",
+    image: "https://pylove.us.kg/comfort-zone/PILLOWTALK.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/PILLOWTALK.mp3"
+},
+{
+    name: "Rewrite The Stars (with James Arthur & Anne-Marie)",
+    artist: "James Arthur/Anne-Marie",
+    image: "https://pylove.us.kg/comfort-zone/Rewrite-The-Stars-with-James-Arthur-Anne-Marie.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Rewrite The Stars (with James Arthur & Anne-Marie).mp3"
+},
+{
+    name: "Riptide",
+    artist: "Vance Joy",
+    image: "https://pylove.us.kg/comfort-zone/Riptide.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Riptide.mp3"
+},
+{
+    name: "Royals",
+    artist: "Lorde",
+    image: "https://pylove.us.kg/comfort-zone/Royals.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Royals.mp3"
+},
+{
+    name: "Rude",
+    artist: "MAGIC!",
+    image: "https://pylove.us.kg/comfort-zone/Rude.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Rude.mp3"
+},
+{
+    name: "Say You Won't Let Go",
+    artist: "James Arthur",
+    image: "https://pylove.us.kg/comfort-zone/Say-You-Won-t-Let-Go.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Say You Won't Let Go.mp3"
+},
+{
+    name: "Scared to Be Lonely",
+    artist: "Martin Garrix/Dua Lipa",
+    image: "https://pylove.us.kg/comfort-zone/Scared-to-Be-Lonely.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Scared to Be Lonely.mp3"
+},
+{
+    name: "See You Again (feat. Charlie Puth)",
+    artist: "Wiz Khalifa/Charlie Puth",
+    image: "https://pylove.us.kg/comfort-zone/See-You-Again-feat-Charlie-Puth.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/See You Again (feat. Charlie Puth).mp3"
+},
+{
+    name: "Señorita",
+    artist: "Shawn Mendes/Camila Cabello",
+    image: "https://pylove.us.kg/comfort-zone/Señorita.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Señorita.mp3"
+},
+{
+    name: "Sign of the Times",
+    artist: "Harry Styles",
+    image: "https://pylove.us.kg/comfort-zone/Sign-of-the-Times.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Sign of the Times.mp3"
+},
+{
+    name: "Silence",
+    artist: "Marshmello/Khalid",
+    image: "https://pylove.us.kg/comfort-zone/Silence.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Silence.mp3"
+},
+{
+    name: "Slow Hands",
+    artist: "Niall Horan",
+    image: "https://pylove.us.kg/comfort-zone/Slow-Hands.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Slow Hands.mp3"
+},
+{
+    name: "Someone Like You",
+    artist: "Adele",
+    image: "https://pylove.us.kg/comfort-zone/Someone-Like-You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Someone Like You.mp3"
+},
+{
+    name: "Someone You Loved",
+    artist: "Lewis Capaldi",
+    image: "https://pylove.us.kg/comfort-zone/Someone-You-Loved.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Someone You Loved.mp3"
+},
+{
+    name: "Stay With Me",
+    artist: "Sam Smith",
+    image: "https://pylove.us.kg/comfort-zone/Stay-With-Me.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Stay With Me.mp3"
+},
+{
+    name: "Story of My Life",
+    artist: "One Direction",
+    image: "https://pylove.us.kg/comfort-zone/Story-of-My-Life.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Story of My Life.mp3"
+},
+{
+    name: "Stuck with U (with Justin Bieber)",
+    artist: "Ariana Grande/Justin Bieber",
+    image: "https://pylove.us.kg/comfort-zone/Stuck-with-U-with-Justin-Bieber.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Stuck with U (with Justin Bieber).mp3"
+},
+{
+    name: "Sugar",
+    artist: "Maroon 5",
+    image: "https://pylove.us.kg/comfort-zone/Sugar.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Sugar.mp3"
+},
+{
+    name: "Sunflower - Spider-Man: Into the Spider-Verse",
+    artist: "Post Malone/Swae Lee",
+    image: "https://pylove.us.kg/comfort-zone/Sunflower---Spider-Man--Into-the-Spider-Verse.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Sunflower - Spider-Man: Into the Spider-Verse.mp3"
+},
+{
+    name: "The Scientist",
+    artist: "Coldplay",
+    image: "https://pylove.us.kg/comfort-zone/The-Scientist.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/The Scientist.mp3"
+},
+{
+    name: "Thinking out Loud",
+    artist: "Ed Sheeran",
+    image: "https://pylove.us.kg/comfort-zone/Thinking-out-Loud.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Thinking out Loud.mp3"
+},
+{
+    name: "Too Good At Goodbyes",
+    artist: "Sam Smith",
+    image: "https://pylove.us.kg/comfort-zone/Too-Good-At-Goodbyes.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Too Good At Goodbyes.mp3"
+},
+{
+    name: "Until I Found You (with Em Beihold) - Em Beihold Version",
+    artist: "Stephen Sanchez/Em Beihold",
+    image: "https://pylove.us.kg/comfort-zone/Until-I-Found-You-with-Em-Beihold-Em-Beihold-Version.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Until I Found You (with Em Beihold) - Em Beihold Version.mp3"
+},
+{
+    name: "Watermelon Sugar",
+    artist: "Harry Styles",
+    image: "https://pylove.us.kg/comfort-zone/Watermelon-Sugar.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Watermelon Sugar.mp3"
+},
+{
+    name: "What A Time (feat. Niall Horan)",
+    artist: "Julia Michaels/Niall Horan",
+    image: "https://pylove.us.kg/comfort-zone/What-A-Time-feat-Niall-Horan.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/What A Time (feat. Niall Horan).mp3"
+},
+{
+    name: "When I Was Your Man",
+    artist: "Bruno Mars",
+    image: "https://pylove.us.kg/comfort-zone/When-I-Was-Your-Man.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/When I Was Your Man.mp3"
+},
+{
+    name: "when the party's over",
+    artist: "Billie Eilish",
+    image: "https://pylove.us.kg/comfort-zone/when-the-party-s-over.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/when the party's over.mp3"
+},
+{
+    name: "Where Is The Love?",
+    artist: "Black Eyed Peas",
+    image: "https://pylove.us.kg/comfort-zone/Where-Is-The-Love.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Where Is The Love?.mp3"
+},
+{
+    name: "willow",
+    artist: "Taylor Swift",
+    image: "https://pylove.us.kg/comfort-zone/willow.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/willow.mp3"
+},
+{
+    name: "Wish You The Best",
+    artist: "Lewis Capaldi",
+    image: "https://pylove.us.kg/comfort-zone/Wish-You-The-Best.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Wish You The Best.mp3"
+},
+{
+    name: "Wolves",
+    artist: "Selena Gomez/Marshmello",
+    image: "https://pylove.us.kg/comfort-zone/Wolves.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Wolves.mp3"
+},
+{
+    name: "Wrecking Ball",
+    artist: "Miley Cyrus",
+    image: "https://pylove.us.kg/comfort-zone/Wrecking-Ball.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Wrecking Ball.mp3"
+},
+{
+    name: "Yellow",
+    artist: "Coldplay",
+    image: "https://pylove.us.kg/comfort-zone/Yellow.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Yellow.mp3"
+},
+{
+    name: "you broke me first",
+    artist: "Tate McRae",
+    image: "https://pylove.us.kg/comfort-zone/you-broke-me-first.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/you broke me first.mp3"
+},
+{
+    name: "Young Dumb & Broke",
+    artist: "Khalid",
+    image: "https://pylove.us.kg/comfort-zone/Young-Dumb-&-Broke.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "https://pylove.us.kg/comfort-zone/Young Dumb & Broke.mp3"
+},
     // {
     //   name: "2002",
     //   artist: "2002",
