@@ -4,7 +4,7 @@ const overlay = document.getElementById('overlay');
 
 // 定义格式化的提示内容
 const messages = {
-    'text-0': `
+  'text-0': `
     <p><strong>步骤一：快速浏览</strong><br />
     <strong>目标：</strong> 抓住主题和结构。</p>
     <p>1. <strong>快速阅读全文：</strong> 先不查单词，尝试理解文章的大意和主旨。<br />
@@ -46,12 +46,12 @@ const messages = {
     <p><strong>每日练习建议</strong><br />
     &nbsp;&nbsp;&nbsp;&nbsp;每天坚持阅读一篇简短新闻，按照以上步骤操作，逐步提高单词量、阅读理解、听力和口语表达能力。坚持一段时间后，进步将会显而易见！</p>
     `,
-    'text-1': `
+  'text-1': `
     <p><strong>原文：</strong><br />
     The 1910 Cuba hurricane was said to be one of the worst tropical cyclones that has ever hit Cuba.</p>
     <p><strong>1. 句子主干：</strong><br />
-    • <em>The 1910 Cuba hurricane was one of the worst tropical cyclones.</em><br />
-    • <em>was said to be：</em> 被认为是（被动语态）。</p>
+    • <strong>The 1910 Cuba hurricane</strong> was <strong>one of the worst tropical cyclones.</strong><br />
+    • <strong>was said to be：</strong> 被认为是（被动语态）。</p>
     <p><strong>2. 注解：</strong><br />
     • <strong>hurricane：</strong> 飓风，关键词。<br />
     • <strong>one of the worst：</strong> 最严重的之一，表强调。<br />
@@ -60,11 +60,11 @@ const messages = {
     <p><strong>3. 翻译：</strong><br />
     1910年的古巴飓风被认为是袭击古巴最严重的热带气旋之一。</p>
   `,
-    'text-2': `
-        <p>原文：<br />
+  'text-2': `
+        <p><strong>原文：</strong><br />
         The storm formed in the southern Caribbean Sea on October 9, 1910.</p>
         <p><strong>1. 句子主干：</strong><br />
-        • <em>The storm formed in the southern Caribbean Sea.</em><br />
+        • The storm <strong>formed</strong> in the southern Caribbean Sea.<br />
         <p><strong>2. 注解：</strong><br />
         • <strong>formed：</strong> 动词，形成。<br />
         • <strong>southern Caribbean Sea：</strong> 地理位置，“加勒比海南部”。<br />
@@ -72,22 +72,22 @@ const messages = {
         <p><strong>3. 翻译：</strong><br />
         这场风暴于1910年10月9日在加勒比海南部形成。</p>
     `,
-    'text-3': `
-        <p>原文：<br />
+  'text-3': `
+        <p><strong>原文：</strong><br />
         It grew stronger as it moved northwest.</p>
         <p><strong>1. 句子主干：</strong><br />
-        • <em>It grew stronger as it moved northwest.</em><br />
+        • It <strong>grew stronger</strong> as it <strong>moved northwest</strong>.<br />
         <p><strong>2. 注解：</strong><br />
         • <strong>grew stronger：</strong> 变得更强（比较级，表程度变化）。<br />
         • <strong>as it moved northwest：</strong> 从句，表时间和过程，说明飓风路径和强度变化。<br />
         <p><strong>3. 翻译：</strong><br />
         它在向西北移动的过程中变得更加强烈。</p>
     `,
-    'text-4': `
-        <p>原文：<br />
+  'text-4': `
+        <p><strong>原文：</strong><br />
         It then made landfall on the western end of Cuba.</p>
         <p><strong>1. 句子主干：</strong><br />
-        • <em>It made landfall on the western end of Cuba.</em><br />
+        • It <strong>made landfall</strong> on the western end of Cuba.<br />
         <p><strong>2. 注解：</strong><br />
         • <strong>made landfall：</strong> 动词短语，意为“登陆”。<br />
         • <strong>western end of Cuba：</strong> 古巴的西端，表地理位置。<br />
@@ -95,11 +95,11 @@ const messages = {
         随后，它在古巴的西端登陆。</p>
     `,
 
-    'text-5': `
+  'text-5': `
           <p><strong>原文：</strong><br />
           The storm made a loop over open water, and then began moving towards the United States.</p>
           <p><strong>1. 句子主干：</strong><br />
-          • <em>The storm made a loop, and then began moving towards the United States.</em></p>
+          • The storm <strong>made a loop</strong>, and then <strong>began moving</strong> towards the United States.</p>
           <p><strong>2. 注解：</strong><br />
           • <strong>made a loop：</strong> 动词短语，“形成一个环状路径”，强调飓风轨迹的特殊性。<br />
           • <strong>open water：</strong> 意为“开阔水域”，指海洋区域。<br />
@@ -107,22 +107,22 @@ const messages = {
           <p><strong>3. 翻译：</strong><br />
           风暴在开阔水域形成了环状路径，然后开始向美国移动。</p>
         `,
-    'text-6': `
+  'text-6': `
           <p><strong>原文：</strong><br />
           After crossing Florida, the storm moved near the rest of the southeastern United States and passed out to sea.</p>
           <p><strong>1. 句子主干：</strong><br />
-          • <em>The storm moved near the southeastern United States and passed out to sea.</em></p>
+          • The storm <strong>moved near</strong> the southeastern United States and <strong>passed out to sea</strong>.</p>
           <p><strong>2. 注解：</strong><br />
           • <strong>crossing Florida：</strong> 现在分词短语，作时间状语，表示“穿过佛罗里达州”后。<br />
           • <strong>passed out to sea：</strong> 动词短语，指“进入大海”。</p>
           <p><strong>3. 翻译：</strong><br />
           穿过佛罗里达州后，这场风暴接近了美国东南部的其他地区，然后进入了海洋。</p>
         `,
-    'text-7': `
+  'text-7': `
     <p><strong>原文：</strong><br />
     Because of the storm's loop, some reports said it was actually two hurricanes.</p>
     <p><strong>1. 句子主干：</strong><br />
-    • <em>Some reports said it was two hurricanes.</em></p>
+    • Some reports <strong>said</strong> it <strong>was</strong> two hurricanes.</p>
     <p><strong>2. 注解：</strong><br />
     • <strong>Because of：</strong> 表原因。<br />
     • <strong>the storm's loop：</strong> 飓风的环形路径，表特征。<br />
@@ -134,7 +134,7 @@ const messages = {
     <p><strong>原文：</strong><br />
     In Cuba, the storm was one of the worst disasters in the island's history.</p>
     <p><strong>1. 句子主干：</strong><br />
-    • <em>The storm was one of the worst disasters.</em></p>
+    • The storm <strong>was</strong> one of the worst disasters.</p>
     <p><strong>2. 注解：</strong><br />
     • <strong>in the island's history：</strong> 表范围，指古巴历史中。</p>
     <p><strong>3. 翻译：</strong><br />
@@ -144,8 +144,8 @@ const messages = {
     <p><strong>原文：</strong><br />
     There was bad damage and thousands of people lost their homes.</p>
     <p><strong>1. 句子主干：</strong><br />
-    • <em>There was bad damage.</em><br />
-    • <em>Thousands of people lost their homes.</em></p>
+    • There <strong>was</strong> bad damage.<br />
+    • Thousands of people <strong>lost</strong> their homes.</p>
     <p><strong>2. 注解：</strong><br />
     • <strong>bad damage：</strong> 严重破坏，表影响程度。<br />
     • <strong>lost their homes：</strong> 失去家园，描述灾后影响。</p>
@@ -156,7 +156,7 @@ const messages = {
     <p><strong>原文：</strong><br />
     In Florida, the storm also caused damage and caused flooding in some areas.</p>
     <p><strong>1. 句子主干：</strong><br />
-    • <em>The storm caused damage and caused flooding.</em></p>
+    • The storm <strong>caused damage</strong> and <strong>caused flooding</strong>.</p>
     <p><strong>2. 注解：</strong><br />
     • <strong>also：</strong> 表示“也”，说明影响范围。<br />
     • <strong>flooding in some areas：</strong> 部分地区的洪水，具体描述灾害类型。</p>
@@ -167,7 +167,7 @@ const messages = {
     <p><strong>原文：</strong><br />
     It is not known exactly how much damage the storm caused.</p>
     <p><strong>1. 句子主干：</strong><br />
-    • <em>It is not known how much damage the storm caused.</em></p>
+    • It <strong>is not known</strong> how much damage <strong>the storm caused</strong>.</p>
     <p><strong>2. 注解：</strong><br />
     • <strong>It is not known：</strong> 表被动，意为“目前尚不清楚”。<br />
     • <strong>how much damage：</strong> 提问从句，表示破坏程度不明确。</p>
@@ -178,7 +178,7 @@ const messages = {
     <p><strong>原文：</strong><br />
     However, losses in Havana, Cuba were over $1 million.</p>
     <p><strong>1. 句子主干：</strong><br />
-    • <em>Losses were over $1 million.</em></p>
+    • Losses <strong>were</strong> over $1 million.</p>
     <p><strong>2. 注解：</strong><br />
     • <strong>losses：</strong> 损失，表经济影响。<br />
     • <strong>Havana, Cuba：</strong> 地名，指古巴的哈瓦那。</p>
@@ -189,7 +189,7 @@ const messages = {
     <p><strong>原文：</strong><br />
     At least 100 people died in Cuba alone.</p>
     <p><strong>1. 句子主干：</strong><br />
-    • <em>At least 100 people died.</em></p>
+    • At least 100 people <strong>died</strong>.</p>
     <p><strong>2. 注解：</strong><br />
     • <strong>at least：</strong> 至少，表最低估计。<br />
     • <strong>in Cuba alone：</strong> 仅在古巴，表范围。</p>
@@ -201,31 +201,31 @@ const messages = {
 
 // 显示提示框
 const showPopup = (textId, targetElement) => {
-    popup.innerHTML = messages[textId];
-    popup.style.display = 'block';
-    overlay.style.display = 'block';
+  popup.innerHTML = messages[textId];
+  popup.style.display = 'block';
+  overlay.style.display = 'block';
 
-    // 获取点击元素的位置
-    const rect = targetElement.getBoundingClientRect();
+  // 获取点击元素的位置
+  const rect = targetElement.getBoundingClientRect();
 
-    // 动态设置提示框位置和宽度
-    popup.style.top = `${rect.bottom + window.scrollY + 10}px`; // 距离点击元素下方 10px
-    popup.style.left = `${rect.left + window.scrollX}px`;
-    popup.style.width = 'auto'; // 自动宽度
-    popup.style.maxWidth = '300px'; // 最大宽度限制
+  // 动态设置提示框位置和宽度
+  popup.style.top = `${rect.bottom + window.scrollY + 10}px`; // 距离点击元素下方 10px
+  popup.style.left = `${rect.left + window.scrollX}px`;
+  popup.style.width = 'auto'; // 自动宽度
+  popup.style.maxWidth = '300px'; // 最大宽度限制
 };
 
 // 隐藏提示框
 const hidePopup = () => {
-    popup.style.display = 'none';
-    overlay.style.display = 'none';
+  popup.style.display = 'none';
+  overlay.style.display = 'none';
 };
 
 // 绑定事件到每个可点击的文本
 document.querySelectorAll('.clickable-text').forEach((textElement) => {
-    textElement.addEventListener('click', (event) =>
-        showPopup(textElement.id, event.target)
-    );
+  textElement.addEventListener('click', (event) =>
+    showPopup(textElement.id, event.target)
+  );
 });
 
 // 点击遮罩层隐藏提示框

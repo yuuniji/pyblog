@@ -10,6 +10,16 @@ body {
     /* font-family: Arial, sans-serif; */
 }
 
+.arrow {
+    display: inline-block;
+    color: blue;
+  }
+  .arrow::after {
+    content: '→';
+    margin-left: 5px;
+    color: red; /* 箭头颜色 */
+  }
+
 #main {
     /* float: left; */
     padding-bottom: 20px;

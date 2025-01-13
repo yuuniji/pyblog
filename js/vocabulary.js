@@ -1,76 +1,190 @@
 const vocabulary = [
     {
-        word: "Intricate",
-        category: "adjective",
-        meaning: "Very complicated or detailed.",
-        example: "The engineer explained the intricate details of the machine.",
+        "word": "hurricane",
+        "category": "noun",
+        "meaning": "飓风",
+        "example": "The 1910 Cuba hurricane was said to be one of the worst tropical cyclones that has ever hit Cuba."
     },
     {
-        word: "Persevere",
-        category: "verb",
-        meaning: "Continue in a course of action even in the face of difficulty.",
-        example: "She decided to persevere with her studies despite challenges.",
+        "word": "was said to be",
+        "category": "verb phrase",
+        "meaning": "被认为是（被动语态）",
+        "example": "The 1910 Cuba hurricane was said to be one of the worst tropical cyclones that has ever hit Cuba."
     },
     {
-        word: "Harmony",
-        category: "noun",
-        meaning: "A pleasing combination of elements in a whole.",
-        example: "The song achieved perfect harmony among instruments.",
+        "word": "one of the worst",
+        "category": "adjective phrase",
+        "meaning": "最严重的之一，表强调",
+        "example": "The 1910 Cuba hurricane was said to be one of the worst tropical cyclones that has ever hit Cuba."
     },
     {
-        word: "Vivid",
-        category: "adjective",
-        meaning: "Producing strong, clear images in the mind.",
-        example: "She described the scene in vivid detail.",
+        "word": "tropical cyclones",
+        "category": "noun",
+        "meaning": "热带气旋，科学术语，hurricane 的同义词",
+        "example": "The 1910 Cuba hurricane was said to be one of the worst tropical cyclones that has ever hit Cuba."
     },
     {
-        word: "Intricate",
-        category: "adjective",
-        meaning: "Very complicated or detailed.",
-        example: "The engineer explained the intricate details of the machine.",
+        "word": "has ever hit Cuba",
+        "category": "verb phrase",
+        "meaning": "现在完成时，说明事件影响至今仍被提及",
+        "example": "The 1910 Cuba hurricane was said to be one of the worst tropical cyclones that has ever hit Cuba."
     },
     {
-        word: "Persevere",
-        category: "verb",
-        meaning: "Continue in a course of action even in the face of difficulty.",
-        example: "She decided to persevere with her studies despite challenges.",
+        "word": "formed",
+        "category": "verb",
+        "meaning": "形成",
+        "example": "The storm formed in the southern Caribbean Sea on October 9, 1910."
     },
     {
-        word: "Harmony",
-        category: "noun",
-        meaning: "A pleasing combination of elements in a whole.",
-        example: "The song achieved perfect harmony among instruments.",
+        "word": "southern Caribbean Sea",
+        "category": "noun phrase",
+        "meaning": "地理位置，“加勒比海南部”",
+        "example": "The storm formed in the southern Caribbean Sea on October 9, 1910."
     },
     {
-        word: "Vivid",
-        category: "adjective",
-        meaning: "Producing strong, clear images in the mind.",
-        example: "She described the scene in vivid detail.",
+        "word": "on October 9, 1910",
+        "category": "time expression",
+        "meaning": "具体时间，表示事件起点",
+        "example": "The storm formed in the southern Caribbean Sea on October 9, 1910."
     },
     {
-        word: "Intricate",
-        category: "adjective",
-        meaning: "Very complicated or detailed.",
-        example: "The engineer explained the intricate details of the machine.",
+        "word": "grew stronger",
+        "category": "verb phrase",
+        "meaning": "变得更强（比较级，表程度变化）",
+        "example": "It grew stronger as it moved northwest."
     },
     {
-        word: "Persevere",
-        category: "verb",
-        meaning: "Continue in a course of action even in the face of difficulty.",
-        example: "She decided to persevere with her studies despite challenges.",
+        "word": "as it moved northwest",
+        "category": "clause",
+        "meaning": "从句，表时间和过程，说明飓风路径和强度变化",
+        "example": "It grew stronger as it moved northwest."
     },
     {
-        word: "Harmony",
-        category: "noun",
-        meaning: "A pleasing combination of elements in a whole.",
-        example: "The song achieved perfect harmony among instruments.",
+        "word": "made landfall",
+        "category": "verb phrase",
+        "meaning": "动词短语，意为“登陆”",
+        "example": "It then made landfall on the western end of Cuba."
     },
     {
-        word: "Vivid",
-        category: "adjective",
-        meaning: "Producing strong, clear images in the mind.",
-        example: "She described the scene in vivid detail.",
+        "word": "western end of Cuba",
+        "category": "noun phrase",
+        "meaning": "古巴的西端，表地理位置",
+        "example": "It then made landfall on the western end of Cuba."
     },
+    {
+        "word": "made a loop",
+        "category": "verb phrase",
+        "meaning": "动词短语，“形成一个环状路径”，强调飓风轨迹的特殊性",
+        "example": "The storm made a loop over open water, and then began moving towards the United States."
+    },
+    {
+        "word": "open water",
+        "category": "noun phrase",
+        "meaning": "意为“开阔水域”，指海洋区域",
+        "example": "The storm made a loop over open water, and then began moving towards the United States."
+    },
+    {
+        "word": "began moving",
+        "category": "verb phrase",
+        "meaning": "开始移动，表动作的开始",
+        "example": "The storm made a loop over open water, and then began moving towards the United States."
+    },
+    {
+        "word": "crossing Florida",
+        "category": "present participle phrase",
+        "meaning": "现在分词短语，作时间状语，表示“穿过佛罗里达州”后",
+        "example": "After crossing Florida, the storm moved near the rest of the southeastern United States and passed out to sea."
+    },
+    {
+        "word": "passed out to sea",
+        "category": "verb phrase",
+        "meaning": "动词短语，指“进入大海”",
+        "example": "After crossing Florida, the storm moved near the rest of the southeastern United States and passed out to sea."
+    },
+    {
+        "word": "Because of",
+        "category": "preposition",
+        "meaning": "表原因",
+        "example": "Because of the storm's loop, some reports said it was actually two hurricanes."
+    },
+    {
+        "word": "the storm's loop",
+        "category": "noun phrase",
+        "meaning": "飓风的环形路径，表特征",
+        "example": "Because of the storm's loop, some reports said it was actually two hurricanes."
+    },
+    {
+        "word": "actually",
+        "category": "adverb",
+        "meaning": "副词，“实际上”，表强调",
+        "example": "Because of the storm's loop, some reports said it was actually two hurricanes."
+    },
+    {
+        "word": "in the island's history",
+        "category": "prepositional phrase",
+        "meaning": "表范围，指古巴历史中",
+        "example": "In Cuba, the storm was one of the worst disasters in the island's history."
+    },
+    {
+        "word": "bad damage",
+        "category": "noun phrase",
+        "meaning": "严重破坏，表影响程度",
+        "example": "There was bad damage and thousands of people lost their homes."
+    },
+    {
+        "word": "lost their homes",
+        "category": "verb phrase",
+        "meaning": "失去家园，描述灾后影响",
+        "example": "There was bad damage and thousands of people lost their homes."
+    },
+    {
+        "word": "also",
+        "category": "adverb",
+        "meaning": "表示“也”，说明影响范围",
+        "example": "In Florida, the storm also caused damage and caused flooding in some areas."
+    },
+    {
+        "word": "flooding in some areas",
+        "category": "noun phrase",
+        "meaning": "部分地区的洪水，具体描述灾害类型",
+        "example": "In Florida, the storm also caused damage and caused flooding in some areas."
+    },
+    {
+        "word": "It is not known",
+        "category": "verb phrase",
+        "meaning": "表被动，意为“目前尚不清楚”",
+        "example": "It is not known exactly how much damage the storm caused."
+    },
+    {
+        "word": "how much damage",
+        "category": "noun clause",
+        "meaning": "提问从句，表示破坏程度不明确",
+        "example": "It is not known exactly how much damage the storm caused."
+    },
+    {
+        "word": "losses",
+        "category": "noun",
+        "meaning": "损失，表经济影响",
+        "example": "However, losses in Havana, Cuba were over $1 million."
+    },
+    {
+        "word": "Havana, Cuba",
+        "category": "proper noun",
+        "meaning": "地名，指古巴的哈瓦那",
+        "example": "However, losses in Havana, Cuba were over $1 million."
+    },
+    {
+        "word": "at least",
+        "category": "adverb phrase",
+        "meaning": "至少，表最低估计",
+        "example": "At least 100 people died in Cuba alone."
+    },
+    {
+        "word": "in Cuba alone",
+        "category": "prepositional phrase",
+        "meaning": "仅在古巴，表范围",
+        "example": "At least 100 people died in Cuba alone."
+    }
 ];
 
 function renderWords(category = "all", searchQuery = "") {
