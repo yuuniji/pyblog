@@ -124,6 +124,9 @@ loadComponent('../components/ipa.html', 'ipa-container');
 // 调用函数动态加载 ../components/enmusic.html
 loadComponent('../components/enmusic.html', 'enmusic-container');
 
+// 调用函数动态加载 ../components/wiki.html
+loadComponent('../components/wiki.html', 'wiki-container');
+
 
 
 // 使用 JavaScript 动态加载 vocabulary.html
