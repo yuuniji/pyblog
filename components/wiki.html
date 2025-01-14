@@ -8,10 +8,9 @@
     <style>
         .clickable-text {
             font-size: 14px;
-            /* color: #333; */
             cursor: help;
-            /* margin: 10px; */
-            /* display: inline-block; */
+            transition: color 0.3s ease;
+            /* 添加颜色过渡，提升交互体验 */
         }
 
         .popup-message {
@@ -24,11 +23,11 @@
             display: none;
             z-index: 10;
             max-width: 90%;
-            /* 限制最大宽度为屏幕宽度的 90% */
-            min-width: auto;
             word-wrap: break-word;
             text-align: left;
             overflow-wrap: break-word;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            /* 平滑过渡背景色和文字颜色 */
         }
 
         .popup-overlay {
@@ -42,12 +41,33 @@
             z-index: 5;
         }
 
+        /* 小屏幕优化 */
         @media (max-width: 480px) {
             .popup-message {
                 font-size: 13px;
-                /* 调整字体大小以适应小屏 */
                 padding: 8px;
-                /* 减小内边距 */
+            }
+        }
+
+        /* 深色模式样式 */
+        @media (prefers-color-scheme: dark) {
+            .clickable-text {
+                color: #f5f5f5;
+                /* 提高深色模式下可点击文本的可见性 */
+            }
+
+            .popup-message {
+                background-color: #333;
+                /* 更暗的背景色，避免纯黑造成的视觉疲劳 */
+                color: #f5f5f5;
+                /* 深色模式下使用浅色字体提高对比度 */
+                box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+                /* 提高阴影的亮度，避免深色模式下阴影过于模糊 */
+            }
+
+            .popup-overlay {
+                background-color: rgba(0, 0, 0, 0.4);
+                /* 深色模式下增加覆盖层的透明度 */
             }
         }
     </style>
@@ -95,7 +115,8 @@
                 the
                 storm
                 caused. </span>
-            <span style="color: #DAA520;" class="clickable-text" id="text-12">However, losses in Havana, <b>Cuba</b> were over $1 million. </span>
+            <span style="color: #DAA520;" class="clickable-text" id="text-12">However, losses in Havana, <b>Cuba</b>
+                were over $1 million. </span>
             <span style="color: #4682B4;" class="clickable-text" id="text-13">At least 100 people died in Cuba
                 alone.</span>
         </p>
