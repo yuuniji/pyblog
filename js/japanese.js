@@ -3,7 +3,7 @@ const pdfData = [
   {
     title: "平假名、片假名表",
     images: ["/docs/00-1.png", "/docs/00-2.png"],
-    audio: "/docs/あいうえおのうた.mp3",
+    audio: "/docs/japanese hiragana syllable song.mp3",
   },
   {
     title: "1 问路",
