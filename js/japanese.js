@@ -2,7 +2,7 @@
 const pdfData = [
   {
     title: "平假名、片假名表",
-    images: ["/docs/00-1.png", "/docs/00-2.png"],
+    images: ["/docs/Nihongo_ichiran_01-converted.svg", "/docs/00-1.png", "/docs/00-2.png"],
     audio: "/docs/japanese hiragana syllable song.mp3",
   },
   {
