@@ -1,0 +1,63 @@
+/* 模块整体样式 */
+#pdf-viewer-module {
+    display: flex;
+    gap: 20px;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  /* 目录样式 */
+  #pdf-menu {
+    flex: 0 0 200px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  #pdf-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #pdf-menu li {
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border-radius: 4px;
+  }
+  
+  #pdf-menu li:hover {
+    background-color: #ececec;
+  }
+  
+  #pdf-menu li.active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  /* PDF 内容样式 */
+  #pdf-content {
+    flex: 1;
+  }
+  
+  #pdf-content .pdf-images {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  #pdf-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  #pdf-content audio {
+    margin-top: 20px;
+    width: 100%;
+    outline: none;
+  }
+  
