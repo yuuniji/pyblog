@@ -1,6 +1,7 @@
 /* 模块整体样式 */
 #pdf-viewer-module {
     display: flex;
+    flex-direction: row; /* 默认是横向排列 */
     gap: 20px;
     font-family: Arial, sans-serif;
     margin: 20px;
@@ -8,10 +9,11 @@
   
   /* 目录样式 */
   #pdf-menu {
-    flex: 0 0 200px;
+    flex: 0 0 200px; /* 左侧固定宽度 */
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 10px;
+    /* margin-top: 20px; */
     background-color: #f9f9f9;
   }
   
@@ -46,11 +48,19 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+  
+    /* 滚动区域 */
+    max-height: 700px; /* 固定高度 */
+    overflow-y: auto; /* 滚动条 */
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #f9f9f9;
   }
   
   #pdf-content img {
-    width: 100%;
-    height: auto;
+    width: 100%; /* 图片宽度适配区域 */
+    height: auto; /* 保持图片比例 */
     border-radius: 4px;
     border: 1px solid #ddd;
   }
@@ -59,5 +69,58 @@
     margin-top: 20px;
     width: 100%;
     outline: none;
+  }
+  
+  /* 响应式布局：小屏幕时目录移动到顶部 */
+  @media (max-width: 768px) {
+    #pdf-viewer-module {
+      flex-direction: column; /* 改为纵向排列 */
+    }
+  
+    #pdf-menu {
+      flex: 0 0 auto; /* 高度自动调整 */
+      order: 1; /* 将目录移到最顶部 */
+      width: 90%; /* 宽度自适应 */
+    }
+  }
+  
+  /* 深色模式支持 */
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #121212; /* 深色背景 */
+      color: #e0e0e0; /* 浅色字体 */
+    }
+  
+    #pdf-menu {
+      background-color: #1e1e1e;
+      border: 1px solid #333;
+    }
+  
+    #pdf-menu li {
+      color: #e0e0e0;
+    }
+  
+    #pdf-menu li:hover {
+      background-color: #333;
+    }
+  
+    #pdf-menu li.active {
+      background-color: #007bff;
+      color: #fff;
+    }
+  
+    #pdf-content .pdf-images {
+      background-color: #1e1e1e;
+      border: 1px solid #333;
+    }
+  
+    #pdf-content img {
+      border: 1px solid #333;
+    }
+  
+    #pdf-content audio {
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+    }
   }
   
