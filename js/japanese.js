@@ -1,6 +1,11 @@
 // PDF 数据
 const pdfData = [
   {
+    title: "平假名、片假名表",
+    images: ["/docs/00-1.png", "/docs/00-2.png"],
+    // audio: "/docs/audio_lesson_01.mp3",
+  },
+  {
     title: "1 问路",
     images: ["/docs/01-1.png", "/docs/01-2.png", "/docs/01-3.png"],
     audio: "/docs/audio_lesson_01.mp3",
@@ -239,6 +244,10 @@ const pdfData = [
     title: "48 叙述你今后想做的事",
     images: ["/docs/48-1.png", "/docs/48-2.png", "/docs/48-3.png"],
     audio: "/docs/audio_lesson_48.mp3",
+  },
+  {
+    title: "附录",
+    images: ["/docs/appendix-1.png", "/docs/appendix-2.png", "/docs/appendix-3.png"],
   },
 ];
 
