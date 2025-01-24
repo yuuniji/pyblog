@@ -10,7 +10,7 @@
   /* 目录样式 */
   #pdf-menu {
     flex: 0 0 200px; /* 左侧固定宽度 */
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd; */
     border-radius: 8px;
     /* padding: 10px; */
     margin-top: 5px;
@@ -19,7 +19,7 @@
   
   #pdf-menu ul {
     /* 滚动区域 */
-    max-height: 580px; /* 固定高度 */
+    max-height: 460px; /* 固定高度 */
     overflow-y: auto; /* 滚动条 */
     list-style: none;
     padding: 0;
@@ -45,6 +45,7 @@
   /* PDF 内容样式 */
   #pdf-content {
     flex: 1;
+    margin-top: 10px;
   }
   
   #pdf-content .pdf-images {
@@ -105,7 +106,7 @@
   
     #pdf-menu {
       background-color: rgb(24, 22, 13);
-      border: 1px solid #333;
+      /* border: 1px solid #333; */
     }
   
     #pdf-menu li {

@@ -4,7 +4,12 @@ const pdfData = [
     title: "平假名、片假名表",
     images: ["/docs/00-1.png", "/docs/00-2.png", "/docs/Nihongo_ichiran_01-converted.svg", "/docs/001-1.png", "/docs/001-2.png", "/docs/002-1.png", "/docs/002-2.png"],
     // audio: "/docs/japanese hiragana syllable song.mp3",
-    audios: ["/docs/japanese hiragana syllable song.mp3", "/docs/audio_lesson_01.mp3"],
+    audios: [
+      "/docs/japanese hiragana syllable song.mp3", 
+      "/docs/Japanese Alphabet Song.mp3",
+      "/docs/learn japanese alphabet katakana.mp3",
+      "/docs/あいうえおのうた.mp3"
+    ],
   },
   {
     title: "1 问路",
@@ -352,8 +357,8 @@ function renderPDFContent(pdf) {
   }
 
   // 将图片和音频容器添加到主内容容器
-  content.appendChild(imagesContainer);
   content.appendChild(audiosContainer);
+  content.appendChild(imagesContainer);
 }
 
 // 初始化
