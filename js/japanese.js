@@ -1,20 +1,25 @@
 // PDF 数据
 const pdfData = [
     {
-      title: "Document 1",
+      title: "1 问路",
       images: ["/docs/01-1.png", "/docs/01-2.png", "/docs/01-3.png"],
       audio: "/docs/audio_lesson_01.mp3",
     },
     {
-      title: "Document 2",
+      title: "2 自我介绍",
       images: ["/docs/02-1.png", "/docs/02-2.png", "/docs/02-3.png"],
       audio: "/docs/audio_lesson_02.mp3",
     },
     {
-      title: "Document 3",
+      title: "3 说明自己来自哪里",
       images: ["/docs/03-1.png", "/docs/03-2.png", "/docs/03-3.png"],
       audio: "/docs/audio_lesson_03.mp3",
     },
+    {
+        title: "4 说明你将要做什么",
+        images: ["/docs/04-1.png", "/docs/04-2.png", "/docs/04-3.png"],
+        audio: "/docs/audio_lesson_04.mp3",
+      },
   ];
   
   // 初始化目录和内容
