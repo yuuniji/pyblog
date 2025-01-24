@@ -2,9 +2,9 @@
 #pdf-viewer-module {
     display: flex;
     flex-direction: row; /* 默认是横向排列 */
-    gap: 10px;
+    gap: 5px;
     font-family: Arial, sans-serif;
-    margin: 20px;
+    margin: 5px;
   }
   
   /* 目录样式 */
@@ -12,11 +12,15 @@
     flex: 0 0 200px; /* 左侧固定宽度 */
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 10px;
+    /* padding: 10px; */
+    margin-top: 5px;
     background-color: rgb(255, 252, 245);
   }
   
   #pdf-menu ul {
+    /* 滚动区域 */
+    max-height: 580px; /* 固定高度 */
+    overflow-y: auto; /* 滚动条 */
     list-style: none;
     padding: 0;
     margin: 0;
@@ -65,7 +69,7 @@
   }
   
   #pdf-content audio {
-    margin-top: 10px;
+    margin-top: 5px;
     width: 100%;
     outline: none;
   }
@@ -76,6 +80,12 @@
       flex-direction: column; /* 改为纵向排列 */
       margin: 0px;
     }
+
+    #pdf-menu ul {
+      /* 滚动区域 */
+      max-height: 185px; /* 固定高度 */
+    }
+
 
     #pdf-content .pdf-images {
       /* 滚动区域 */
