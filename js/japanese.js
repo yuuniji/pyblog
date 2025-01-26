@@ -33,42 +33,66 @@ const pdfData = [
   {
     title: "3 说明自己来自哪里",
     images: ["/docs/03-1.png", "/docs/03-2.png", "/docs/03-3.png"],
-    audios: ["/docs/audio_lesson_03.mp3"],
+    audios: [
+      "/docs/audio_lesson_03.mp3",
+      "/docs/audio_lesson_03-1.mp3"
+    ],
   },
   {
     title: "4 说明你将要做什么",
     images: ["/docs/04-1.png", "/docs/04-2.png", "/docs/04-3.png"],
-    audios: ["/docs/audio_lesson_04.mp3"],
+    audios: [
+      "/docs/audio_lesson_04.mp3",
+      "/docs/audio_lesson_04-1.mp3"
+    ],
   },
   {
     title: "5 说明自己是怎样学习日语",
     images: ["/docs/05-1.png", "/docs/05-2.png", "/docs/05-3.png"],
-    audios: ["/docs/audio_lesson_05.mp3"],
+    audios: [
+      "/docs/audio_lesson_05.mp3",
+      "/docs/audio_lesson_05-1.mp3"
+    ],
   },
   {
     title: "6 确认公共交通工具开往何处",
     images: ["/docs/06-1.png", "/docs/06-2.png", "/docs/06-3.png"],
-    audios: ["/docs/audio_lesson_06.mp3"],
+    audios: [
+      "/docs/audio_lesson_06.mp3",
+      "/docs/audio_lesson_06-1.mp3"
+    ],
   },
   {
     title: "7 请对方说得慢一些",
     images: ["/docs/07-1.png", "/docs/07-2.png", "/docs/07-3.png"],
-    audios: ["/docs/audio_lesson_07.mp3"],
+    audios: [
+      "/docs/audio_lesson_07.mp3",
+      "/docs/audio_lesson_07-1.mp3"
+    ],
   },
   {
     title: "8 引荐朋友等",
     images: ["/docs/08-1.png", "/docs/08-2.png", "/docs/08-3.png"],
-    audios: ["/docs/audio_lesson_08.mp3"],
+    audios: [
+      "/docs/audio_lesson_08.mp3",
+      "/docs/audio_lesson_08-1.mp3"
+    ],
   },
   {
     title: "9 询问东西的名称",
     images: ["/docs/09-1.png", "/docs/09-2.png", "/docs/09-3.png"],
-    audios: ["/docs/audio_lesson_09.mp3"],
+    audios: [
+      "/docs/audio_lesson_09.mp3",
+      "/docs/audio_lesson_09-1.mp3"
+    ],
   },
   {
     title: "10 询问价格",
     images: ["/docs/10-1.png", "/docs/10-2.png", "/docs/10-3.png"],
-    audios: ["/docs/audio_lesson_10.mp3"],
+    audios: [
+      "/docs/audio_lesson_10.mp3",
+      "/docs/audio_lesson_10-1.mp3"
+    ],
   },
   {
     title: "11 询问是否有你想要的东西",
