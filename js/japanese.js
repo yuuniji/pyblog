@@ -14,7 +14,13 @@ const pdfData = [
   {
     title: "1 问路",
     images: ["/docs/01-1.png", "/docs/01-2.png", "/docs/01-3.png"],
-    audios: ["/docs/audio_lesson_01.mp3"],
+    audios: [
+      "/docs/audio_lesson_01.mp3",
+      "/docs/audio_lesson_01-1.mp3",
+      "/docs/audio_lesson_01-2.mp3",
+      "/docs/audio_lesson_01-3.mp3",
+      "/docs/audio_lesson_01-4.mp3",
+    ],
   },
   {
     title: "2 自我介绍 告诉别人你的名字和职业",
@@ -357,8 +363,8 @@ function renderPDFContent(pdf) {
   }
 
   // 将图片和音频容器添加到主内容容器
-  content.appendChild(audiosContainer);
   content.appendChild(imagesContainer);
+  content.appendChild(audiosContainer);
 }
 
 // 初始化
