@@ -19,13 +19,16 @@ const pdfData = [
       "/docs/audio_lesson_01-1.mp3",
       "/docs/audio_lesson_01-2.mp3",
       "/docs/audio_lesson_01-3.mp3",
-      "/docs/audio_lesson_01-4.mp3",
+      "/docs/audio_lesson_01-4.mp3"
     ],
   },
   {
     title: "2 自我介绍 告诉别人你的名字和职业",
     images: ["/docs/02-1.png", "/docs/02-2.png", "/docs/02-3.png"],
-    audios: ["/docs/audio_lesson_02.mp3"],
+    audios: [
+      "/docs/audio_lesson_02.mp3",
+      "/docs/audio_lesson_02-1.mp3"
+    ],
   },
   {
     title: "3 说明自己来自哪里",
@@ -295,31 +298,6 @@ function initializePDFViewer(data) {
     menu.firstChild.classList.add("active");
   }
 }
-
-// 渲染 PDF 内容
-// function renderPDFContent(pdf) {
-//   const content = document.getElementById("pdf-content");
-//   content.innerHTML = "";
-
-//   // 添加图片
-//   const imagesContainer = document.createElement("div");
-//   imagesContainer.className = "pdf-images";
-
-//   pdf.images.forEach((image) => {
-//     const img = document.createElement("img");
-//     img.src = image;
-//     img.alt = pdf.title;
-//     imagesContainer.appendChild(img);
-//   });
-
-//   // 添加音频
-//   const audioContainer = document.createElement("audio");
-//   audioContainer.controls = true;
-//   audioContainer.src = pdf.audio;
-
-//   content.appendChild(audioContainer);
-//   content.appendChild(imagesContainer);
-// }
 
 // 渲染 PDF 内容
 function renderPDFContent(pdf) {

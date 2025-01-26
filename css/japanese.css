@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: row; /* 默认是横向排列 */
     gap: 5px;
-    font-family: Arial, sans-serif;
+    /* font-family: Arial, sans-serif; */
     margin: 5px;
   }
   
@@ -66,12 +66,12 @@
     width: 100%; /* 图片宽度适配区域 */
     height: auto; /* 保持图片比例 */
     border-radius: 4px;
-    border: 1px solid #ddd;
+    border: 0px;
   }
   
   #pdf-content audio {
     margin-top: 5px;
-    width: 100%;
+    width: 50%;
     outline: none;
   }
   
@@ -92,12 +92,25 @@
       /* 滚动区域 */
       max-height: 450px; 
       /* 固定高度 */
+      width: 99%;
+      padding: 0px;
+      gap: 0px;
+      border-radius: 0px;
+    }
+
+    #pdf-content img {
+      border-radius: 0px;
+      border: 0px;
     }
   
     #pdf-menu {
       flex: 0 0 auto; /* 高度自动调整 */
       order: 1; /* 将目录移到最顶部 */
       width: auto; /* 宽度自适应 */
+    }
+
+    #pdf-content audio {
+      width: 100%;
     }
   }
   
@@ -123,13 +136,13 @@
     }
   
     #pdf-content .pdf-images {
-      background-color: rgb(255, 252, 245);
+      background-color: #F5F5F5;
       border: 1px solid #333;
     }
   
-    #pdf-content img {
+    /* #pdf-content img {
       border: 1px solid #333;
-    }
+    } */
   
     #pdf-content audio {
       background-color: rgb(24, 22, 13);
