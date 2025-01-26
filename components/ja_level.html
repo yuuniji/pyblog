@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion Timeline</title>
+    <style>
+        /* 遮罩层样式 */
+        #modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 弹窗样式 */
+        #modal-content {
+            background-color: #fff;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            max-height: 80%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* 弹窗内容样式 */
+        #modal-body {
+            padding: 20px;
+            overflow-y: auto;
+            /* 添加滚动条 */
+            max-height: calc(100% - 40px);
+            /* 留出关闭按钮的空间 */
+        }
+
+        /* 关闭按钮样式 */
+        #modal-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            color: #555;
+        }
+
+        #modal-close:hover {
+            color: #000;
+        }
+
+        /* 样式设置，确保不影响主博客 */
+        .accordion-container {
+            margin: 0 auto;
+            /* 居中 */
+            max-width: 800px;
+            /* 限制最大宽度，优化宽屏下的阅读体验 */
+            width: 100%;
+            /* 让内容在小屏幕上自适应 */
+            padding: 20px;
+            /* 保留你的内边距设置 */
+            box-sizing: border-box;
+            /* 确保 padding 不影响宽度计算 */
+        }
+
+        .accordion-item {
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        /* Accordion header */
+        .accordion-header {
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 15px;
+            border-top: 1px solid #ddd;
+            background-color: #fff;
+        }
+
+        /* Timeline styles */
+        .timeline-item {
+            margin-bottom: 10px;
+            /* padding: 10px; */
+        }
+
+        /* 基础 Circle 样式 */
+        .circle {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            text-align: center;
+            font-weight: bold;
+            display: inline-block;
+            line-height: 24px;
+            margin-right: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* 浅色模式 - Circle 层级颜色 */
+        .accordion-item[data-level="1"] .circle {
+            background-color: rgb(249, 216, 73);
+            color: #333;
+        }
+
+        .accordion-item[data-level="2"] .circle {
+            background-color: rgb(223, 109, 43);
+            color: #fff;
+        }
+
+        .accordion-item[data-level="3"] .circle {
+            background-color: rgb(183, 43, 53);
+            color: #fff;
+        }
+
+        .accordion-item[data-level="4"] .circle {
+            background-color: rgb(118, 51, 126);
+            color: white;
+        }
+
+        .accordion-item[data-level="5"] .circle {
+            background-color: rgb(75, 45, 58);
+            color: white;
+        }
+
+        .accordion-item[data-level="6"] .circle {
+            background: linear-gradient(to right, rgb(198, 69, 132), rgb(175, 208, 224));
+            color: white;
+        }
+
+        .timeline-item a {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .timeline-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* 图标旋转动画 */
+        .accordion-header svg {
+            transition: transform 0.3s;
+        }
+
+        .accordion-header.open svg {
+            transform: rotate(180deg);
+        }
+
+        /* 浅色模式 - 层级颜色渐变 */
+        .accordion-item[data-level="1"] .accordion-header {
+            background-color: rgb(249, 216, 73);
+            color: #333;
+        }
+
+        .accordion-item[data-level="2"] .accordion-header {
+            background-color: rgb(223, 109, 43);
+            color: #fff;
+        }
+
+        .accordion-item[data-level="3"] .accordion-header {
+            background-color: rgb(183, 43, 53);
+            color: #fff;
+        }
+
+        .accordion-item[data-level="4"] .accordion-header {
+            background-color: rgb(118, 51, 126);
+            color: white;
+        }
+
+        .accordion-item[data-level="5"] .accordion-header {
+            background-color: rgb(75, 45, 58);
+            color: white;
+        }
+
+        .accordion-item[data-level="6"] .accordion-header {
+            background: rgb(175, 208, 224);
+            color: rgb(198, 69, 132);
+        }
+
+        /* 深色模式 */
+        @media (prefers-color-scheme: dark) {
+            .accordion-header {
+                background-color: #2e2e2e;
+                color: #e0e0e0;
+            }
+
+            .accordion-content {
+                background-color: #1a1a1a;
+                color: #ddd;
+            }
+
+            .timeline-item a {
+                color: #80bfff;
+            }
+
+            .timeline-item a:hover {
+                color: #a1cfff;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="accordion-container">
+        <!-- 弹窗容器 -->
+        <div id="modal-overlay" style="display: none;">
+            <div id="modal-content">
+                <span id="modal-close">&times;</span>
+                <div id="modal-body"></div>
+            </div>
+        </div>
+
+        <!-- Level 1 Timeline -->
+        <div class="accordion-item" data-level="1">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                1 完全初学者
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24">
+                    <path d="M480 696 240 456h480L480 696Z" />
+                </svg>
+            </div>
+            <div class="accordion-content">
+                <div class="timeline-item">
+                    <div class="circle">1</div>
+                    <a href="/components/ja_level/j1_1.html" class="modal-link">Level</a>
+                </div>
+                <div class="timeline-item">
+                    <div class="circle">2</div>
+                    <a href="/components/ja_level/j1_2.html" class="modal-link">Level</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Level 2 Timeline -->
+        <div class="accordion-item" data-level="2">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                2 初学者
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24">
+                    <path d="M480 696 240 456h480L480 696Z" />
+                </svg>
+            </div>
+            <div class="accordion-content">
+                <div class="timeline-item">
+                    <div class="circle">1</div>
+                    <a href="/components/ja_level/j2_1.html" class="modal-link">Level</a>
+                </div>
+                <div class="timeline-item">
+                    <div class="circle">2</div>
+                    <a href="/components/ja_level/j2_2.html" class="modal-link">Level</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Level 3 Timeline -->
+        <div class="accordion-item" data-level="3">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                3 中级
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24">
+                    <path d="M480 696 240 456h480L480 696Z" />
+                </svg>
+            </div>
+            <div class="accordion-content">
+                <div class="timeline-item">
+                    <div class="circle">1</div>
+                    <a href="/components/ja_level/j3_1.html" class="modal-link">Level</a>
+                </div>
+                <div class="timeline-item">
+                    <div class="circle">2</div>
+                    <a href="/components/ja_level/j3_2.html" class="modal-link">Level</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Level 4 Timeline -->
+        <div class="accordion-item" data-level="4">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                4 中高级
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24">
+                    <path d="M480 696 240 456h480L480 696Z" />
+                </svg>
+            </div>
+            <div class="accordion-content">
+                <div class="timeline-item">
+                    <div class="circle">1</div>
+                    <a href="/components/ja_level/j4_1.html" class="modal-link">Level</a>
+                </div>
+                <div class="timeline-item">
+                    <div class="circle">2</div>
+                    <a href="/components/ja_level/j4_2.html" class="modal-link">Level</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Level 5 Timeline -->
+        <div class="accordion-item" data-level="5">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                5 高级
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24">
+                    <path d="M480 696 240 456h480L480 696Z" />
+                </svg>
+            </div>
+            <div class="accordion-content">
+                <div class="timeline-item">
+                    <div class="circle">1</div>
+                    <a href="/components/ja_level/j5_1.html" class="modal-link">Level</a>
+                </div>
+                <div class="timeline-item">
+                    <div class="circle">2</div>
+                    <a href="/components/ja_level/j5_2.html" class="modal-link">Level</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Level 6 Timeline -->
+        <div class="accordion-item" data-level="6">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                ★ 额外内容
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24">
+                    <path d="M480 696 240 456h480L480 696Z" />
+                </svg>
+            </div>
+            <div class="accordion-content">
+                <div class="timeline-item">
+                    <div class="circle">1</div>
+                    <a href="/components/ja_level/j6_1.html" class="modal-link">Level</a>
+                </div>
+                <div class="timeline-item">
+                    <div class="circle">2</div>
+                    <a href="/components/ja_level/j6_2.html" class="modal-link">Level</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    // 默认展开所有手风琴项
+    document.addEventListener("DOMContentLoaded", () => {
+        const allHeaders = document.querySelectorAll(".accordion-header");
+        const allContents = document.querySelectorAll(".accordion-content");
+
+        // 打开所有手风琴项
+        allHeaders.forEach((header) => {
+            header.classList.add("open");
+        });
+
+        allContents.forEach((content) => {
+            content.style.display = "block";
+        });
+    });
+
+    function toggleAccordion(header) {
+        const isOpen = header.classList.contains("open");
+        const allHeaders = document.querySelectorAll(".accordion-header");
+        const allContents = document.querySelectorAll(".accordion-content");
+
+        // 关闭所有手风琴
+        allHeaders.forEach((h) => h.classList.remove("open"));
+        allContents.forEach((c) => (c.style.display = "none"));
+
+        // 如果点击的是关闭状态，打开当前手风琴
+        if (!isOpen) {
+            header.classList.add("open");
+            header.nextElementSibling.style.display = "block";
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const links = document.querySelectorAll(".timeline-item a");
+        const modalOverlay = document.getElementById("modal-overlay");
+        const modalBody = document.getElementById("modal-body");
+        const modalClose = document.getElementById("modal-close");
+
+        // 显示弹窗
+        links.forEach((link) => {
+            link.addEventListener("click", (event) => {
+                event.preventDefault(); // 阻止默认跳转行为
+                const url = link.getAttribute("href"); // 获取链接地址
+
+                // 显示遮罩层和弹窗
+                modalOverlay.style.display = "flex";
+                modalBody.innerHTML = "<p>加载中...</p>";
+
+                // 动态加载内容
+                fetch(url)
+                    .then((response) => {
+                        if (!response.ok) {
+                            throw new Error("网络错误：" + response.status);
+                        }
+                        return response.text();
+                    })
+                    .then((html) => {
+                        modalBody.innerHTML = html; // 将加载的内容插入弹窗
+                    })
+                    .catch((error) => {
+                        modalBody.innerHTML =
+                            "<p style='color: red;'>加载失败：" + error.message + "</p>";
+                    });
+            });
+        });
+
+        // 点击关闭按钮关闭弹窗
+        modalClose.addEventListener("click", () => {
+            modalOverlay.style.display = "none";
+        });
+
+        // 点击空白区域关闭弹窗
+        modalOverlay.addEventListener("click", (event) => {
+            if (event.target === modalOverlay) {
+                modalOverlay.style.display = "none";
+            }
+        });
+    });
+</script>
+</body>
+
+</html>
