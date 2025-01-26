@@ -96,6 +96,7 @@
             border-top: 1px solid #ddd;
             background-color: #fff;
         }
+        
 
         /* Timeline styles */
         .timeline-item {
@@ -243,7 +244,7 @@
             <div class="accordion-content">
                 <div class="timeline-item">
                     <div class="circle">1</div>
-                    <a href="/components/ja_level/j1_1.html" class="modal-link">能力陈述</a>
+                    <a href="../components/ja_level/j1_1.html" class="modal-link">能力陈述</a>
                 </div>
                 <div class="timeline-item">
                     <div class="circle">2</div>
@@ -383,18 +384,11 @@
             });
         }
 
-        function toggleAccordion(header, allHeaders, allContents) {
-            const isOpen = header.classList.contains("open");
-
-            // 关闭所有手风琴
-            allHeaders.forEach((h) => h.classList.remove("open"));
-            allContents.forEach((c) => (c.style.display = "none"));
-
-            // 如果当前手风琴项是关闭状态，则打开
-            if (!isOpen) {
-                header.classList.add("open");
-                header.nextElementSibling.style.display = "block";
-            }
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const isOpen = content.style.display === "block";
+            content.style.display = isOpen ? "none" : "block";
+            header.classList.toggle("open", !isOpen);
         }
 
         function initModal() {
