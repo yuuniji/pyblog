@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level 1</title>
+  <style>
+    /* 仅作用于该页面的样式 */
+    .article-container {
+      font-family: Arial, sans-serif;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      max-width: 800px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .article-container h1 {
+      font-size: 28px;
+      color: #333;
+    }
+
+    .article-container p {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .article-container .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #007bff;
+      font-size: 14px;
+    }
+
+    .article-container .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="article-container">
+    <!-- <h1>绝对初学者 1.1</h1> -->
+    <h2>基础词汇</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Japanese (Kanji)</th>
+                <th>Japanese (Kana)</th>
+                <th>Japanese (Transliterated)</th>
+                <th>English</th>
+                <th>中文</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>です</td>
+                <td>です</td>
+                <td>desu</td>
+                <td>be</td>
+                <td>是</td>
+            </tr>
+            <tr>
+                <td>何</td>
+                <td>なに・なん</td>
+                <td>nani/nan</td>
+                <td>what</td>
+                <td>什么</td>
+            </tr>
+            <tr>
+                <td>どこ</td>
+                <td>どこ</td>
+                <td>doko</td>
+                <td>where</td>
+                <td>哪里</td>
+            </tr>
+            <tr>
+                <td>は</td>
+                <td>は</td>
+                <td>wa</td>
+                <td>topic-marking particle</td>
+                <td>主题助词</td>
+            </tr>
+            <tr>
+                <td>の</td>
+                <td>の</td>
+                <td>no</td>
+                <td>possessive-marking particle</td>
+                <td>所有格助词</td>
+            </tr>
+            <tr>
+                <td>を</td>
+                <td>を</td>
+                <td>o</td>
+                <td>object-marking particle</td>
+                <td>宾语助词</td>
+            </tr>
+            <tr>
+                <td>か</td>
+                <td>か</td>
+                <td>ka</td>
+                <td>question-marking particle</td>
+                <td>疑问助词</td>
+            </tr>
+            <tr>
+                <td>さん</td>
+                <td>さん</td>
+                <td>san</td>
+                <td>polite suffix attached to a person's name</td>
+                <td>礼貌后缀</td>
+            </tr>
+            <tr>
+                <td>先生</td>
+                <td>せんせい</td>
+                <td>sensei</td>
+                <td>teacher</td>
+                <td>老师</td>
+            </tr>
+            <tr>
+                <td>人</td>
+                <td>じん</td>
+                <td>jin</td>
+                <td>person</td>
+                <td>人</td>
+            </tr>
+            <tr>
+              <td>私</td>
+              <td>わたし</td>
+              <td>watashi</td>
+              <td>I</td>
+              <td>我</td>
+          </tr>
+            <tr>
+                <td>いいえ</td>
+                <td>いいえ</td>
+                <td>iie</td>
+                <td>No.</td>
+                <td>不</td>
+            </tr>
+            <tr>
+                <td>もう一度</td>
+                <td>もういちど</td>
+                <td>mō ichi-do</td>
+                <td>one more time</td>
+                <td>再次</td>
+            </tr>
+            <tr>
+                <td>ゆっくり</td>
+                <td>ゆっくり</td>
+                <td>yukkuri</td>
+                <td>slowly</td>
+                <td>慢慢地</td>
+            </tr>
+            <tr>
+              <td>日本語</td>
+              <td>にほんご</td>
+              <td>Nihongo</td>
+              <td>Japanese (language)</td>
+              <td>日语</td>
+          </tr>
+          <tr>
+              <td>英語</td>
+              <td>えいご</td>
+              <td>Eigo</td>
+              <td>English</td>
+              <td>英语</td>
+          </tr>
+          <tr>
+              <td>アメリカ</td>
+              <td>アメリカ</td>
+              <td>Amerika</td>
+              <td>America</td>
+              <td>美国</td>
+          </tr>
+          <tr>
+              <td>韓国</td>
+              <td>かんこく</td>
+              <td>Kankoku</td>
+              <td>South Korea</td>
+              <td>韩国</td>
+          </tr>
+          <tr>
+              <td>日本</td>
+              <td>にっぽん・にほん</td>
+              <td>Nippon/Nihon</td>
+              <td>Japan</td>
+              <td>日本</td>
+          </tr>
+          <tr>
+              <td>ドイツ</td>
+              <td>ドイツ</td>
+              <td>Doitsu</td>
+              <td>Germany</td>
+              <td>德国</td>
+          </tr>
+          <tr>
+              <td>フランス</td>
+              <td>フランス</td>
+              <td>Furansu</td>
+              <td>France</td>
+              <td>法国</td>
+          </tr>
+          <tr>
+            <td>中国</td>
+            <td>ちゅうごく</td>
+            <td>Chūgoku</td>
+            <td>China</td>
+            <td>中国</td>
+        </tr>
+        <tr>
+            <td>イギリス</td>
+            <td>イギリス</td>
+            <td>Igirisu</td>
+            <td>UK</td>
+            <td>英国</td>
+        </tr>
+        <tr>
+            <td>オーストラリア</td>
+            <td>オーストラリア</td>
+            <td>Ōsutoraria</td>
+            <td>Australia</td>
+            <td>澳大利亚</td>
+        </tr>
+        <tr>
+            <td>カナダ</td>
+            <td>カナダ</td>
+            <td>Kanada</td>
+            <td>Canada</td>
+            <td>加拿大</td>
+        </tr>
+        <tr>
+            <td>インド</td>
+            <td>インド</td>
+            <td>Indo</td>
+            <td>India</td>
+            <td>印度</td>
+        </tr>
+        <tr>
+            <td>東京</td>
+            <td>とうきょう</td>
+            <td>Tōkyō</td>
+            <td>Tokyo</td>
+            <td>东京</td>
+        </tr>
+        <tr>
+            <td>ニューヨーク</td>
+            <td>ニューヨーク</td>
+            <td>Nyūyōku</td>
+            <td>New York</td>
+            <td>纽约</td>
+        </tr>
+        <tr>
+            <td>ロンドン</td>
+            <td>ロンドン</td>
+            <td>Rondon</td>
+            <td>London</td>
+            <td>伦敦</td>
+        </tr>
+        <tr>
+            <td>北京</td>
+            <td>ペキン</td>
+            <td>Pekin</td>
+            <td>Beijing</td>
+            <td>北京</td>
+        </tr>
+        <tr>
+            <td>パリ</td>
+            <td>パリ</td>
+            <td>Pari</td>
+            <td>Paris</td>
+            <td>巴黎</td>
+        </tr>
+        <tr>
+            <td>ソウル</td>
+            <td>ソウル</td>
+            <td>Sōru</td>
+            <td>Seoul</td>
+            <td>首尔</td>
+        </tr>
+        <tr>
+            <td>シドニー</td>
+            <td>シドニー</td>
+            <td>Shidonī</td>
+            <td>Sydney</td>
+            <td>悉尼</td>
+        </tr>
+        <tr>
+            <td>ベルリン</td>
+            <td>ベルリン</td>
+            <td>Berurin</td>
+            <td>Berlin</td>
+            <td>柏林</td>
+        </tr>
+        <tr>
+            <td>トロント</td>
+            <td>トロント</td>
+            <td>Toronto</td>
+            <td>Toronto</td>
+            <td>多伦多</td>
+        </tr>
+        <tr>
+            <td>ニューデリー</td>
+            <td>ニューデリー</td>
+            <td>Nyūderī</td>
+            <td>New Delhi</td>
+            <td>新德里</td>
+        </tr>
+        <tr>
+            <td>医者</td>
+            <td>いしゃ</td>
+            <td>isha</td>
+            <td>doctor, physician</td>
+            <td>医生</td>
+        </tr>
+        <tr>
+            <td>教師</td>
+            <td>きょうし</td>
+            <td>kyōshi</td>
+            <td>teacher</td>
+            <td>教师</td>
+        </tr>
+        <tr>
+            <td>会社員</td>
+            <td>かいしゃいん</td>
+            <td>Kaishain</td>
+            <td>office worker</td>
+            <td>公司职员</td>
+        </tr>
+        <tr>
+            <td>看護師</td>
+            <td>かんごし</td>
+            <td>kangoshi</td>
+            <td>nurse</td>
+            <td>护士</td>
+        </tr>
+        <tr>
+            <td>エンジニア</td>
+            <td>エンジニア</td>
+            <td>enjinia</td>
+            <td>engineer</td>
+            <td>工程师</td>
+        </tr>
+        <tr>
+            <td>消防士</td>
+            <td>しょうぼうし</td>
+            <td>shōbōshi</td>
+            <td>fire fighter</td>
+            <td>消防员</td>
+        </tr>
+        <tr>
+            <td>警察官</td>
+            <td>けいさつかん</td>
+            <td>keisatsukan</td>
+            <td>police officer</td>
+            <td>警察</td>
+        </tr>
+        <tr>
+            <td>学生</td>
+            <td>がくせい</td>
+            <td>gakusei</td>
+            <td>student</td>
+            <td>学生</td>
+        </tr>
+        <tr>
+            <td>シェフ</td>
+            <td>シェフ</td>
+            <td>shefu</td>
+            <td>chef</td>
+            <td>厨师</td>
+        </tr>
+        <tr>
+            <td>ありがとうございます</td>
+            <td>ありがとうございます</td>
+            <td>arigatō gozaimasu</td>
+            <td>Thank you.</td>
+            <td>谢谢。</td>
+        </tr>
+        <tr>
+            <td>どういたしまして</td>
+            <td>どういたしまして</td>
+            <td>dōitashimashite</td>
+            <td>You are welcome.</td>
+            <td>不客气。</td>
+        </tr>
+        <tr>
+            <td>はじめまして</td>
+            <td>はじめまして</td>
+            <td>Hajimemashite</td>
+            <td>Nice to meet you.</td>
+            <td>初次见面。</td>
+        </tr>
+        <tr>
+            <td>よろしくお願いします</td>
+            <td>よろしくおねがいします</td>
+            <td>Yoroshiku onegai shimasu</td>
+            <td>Please treat me well.</td>
+            <td>请多关照。</td>
+        </tr>
+        <tr>
+            <td>お願いします</td>
+            <td>おねがいします</td>
+            <td>Onegai shimasu</td>
+            <td>Please.</td>
+            <td>请。</td>
+        </tr>
+        <tr>
+            <td>すみません</td>
+            <td>すみません</td>
+            <td>Sumimasen</td>
+            <td>Excuse me.</td>
+            <td>对不起。</td>
+        </tr>
+        <tr>
+            <td>おはようございます</td>
+            <td>おはようございます</td>
+            <td>Ohayō gozaimasu</td>
+            <td>Good morning.</td>
+            <td>早上好。</td>
+        </tr>
+        <tr>
+            <td>こんにちは</td>
+            <td>こんにちは</td>
+            <td>Kon'nichiwa</td>
+            <td>Hello.</td>
+            <td>你好。</td>
+        </tr>
+        </tbody>
+    </table>
+    <p>以上为完整的基础词汇表。</p>
+
+    <a href="/tags/ja_level.html" class="back-link">← 返回时间线</a>
+  </div>
+</body>
+</html>

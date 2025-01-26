@@ -30,6 +30,7 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             position: relative;
+            overflow-y: auto; /* 允许纵向滚动 */
         }
 
         /* 弹窗内容样式 */
@@ -232,7 +233,7 @@
         <!-- Level 1 Timeline -->
         <div class="accordion-item" data-level="1">
             <div class="accordion-header" onclick="toggleAccordion(this)">
-                1 完全初学者
+                1 完全初学者<span>用日语“做”任务</span>
                 <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24">
                     <path d="M480 696 240 456h480L480 696Z" />
                 </svg>
@@ -240,11 +241,15 @@
             <div class="accordion-content">
                 <div class="timeline-item">
                     <div class="circle">1</div>
-                    <a href="/components/ja_level/j1_1.html" class="modal-link">Level</a>
+                    <a href="/components/ja_level/j1_1.html" class="modal-link">能力陈述</a>
                 </div>
                 <div class="timeline-item">
                     <div class="circle">2</div>
-                    <a href="/components/ja_level/j1_2.html" class="modal-link">Level</a>
+                    <a href="/components/ja_level/j1_2.html" class="modal-link">平假名表</a>
+                </div>
+                <div class="timeline-item">
+                    <div class="circle">3</div>
+                    <a href="/components/ja_level/j1_3.html" class="modal-link">基础词汇</a>
                 </div>
             </div>
         </div>
