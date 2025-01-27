@@ -1,132 +1,230 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>日语能力测试 — 诊断</title>
+  <link href="https://pylove.us.kg/images/yzwer.jpg" rel="icon" type="image/x-icon">
+  <title>日文Level 1 - 叶泽伟的博客</title>
+  <!-- <style href="/css/yzw-beast.css" rel="stylesheet"></style> -->
   <style>
-    /* body {
-      font-family: Arial, sans-serif;
-      background-color: #f3f4f6;
-      margin: 0;
-      padding: 0;
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: #f8f9fa;
+      /* 柔和的浅灰色，降低视觉疲劳 */
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-    } */
-
-    .container {
-      background-color: #fffdf5;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      width: 80%;
-      max-width: 600px;
-      margin: auto;
-    }
-
-    .progress {
-      display: flex;
-      gap: 4px;
-      justify-content: center;
-      margin-bottom: 16px;
-    }
-
-    .progress span {
-      width: 7px;
-      height: 7px;
-      background-color: #cbd5e1;
-      border-radius: 50%;
-      display: inline-block;
-    }
-
-    .progress span.active {
-      background-color: #3b82f6;
-    }
-
-    .question {
-      margin-bottom: 16px;
-    }
-
-    .question p {
-      font-size: 16px;
-      color: #4b5563;
-    }
-
-    .options {
-      list-style: none;
-      padding: 0;
       margin: 0;
+      color: #212529;
+      /* 深灰色字体，对比度高 */
     }
 
-    .options li {
-      margin: 8px 0;
-    }
-
-    .options button {
-      background-color: #e5e7eb;
-      border: none;
-      border-radius: 4px;
-      padding: 10px 12px;
-      font-size: 14px;
+    .quiz-container {
+      background-color: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      /* 柔和阴影，突出内容 */
+      max-width: 600px;
+      /* 适合阅读的宽度 */
+      width: 90%;
+      /* 响应式适配 */
+      /* text-align: justify; */
       text-align: left;
+      /* line-height: 1.6; */
+    }
+
+    #progress-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    #progress-bar-line {
+      position: absolute;
+      top: 50%;
+      left: 0;
       width: 100%;
+      height: 4px;
+      background-color: #e9ecef;
+      /* 柔和的背景线 */
+      z-index: 0;
+      transform: translateY(-50%);
+      border-radius: 2px;
+    }
+
+    .progress-dot {
+      width: 10px;
+      height: 10px;
+      background-color: #dee2e6;
+      border-radius: 50%;
+      z-index: 1;
+      position: relative;
+      transition: background-color 0.3s ease;
+    }
+
+    .progress-dot.active {
+      background-color: #0d6efd;
+      /* Apple风格的蓝色，清晰高对比 */
+    }
+
+    #question-text {
+      font-size: 18px;
+      /* 略大字体，方便快速识别 */
+      font-weight: 600;
+      /* 字体加粗，强调问题内容 */
+      margin-bottom: 20px;
+      color: #343a40;
+      /* 更深的灰色，增加对比 */
+    }
+
+    #audio-container {
+      margin-bottom: 20px;
+    }
+
+    #options-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .option {
+      padding: 14px 18px;
+      /* 增加内边距，点击区域更大 */
+      border: 1px solid #ced4da;
+      border-radius: 8px;
+      background-color: #f8f9fa;
+      font-size: 14px;
+      color: #495057;
       cursor: pointer;
-      transition: background-color 0.2s;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+      text-align: left;
+      user-select: none;
+      /* 禁止选中文本，避免干扰 */
     }
 
-    .options button:hover {
-      background-color: #d1d5db;
+    .option:hover {
+      background-color: #e9ecef;
+      border-color: #adb5bd;
     }
 
-    .options button.selected {
-      background-color: #3b82f6;
-      color: white;
+    .option.selected {
+      background-color: #0d6efd;
+      /* 高对比蓝色 */
+      border-color: #0b5ed7;
+      color: #ffffff;
+      /* 白色文字 */
     }
 
-    .footer {
-      margin-top: 16px;
-      text-align: right;
-    }
-
-    .footer button {
-      background-color: #3b82f6;
-      color: white;
+    button {
+      background-color: #0d6efd;
+      color: #ffffff;
       border: none;
-      border-radius: 4px;
-      padding: 10px 16px;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
       cursor: pointer;
-      transition: background-color 0.2s;
+      transition: background-color 0.2s ease;
+      margin-top: 20px;
+      width: 100%;
+      /* 拉伸按钮适应屏幕 */
     }
 
-    .footer button:disabled {
-      background-color: #9ca3af;
+    button:hover {
+      background-color: #0b5ed7;
+    }
+
+    button:disabled {
+      background-color: #ced4da;
       cursor: not-allowed;
+      color: #6c757d;
     }
 
-    .footer button:hover:enabled {
-      background-color: #2563eb;
+    #result-container {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: 500;
+      color: #495057;
+    }
+
+    /* 结果容器基础样式 */
+    #result-container {
+      margin-top: 20px;
+      font-size: 16px;
+      font-weight: bold;
+      /* 提高视觉明显性 */
+    }
+
+    /* 正确结果样式 */
+    #result-container.result-correct {
+      color: #28a745;
+      /* Apple风格的绿色 */
+    }
+
+    /* 错误结果样式 */
+    #result-container.result-wrong {
+      color: #dc3545;
+      /* Apple风格的红色 */
+    }
+
+    /* 跳过结果样式 */
+    #result-container.result-skip {
+      color: #ffc107;
+      /* Apple风格的黄色 */
+    }
+
+
+
+    /* 响应式优化 */
+    @media (max-width: 768px) {
+      #question-text {
+        font-size: 20px;
+      }
+
+      .option {
+        font-size: 16px;
+        padding: 12px 16px;
+      }
+
+      button {
+        padding: 12px 20px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <div class="progress" id="progressBar"></div>
-    <div class="question">
-      <!-- <h2>选择最合适的答案。</h2> -->
-      <p id="questionText"></p>
+  <div class="quiz-container">
+    <!-- 进度条 -->
+    <div id="progress-bar">
+      <div id="progress-bar-line"></div>
     </div>
-    <ul class="options" id="optionsList"></ul>
-    <div class="footer">
-      <button id="nextButton" disabled>下一题</button>
-    </div>
+
+    <!-- 问题内容 -->
+    <div id="question-text"></div>
+    <div id="audio-container"></div>
+    <div id="options-container"></div>
+    <button id="next-button">下一题</button>
+    <div id="result-container"></div>
   </div>
 
   <script>
-    // 题目数据
+    let currentQuestionIndex = 0;
+    let score = 0;
+
+    const questionText = document.getElementById('question-text');
+    const audioContainer = document.getElementById('audio-container');
+    const optionsContainer = document.getElementById('options-container');
+    const nextButton = document.getElementById('next-button');
+    const resultContainer = document.getElementById('result-container');
+    const progressBar = document.getElementById('progress-bar');
+
     const questions = [
       {
         text: `在日语中，开始自我介绍时，如何说“很高兴见到你”？`,
@@ -291,9 +389,9 @@
       },
       {
         text: `ささき　じゅん: がくせいですか。<br>
-ともこ　たなか: いいえ、がくせい（ ）。きょうしです。<br>
-Jun Sasaki: Gakusei desu ka.<br>
-Tomoko Tanaka: Iie, gakusei ( ). Kyōshi desu.`,
+        ともこ　たなか: いいえ、がくせい（ ）。きょうしです。<br>
+        Jun Sasaki: Gakusei desu ka.<br>
+        Tomoko Tanaka: Iie, gakusei ( ). Kyōshi desu.`,
         options: [
           { text: "です (desu)", value: "A", correct: false },
           { text: "では (dewa)", value: "B", correct: false },
@@ -327,13 +425,10 @@ Tomoko Tanaka: Iie, gakusei ( ). Kyōshi desu.`,
         ]
       },
       {
-        text: `一位日本学生桥本花（Hana Hashimoto）做自我介绍。她说：
-<br>
-はじめまして。はしもとはな です。よろしくおねがいします。
-<br>
-Hajimemashite. Hashimoto Hana desu. Yoroshiku onegai shimasu.
-<br>
-杰克·琼斯（Jack Jones）对Hana的国籍感到好奇。他怎么问她是否是日本人？`,
+        text: `一位日本学生桥本花（Hana Hashimoto）做自我介绍。她说：<br>
+        はじめまして。はしもとはな です。よろしくおねがいします。<br>
+        Hajimemashite. Hashimoto Hana desu. Yoroshiku onegai shimasu.<br>
+        杰克·琼斯（Jack Jones）对Hana的国籍感到好奇。他怎么问她是否是日本人？`,
         options: [
           { text: "にほんじんですか。 (Nihon-jin desu ka.)", value: "A", correct: false },
           { text: "にほんからきましたか。 (Nihon kara kimashita ka.)", value: "B", correct: false },
@@ -382,7 +477,7 @@ Hajimemashite. Hashimoto Hana desu. Yoroshiku onegai shimasu.
         ]
       },
       {
-        text: ``,
+        text: `23`,
         options: [
           { text: "わた (wata)", value: "A", correct: false },
           { text: "わした (washita)", value: "B", correct: true },
@@ -392,7 +487,7 @@ Hajimemashite. Hashimoto Hana desu. Yoroshiku onegai shimasu.
         ]
       },
       {
-        text: ``,
+        text: `24`,
         options: [
           { text: "わた (wata)", value: "A", correct: false },
           { text: "わした (washita)", value: "B", correct: true },
@@ -402,7 +497,7 @@ Hajimemashite. Hashimoto Hana desu. Yoroshiku onegai shimasu.
         ]
       },
       {
-        text: ``,
+        text: `25`,
         options: [
           { text: "わた (wata)", value: "A", correct: false },
           { text: "わした (washita)", value: "B", correct: true },
@@ -412,7 +507,7 @@ Hajimemashite. Hashimoto Hana desu. Yoroshiku onegai shimasu.
         ]
       },
       {
-        text: ``,
+        text: `26`,
         options: [
           { text: "わた (wata)", value: "A", correct: false },
           { text: "わした (washita)", value: "B", correct: true },
@@ -422,7 +517,7 @@ Hajimemashite. Hashimoto Hana desu. Yoroshiku onegai shimasu.
         ]
       },
       {
-        text: ``,
+        text: `27`,
         options: [
           { text: "わた (wata)", value: "A", correct: false },
           { text: "わした (washita)", value: "B", correct: true },
@@ -432,7 +527,7 @@ Hajimemashite. Hashimoto Hana desu. Yoroshiku onegai shimasu.
         ]
       },
       {
-        text: ``,
+        text: `28`,
         options: [
           { text: "わた (wata)", value: "A", correct: false },
           { text: "わした (washita)", value: "B", correct: true },
@@ -442,7 +537,7 @@ Hajimemashite. Hashimoto Hana desu. Yoroshiku onegai shimasu.
         ]
       },
       {
-        text: ``,
+        text: `29`,
         options: [
           { text: "わた (wata)", value: "A", correct: false },
           { text: "わした (washita)", value: "B", correct: true },
@@ -452,7 +547,7 @@ Hajimemashite. Hashimoto Hana desu. Yoroshiku onegai shimasu.
         ]
       },
       {
-        text: ``,
+        text: `30`,
         options: [
           { text: "わた (wata)", value: "A", correct: false },
           { text: "わした (washita)", value: "B", correct: true },
@@ -462,7 +557,7 @@ Hajimemashite. Hashimoto Hana desu. Yoroshiku onegai shimasu.
         ]
       },
       {
-        text: ``,
+        text: `31`,
         options: [
           { text: "わた (wata)", value: "A", correct: false },
           { text: "わした (washita)", value: "B", correct: true },
@@ -472,7 +567,7 @@ Hajimemashite. Hashimoto Hana desu. Yoroshiku onegai shimasu.
         ]
       },
       {
-        text: ``,
+        text: `32`,
         options: [
           { text: "わた (wata)", value: "A", correct: false },
           { text: "わした (washita)", value: "B", correct: true },
@@ -480,130 +575,100 @@ Hajimemashite. Hashimoto Hana desu. Yoroshiku onegai shimasu.
           { text: "わがし (wagashi)", value: "D", correct: false },
           { text: "不确定 / 跳过问题", value: "skip", correct: false }
         ]
-      },
-      {
-        text: ``,
-        options: [
-          { text: "わた (wata)", value: "A", correct: false },
-          { text: "わした (washita)", value: "B", correct: true },
-          { text: "わたし (watashi)", value: "C", correct: false },
-          { text: "わがし (wagashi)", value: "D", correct: false },
-          { text: "不确定 / 跳过问题", value: "skip", correct: false }
-        ]
-      },
-      {
-        text: ``,
-        options: [
-          { text: "わた (wata)", value: "A", correct: false },
-          { text: "わした (washita)", value: "B", correct: true },
-          { text: "わたし (watashi)", value: "C", correct: false },
-          { text: "わがし (wagashi)", value: "D", correct: false },
-          { text: "不确定 / 跳过问题", value: "skip", correct: false }
-        ]
-      },
-      {
-        text: ``,
-        options: [
-          { text: "わた (wata)", value: "A", correct: false },
-          { text: "わした (washita)", value: "B", correct: true },
-          { text: "わたし (watashi)", value: "C", correct: false },
-          { text: "わがし (wagashi)", value: "D", correct: false },
-          { text: "不确定 / 跳过问题", value: "skip", correct: false }
-        ]
-      },
+      }
     ];
 
 
-
-    let currentQuestionIndex = 0;
-    const userAnswers = [];
-
-    const progressBar = document.getElementById('progressBar');
-    const questionText = document.getElementById('questionText');
-    const optionsList = document.getElementById('optionsList');
-    const nextButton = document.getElementById('nextButton');
-
-    // 初始化进度条
-    function updateProgressBar() {
-      progressBar.innerHTML = '';
+    function createProgressDots() {
+      progressBar.innerHTML = '<div id="progress-bar-line"></div>'; // 重置进度条
       questions.forEach((_, index) => {
-        const span = document.createElement('span');
-        if (index <= currentQuestionIndex) {
-          span.classList.add('active');
+        const dot = document.createElement('div');
+        dot.className = 'progress-dot';
+        if (index === currentQuestionIndex) {
+          dot.classList.add('active');
         }
-        progressBar.appendChild(span);
+        progressBar.appendChild(dot);
       });
     }
 
-    // 加载题目
-    function loadQuestion() {
-      const question = questions[currentQuestionIndex];  // 获取当前题目
-      questionText.innerHTML = question.text;  // 使用 innerHTML 来加载题目
-      optionsList.innerHTML = '';  // 清空选项列表
+    function showQuestion() {
+      const question = questions[currentQuestionIndex];
+      questionText.innerHTML = question.text;
+
+      // 清空音频容器和选项容器
+      audioContainer.innerHTML = '';
+      optionsContainer.innerHTML = '';
+
       question.options.forEach(option => {
-        const li = document.createElement('li');
-        const button = document.createElement('button');
+        const button = document.createElement('div');
         button.textContent = option.text;
+        button.className = 'option';
         button.dataset.value = option.value;
-        button.dataset.correct = option.correct;
-        button.addEventListener('click', () => {
-          // 取消选择其他按钮
-          document.querySelectorAll('.options button').forEach(btn => btn.classList.remove('selected'));
-          // 当前按钮高亮
-          button.classList.add('selected');
-          nextButton.disabled = false;  // 启用“下一题”按钮
-        });
-        li.appendChild(button);
-        optionsList.appendChild(li);
+        button.addEventListener('click', selectOption);
+        optionsContainer.appendChild(button);
       });
-      nextButton.disabled = true;  // 默认禁用“下一题”按钮
+
+      nextButton.disabled = true; // 禁用“下一题”按钮
+      resultContainer.textContent = '';
+      createProgressDots(); // 更新进度条
     }
 
+    function selectOption(event) {
+      const selectedButton = event.target;
 
-    // 点击“下一题”按钮
-    nextButton.addEventListener('click', () => {
-      const selectedButton = document.querySelector('.options button.selected');
-      if (selectedButton) {
-        // 保存答案
-        userAnswers.push({
-          question: questions[currentQuestionIndex].text,
-          userAnswer: selectedButton.textContent,
-          isCorrect: selectedButton.dataset.correct === 'true',
-          correctAnswer: questions[currentQuestionIndex].options.find(option => option.correct).text
-        });
+      // 清除其他选项的选中状态
+      document.querySelectorAll('.option').forEach(option => {
+        option.classList.remove('selected');
+      });
 
-        // 进入下一题或显示结果
-        currentQuestionIndex++;
-        if (currentQuestionIndex < questions.length) {
-          updateProgressBar();
-          loadQuestion();
-        } else {
-          showResults();
-        }
+      // 标记当前选中选项
+      selectedButton.classList.add('selected');
+
+      const selectedValue = selectedButton.dataset.value;
+      const question = questions[currentQuestionIndex];
+      const selectedOption = question.options.find(option => option.value === selectedValue);
+
+      // 清除结果容器的所有样式
+      resultContainer.className = '';
+
+      if (selectedValue === 'skip') {
+        resultContainer.textContent = '跳过此题';
+        resultContainer.classList.add('result-skip'); // 跳过的样式
+      } else if (selectedOption.correct) {
+        resultContainer.textContent = '正确！';
+        resultContainer.classList.add('result-correct'); // 正确的样式
+        score++;
+      } else {
+        resultContainer.textContent = '错误！';
+        resultContainer.classList.add('result-wrong'); // 错误的样式
       }
-    });
 
-    // 显示结果
-    function showResults() {
-      questionText.textContent = '测试完成！以下是您的答案：';
-      optionsList.innerHTML = userAnswers
-        .map(
-          (answer, index) => `
-      <li style="margin-bottom: 16px; padding: 10px; border: 1px solid #e5e7eb; border-radius: 4px; background-color: ${answer.isCorrect ? '#d1fae5' : '#fee2e2'};">
-        <strong>第${index + 1}题:</strong> ${answer.question}<br>
-        <strong>您的答案:</strong> ${answer.userAnswer} <span style="color: ${answer.isCorrect ? 'green' : 'red'}">
-        （${answer.isCorrect ? '正确' : '错误'}）
-        </span><br>
-        <strong>正确答案:</strong> ${answer.correctAnswer}
-      </li>`
-        )
-        .join('');
-      nextButton.style.display = 'none';
+      nextButton.disabled = false; // 启用“下一题”按钮
     }
 
-    // 初始化测验
-    updateProgressBar();
-    loadQuestion();
+
+
+    function showNextQuestion() {
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
+        showQuestion();
+      } else {
+        endQuiz();
+      }
+    }
+
+    function endQuiz() {
+      questionText.textContent = `Quiz结束！你的得分是 ${score} / ${questions.length}`;
+      optionsContainer.innerHTML = '';
+      audioContainer.innerHTML = '';
+      progressBar.innerHTML = ''; // 清空进度条
+      nextButton.style.display = 'none';
+      resultContainer.textContent = '';
+    }
+
+    nextButton.addEventListener('click', showNextQuestion);
+
+    showQuestion();
   </script>
 </body>
 
