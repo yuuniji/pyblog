@@ -1,84 +1,102 @@
-function initAccordion() {
-  const allHeaders = document.querySelectorAll(".accordion-header");
-  const allContents = document.querySelectorAll(".accordion-content");
-
-  // 默认展开所有手风琴项
-  allHeaders.forEach((header) => {
-      header.classList.add("open");
-  });
-  allContents.forEach((content) => {
-      content.style.display = "block";
-  });
-
-  // 添加点击事件监听
-  allHeaders.forEach((header) => {
-      header.addEventListener("click", () =>
-          toggleAccordion(header, allHeaders, allContents)
-      );
-  });
+// 获取元素的方法
+function getElement(selector, context = document) {
+    return context.querySelector(selector);
 }
 
-function toggleAccordion(header) {
-  const content = header.nextElementSibling;
-  const isOpen = content.style.display === "block";
-  content.style.display = isOpen ? "none" : "block";
-  header.classList.toggle("open", !isOpen);
+function getElements(selector, context = document) {
+    return context.querySelectorAll(selector);
 }
 
-function initModal() {
-  const links = document.querySelectorAll(".timeline-item a");
-  const modalOverlay = document.getElementById("modal-overlay");
-  const modalBody = document.getElementById("modal-body");
-  const modalClose = document.getElementById("modal-close");
+// 切换 Accordion 折叠状态
+function toggleAccordion(headerElement) {
+    const accordionItem = headerElement.parentElement;
+    const content = getElement('.accordion-content', accordionItem);
 
-  // 显示弹窗
-  links.forEach((link) => {
-      link.addEventListener("click", (event) => {
-          event.preventDefault();
-          const url = link.getAttribute("href");
+    // 判断当前是否打开
+    const isOpen = headerElement.classList.contains('open');
 
-          showModal(modalOverlay, modalBody, url);
-      });
-  });
+    // 关闭所有其他打开的 Accordion
+    getElements('.accordion-header').forEach(header => {
+        if (header !== headerElement) {
+            header.classList.remove('open');
+            const siblingContent = getElement('.accordion-content', header.parentElement);
+            if (siblingContent) siblingContent.style.display = 'none';
+        }
+    });
 
-  // 关闭弹窗
-  modalClose.addEventListener("click", () => {
-      closeModal(modalOverlay);
-  });
-
-  modalOverlay.addEventListener("click", (event) => {
-      if (event.target === modalOverlay) {
-          closeModal(modalOverlay);
-      }
-  });
+    // 切换当前 Accordion
+    if (isOpen) {
+        headerElement.classList.remove('open');
+        content.style.display = 'none';
+    } else {
+        headerElement.classList.add('open');
+        content.style.display = 'block';
+    }
 }
 
-function showModal(modalOverlay, modalBody, url) {
-  modalOverlay.style.display = "flex";
-  modalBody.innerHTML = "<p>加载中...</p>";
+// 显示弹窗
+function showModal(contentUrl) {
+    const modalOverlay = getElement('#modal-overlay');
+    const modalBody = getElement('#modal-body');
 
-  fetch(url)
-      .then((response) => {
-          if (!response.ok) {
-              throw new Error("网络错误：" + response.status);
-          }
-          return response.text();
-      })
-      .then((html) => {
-          modalBody.innerHTML = html;
-      })
-      .catch((error) => {
-          modalBody.innerHTML = `<p style='color: red;'>加载失败：${error.message}</p>`;
-      });
+    // 加载外部内容
+    fetch(contentUrl)
+        .then(response => {
+            if (response.ok) {
+                return response.text();
+            } else {
+                throw new Error('内容加载失败');
+            }
+        })
+        .then(html => {
+            modalBody.innerHTML = html; // 将内容插入到弹窗中
+            modalOverlay.style.display = 'flex'; // 显示弹窗
+        })
+        .catch(error => {
+            modalBody.innerHTML = `<p>加载失败: ${error.message}</p>`;
+            modalOverlay.style.display = 'flex';
+        });
 }
 
-function closeModal(modalOverlay) {
-  modalOverlay.style.display = "none";
+// 关闭弹窗
+function closeModal() {
+    const modalOverlay = getElement('#modal-overlay');
+    const modalBody = getElement('#modal-body');
+
+    modalOverlay.style.display = 'none';
+    modalBody.innerHTML = ''; // 清空内容
 }
 
-function init() {
-  initAccordion();
-  initModal();
+// 初始化事件绑定
+function initializeModalEvents() {
+    const modalLinks = getElements('.modal-link');
+    modalLinks.forEach(link => {
+        link.addEventListener('click', event => {
+            event.preventDefault(); // 阻止默认跳转
+            const url = link.getAttribute('href');
+            showModal(url);
+        });
+    });
+
+    // 绑定关闭按钮事件
+    const closeButton = getElement('#modal-close');
+    closeButton.addEventListener('click', closeModal);
+
+    // 点击遮罩层关闭弹窗
+    const modalOverlay = getElement('#modal-overlay');
+    modalOverlay.addEventListener('click', event => {
+        if (event.target === modalOverlay) {
+            closeModal();
+        }
+    });
 }
 
-document.addEventListener("DOMContentLoaded", init);
+// DOM 加载后初始化
+function onDOMLoaded(callback) {
+    document.addEventListener('DOMContentLoaded', callback);
+}
+
+// 主入口
+onDOMLoaded(() => {
+    initializeModalEvents();
+});

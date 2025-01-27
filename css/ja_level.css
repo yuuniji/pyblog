@@ -22,7 +22,8 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     position: relative;
-    overflow-y: auto; /* 允许纵向滚动 */
+    overflow-y: auto;
+    /* 允许纵向滚动 */
 }
 
 /* 弹窗内容样式 */
@@ -81,12 +82,18 @@
     transition: background-color 0.3s, color 0.3s;
 }
 
-.accordion-content {
-    display: none;
-    padding: 15px;
-    border-top: 1px solid #ddd;
-    background-color: #fff;
+.accordion-header.open {
+    background: #d0d0d0;
 }
+
+.accordion-content {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-top: none;
+    display: block;
+    /* 默认展开 */
+}
+
 
 /* Timeline styles */
 .timeline-item {
