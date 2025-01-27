@@ -84,6 +84,17 @@
             font-size: 14px;
             color: #555;
         }
+
+
+        /* 针对小屏幕优化 */
+        @media (max-width: 768px) {
+            .examples {
+                flex-direction: column;
+                /* 改为垂直布局 */
+                gap: 10px;
+                /* 缩小间距 */
+            }
+        }
     </style>
 </head>
 
@@ -105,20 +116,20 @@
         </p>
         <ul>
             <li>
-                A) 一个或多个核心句子被逐步解析，展示语法点在实际使用中的运作方式。每个句子都以日语的汉字和假名书写系统呈现，并附有罗马字转写。此外，还提供字面英文分解，帮助学习者解读句子的每一部分。
+                一个或多个核心句子被逐步解析，展示语法点在实际使用中的运作方式。每个句子都以日语的汉字和假名书写系统呈现，并附有罗马字转写。此外，还提供字面英文分解，帮助学习者解读句子的每一部分。
                 同时，提供符合语境的英文翻译，确保对每个语法点的全面理解。
             </li>
             <li>
-                B) “构成指南”提供使用该语法点的公式或步骤，便于学习者自行运用。
+                “构成指南”提供使用该语法点的公式或步骤，便于学习者自行运用。
             </li>
             <li>
-                C) 例句结合精心设计的插图，展示语法点在真实生活场景中的运用。
+                例句结合精心设计的插图，展示语法点在真实生活场景中的运用。
             </li>
             <li>
-                D) “注释”提供有关语法点的附加信息，包括其用法和相关表达。
+                “注释”提供有关语法点的附加信息，包括其用法和相关表达。
             </li>
             <li>
-                E) “相关课程”列表指引学习者访问 JapanesePod101.com 上的视频和音频课程。
+                “相关课程”列表指引学习者访问 JapanesePod101.com 上的视频和音频课程。
             </li>
         </ul>
 
@@ -264,7 +275,8 @@
                         <td>田中　ともこ<br />Tanaka Tomoko</td>
                         <td>しゅっしん<span style="color: red;">は</span>　東京<span style="color: red;">です</span>。<br>Shusshin
                             <span style="color: red;">wa</span> Tōkyō <span style="color: red;">desu</span>.<br>My
-                            hometown is Tokyo.<br>我的家乡是东京。</td>
+                            hometown is Tokyo.<br>我的家乡是东京。
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -277,6 +289,174 @@
                     </div>
                     <div class="example">
                         <p>しゅみは　読書です。<br>Shumi wa dokusho desu.<br>My hobby is reading books.<br>我的爱好是读书。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <p><b>注意</b></p>
+                <ol>
+                    <li>です (desu) 是だ (da) 的礼貌形式。</li>
+                    <li>在这个结构中，第二个名词可以被替换为 な(na)-形容词。
+                        〜は〜だ/です (~ wa ~ da / desu)。<br />  
+                        <b>わたしは　げんきだ / げんきです。</b><br />  
+                        Watashi wa genki da / genki desu.<br />  
+                        I’m fine.<br />我很好。</li>
+                    <li>第二个名词也可以替换为い(i)-形容词，但句子只能以です(desu)结尾，而不能以だ(da)结尾。<br />  
+                        これは　おいしいです。（❌これは　おいしいだ。）<br />  
+                        Kore wa oishii desu.<br />  
+                        This is delicious.<br />这很美味。</li>
+                </ol>
+                
+            </div>
+
+            <div class="section">
+                <p><b>相关课程</b></p>
+                <ul>
+                    <li>可以介绍自己</li>
+                    <li>可以提供联系信息</li>
+                    <li>可以谈论你的国籍</li>
+                    <li>可以谈论自己的兴趣</li>
+                    <li>日语课程28级（Nihongo Doujou - Meeting New People in Japan Made Easy）</li>
+                </ul>
+            </div>
+        </div>
+
+        <div>
+            <div class="section">
+                <p class="title"><span style="color: red;">か (ka) </span> 助词</p>
+                <p>将陈述句变为疑问句的助词</p>
+                <table class="table">
+                    <tr>
+                        <th>句子</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>小林さんは　げんき　です<br />Kobayashi-san wa genki desu</td>
+                        <td><span style="color: red;">か</span>。<br /><span style="color: red;">ka</span>.</td>
+                    </tr>
+                    <tr>
+                        <td>Mr. Kobayashi well is</td>
+                        <td><span style="color: red;">?</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: left;">How are you, Mr. Kobayashi?</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: left;">小林先生，你好吗？</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="section">
+                <p class="title">🧠 构成</p>
+                <p>Statement <span style="color: red;">か (ka)</span></p>
+                <p>例句：</p>
+                <table class="table">
+                    <tr>
+                        <td>サーシャ リー<br />Sāsha Rī</td>
+                        <td>ささきさんは 日本人です<span style="color: red;">か</span>。<br>
+                            Sasaki-san wa Nihon-jin desu <span style="color: red;">ka</span>.<br>
+                            Are you Japanese, Ms. Sasaki<span style="color: red;">?</span>
+                            <br>佐々木小姐，你是日本人吗？
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>いしかわ しん<br />Ishikawa Shin</td>
+                        <td>はるとくんの　しゅっしんは　アメリカです<span style="color: red;">か</span>。<br>
+                            Haruto-kun no shusshin wa Amerika desu <span style="color: red;">ka</span>. <br>
+                            Is Haruto’s hometown America<span style="color: red;">?</span>
+                            <br>春人的家乡是美国吗？
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="section">
+                <p class="title">💬 例句</p>
+                <div class="examples">
+                    <div class="example">
+                        <p>はしもとさんは　いしゃですか。<br>Hashimoto-san wa isha desu ka. <br>Mr. Hashimoto, are you a doctor?<br>桥本先生，您是医生吗？</p>
+                    </div>
+                    <div class="example">
+                        <p>けいさつかんですか。<br>Keisatsukan desu ka.<br>Are you a police officer?<br>你是警察吗？</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <p><b>相关课程</b></p>
+                <ul>
+                    <li>可以谈论你来自哪里</li>
+                    <li>可以谈论职业</li>
+                    <li>可以询问幸福感/健康状况</li>
+                </ul>
+            </div>
+        </div>
+
+        <div>
+            <div class="section">
+                <p class="title"><span style="color: red;">は (wa)</span> 助词</p>
+                <p>表示句子的主题。</p>
+                <table class="table">
+                    <tr>
+                        <th>主题</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>私<br />Watashi</td>
+                        <td><span style="color: red;">は<br />wa</span></td>
+                        <td>小林です。<br />Kobayashi desu.</td>
+                    </tr>
+                    <tr>
+                        <td>I</td>
+                        <td></td>
+                        <td>Kobayashi am.</td>
+                    </tr>
+                    <tr>
+                        <td>我</td>
+                        <td></td>
+                        <td>小林是。</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="text-align: left;">I’m Kobayashi.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="text-align: left;">我是小林。</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="section">
+                <p class="title">🧠 构成</p>
+                <p>Noun <span style="color: red;">は (wa)</span></p>
+                <p>例句：</p>
+                <table class="table">
+                    <tr>
+                        <td>田中　ともこ<br />Tanaka Tomoko</td>
+                        <td>私<span style="color: red;">は</span>　田中です。<br>Watashi <span style="color: red;">wa</span>
+                            Tanaka
+                            desu.<br>I’m Tanaka.<br>我是田中。</td>
+                    </tr>
+                    <tr>
+                        <td>中村　よし<br />Nakamura Yoshi</td>
+                        <td>私の　電話ばんごう<span style="color: red;">は</span>　080-0442-2374です。<br>Watashi no denwa bangō <span
+                                style="color: red;">wa</span> 080-0442-2374 desu.<br>My phone number is 080-0442-2374.
+                            <br>我的电话号码是080-0442-2374。
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="section">
+                <p class="title">💬 例句</p>
+                <div class="examples">
+                    <div class="example">
+                        <p>しゅっしんは　おおさかです。<br>Shusshin wa Ōsaka desu.<br>My hometown is Osaka.<br>我的家乡是大阪。</p>
+                    </div>
+                    <div class="example">
+                        <p>私の　しゅみは　つりです。<br>Watashi no Shumi wa tsuri desu.<br>My hobby is fishing.<br>我的兴趣是钓鱼。</p>
                     </div>
                 </div>
             </div>
