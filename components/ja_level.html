@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accordion Timeline</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion and Modal Example</title>
     <style>
         /* 遮罩层样式 */
         #modal-overlay {
@@ -90,13 +89,18 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
-        .accordion-content {
-            display: none;
-            padding: 15px;
-            border-top: 1px solid #ddd;
-            background-color: #fff;
+        .accordion-header.open {
+            background: #d0d0d0;
         }
-        
+
+        .accordion-content {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-top: none;
+            display: block;
+            /* 默认展开 */
+        }
+
 
         /* Timeline styles */
         .timeline-item {
@@ -220,10 +224,10 @@
             }
         }
     </style>
-    <!-- <link type="text/css" rel="stylesheet" href="/css/ja_level.css"> -->
 </head>
-
 <body>
+
+    <!-- Accordion -->
     <div class="accordion-container">
         <!-- 弹窗容器 -->
         <div id="modal-overlay" style="display: none;">
@@ -235,7 +239,7 @@
 
         <!-- Level 1 Timeline -->
         <div class="accordion-item" data-level="1">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
+            <div class="accordion-header open" onclick="toggleAccordion(this)">
                 1 完全初学者<span>用日语“做”任务</span>
                 <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24">
                     <path d="M480 696 240 456h480L480 696Z" />
@@ -244,7 +248,7 @@
             <div class="accordion-content">
                 <div class="timeline-item">
                     <div class="circle">1</div>
-                    <a href="../components/ja_level/j1_1.html" class="modal-link">能力陈述</a>
+                    <a href="/components/ja_level/j1_1.html" class="modal-link">能力陈述</a>
                 </div>
                 <div class="timeline-item">
                     <div class="circle">2</div>
@@ -363,92 +367,89 @@
     </div>
 
     <script>
-        function initAccordion() {
-  const allHeaders = document.querySelectorAll(".accordion-header");
-  const allContents = document.querySelectorAll(".accordion-content");
+        // 切换 Accordion 折叠状态
+        function toggleAccordion(headerElement) {
+            const accordionItem = headerElement.parentElement;
+            const content = accordionItem.querySelector('.accordion-content');
 
-  // 默认展开所有手风琴项
-  allHeaders.forEach((header) => {
-      header.classList.add("open");
-  });
-  allContents.forEach((content) => {
-      content.style.display = "block";
-  });
+            // 判断当前是否打开
+            const isOpen = headerElement.classList.contains('open');
 
-  // 添加点击事件监听
-  allHeaders.forEach((header) => {
-      header.addEventListener("click", () =>
-          toggleAccordion(header, allHeaders, allContents)
-      );
-  });
-}
+            // 关闭所有其他打开的 Accordion
+            document.querySelectorAll('.accordion-header').forEach(header => {
+                if (header !== headerElement) {
+                    header.classList.remove('open');
+                    const siblingContent = header.parentElement.querySelector('.accordion-content');
+                    if (siblingContent) siblingContent.style.display = 'none';
+                }
+            });
 
-function toggleAccordion(header) {
-  const content = header.nextElementSibling;
-  const isOpen = content.style.display === "block";
-  content.style.display = isOpen ? "none" : "block";
-  header.classList.toggle("open", !isOpen);
-}
+            // 切换当前 Accordion
+            if (isOpen) {
+                headerElement.classList.remove('open');
+                content.style.display = 'none';
+            } else {
+                headerElement.classList.add('open');
+                content.style.display = 'block';
+            }
+        }
 
-function initModal() {
-  const links = document.querySelectorAll(".timeline-item a");
-  const modalOverlay = document.getElementById("modal-overlay");
-  const modalBody = document.getElementById("modal-body");
-  const modalClose = document.getElementById("modal-close");
+        // 显示弹窗
+        function showModal(contentUrl) {
+            const modalOverlay = document.getElementById('modal-overlay');
+            const modalBody = document.getElementById('modal-body');
 
-  // 显示弹窗
-  links.forEach((link) => {
-      link.addEventListener("click", (event) => {
-          event.preventDefault();
-          const url = link.getAttribute("href");
+            // 加载外部内容
+            fetch(contentUrl)
+                .then(response => {
+                    if (response.ok) {
+                        return response.text();
+                    } else {
+                        throw new Error('内容加载失败');
+                    }
+                })
+                .then(html => {
+                    modalBody.innerHTML = html; // 将内容插入到弹窗中
+                    modalOverlay.style.display = 'flex'; // 显示弹窗
+                })
+                .catch(error => {
+                    modalBody.innerHTML = `<p>加载失败: ${error.message}</p>`;
+                    modalOverlay.style.display = 'flex';
+                });
+        }
 
-          showModal(modalOverlay, modalBody, url);
-      });
-  });
+        // 关闭弹窗
+        function closeModal() {
+            const modalOverlay = document.getElementById('modal-overlay');
+            const modalBody = document.getElementById('modal-body');
 
-  // 关闭弹窗
-  modalClose.addEventListener("click", () => {
-      closeModal(modalOverlay);
-  });
+            modalOverlay.style.display = 'none';
+            modalBody.innerHTML = ''; // 清空内容
+        }
 
-  modalOverlay.addEventListener("click", (event) => {
-      if (event.target === modalOverlay) {
-          closeModal(modalOverlay);
-      }
-  });
-}
+        // 为所有 .modal-link 绑定事件
+        document.addEventListener('DOMContentLoaded', () => {
+            const modalLinks = document.querySelectorAll('.modal-link');
+            modalLinks.forEach(link => {
+                link.addEventListener('click', event => {
+                    event.preventDefault(); // 阻止默认跳转
+                    const url = link.getAttribute('href');
+                    showModal(url);
+                });
+            });
 
-function showModal(modalOverlay, modalBody, url) {
-  modalOverlay.style.display = "flex";
-  modalBody.innerHTML = "<p>加载中...</p>";
+            // 绑定关闭按钮事件
+            const closeButton = document.getElementById('modal-close');
+            closeButton.addEventListener('click', closeModal);
 
-  fetch(url)
-      .then((response) => {
-          if (!response.ok) {
-              throw new Error("网络错误：" + response.status);
-          }
-          return response.text();
-      })
-      .then((html) => {
-          modalBody.innerHTML = html;
-      })
-      .catch((error) => {
-          modalBody.innerHTML = `<p style='color: red;'>加载失败：${error.message}</p>`;
-      });
-}
-
-function closeModal(modalOverlay) {
-  modalOverlay.style.display = "none";
-}
-
-function init() {
-  initAccordion();
-  initModal();
-}
-
-document.addEventListener("DOMContentLoaded", init);
+            // 点击遮罩层关闭弹窗
+            const modalOverlay = document.getElementById('modal-overlay');
+            modalOverlay.addEventListener('click', event => {
+                if (event.target === modalOverlay) {
+                    closeModal();
+                }
+            });
+        });
     </script>
-    <!-- <script src="/js/ja_level.js" type="text/javascript"></script> -->
 </body>
-
 </html>
