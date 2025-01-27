@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>日语能力测试 — 诊断</title>
   <style>
-    body {
+    /* body {
       font-family: Arial, sans-serif;
       background-color: #f3f4f6;
       margin: 0;
@@ -15,16 +15,16 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-    }
+    } */
 
     .container {
-      background-color: rgb(255, 252, 245);
+      background-color: #fffdf5;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       padding: 20px;
       width: 80%;
-      /* 保留换行符并自动换行 */
-      /* white-space: pre-wrap; */
+      max-width: 600px;
+      margin: auto;
     }
 
     .progress {
@@ -50,13 +50,8 @@
       margin-bottom: 16px;
     }
 
-    .question h2 {
-      font-size: 18px;
-      margin: 0 0 8px;
-    }
-
     .question p {
-      font-size: 14px;
+      font-size: 16px;
       color: #4b5563;
     }
 
@@ -182,7 +177,7 @@
         ]
       },
       {
-        text: 'こばやし　けん：はじめまして。わたしは こばやしです。よろしく おねがいします。<br>サーシャ　リー：（　　　　　　　　　　　　　　　　　　　　　　）。<br>Ken Kobayashi:  Hajimemashite. Watashi wa Kobayashi desu. Yoroshiku onegai shimasu.<br>Sasha Lee: （　　　　　　　　　　　　　　　　　　　　　　）.',
+        text: 'こばやし　けん：はじめまして。わたしは こばやしです。よろしく おねがいします。<br>サーシャ　リー：（ ）。<br>Ken Kobayashi:  Hajimemashite. Watashi wa Kobayashi desu. Yoroshiku onegai shimasu.<br>Sasha Lee: ( ).',
         options: [
           { text: "よろしくおねがいします。わたしはリーベンです。はじめまして。 (Yoroshiku onegai shimasu. Watashi wa Rī Ben desu. Hajimemashite.)", value: "A", correct: false },
           { text: "はじめまして。わたしはリーベンです。よろしくおねがいします。 (Hajimemashite. Watashi wa Rī Ben desu. Yoroshiku onegai shimasu.)", value: "B", correct: false },
@@ -237,8 +232,8 @@
       },
       {
         text: `中国学生刘静做自我介绍。 她说，<br>
-        はじめまして。リュー ジングです。(      ) です。よろしくおねがいします。<br>
-        Hajimemashite. Ryū Jingu desu. (      ) desu. Yoroshiku onegai shimasu.`,
+        はじめまして。リュー ジングです。( ) です。よろしくおねがいします。<br>
+        Hajimemashite. Ryū Jingu desu. ( ) desu. Yoroshiku onegai shimasu.`,
         options: [
           { text: "ちゅうごく (Chūgoku)", value: "A", correct: false },
           { text: "ちゅうごくじん (Chūgoku-jin)", value: "B", correct: true },
@@ -248,22 +243,26 @@
         ]
       },
       {
-        text: ``,
+        text: `“故乡” 这个在 日语 里怎么说？`,
         options: [
-          { text: "わた (wata)", value: "A", correct: false },
-          { text: "わした (washita)", value: "B", correct: true },
-          { text: "わたし (watashi)", value: "C", correct: false },
-          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "しゃしん (shashin)", value: "A", correct: false },
+          { text: "しゃっしん (shasshin)", value: "B", correct: true },
+          { text: "しゅしん (shushin)", value: "C", correct: false },
+          { text: "しゅっしん (shusshin)", value: "D", correct: false },
           { text: "不确定 / 跳过问题", value: "skip", correct: false }
         ]
       },
       {
-        text: ``,
+        text: `听对话。说话者来自哪里？
+        <audio controls>
+           <source src="/components/ja_level/d1_test12.mp3" type="audio/mpeg">
+           您的浏览器不支持音频元素。
+         </audio>`,
         options: [
-          { text: "わた (wata)", value: "A", correct: false },
-          { text: "わした (washita)", value: "B", correct: true },
-          { text: "わたし (watashi)", value: "C", correct: false },
-          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "Sydney", value: "A", correct: false },
+          { text: "Seattle", value: "B", correct: true },
+          { text: "San Francisco", value: "C", correct: false },
+          { text: "Sapporo", value: "D", correct: false },
           { text: "不确定 / 跳过问题", value: "skip", correct: false }
         ]
       },
@@ -385,13 +384,13 @@
       optionsList.innerHTML = userAnswers
         .map(
           (answer, index) => `
-            <li>
-              第${index + 1}题: ${answer.question}<br>
-              您的答案: ${answer.userAnswer} <span style="color: ${answer.isCorrect ? 'green' : 'red'}">
-                （${answer.isCorrect ? '正确' : '错误'}）
-              </span><br>
-              正确答案: ${answer.correctAnswer}
-            </li>`
+      <li style="margin-bottom: 16px; padding: 10px; border: 1px solid #e5e7eb; border-radius: 4px; background-color: ${answer.isCorrect ? '#d1fae5' : '#fee2e2'};">
+        <strong>第${index + 1}题:</strong> ${answer.question}<br>
+        <strong>您的答案:</strong> ${answer.userAnswer} <span style="color: ${answer.isCorrect ? 'green' : 'red'}">
+        （${answer.isCorrect ? '正确' : '错误'}）
+        </span><br>
+        <strong>正确答案:</strong> ${answer.correctAnswer}
+      </li>`
         )
         .join('');
       nextButton.style.display = 'none';
