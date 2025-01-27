@@ -35,8 +35,8 @@
     }
 
     .progress span {
-      width: 16px;
-      height: 16px;
+      width: 7px;
+      height: 7px;
       background-color: #cbd5e1;
       border-radius: 50%;
       display: inline-block;
@@ -263,6 +263,211 @@
           { text: "Seattle", value: "B", correct: true },
           { text: "San Francisco", value: "C", correct: false },
           { text: "Sapporo", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `您将听到一个问题和三个可能的答案。
+        <audio controls>
+           <source src="/components/ja_level/d1_test13.mp3" type="audio/mpeg">
+           您的浏览器不支持音频元素。
+         </audio>`,
+        options: [
+          { text: "(1)", value: "A", correct: false },
+          { text: "(2)", value: "B", correct: true },
+          { text: "(3)", value: "C", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `杰克·琼斯（Jack Jones）问哈娜·希金托（Hana Hashimoto）是否是日本人。 Hana如何回应杰克·琼斯（Jack Jones）关于其国籍的问题？`,
+        options: [
+          { text: "はい、にほんじんですか。 (Hai, Nihon-jin desu ka.)", value: "A", correct: false },
+          { text: "はい、にほんじんです。 (Hai, Nihon-jin desu.)", value: "B", correct: true },
+          { text: "いいえ、にほんじんです。 (Iie, Nihon-jin desu.)", value: "C", correct: false },
+          { text: "いいえ、にほんです。 (Iie, Nihon desu.)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `ささき　じゅん: がくせいですか。<br>
+ともこ　たなか: いいえ、がくせい（ ）。きょうしです。<br>
+Jun Sasaki: Gakusei desu ka.<br>
+Tomoko Tanaka: Iie, gakusei ( ). Kyōshi desu.`,
+        options: [
+          { text: "です (desu)", value: "A", correct: false },
+          { text: "では (dewa)", value: "B", correct: false },
+          { text: "ありません (arimasen)", value: "C", correct: true },
+          { text: "ではありません (dewa arimasen)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `“护士” 这个在 日语 里怎么说？`,
+        options: [
+          { text: "いしゃ (isha)", value: "A", correct: false },
+          { text: "とうしか (tōshika)", value: "B", correct: false },
+          { text: "エンジニア (enjinia)", value: "C", correct: false },
+          { text: "かんごし (kangoshi)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `听一下自我介绍。他的职业是什么？
+        <audio controls>
+           <source src="/components/ja_level/d1_test17.mp3" type="audio/mpeg">
+           您的浏览器不支持音频元素。
+         </audio>`,
+        options: [
+          { text: "doctor", value: "A", correct: false },
+          { text: "investor", value: "B", correct: true },
+          { text: "nurse", value: "C", correct: false },
+          { text: "engineer", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `一位日本学生桥本花（Hana Hashimoto）做自我介绍。她说：
+<br>
+はじめまして。はしもとはな です。よろしくおねがいします。
+<br>
+Hajimemashite. Hashimoto Hana desu. Yoroshiku onegai shimasu.
+<br>
+杰克·琼斯（Jack Jones）对Hana的国籍感到好奇。他怎么问她是否是日本人？`,
+        options: [
+          { text: "にほんじんですか。 (Nihon-jin desu ka.)", value: "A", correct: false },
+          { text: "にほんからきましたか。 (Nihon kara kimashita ka.)", value: "B", correct: false },
+          { text: "にほんですか。 (Nihon desu ka.)", value: "C", correct: false },
+          { text: "しゅっしんはどこですか。 (Shusshin wa doko desu ka.)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `以下哪种是说“早上好”更正式的方式？`,
+        options: [
+          { text: "おはようございます。 (Ohayō gozaimasu.)", value: "A", correct: false },
+          { text: "おはよう。 (Ohayō.)", value: "B", correct: false },
+          { text: "Both are equally formal.", value: "C", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `想象一下你是一名高中生，你正在上晚课。向你的老师问好。`,
+        options: [
+          { text: "おはようございます (Ohayō gozaimasu.)", value: "A", correct: false },
+          { text: "こんばんは (Konbanwa.)", value: "B", correct: false },
+          { text: "こんにちは (Kon'nichiwa.)", value: "C", correct: false },
+          { text: "おはよう (Ohayō.)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: ``,
+        options: [
+          { text: "わた (wata)", value: "A", correct: false },
+          { text: "わした (washita)", value: "B", correct: true },
+          { text: "わたし (watashi)", value: "C", correct: false },
+          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: ``,
+        options: [
+          { text: "わた (wata)", value: "A", correct: false },
+          { text: "わした (washita)", value: "B", correct: true },
+          { text: "わたし (watashi)", value: "C", correct: false },
+          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: ``,
+        options: [
+          { text: "わた (wata)", value: "A", correct: false },
+          { text: "わした (washita)", value: "B", correct: true },
+          { text: "わたし (watashi)", value: "C", correct: false },
+          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: ``,
+        options: [
+          { text: "わた (wata)", value: "A", correct: false },
+          { text: "わした (washita)", value: "B", correct: true },
+          { text: "わたし (watashi)", value: "C", correct: false },
+          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: ``,
+        options: [
+          { text: "わた (wata)", value: "A", correct: false },
+          { text: "わした (washita)", value: "B", correct: true },
+          { text: "わたし (watashi)", value: "C", correct: false },
+          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: ``,
+        options: [
+          { text: "わた (wata)", value: "A", correct: false },
+          { text: "わした (washita)", value: "B", correct: true },
+          { text: "わたし (watashi)", value: "C", correct: false },
+          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: ``,
+        options: [
+          { text: "わた (wata)", value: "A", correct: false },
+          { text: "わした (washita)", value: "B", correct: true },
+          { text: "わたし (watashi)", value: "C", correct: false },
+          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: ``,
+        options: [
+          { text: "わた (wata)", value: "A", correct: false },
+          { text: "わした (washita)", value: "B", correct: true },
+          { text: "わたし (watashi)", value: "C", correct: false },
+          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: ``,
+        options: [
+          { text: "わた (wata)", value: "A", correct: false },
+          { text: "わした (washita)", value: "B", correct: true },
+          { text: "わたし (watashi)", value: "C", correct: false },
+          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: ``,
+        options: [
+          { text: "わた (wata)", value: "A", correct: false },
+          { text: "わした (washita)", value: "B", correct: true },
+          { text: "わたし (watashi)", value: "C", correct: false },
+          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: ``,
+        options: [
+          { text: "わた (wata)", value: "A", correct: false },
+          { text: "わした (washita)", value: "B", correct: true },
+          { text: "わたし (watashi)", value: "C", correct: false },
+          { text: "わがし (wagashi)", value: "D", correct: false },
           { text: "不确定 / 跳过问题", value: "skip", correct: false }
         ]
       },
