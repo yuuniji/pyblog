@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日语能力测试 — 诊断</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: rgb(255, 252, 245);
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 80%;
+      /* 保留换行符并自动换行 */
+      /* white-space: pre-wrap; */
+    }
+
+    .progress {
+      display: flex;
+      gap: 4px;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .progress span {
+      width: 16px;
+      height: 16px;
+      background-color: #cbd5e1;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .progress span.active {
+      background-color: #3b82f6;
+    }
+
+    .question {
+      margin-bottom: 16px;
+    }
+
+    .question h2 {
+      font-size: 18px;
+      margin: 0 0 8px;
+    }
+
+    .question p {
+      font-size: 14px;
+      color: #4b5563;
+    }
+
+    .options {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .options li {
+      margin: 8px 0;
+    }
+
+    .options button {
+      background-color: #e5e7eb;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 12px;
+      font-size: 14px;
+      text-align: left;
+      width: 100%;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .options button:hover {
+      background-color: #d1d5db;
+    }
+
+    .options button.selected {
+      background-color: #3b82f6;
+      color: white;
+    }
+
+    .footer {
+      margin-top: 16px;
+      text-align: right;
+    }
+
+    .footer button {
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 16px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .footer button:disabled {
+      background-color: #9ca3af;
+      cursor: not-allowed;
+    }
+
+    .footer button:hover:enabled {
+      background-color: #2563eb;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="progress" id="progressBar"></div>
+    <div class="question">
+      <!-- <h2>选择最合适的答案。</h2> -->
+      <p id="questionText"></p>
+    </div>
+    <ul class="options" id="optionsList"></ul>
+    <div class="footer">
+      <button id="nextButton" disabled>下一题</button>
+    </div>
+  </div>
+
+  <script>
+    // 题目数据
+    const questions = [
+      {
+        text: `在日语中，开始自我介绍时，如何说“很高兴见到你”？`,
+        options: [
+          { text: "はじまして。 (Hajimashite.)", value: "A", correct: false },
+          { text: "はじめまして。 (Hajimemashite.)", value: "B", correct: true },
+          { text: "よろしくおねがいします。 (Yoroshiku onegai shimasu.)", value: "C", correct: false },
+          { text: "よくおねがいします。 (Yoku onegai shimasu.)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: '“我” 这个在 日语 里怎么说？',
+        options: [
+          { text: "わた (wata)", value: "A", correct: false },
+          { text: "わした (washita)", value: "B", correct: true },
+          { text: "わたし (watashi)", value: "C", correct: false },
+          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: '自我介绍的最后“很高兴认识你”用日语怎么说？',
+        options: [
+          { text: "よくおねがいします。 (Yoku onegai shimasu.)", value: "A", correct: false },
+          { text: "よろしくおねがいします。 (Yoroshiku onegai shimasu.)", value: "B", correct: true },
+          { text: "はじめまして。 (Hajimemashite)", value: "C", correct: false },
+          { text: "はめまして。 (Hamemashite)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: '英国学生杰克·琼斯做了自我介绍。他说，<br>はじめまして。ジョーンズ ジャックです。(     ) よろしくおねがいします。<br>Hajimemashite. Jōnzu Jakku desu. (      ) Yoroshiku onegai shimasu.',
+        options: [
+          { text: "イギリスにんです。 (Igirisu-nin desu.)", value: "A", correct: false },
+          { text: "イギリスです。 (Igirisu desu.)", value: "B", correct: true },
+          { text: "イギリスからきました。 (Igirisu kara kimashita.)", value: "C", correct: false },
+          { text: "イギリスじんからきました。 (Igirisu-jin kara kimashita.)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: '你可以省略 わたしは (Watashi wa) 在 わたしは　こばやしです (Watashi wa Kobayashi desu.) 中。',
+        options: [
+          { text: "True.", value: "T", correct: false },
+          { text: "False.", value: "F", correct: true },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: 'こばやし　けん：はじめまして。わたしは こばやしです。よろしく おねがいします。<br>サーシャ　リー：（　　　　　　　　　　　　　　　　　　　　　　）。<br>Ken Kobayashi:  Hajimemashite. Watashi wa Kobayashi desu. Yoroshiku onegai shimasu.<br>Sasha Lee: （　　　　　　　　　　　　　　　　　　　　　　）.',
+        options: [
+          { text: "よろしくおねがいします。わたしはリーベンです。はじめまして。 (Yoroshiku onegai shimasu. Watashi wa Rī Ben desu. Hajimemashite.)", value: "A", correct: false },
+          { text: "はじめまして。わたしはリーベンです。よろしくおねがいします。 (Hajimemashite. Watashi wa Rī Ben desu. Yoroshiku onegai shimasu.)", value: "B", correct: false },
+          { text: "わたしはリーベンです。よろしくおねがいします。はじめまして。 (Watashi wa Rī Ben desu. Yoroshiku onegai shimasu. Hajimemashite.)", value: "C", correct: true },
+          { text: "わたしはリーベンです。 (Watashi wa Rī Ben desu.)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+
+      },
+      {
+        text: `听听演讲者怎么说。他的姓氏是什么。
+        <audio controls>
+           <source src="/components/ja_level/d1_test7.mp3" type="audio/mpeg">
+           您的浏览器不支持音频元素。
+         </audio>`,
+        options: [
+          { text: "ゆうや (Yūya)", value: "A", correct: true },
+          { text: "ゆや (Yuya)", value: "B", correct: false },
+          { text: "やまぐち (Yamaguchi)", value: "C", correct: false },
+          { text: "やまち (Yamachi)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `听听演讲者怎么说。她的姓氏是什么。
+        <audio controls>
+           <source src="/components/ja_level/d1_test8.mp3" type="audio/mpeg">
+           您的浏览器不支持音频元素。
+         </audio>`,
+        options: [
+          { text: "さずき (Sazuki)", value: "A", correct: false },
+          { text: "すずき (Suzuki)", value: "B", correct: true },
+          { text: "さつき (Satsuki)", value: "C", correct: false },
+          { text: "ささき (Sasaki)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: ``,
+        options: [
+          { text: "わた (wata)", value: "A", correct: false },
+          { text: "わした (washita)", value: "B", correct: true },
+          { text: "わたし (watashi)", value: "C", correct: false },
+          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: ``,
+        options: [
+          { text: "わた (wata)", value: "A", correct: false },
+          { text: "わした (washita)", value: "B", correct: true },
+          { text: "わたし (watashi)", value: "C", correct: false },
+          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: ``,
+        options: [
+          { text: "わた (wata)", value: "A", correct: false },
+          { text: "わした (washita)", value: "B", correct: true },
+          { text: "わたし (watashi)", value: "C", correct: false },
+          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: ``,
+        options: [
+          { text: "わた (wata)", value: "A", correct: false },
+          { text: "わした (washita)", value: "B", correct: true },
+          { text: "わたし (watashi)", value: "C", correct: false },
+          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: ``,
+        options: [
+          { text: "わた (wata)", value: "A", correct: false },
+          { text: "わした (washita)", value: "B", correct: true },
+          { text: "わたし (watashi)", value: "C", correct: false },
+          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: ``,
+        options: [
+          { text: "わた (wata)", value: "A", correct: false },
+          { text: "わした (washita)", value: "B", correct: true },
+          { text: "わたし (watashi)", value: "C", correct: false },
+          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: ``,
+        options: [
+          { text: "わた (wata)", value: "A", correct: false },
+          { text: "わした (washita)", value: "B", correct: true },
+          { text: "わたし (watashi)", value: "C", correct: false },
+          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: ``,
+        options: [
+          { text: "わた (wata)", value: "A", correct: false },
+          { text: "わした (washita)", value: "B", correct: true },
+          { text: "わたし (watashi)", value: "C", correct: false },
+          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+    ];
+
+
+
+    let currentQuestionIndex = 0;
+    const userAnswers = [];
+
+    const progressBar = document.getElementById('progressBar');
+    const questionText = document.getElementById('questionText');
+    const optionsList = document.getElementById('optionsList');
+    const nextButton = document.getElementById('nextButton');
+
+    // 初始化进度条
+    function updateProgressBar() {
+      progressBar.innerHTML = '';
+      questions.forEach((_, index) => {
+        const span = document.createElement('span');
+        if (index <= currentQuestionIndex) {
+          span.classList.add('active');
+        }
+        progressBar.appendChild(span);
+      });
+    }
+
+    // 加载题目
+    function loadQuestion() {
+      const question = questions[currentQuestionIndex];  // 获取当前题目
+      questionText.innerHTML = question.text;  // 使用 innerHTML 来加载题目
+      optionsList.innerHTML = '';  // 清空选项列表
+      question.options.forEach(option => {
+        const li = document.createElement('li');
+        const button = document.createElement('button');
+        button.textContent = option.text;
+        button.dataset.value = option.value;
+        button.dataset.correct = option.correct;
+        button.addEventListener('click', () => {
+          // 取消选择其他按钮
+          document.querySelectorAll('.options button').forEach(btn => btn.classList.remove('selected'));
+          // 当前按钮高亮
+          button.classList.add('selected');
+          nextButton.disabled = false;  // 启用“下一题”按钮
+        });
+        li.appendChild(button);
+        optionsList.appendChild(li);
+      });
+      nextButton.disabled = true;  // 默认禁用“下一题”按钮
+    }
+
+
+    // 点击“下一题”按钮
+    nextButton.addEventListener('click', () => {
+      const selectedButton = document.querySelector('.options button.selected');
+      if (selectedButton) {
+        // 保存答案
+        userAnswers.push({
+          question: questions[currentQuestionIndex].text,
+          userAnswer: selectedButton.textContent,
+          isCorrect: selectedButton.dataset.correct === 'true',
+          correctAnswer: questions[currentQuestionIndex].options.find(option => option.correct).text
+        });
+
+        // 进入下一题或显示结果
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+          updateProgressBar();
+          loadQuestion();
+        } else {
+          showResults();
+        }
+      }
+    });
+
+    // 显示结果
+    function showResults() {
+      questionText.textContent = '测试完成！以下是您的答案：';
+      optionsList.innerHTML = userAnswers
+        .map(
+          (answer, index) => `
+            <li>
+              第${index + 1}题: ${answer.question}<br>
+              您的答案: ${answer.userAnswer} <span style="color: ${answer.isCorrect ? 'green' : 'red'}">
+                （${answer.isCorrect ? '正确' : '错误'}）
+              </span><br>
+              正确答案: ${answer.correctAnswer}
+            </li>`
+        )
+        .join('');
+      nextButton.style.display = 'none';
+    }
+
+    // 初始化测验
+    updateProgressBar();
+    loadQuestion();
+  </script>
+</body>
+
+</html>
