@@ -85,6 +85,12 @@
             color: #555;
         }
 
+        hr.custom {
+            border: none;
+            height: 4px;
+            background-color: #e74c3c;
+            box-shadow: 0 4px 2px -2px gray;
+        }
 
         /* 针对小屏幕优化 */
         @media (max-width: 768px) {
@@ -132,7 +138,7 @@
                 “相关课程”列表指引学习者访问 JapanesePod101.com 上的视频和音频课程。
             </li>
         </ul>
-
+        <hr class="custom">
         <div>
             <div class="section">
                 <p class="title"><span style="color: red;">は (wa)</span> 助词</p>
@@ -213,11 +219,11 @@
                     <li>可以介绍自己</li>
                     <li>可以提供联系信息</li>
                     <li>可以谈论自己的兴趣</li>
-                    <li>日语课程28级（Nihongo Doujou - Meeting New People in Japan Made Easy）</li>
+                    <li>Level 1 Japanese Lesson 28（Nihongo Doujou - Meeting New People in Japan Made Easy）</li>
                 </ul>
             </div>
         </div>
-
+        <hr class="custom">
         <div>
             <div class="section">
                 <p class="title"><span style="color: red;">〜は 〜だ (~ wa ~ da)</span> 结构</p>
@@ -268,7 +274,7 @@
                         <td>私<span style="color: red;">は</span>　会社員<span style="color: red;">だ</span>。<br>Watashi <span
                                 style="color: red;">wa</span>
                             kaishain
-                            <span style="color: red;">da</span>.<br>I am an office worker.<br>我是一名办公室职员。
+                            <span style="color: red;">da</span>.<br>I am an office worker.<br>我是公司职员。
                         </td>
                     </tr>
                     <tr>
@@ -317,11 +323,11 @@
                     <li>可以提供联系信息</li>
                     <li>可以谈论你的国籍</li>
                     <li>可以谈论自己的兴趣</li>
-                    <li>日语课程28级（Nihongo Doujou - Meeting New People in Japan Made Easy）</li>
+                    <li>Level 1 Japanese Lesson 28（Nihongo Doujou - Meeting New People in Japan Made Easy）</li>
                 </ul>
             </div>
         </div>
-
+        <hr class="custom">
         <div>
             <div class="section">
                 <p class="title"><span style="color: red;">か (ka) </span> 助词</p>
@@ -393,58 +399,85 @@
                 </ul>
             </div>
         </div>
-
+        <hr class="custom">
         <div>
             <div class="section">
-                <p class="title"><span style="color: red;">は (wa)</span> 助词</p>
-                <p>表示句子的主题。</p>
+                <p class="title"><span style="color: red;">ではない (de wa nai)</span> 是助动词 だ (da) 的否定形式</p>
+                <p>是系动词 だ (da) 的非过去否定形式，表示“不是”。</p>
                 <table class="table">
                     <tr>
-                        <th>主题</th>
                         <th></th>
+                        <th>Noun</th>
                         <th></th>
                     </tr>
                     <tr>
-                        <td>私<br />Watashi</td>
-                        <td><span style="color: red;">は<br />wa</span></td>
-                        <td>小林です。<br />Kobayashi desu.</td>
+                        <td>私　は<br />Watashi wa</td>
+                        <td>小林<br />Kobayashi</td>
+                        <td>
+                            <span style="color: red;">ではない</span> / <span style="color: red;">ではありません</span>。
+                            <br>
+                            <span style="color: red;">de wa nai</span> / <span style="color: red;">de wa arimasen</span>.
+                        </td>
                     </tr>
                     <tr>
                         <td>I</td>
-                        <td></td>
-                        <td>Kobayashi am.</td>
+                        <td>Kobayashi</td>
+                        <td><span style="color: red;">am not</span>.</td>
                     </tr>
                     <tr>
-                        <td>我</td>
-                        <td></td>
-                        <td>小林是。</td>
+                        <td colspan="3" style="text-align: left;">I am not Kobayashi.</td>
                     </tr>
                     <tr>
-                        <td colspan="3" style="text-align: left;">I’m Kobayashi.</td>
-                    </tr>
-                    <tr>
-                        <td colspan="3" style="text-align: left;">我是小林。</td>
+                        <td colspan="3" style="text-align: left;">我不是小林。</td>
                     </tr>
                 </table>
             </div>
 
             <div class="section">
                 <p class="title">🧠 构成</p>
-                <p>Noun <span style="color: red;">は (wa)</span></p>
+                <table class="table">
+                    <tr>
+                        <th>非正式</th>
+                        <th>正式</th>
+                    </tr>
+                    <tr>
+                        <td>Noun <span style="color: red;">ではない (de wa nai)</span></td>
+                        <td>
+                            Noun <span style="color: red;">ではありません (de wa arimasen)</span><br>
+                            Noun <span style="color: red;">じゃありません (ja arimasen)</span><br>
+                            Noun <span style="color: red;">じゃないです (ja nai desu)</span>
+                        </td>
+                    </tr>
+                </table>
                 <p>例句：</p>
                 <table class="table">
                     <tr>
-                        <td>田中　ともこ<br />Tanaka Tomoko</td>
-                        <td>私<span style="color: red;">は</span>　田中です。<br>Watashi <span style="color: red;">wa</span>
-                            Tanaka
-                            desu.<br>I’m Tanaka.<br>我是田中。</td>
+                        <td>石川　いせき<br />Ishikawa Iseki</td>
+                        <td>私は　学生<span style="color: red;">ではない</span>。
+                            <br>Watashi wa gakusei <span style="color: red;">de wa nai</span>.
+                            <br>I <span style="color: red;">am not</span> a student.
+                            <br>我不是学生。</td>
                     </tr>
                     <tr>
-                        <td>中村　よし<br />Nakamura Yoshi</td>
-                        <td>私の　電話ばんごう<span style="color: red;">は</span>　080-0442-2374です。<br>Watashi no denwa bangō <span
-                                style="color: red;">wa</span> 080-0442-2374 desu.<br>My phone number is 080-0442-2374.
-                            <br>我的电话号码是080-0442-2374。
-                        </td>
+                        <td>松本　まき<br />Matsumoto Maki</td>
+                        <td>私の　電話ばんごうは　03-1212-3535<span style="color: red;">ではありません</span>。
+                            <br>Watashi no denwa bangō wa 03-1212-3535 <span style="color: red;">de wa arimasen</span>.
+                            <br>My phone number <span style="color: red;">is not</span> 03-1212-3535.
+                            <br>我的电话号码不是03-1212-3535。</td>
+                    </tr>
+                    <tr>
+                        <td>はしもと　はな<br />Hashimoto Hana</td>
+                        <td>しゅっしんは　東京<span style="color: red;">じゃありません</span>。
+                            <br>Shusshin wa Tōkyō <span style="color: red;">ja arimasen</span>.
+                            <br>My hometown <span style="color: red;">is not</span> Tokyo.
+                            <br>我的家乡不是东京。</td>
+                    </tr>
+                    <tr>
+                        <td>石川　しん<br />Ishikawa Shin</td>
+                        <td>しゅみは　テニス<span style="color: red;">じゃないです</span>。やきゅうです。
+                            <br>Shumi wa tenisu <span style="color: red;">ja nai desu</span>. Yakyū desu.
+                            <br>My hobby <span style="color: red;">is not</span> tennis. It’s baseball.
+                            <br>我的爱好不是网球，而是棒球。</td>
                     </tr>
                 </table>
             </div>
@@ -453,10 +486,28 @@
                 <p class="title">💬 例句</p>
                 <div class="examples">
                     <div class="example">
-                        <p>しゅっしんは　おおさかです。<br>Shusshin wa Ōsaka desu.<br>My hometown is Osaka.<br>我的家乡是大阪。</p>
+                        <p>しゅっしんは　ロンドンではありません。シドニーです。
+                            <br>Shusshin wa Rondon de wa arimasen. Shidonī desu.
+                            <br>My hometown isn’t London. It’s Sydney.
+                            <br>我的家乡不是伦敦，而是悉尼。</p>
                     </div>
                     <div class="example">
-                        <p>私の　しゅみは　つりです。<br>Watashi no Shumi wa tsuri desu.<br>My hobby is fishing.<br>我的兴趣是钓鱼。</p>
+                        <p>わたしは　日本人ではない。
+                            <br>Watashi wa Nihon-jin de wa nai.
+                            <br>I’m not Japanese.
+                            <br>我不是日本人。</p>
+                    </div>
+                    <div class="example">
+                        <p>私は　会社員じゃありません。
+                            <br>Watashi wa kaishain ja arimasen. 
+                            <br>I’m not an office worker.
+                            <br>我不是公司职员。</p>
+                    </div>
+                    <div class="example">
+                        <p>私は　石井じゃないです。石川です。
+                            <br>Watashi wa Ishii ja nai desu. Ishikawa desu.
+                            <br>I’m not Ishii. I’m Ishikawa.
+                            <br>我不是石井，我是石川。</p>
                     </div>
                 </div>
             </div>
@@ -464,8 +515,93 @@
             <div class="section">
                 <p><b>注意</b></p>
                 <p class="note">
-                    此助词在平假名中写作「は (ha)」，但作为助词时发音为「wa」。
+                    ではありません（de wa arimasen）是这三种形式中最礼貌的。
                 </p>
+            </div>
+
+            <div class="section">
+                <p><b>相关课程</b></p>
+                <ul>
+                    <li>可以介绍自己</li>
+                    <li>Level 1 Japanese Lesson 30（Nihongo Doujou - I’m Sorry, Where Is The Japanese Food I Can
+                        Eat?!）</li>
+                </ul>
+            </div>
+        </div>
+        <hr class="custom">
+        <div>
+            <div class="section">
+                <p class="title"><span style="color: red;">の (no)</span> 助词</p>
+                <p>表示所属关系的助词</p>
+                <table class="table">
+                    <tr>
+                        <th>Noun</th>
+                        <th></th>
+                        <th>Noun</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>私<br />Watashi</td>
+                        <td><span style="color: red;">の<br />no</span></td>
+                        <td>しゅみ<br />shumi</td>
+                        <td>
+                            は　 読書です。
+                            <br> wa　dokusho desu.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>I</td>
+                        <td></td>
+                        <td>hobby</td>
+                        <td>　　 reading is</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: left;">My hobby is reading.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: left;">我的爱好是读书。</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="section">
+                <p class="title">🧠 构成</p>
+                <p>Noun <span style="color: red;">の (no)</span> noun</p>
+                <p>例句：</p>
+                <table class="table">
+                    <tr>
+                        <td>ささき　りん<br />Sasaki Rin</td>
+                        <td>はしもとさん<span style="color: red;">の</span>　電話ばんごうは　090-0003-9004です。
+                            <br>Hashimoto-san <span style="color: red;">no</span> denwa bangō wa 090-0003-9004 desu.
+                            <br>Ms. Hashimoto’s phone number is 090-0003-9004.
+                            <br>桥本女士的电话号码是090-0003-9004。</td>
+                    </tr>
+                    <tr>
+                        <td>中村　よし<br />Nakamura Yoshi</td>
+                        <td>ながおかさん<span style="color: red;">の</span>　しゅみは　りょこうです。
+                            <br>Nagaoka-san<span style="color: red;"> no</span> shumi wa ryokō desu.
+                            <br>Ms. Nagaoka’s hobby is travel.
+                            <br>长冈女士的爱好是旅行。</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="section">
+                <p class="title">💬 例句</p>
+                <div class="examples">
+                    <div class="example">
+                        <p>私の　しゅっしんは　アメリカです。
+                            <br>Watashi no shusshin wa Amerika desu.
+                            <br>My hometown is America.
+                            <br>我的家乡是美国。</p>
+                    </div>
+                    <div class="example">
+                        <p>小林さんの　しゅみは　まんがです。
+                            <br>Kobayashi-san no shumi wa manga desu.
+                            <br>Mr. Kobayashi’s hobby is manga.
+                            <br>小林先生的爱好是漫画。</p>
+                    </div>
+                </div>
             </div>
 
             <div class="section">
@@ -474,7 +610,182 @@
                     <li>可以介绍自己</li>
                     <li>可以提供联系信息</li>
                     <li>可以谈论自己的兴趣</li>
-                    <li>日语课程28级（Nihongo Doujou - Meeting New People in Japan Made Easy）</li>
+                    <li>Level 1 Japanese Lesson 32 (Nihongo Doujou - In Japan, It’s All in the Numbers)</li>
+                </ul>
+            </div>
+        </div>
+        <hr class="custom">
+        <div>
+            <div class="section">
+                <p class="title"><span style="color: red;">〜は　何ですか (~ wa nan desu ka)</span> 结构</p>
+                <p>用于询问某物是什么</p>
+                <table class="table">
+                    <tr>
+                        <th>Topic</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>しゅみ<br />Shumi</td>
+                        <td><span style="color: red;">は<br />wa</span></td>
+                        <td>何ですか。<br />nan desu ka.</td>
+                    </tr>
+                    <tr>
+                        <td>Hobby</td>
+                        <td></td>
+                        <td><span style="color: red;">what is ?</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="text-align: left;">What’s your hobby?</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="text-align: left;">你的爱好是什么？</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="section">
+                <p class="title">🧠 构成</p>
+                <p>Topic <span style="color: red;"> (wa) 何 (nan) ですか (desuka)。</span></p>
+                <p>例句：</p>
+                <table class="table">
+                    <tr>
+                        <td>ささき　りん<br />Sasaki Rin</td>
+                        <td>しゅみ<span style="color: red;">は　何ですか。</span>
+                            <br>Shumi <span style="color: red;">wa nan desu ka.</span>
+                            <br><span style="color: red;">What is</span> your hobby<span style="color: red;">?</span>
+                            <br>你的爱好是什么？</td>
+                    </tr>
+                    <tr>
+                        <td>石川　しん<br />Ishikawa Shin</td>
+                        <td>これ<span style="color: red;">は 何ですか。</span>
+                            <br>Kore <span style="color: red;">wa nan desu ka.</span>
+                            <br><span style="color: red;">What is</span> this<span style="color: red;">?</span>
+                            <br>这是什么？</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="section">
+                <p class="title">💬 例句</p>
+                <div class="examples">
+                    <div class="example">
+                        <p>これは　日本語で　何ですか。
+                            <br>Kore wa Nihongo de nan desu ka.
+                            <br>What is this in Japanese?
+                            <br>这个在 日语 里是什么意思？</p>
+                    </div>
+                    <div class="example">
+                        <p>電話番号は　何ですか。
+                            <br>Denwa bangō wa nan desu ka.
+                            <br>What is your phone number?
+                            <br>你的电话号码是什么？</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <p><b>注意</b></p>
+                <p class="note">
+                    <b>何</b>有两种读音：なに (nani) 和 なん (nan)。
+                    在这个句型中，它读作 なん (nan)。
+                </p>
+            </div>
+
+            <div class="section">
+                <p><b>相关课程</b></p>
+                <ul>
+                    <li>可以谈论自己的兴趣</li>
+                    <li>可以要求澄清</li>
+                    <li>Level 1 Japanese Lesson 12 (What is This Delicious Japanese Dish?)</li>
+                </ul>
+            </div>
+        </div>
+        <hr class="custom">
+        <div>
+            <div class="section">
+                <p class="title"><span style="color: red;">〜は　どこ (~ wa doko)</span> 结构</p>
+                <p>用于询问某人或某物在哪里</p>
+                <table class="table">
+                    <tr>
+                        <th>Topic</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>しゅっしん<br />Shusshin</td>
+                        <td><span style="color: red;">は<br />wa</span></td>
+                        <td><span style="color: red;">どこ<br />doko</span></td>
+                        <td>ですか。<br />desu ka</td>
+                    </tr>
+                    <tr>
+                        <td>Hometown</td>
+                        <td></td>
+                        <td><span style="color: red;">where</span></td>
+                        <td>is ?</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: left;">Where is your hometown?</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: left;">你的家乡是哪里？</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="section">
+                <p class="title">🧠 构成</p>
+                <p>Topic <span style="color: red;">は (wa) どこ (doko)</span> ですか (desuka)。</p>
+                <p>例句：</p>
+                <table class="table">
+                    <tr>
+                        <td>石川　いちか<br />Ishikawa Ichika</td>
+                        <td>しゅっしん<span style="color: red;">は　どこ</span>ですか。
+                            <br>Shusshin <span style="color: red;">wa doko</span> desu ka.
+                            <br><span style="color: red;">Where</span> is your hometown?
+                            <br>你的家乡是哪里？</td>
+                    </tr>
+                    <tr>
+                        <td>ささき　はると<br />Sasaki Haruto</td>
+                        <td>たなかせんせい<span style="color: red;">は　どこ</span>ですか。
+                            <br>Tanaka-sensei <span style="color: red;">wa doko</span> desu ka.
+                            <br><span style="color: red;">Where</span> is Ms. Tanaka? 
+                            <br>田中女士在哪里？</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="section">
+                <p class="title">💬 例句</p>
+                <div class="examples">
+                    <div class="example">
+                        <p>国は　どこですか。
+                            <br>Kuni wa doko desu ka.
+                            <br>Where is your country?
+                            <br>你的国家在哪里？</p>
+                    </div>
+                    <div class="example">
+                        <p>シェフは　どこですか。
+                            <br>Shefu wa doko desu ka.
+                            <br>Where is the chef?
+                            <br>厨师在哪儿？</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <p><b>注意</b></p>
+                <p class="note">
+                    <b>どちら (dochira)</b> 可以代替 どこ (doko) 来提高礼貌程度。它也是一个礼貌的疑问词，意思是“哪个方向”。
+                </p>
+            </div>
+
+            <div class="section">
+                <p><b>相关课程</b></p>
+                <ul>
+                    <li>可以介绍自己</li>
+                    <li>Level 1 Japanese Lesson 14 (Where’s the Party in Japan?)</li>
                 </ul>
             </div>
         </div>
