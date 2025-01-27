@@ -134,8 +134,31 @@ loadComponent('../components/email.html', 'email-container');
 loadComponent('../components/japanese.html', 'japanese-container');
 
 // 调用函数动态加载 ../components/ja_level.html
-loadComponent('../components/ja_level.html', 'ja_level-container');
+// loadComponent('../components/ja_level.html', 'ja_level-container');
 
+
+// 使用 JavaScript 动态加载 ja_level.html
+fetch('../components/ja_level.html')
+    .then(response => response.text())
+    .then(html => {
+        document.getElementById('ja_level-container').innerHTML = html;
+
+        // 重新加载 ja_level.html 的样式和脚本
+        const cssLink = document.querySelector('link[href="/css/ja_level.css"]');
+        if (!cssLink) {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = '/css/ja_level.css';
+            document.head.appendChild(link);
+        }
+
+        const script = document.createElement('script');
+        script.src = '/js/ja_level.js';
+        script.type = 'text/javascript';
+        document.body.appendChild(script);
+    })
+    .catch(err => console.error('Failed to load ja_level.html:', err));
 
 
 // 使用 JavaScript 动态加载 vocabulary.html
