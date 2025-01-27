@@ -6,6 +6,7 @@
     <meta name="generator" content="Python script by yzw.beast@gmail.com" />
     <meta name="provider" content="pylove.us.kg" />
     <link type="text/css" rel="stylesheet" href="/css/yzw-beast.css">
+    <link type="text/css" rel="stylesheet" href="/css/ja_level.css">
     <script src="/js/yzwbeast.js" type="text/javascript"></script>
     <link href="https://pylove.us.kg/images/yzwer.jpg" rel="icon" type="image/x-icon">
 
@@ -55,13 +56,152 @@
                             <a href="/tags/japan.html" class="tag">Japanese</a>
                         </span>
                     </div>
-                    <div id="ja_level-container"></div>
+                    <!-- <div id="ja_level-container"></div> -->
+                     <!-- Accordion -->
+    <div class="accordion-container">
+        <!-- 弹窗容器 -->
+        <div id="modal-overlay" style="display: none;">
+            <div id="modal-content">
+                <span id="modal-close">&times;</span>
+                <div id="modal-body"></div>
+            </div>
+        </div>
+
+        <!-- Level 1 Timeline -->
+        <div class="accordion-item" data-level="1">
+            <div class="accordion-header open" onclick="toggleAccordion(this)">
+                1 完全初学者<span>用日语“做”任务</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24">
+                    <path d="M480 696 240 456h480L480 696Z" />
+                </svg>
+            </div>
+            <div class="accordion-content">
+                <div class="timeline-item">
+                    <div class="circle">1</div>
+                    <a href="/components/ja_level/j1_1.html" class="modal-link">能力陈述</a>
+                </div>
+                <div class="timeline-item">
+                    <div class="circle">2</div>
+                    <a href="/components/ja_level/j1_2.html" class="modal-link">平假名表</a>
+                </div>
+                <div class="timeline-item">
+                    <div class="circle">3</div>
+                    <a href="/components/ja_level/j1_3.html" class="modal-link">基础词汇</a>
+                </div>
+                <div class="timeline-item">
+                    <div class="circle">4</div>
+                    <a href="/components/ja_level/j1_4.html" class="modal-link">语法要点</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Level 2 Timeline -->
+        <div class="accordion-item" data-level="2">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                2 初学者
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24">
+                    <path d="M480 696 240 456h480L480 696Z" />
+                </svg>
+            </div>
+            <div class="accordion-content">
+                <div class="timeline-item">
+                    <div class="circle">1</div>
+                    <a href="/components/ja_level/j2_1.html" class="modal-link">Level</a>
+                </div>
+                <div class="timeline-item">
+                    <div class="circle">2</div>
+                    <a href="/components/ja_level/j2_2.html" class="modal-link">Level</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Level 3 Timeline -->
+        <div class="accordion-item" data-level="3">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                3 中级
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24">
+                    <path d="M480 696 240 456h480L480 696Z" />
+                </svg>
+            </div>
+            <div class="accordion-content">
+                <div class="timeline-item">
+                    <div class="circle">1</div>
+                    <a href="/components/ja_level/j3_1.html" class="modal-link">Level</a>
+                </div>
+                <div class="timeline-item">
+                    <div class="circle">2</div>
+                    <a href="/components/ja_level/j3_2.html" class="modal-link">Level</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Level 4 Timeline -->
+        <div class="accordion-item" data-level="4">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                4 中高级
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24">
+                    <path d="M480 696 240 456h480L480 696Z" />
+                </svg>
+            </div>
+            <div class="accordion-content">
+                <div class="timeline-item">
+                    <div class="circle">1</div>
+                    <a href="/components/ja_level/j4_1.html" class="modal-link">Level</a>
+                </div>
+                <div class="timeline-item">
+                    <div class="circle">2</div>
+                    <a href="/components/ja_level/j4_2.html" class="modal-link">Level</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Level 5 Timeline -->
+        <div class="accordion-item" data-level="5">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                5 高级
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24">
+                    <path d="M480 696 240 456h480L480 696Z" />
+                </svg>
+            </div>
+            <div class="accordion-content">
+                <div class="timeline-item">
+                    <div class="circle">1</div>
+                    <a href="/components/ja_level/j5_1.html" class="modal-link">Level</a>
+                </div>
+                <div class="timeline-item">
+                    <div class="circle">2</div>
+                    <a href="/components/ja_level/j5_2.html" class="modal-link">Level</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Level 6 Timeline -->
+        <div class="accordion-item" data-level="6">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                ★ 额外内容
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24">
+                    <path d="M480 696 240 456h480L480 696Z" />
+                </svg>
+            </div>
+            <div class="accordion-content">
+                <div class="timeline-item">
+                    <div class="circle">1</div>
+                    <a href="/components/ja_level/j6_1.html" class="modal-link">Level</a>
+                </div>
+                <div class="timeline-item">
+                    <div class="circle">2</div>
+                    <a href="/components/ja_level/j6_2.html" class="modal-link">Level</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/ja_level.js" type="text/javascript"></script>
                 </div>
             </div>
         </div>
         <aside id="part2" class="sidebar"></aside>
     </div> <!-- end content-wrapper -->
-    <script src="/js/ja_level.js" type="text/javascript"></script>
+    <!-- <script src="/js/ja_level.js" type="text/javascript"></script> -->
     <!-- <script>
         // 获取元素的方法
         function getElement(selector, context = document) {
