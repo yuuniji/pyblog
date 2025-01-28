@@ -5,71 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Japanese Words by Category</title>
     <style>
-        .jp-category-container {
-            /* font-family: Arial, sans-serif; */
-            margin: 20px;
-            padding: 0;
-            /* background-color: #f9f9f9; */
-        }
-        .jp-category-container h1, .jp-category-container h2 {
-            text-align: center;
-        }
-        .jp-category-container .tabs {
-            display: flex;
-            justify-content: center;
-            /* border-bottom: 2px solid #ddd; */
-            margin-bottom: 20px;
-        }
-        .jp-category-container .tab {
-            padding: 10px 20px;
-            cursor: pointer;
-            background-color: #f1f1f1;
-            margin-right: 10px;
-            border-radius: 4px 4px 0 0;
-        }
-        .jp-category-container .tab:hover {
-            background-color: #ddd;
-        }
-        .jp-category-container .tab.active {
-            background-color: #ddd;
-            font-weight: bold;
-        }
-        .jp-category-container .category-container {
-            display: none;
-        }
-        .jp-category-container .category-container.active {
-            display: block;
-        }
-        .jp-category-container .container {
-            max-width: 800px;
-            margin: 0 auto;
-            display: grid;
-            /* padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
-        }
-        .jp-category-container .word {
-            border-bottom: 1px solid #ddd;
-            padding: 10px 0;
-        }
-        .jp-category-container .word:last-child {
-            border-bottom: none;
-        }
-        .jp-category-container .examples {
-            margin-top: 10px;
-            padding-left: 20px;
-        }
-        .jp-category-container audio {
-            display: block;
-            margin-top: 5px;
-        }
+        /* Default light mode styles */
+.jp-category-container {
+    margin: 20px;
+    padding: 0;
+    /* background-color: #f9f9f9; */
+}
+.jp-category-container h1, .jp-category-container h2 {
+    text-align: center;
+}
+.jp-category-container .tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.jp-category-container .tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    margin-right: 10px;
+    border-radius: 4px 4px 0 0;
+}
+.jp-category-container .tab:hover {
+    background-color: #ddd;
+}
+.jp-category-container .tab.active {
+    background-color: #ddd;
+    font-weight: bold;
+}
+.jp-category-container .category-container {
+    display: none;
+}
+.jp-category-container .category-container.active {
+    display: block;
+}
+.jp-category-container .container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+}
+.jp-category-container .word {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+.jp-category-container .word:last-child {
+    border-bottom: none;
+}
+.jp-category-container .examples {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+.jp-category-container audio {
+    display: block;
+    margin-top: 5px;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+    .jp-category-container .tabs {
+        border-bottom: 2px solid #444;
+    }
+    .jp-category-container .tab {
+        background-color: #444;
+        color: #fff;
+    }
+    .jp-category-container .tab:hover {
+        background-color: #666;
+    }
+    .jp-category-container .tab.active {
+        background-color: #666;
+        font-weight: bold;
+    }
+    .jp-category-container .word {
+        border-bottom: 1px solid #555;
+        color: #fff;
+    }
+    .jp-category-container .examples {
+        color: #ccc;
+    }
+    .jp-category-container audio {
+        color: #fff;
+    }
+}
+
     </style>
 </head>
 <body>
     <div class="jp-category-container">
         <p>japanesepod101.com 提供的 2000 个日语单词按类别（形容词、名词、动词……）和页面分类</p>
-        <h1>Japanese Words by Category</h1>
+        <h2>日语单词分类</h2>
 
         <!-- Tab navigation -->
         <div class="tabs" id="tabs">
