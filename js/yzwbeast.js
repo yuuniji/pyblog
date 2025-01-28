@@ -133,8 +133,8 @@ loadComponent('../components/email.html', 'email-container');
 // 调用函数动态加载 ../components/japanese.html
 loadComponent('../components/japanese.html', 'japanese-container');
 
-// 调用函数动态加载 ../components/ja_level.html
-// loadComponent('../components/ja_level.html', 'ja_level-container');
+// 调用函数动态加载 ../components/jp101_words.html
+loadComponent('../components/jp101_words.html', 'jp101_words-container');
 
 
 // 使用 JavaScript 动态加载 ja_level.html
