@@ -9,99 +9,148 @@
     <style>
         /* 仅作用于该页面的样式 */
         .article-container {
-            /* font-family: Arial, sans-serif; */
-            margin: 0 auto;
-            padding: 20px;
-            line-height: 1.6;
-            background-color: #f9f9f9;
-            max-width: 800px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          /* font-family: Arial, sans-serif; */
+          margin: 0 auto;
+          padding: 20px;
+          line-height: 1.6;
+          background-color: #f9f9f9;
+          max-width: 800px;
+          border-radius: 10px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-
+      
         .article-container h1 {
-            font-size: 28px;
-            color: #333;
+          font-size: 28px;
+          color: #333;
         }
-
+      
         .article-container p {
-            font-size: 16px;
-            color: #555;
+          font-size: 16px;
+          color: #555;
         }
-
+      
         .article-container .back-link {
-            display: inline-block;
-            margin-top: 20px;
-            text-decoration: none;
-            color: #007bff;
-            font-size: 14px;
+          display: inline-block;
+          margin-top: 20px;
+          text-decoration: none;
+          color: #007bff;
+          font-size: 14px;
         }
-
+      
         .article-container .back-link:hover {
-            text-decoration: underline;
+          text-decoration: underline;
         }
-
+      
         .section {
-            margin-bottom: 20px;
+          margin-bottom: 20px;
         }
-
+      
         .title {
-            font-size: 24px;
-            font-weight: bold;
-            color: red;
+          font-size: 24px;
+          font-weight: bold;
+          color: red;
         }
-
+      
         .table {
-            border-collapse: collapse;
-            width: 100%;
-            margin-top: 10px;
+          border-collapse: collapse;
+          width: 100%;
+          margin-top: 10px;
         }
-
+      
         .table th,
         .table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            vertical-align: top;
-            /* 设置内容向上对齐 */
+          border: 1px solid #ddd;
+          padding: 8px;
+          vertical-align: top;
         }
-
+      
         .table th {
-            background-color: #f4f4f4;
+          background-color: #f4f4f4;
         }
-
+      
         .examples {
-            display: flex;
-            gap: 20px;
+          display: flex;
+          gap: 20px;
         }
-
+      
         .example {
-            border: 1px solid #ddd;
-            padding: 10px;
-            border-radius: 8px;
+          border: 1px solid #ddd;
+          padding: 10px;
+          border-radius: 8px;
         }
-
+      
         .note {
-            font-size: 14px;
-            color: #555;
+          font-size: 14px;
+          color: #555;
         }
-
+      
         hr.custom {
-            border: none;
-            height: 4px;
-            background-color: #e74c3c;
-            box-shadow: 0 4px 2px -2px gray;
+          border: none;
+          height: 4px;
+          background-color: #e74c3c;
+          box-shadow: 0 4px 2px -2px gray;
         }
-
+      
         /* 针对小屏幕优化 */
         @media (max-width: 768px) {
-            .examples {
-                flex-direction: column;
-                /* 改为垂直布局 */
-                gap: 10px;
-                /* 缩小间距 */
-            }
+          .examples {
+            flex-direction: column;
+            gap: 10px;
+          }
         }
-    </style>
+      
+        /* 深色模式 */
+        @media (prefers-color-scheme: dark) {
+          .article-container {
+            background-color: #2b2b2b;
+            color: #f0f0f0;
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+          }
+      
+          .article-container h1 {
+            color: #f0f0f0;
+          }
+      
+          .article-container p {
+            color: #d3d3d3;
+          }
+      
+          .article-container .back-link {
+            color: #66bfff;
+          }
+      
+          .article-container .back-link:hover {
+            text-decoration: underline;
+          }
+      
+          .title {
+            color: #ff6b6b;
+          }
+      
+          .table th {
+            background-color: #3a3a3a;
+            color: #f0f0f0;
+          }
+      
+          .table td {
+            border-color: #555;
+          }
+      
+          .example {
+            border: 1px solid #555;
+            background-color: #3a3a3a;
+          }
+      
+          .note {
+            color: #aaaaaa;
+          }
+      
+          hr.custom {
+            background-color: #c0392b;
+            box-shadow: 0 4px 2px -2px #666;
+          }
+        }
+      </style>
 </head>
 
 <body>

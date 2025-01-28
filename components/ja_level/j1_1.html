@@ -40,8 +40,31 @@
       text-decoration: underline;
     }
 
-    
-  </style>
+    /* 深色模式 */
+    @media (prefers-color-scheme: dark) {
+      .article-container {
+        background-color: #1e1e1e; /* 深色背景 */
+        box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); /* 白色阴影 */
+      }
+
+      .article-container h1 {
+        color: #f5f5f5; /* 浅色标题 */
+      }
+
+      .article-container p {
+        color: #cccccc; /* 浅色段落文字 */
+      }
+
+      .article-container .back-link {
+        color: #66b2ff; /* 浅蓝色链接 */
+      }
+
+      .article-container .back-link:hover {
+        text-decoration: underline;
+        color: #99ccff; /* 浅蓝色悬停效果 */
+      }
+    }
+</style>
 </head>
 <body>
   <div class="article-container">

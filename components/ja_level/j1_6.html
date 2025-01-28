@@ -8,17 +8,21 @@
   <title>日文Level 1 - 叶泽伟的博客</title>
   <!-- <style href="/css/yzw-beast.css" rel="stylesheet"></style> -->
   <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       background-color: #f8f9fa;
-      /* 柔和的浅灰色，降低视觉疲劳 */
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
+      min-height: 100%;
+      width: 100%;
       color: #212529;
-      /* 深灰色字体，对比度高 */
     }
 
     .quiz-container {
@@ -26,14 +30,9 @@
       padding: 24px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      /* 柔和阴影，突出内容 */
-      max-width: 600px;
-      /* 适合阅读的宽度 */
+      max-width: 700px;
       width: 90%;
-      /* 响应式适配 */
-      /* text-align: justify; */
       text-align: left;
-      /* line-height: 1.6; */
     }
 
     #progress-bar {
@@ -51,7 +50,6 @@
       width: 100%;
       height: 4px;
       background-color: #e9ecef;
-      /* 柔和的背景线 */
       z-index: 0;
       transform: translateY(-50%);
       border-radius: 2px;
@@ -68,18 +66,15 @@
     }
 
     .progress-dot.active {
-      background-color: #0d6efd;
-      /* Apple风格的蓝色，清晰高对比 */
+      background-color: rgb(50, 116, 201);
     }
 
     #question-text {
-      font-size: 18px;
-      /* 略大字体，方便快速识别 */
-      font-weight: 600;
-      /* 字体加粗，强调问题内容 */
+      font-size: 16px;
+      line-height: 1.6;
       margin-bottom: 20px;
-      color: #343a40;
-      /* 更深的灰色，增加对比 */
+      color: #4f4f4f;
+      text-align: justify;
     }
 
     #audio-container {
@@ -95,34 +90,31 @@
 
     .option {
       padding: 14px 18px;
-      /* 增加内边距，点击区域更大 */
-      border: 1px solid #ced4da;
+      border: 1px solid rgb(200, 204, 220);
       border-radius: 8px;
-      background-color: #f8f9fa;
-      font-size: 14px;
+      font-size: 16px;
+      font-weight: 600;
       color: #495057;
       cursor: pointer;
       transition: background-color 0.2s ease, border-color 0.2s ease;
       text-align: left;
       user-select: none;
-      /* 禁止选中文本，避免干扰 */
     }
 
     .option:hover {
-      background-color: #e9ecef;
-      border-color: #adb5bd;
+      background-color: rgb(50, 116, 201);
+      color: #ffffff;
+      border-color: rgb(50, 116, 201);
     }
 
     .option.selected {
-      background-color: #0d6efd;
-      /* 高对比蓝色 */
-      border-color: #0b5ed7;
+      background-color: rgb(50, 116, 201);
+      border-color: rgb(50, 116, 201);
       color: #ffffff;
-      /* 白色文字 */
     }
 
     button {
-      background-color: #0d6efd;
+      background-color: rgb(50, 116, 201);
       color: #ffffff;
       border: none;
       padding: 14px 24px;
@@ -133,11 +125,10 @@
       transition: background-color 0.2s ease;
       margin-top: 20px;
       width: 100%;
-      /* 拉伸按钮适应屏幕 */
     }
 
     button:hover {
-      background-color: #0b5ed7;
+      background-color: rgb(42, 99, 174);
     }
 
     button:disabled {
@@ -153,42 +144,25 @@
       color: #495057;
     }
 
-    /* 结果容器基础样式 */
-    #result-container {
-      margin-top: 20px;
-      font-size: 16px;
-      font-weight: bold;
-      /* 提高视觉明显性 */
-    }
-
-    /* 正确结果样式 */
     #result-container.result-correct {
       color: #28a745;
-      /* Apple风格的绿色 */
     }
 
-    /* 错误结果样式 */
     #result-container.result-wrong {
       color: #dc3545;
-      /* Apple风格的红色 */
     }
 
-    /* 跳过结果样式 */
     #result-container.result-skip {
       color: #ffc107;
-      /* Apple风格的黄色 */
     }
 
-
-
-    /* 响应式优化 */
     @media (max-width: 768px) {
       #question-text {
-        font-size: 20px;
+        font-size: 14px;
       }
 
       .option {
-        font-size: 16px;
+        font-size: 12px;
         padding: 12px 16px;
       }
 
@@ -196,7 +170,75 @@
         padding: 12px 20px;
       }
     }
-  </style>
+
+    /* 深色模式支持 */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #121212;
+        color: #e0e0e0;
+      }
+
+      .quiz-container {
+        background-color: #1e1e1e;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      }
+
+      #progress-bar-line {
+        background-color: #333333;
+      }
+
+      .progress-dot {
+        background-color: #555555;
+      }
+
+      .progress-dot.active {
+        background-color: #82b1ff;
+      }
+
+      #question-text {
+        color: #cccccc;
+      }
+
+      .option {
+        border: 1px solid #444444;
+        background-color: #333333;
+        color: #e0e0e0;
+      }
+
+      .option:hover {
+        background-color: #82b1ff;
+        color: #ffffff;
+        border-color: #82b1ff;
+      }
+
+      .option.selected {
+        background-color: #82b1ff;
+        border-color: #82b1ff;
+        color: #ffffff;
+      }
+
+      button {
+        background-color: #82b1ff;
+      }
+
+      button:disabled {
+        background-color: #444444;
+        color: #888888;
+      }
+
+      #result-container.result-correct {
+        color: #66bb6a;
+      }
+
+      #result-container.result-wrong {
+        color: #ef5350;
+      }
+
+      #result-container.result-skip {
+        color: #ffa726;
+      }
+    }
+</style>
 </head>
 
 <body>
@@ -287,7 +329,7 @@
       },
       {
         text: `听听演讲者怎么说。他的姓氏是什么。
-        <audio controls>
+        <br><audio controls>
            <source src="/components/ja_level/d1_test7.mp3" type="audio/mpeg">
            您的浏览器不支持音频元素。
          </audio>`,
@@ -301,7 +343,7 @@
       },
       {
         text: `听听演讲者怎么说。她的姓氏是什么。
-        <audio controls>
+        <br><audio controls>
            <source src="/components/ja_level/d1_test8.mp3" type="audio/mpeg">
            您的浏览器不支持音频元素。
          </audio>`,
@@ -352,7 +394,7 @@
       },
       {
         text: `听对话。说话者来自哪里？
-        <audio controls>
+        <br><audio controls>
            <source src="/components/ja_level/d1_test12.mp3" type="audio/mpeg">
            您的浏览器不支持音频元素。
          </audio>`,
@@ -366,7 +408,7 @@
       },
       {
         text: `您将听到一个问题和三个可能的答案。
-        <audio controls>
+        <br><audio controls>
            <source src="/components/ja_level/d1_test13.mp3" type="audio/mpeg">
            您的浏览器不支持音频元素。
          </audio>`,
@@ -412,7 +454,7 @@
       },
       {
         text: `听一下自我介绍。他的职业是什么？
-        <audio controls>
+        <br><audio controls>
            <source src="/components/ja_level/d1_test17.mp3" type="audio/mpeg">
            您的浏览器不支持音频元素。
          </audio>`,
@@ -468,7 +510,7 @@
       },
       {
         text: `听演讲者说。现在是什么时间？
-        <audio controls>
+        <br><audio controls>
            <source src="/components/ja_level/d1_test22.mp3" type="audio/mpeg">
            您的浏览器不支持音频元素。
          </audio>`,
@@ -492,45 +534,48 @@
       },
       {
         text: `听听对话。这个人感觉如何？
-        <audio controls>
+        <br><audio controls>
            <source src="/components/ja_level/d1_test24.mp3" type="audio/mpeg">
            您的浏览器不支持音频元素。
          </audio>`,
         options: [
-          { text: "わた (wata)", value: "A", correct: false },
-          { text: "わした (washita)", value: "B", correct: true },
-          { text: "わたし (watashi)", value: "C", correct: false },
-          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "He is doing good.", value: "A", correct: false },
+          { text: "He is doing fantastic.", value: "B", correct: true },
+          { text: "He is so-so.", value: "C", correct: false },
+          { text: "It's impossible to tell from the given information.", value: "D", correct: false },
           { text: "不确定 / 跳过问题", value: "skip", correct: false }
         ]
       },
       {
-        text: `25`,
+        text: `澳大利亚学生米娅·马丁 (Mia Martin) 自我介绍说：<br>
+        はじめまして。マーティンミアです。オーストラリア ( ) です。よろしくおねがいします。<br>
+        Hajimemashite. Mātin Mia desu. Ōsutoraria ( ) desu. Yoroshiku onegai shimasu.`,
         options: [
-          { text: "わた (wata)", value: "A", correct: false },
-          { text: "わした (washita)", value: "B", correct: true },
-          { text: "わたし (watashi)", value: "C", correct: false },
-          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "しん (shin)", value: "A", correct: false },
+          { text: "じん (jin)", value: "B", correct: true },
+          { text: "にん (nin)", value: "C", correct: false },
+          { text: "のひと (no hito)", value: "D", correct: false },
           { text: "不确定 / 跳过问题", value: "skip", correct: false }
         ]
       },
       {
-        text: `26`,
+        text: `在日语中，‘well’（像在‘I’m well’中那样）怎么说？`,
         options: [
-          { text: "わた (wata)", value: "A", correct: false },
-          { text: "わした (washita)", value: "B", correct: true },
-          { text: "わたし (watashi)", value: "C", correct: false },
-          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "けんき (kenki)", value: "A", correct: false },
+          { text: "げんき (genki)", value: "B", correct: true },
+          { text: "きけん (kiken)", value: "C", correct: false },
+          { text: "きげん (kigen)", value: "D", correct: false },
           { text: "不确定 / 跳过问题", value: "skip", correct: false }
         ]
       },
       {
-        text: `27`,
+        text: `わたしは　やました（　）。<br>
+        Watashi wa Yamashita (   ).`,
         options: [
-          { text: "わた (wata)", value: "A", correct: false },
-          { text: "わした (washita)", value: "B", correct: true },
-          { text: "わたし (watashi)", value: "C", correct: false },
-          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "てす (tesu)", value: "A", correct: false },
+          { text: "でず (dezu)", value: "B", correct: true },
+          { text: "ですか (desu ka)", value: "C", correct: false },
+          { text: "です (desu)", value: "D", correct: false },
           { text: "不确定 / 跳过问题", value: "skip", correct: false }
         ]
       },

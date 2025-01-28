@@ -215,4 +215,9 @@
     .timeline-item a:hover {
         color: #a1cfff;
     }
+
+    /* 弹窗样式 */
+    #modal-content {
+        background-color: #333333;
+    }
 }

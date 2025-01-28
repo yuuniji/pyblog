@@ -18,17 +18,17 @@
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
-
+  
     .article-container h1 {
       font-size: 28px;
       color: #333;
     }
-
+  
     .article-container p {
       font-size: 16px;
       color: #555;
     }
-
+  
     .article-container .back-link {
       display: inline-block;
       margin-top: 20px;
@@ -36,18 +36,18 @@
       color: #007bff;
       font-size: 14px;
     }
-
+  
     .article-container .back-link:hover {
       text-decoration: underline;
     }
-
+  
     hr.custom {
       border: none;
       height: 4px;
       background-color: #e74c3c;
       box-shadow: 0 4px 2px -2px gray;
     }
-
+  
     .circle {
       width: 24px;
       height: 24px;
@@ -61,27 +61,61 @@
       background-color: rgb(224, 97, 89);
       color: #fff;
     }
-
+  
     .specific-container {
       display: flex;
       width: 100%;
-      /* 容器宽度 */
       gap: 20px;
-      /* 间距 */
     }
-
+  
     .specific-container table,
     .specific-container p {
       flex: 1;
-      /* 各占50%宽度 */
       margin: 0;
-      /* border: 1px solid #ccc;  */
-      /* 可选：添加边框便于查看效果 */
       box-sizing: border-box;
     }
-
+  
     .specific-container table {
-      background-color: aquamarine;
+      background-color: rgb(241, 240, 227);
+    }
+  
+    /* 深色模式 */
+    @media (prefers-color-scheme: dark) {
+      .article-container {
+        background-color: #2c2c2c;
+        color: #f0f0f0;
+        box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+      }
+  
+      .article-container h1 {
+        color: #f0f0f0;
+      }
+  
+      .article-container p {
+        color: #d3d3d3;
+      }
+  
+      .article-container .back-link {
+        color: #66bfff;
+      }
+  
+      .article-container .back-link:hover {
+        text-decoration: underline;
+      }
+  
+      hr.custom {
+        background-color: #c0392b;
+        box-shadow: 0 4px 2px -2px #666;
+      }
+  
+      .circle {
+        background-color: #ff6b6b;
+        color: #000;
+      }
+  
+      .specific-container table {
+        background-color: #455a64;
+      }
     }
   </style>
 </head>
@@ -127,7 +161,8 @@
     <h4>姓名顺序</h4>
 
     <div class="specific-container">
-      <table style="background-color: rgb(241, 240, 227);">
+      <!-- <table style="background-color: rgb(241, 240, 227);"> -->
+        <table>
         <tr>
           <!-- <td></td> -->
           <td>　　　制作部</td>
@@ -145,7 +180,7 @@
         在日语中，一个人的姓氏(family name)在前，名字(given name)在后。
       </p>
     </div>
-    <div style="border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9; margin-top: 10px;">
+    <div style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
     <!-- <div> -->
       <p><strong>常见的姓名后缀-san（さん）</strong></p>
       <p>
