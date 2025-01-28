@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://pylove.us.kg/images/yzwer.jpg" rel="icon" type="image/x-icon">
+  <title>日文Level 1 - 叶泽伟的博客</title>
+  <!-- <style href="/css/yzw-beast.css" rel="stylesheet"></style> -->
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100%;
+      width: 100%;
+      color: #212529;
+    }
+
+    .quiz-container {
+      background-color: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 700px;
+      width: 90%;
+      text-align: left;
+    }
+
+    #progress-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    #progress-bar-line {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-color: #e9ecef;
+      z-index: 0;
+      transform: translateY(-50%);
+      border-radius: 2px;
+    }
+
+    .progress-dot {
+      width: 10px;
+      height: 10px;
+      background-color: #dee2e6;
+      border-radius: 50%;
+      z-index: 1;
+      position: relative;
+      transition: background-color 0.3s ease;
+    }
+
+    .progress-dot.active {
+      background-color: rgb(50, 116, 201);
+    }
+
+    #question-text {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #4f4f4f;
+      text-align: justify;
+    }
+
+    #audio-container {
+      margin-bottom: 20px;
+    }
+
+    #options-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .option {
+      padding: 14px 18px;
+      border: 1px solid rgb(200, 204, 220);
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #495057;
+      cursor: pointer;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+      text-align: left;
+      user-select: none;
+    }
+
+    .option:hover {
+      background-color: rgb(50, 116, 201);
+      color: #ffffff;
+      border-color: rgb(50, 116, 201);
+    }
+
+    .option.selected {
+      background-color: rgb(50, 116, 201);
+      border-color: rgb(50, 116, 201);
+      color: #ffffff;
+    }
+
+    button {
+      background-color: rgb(50, 116, 201);
+      color: #ffffff;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: rgb(42, 99, 174);
+    }
+
+    button:disabled {
+      background-color: #ced4da;
+      cursor: not-allowed;
+      color: #6c757d;
+    }
+
+    #result-container {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: 500;
+      color: #495057;
+    }
+
+    #result-container.result-correct {
+      color: #28a745;
+    }
+
+    #result-container.result-wrong {
+      color: #dc3545;
+    }
+
+    #result-container.result-skip {
+      color: #ffc107;
+    }
+
+    @media (max-width: 768px) {
+      #question-text {
+        font-size: 14px;
+      }
+
+      .option {
+        font-size: 12px;
+        padding: 12px 16px;
+      }
+
+      button {
+        padding: 12px 20px;
+      }
+    }
+
+    /* 深色模式支持 */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #121212;
+        color: #e0e0e0;
+      }
+
+      .quiz-container {
+        background-color: #1e1e1e;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      }
+
+      #progress-bar-line {
+        background-color: #333333;
+      }
+
+      .progress-dot {
+        background-color: #555555;
+      }
+
+      .progress-dot.active {
+        background-color: #82b1ff;
+      }
+
+      #question-text {
+        color: #cccccc;
+      }
+
+      .option {
+        border: 1px solid #444444;
+        background-color: #333333;
+        color: #e0e0e0;
+      }
+
+      .option:hover {
+        background-color: #82b1ff;
+        color: #ffffff;
+        border-color: #82b1ff;
+      }
+
+      .option.selected {
+        background-color: #82b1ff;
+        border-color: #82b1ff;
+        color: #ffffff;
+      }
+
+      button {
+        background-color: #82b1ff;
+      }
+
+      button:disabled {
+        background-color: #444444;
+        color: #888888;
+      }
+
+      #result-container.result-correct {
+        color: #66bb6a;
+      }
+
+      #result-container.result-wrong {
+        color: #ef5350;
+      }
+
+      #result-container.result-skip {
+        color: #ffa726;
+      }
+    }
+</style>
+</head>
+
+<body>
+  <div class="quiz-container">
+    <!-- 进度条 -->
+    <div id="progress-bar">
+      <div id="progress-bar-line"></div>
+    </div>
+
+    <!-- 问题内容 -->
+    <div id="question-text"></div>
+    <div id="audio-container"></div>
+    <div id="options-container"></div>
+    <button id="next-button">下一题</button>
+    <div id="result-container"></div>
+  </div>
+
+  <script>
+    let currentQuestionIndex = 0;
+    let score = 0;
+
+    const questionText = document.getElementById('question-text');
+    const audioContainer = document.getElementById('audio-container');
+    const optionsContainer = document.getElementById('options-container');
+    const nextButton = document.getElementById('next-button');
+    const resultContainer = document.getElementById('result-container');
+    const progressBar = document.getElementById('progress-bar');
+
+    const questions = [
+      {
+        text: `在日语中，开始自我介绍时，如何说“很高兴见到你”？`,
+        options: [
+          { text: "はじまして。 (Hajimashite.)", value: "A", correct: false },
+          { text: "はじめまして。 (Hajimemashite.)", value: "B", correct: true },
+          { text: "よろしくおねがいします。 (Yoroshiku onegai shimasu.)", value: "C", correct: false },
+          { text: "よくおねがいします。 (Yoku onegai shimasu.)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: '“我” 这个在 日语 里怎么说？',
+        options: [
+          { text: "わた (wata)", value: "A", correct: false },
+          { text: "わした (washita)", value: "B", correct: false },
+          { text: "わたし (watashi)", value: "C", correct: true },
+          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: '自我介绍的最后“很高兴认识你”用日语怎么说？',
+        options: [
+          { text: "よくおねがいします。 (Yoku onegai shimasu.)", value: "A", correct: false },
+          { text: "よろしくおねがいします。 (Yoroshiku onegai shimasu.)", value: "B", correct: true },
+          { text: "はじめまして。 (Hajimemashite)", value: "C", correct: false },
+          { text: "はめまして。 (Hamemashite)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: '英国学生杰克·琼斯做了自我介绍。他说，<br>はじめまして。ジョーンズ ジャックです。(     ) よろしくおねがいします。<br>Hajimemashite. Jōnzu Jakku desu. (      ) Yoroshiku onegai shimasu.',
+        options: [
+          { text: "イギリスにんです。 (Igirisu-nin desu.)", value: "A", correct: false },
+          { text: "イギリスです。 (Igirisu desu.)", value: "B", correct: false },
+          { text: "イギリスからきました。 (Igirisu kara kimashita.)", value: "C", correct: true },
+          { text: "イギリスじんからきました。 (Igirisu-jin kara kimashita.)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: '你可以省略 わたしは (Watashi wa) 在 わたしは　こばやしです (Watashi wa Kobayashi desu.) 中。',
+        options: [
+          { text: "True.", value: "T", correct: true },
+          { text: "False.", value: "F", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: 'こばやし　けん：はじめまして。わたしは こばやしです。よろしく おねがいします。<br>サーシャ　リー：（ ）。<br>Ken Kobayashi:  Hajimemashite. Watashi wa Kobayashi desu. Yoroshiku onegai shimasu.<br>Sasha Lee: ( ).',
+        options: [
+          { text: "よろしくおねがいします。わたしはリーベンです。はじめまして。 (Yoroshiku onegai shimasu. Watashi wa Rī Ben desu. Hajimemashite.)", value: "A", correct: false },
+          { text: "はじめまして。わたしはリーベンです。よろしくおねがいします。 (Hajimemashite. Watashi wa Rī Ben desu. Yoroshiku onegai shimasu.)", value: "B", correct: true },
+          { text: "わたしはリーベンです。よろしくおねがいします。はじめまして。 (Watashi wa Rī Ben desu. Yoroshiku onegai shimasu. Hajimemashite.)", value: "C", correct: false },
+          { text: "わたしはリーベンです。 (Watashi wa Rī Ben desu.)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+
+      },
+      {
+        text: `听听演讲者怎么说。他的姓氏是什么。
+        <br><audio controls>
+           <source src="/components/ja_level/d1_test7.mp3" type="audio/mpeg">
+           您的浏览器不支持音频元素。
+         </audio>`,
+        options: [
+          { text: "ゆうや (Yūya)", value: "A", correct: false },
+          { text: "ゆや (Yuya)", value: "B", correct: false },
+          { text: "やまぐち (Yamaguchi)", value: "C", correct: true },
+          { text: "やまち (Yamachi)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `听听演讲者怎么说。她的姓氏是什么。
+        <br><audio controls>
+           <source src="/components/ja_level/d1_test8.mp3" type="audio/mpeg">
+           您的浏览器不支持音频元素。
+         </audio>`,
+        options: [
+          { text: "さずき (Sazuki)", value: "A", correct: false },
+          { text: "すずき (Suzuki)", value: "B", correct: true },
+          { text: "さつき (Satsuki)", value: "C", correct: false },
+          { text: "ささき (Sasaki)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `Hana Hashimoto 向美国学生 Gabriel Garcia 询问他的国籍。<br>
+        他和 Jack Jones 一起来到派对，Jack Jones 是她的英国学生，所以她怀疑他可能也是英国人。<br>
+        她问道，<br>
+        すみません、イギリスじんですか。<br>
+        Sumimasen, Igirisu-jin desu ka.<br>
+        Gabriel 会如何回应？`,
+        options: [
+          { text: "はい、アメリカです。 (Hai, Amerika desu.)", value: "A", correct: false },
+          { text: "はい、アメリカ人です。 (Hai, Amerika-jin desu.)", value: "B", correct: false },
+          { text: "いいえ、アメリカきました。 (Iie, Amerika kimashita.)", value: "C", correct: false },
+          { text: "いいえ、アメリカ人です。 (Iie, Amerika-jin desu.)", value: "D", correct: true },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `中国学生刘静做自我介绍。 她说，<br>
+        はじめまして。リュー ジングです。( ) です。よろしくおねがいします。<br>
+        Hajimemashite. Ryū Jingu desu. ( ) desu. Yoroshiku onegai shimasu.`,
+        options: [
+          { text: "ちゅうごく (Chūgoku)", value: "A", correct: false },
+          { text: "ちゅうごくじん (Chūgoku-jin)", value: "B", correct: false },
+          { text: "ちゅうこく (Chūkoku)", value: "C", correct: false },
+          { text: "ちゅうごくじん (Chūgoku-jin)", value: "D", correct: true },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `“故乡” 这个在 日语 里怎么说？`,
+        options: [
+          { text: "しゃしん (shashin)", value: "A", correct: false },
+          { text: "しゃっしん (shasshin)", value: "B", correct: false },
+          { text: "しゅしん (shushin)", value: "C", correct: false },
+          { text: "しゅっしん (shusshin)", value: "D", correct: true },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `听对话。说话者来自哪里？
+        <br><audio controls>
+           <source src="/components/ja_level/d1_test12.mp3" type="audio/mpeg">
+           您的浏览器不支持音频元素。
+         </audio>`,
+        options: [
+          { text: "Sydney", value: "A", correct: false },
+          { text: "Seattle", value: "B", correct: true },
+          { text: "San Francisco", value: "C", correct: false },
+          { text: "Sapporo", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `您将听到一个问题和三个可能的答案。
+        <br><audio controls>
+           <source src="/components/ja_level/d1_test13.mp3" type="audio/mpeg">
+           您的浏览器不支持音频元素。
+         </audio>`,
+        options: [
+          { text: "(1)", value: "A", correct: false },
+          { text: "(2)", value: "B", correct: false },
+          { text: "(3)", value: "C", correct: true },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `杰克·琼斯（Jack Jones）问哈娜·希金托（Hana Hashimoto）是否是日本人。 Hana如何回应杰克·琼斯（Jack Jones）关于其国籍的问题？`,
+        options: [
+          { text: "はい、にほんじんですか。 (Hai, Nihon-jin desu ka.)", value: "A", correct: false },
+          { text: "はい、にほんじんです。 (Hai, Nihon-jin desu.)", value: "B", correct: true },
+          { text: "いいえ、にほんじんです。 (Iie, Nihon-jin desu.)", value: "C", correct: false },
+          { text: "いいえ、にほんです。 (Iie, Nihon desu.)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `ささき　じゅん: がくせいですか。<br>
+        ともこ　たなか: いいえ、がくせい（ ）。きょうしです。<br>
+        Jun Sasaki: Gakusei desu ka.<br>
+        Tomoko Tanaka: Iie, gakusei ( ). Kyōshi desu.`,
+        options: [
+          { text: "です (desu)", value: "A", correct: false },
+          { text: "では (dewa)", value: "B", correct: false },
+          { text: "ありません (arimasen)", value: "C", correct: false },
+          { text: "ではありません (dewa arimasen)", value: "D", correct: true },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `“护士” 这个在 日语 里怎么说？`,
+        options: [
+          { text: "いしゃ (isha)", value: "A", correct: false },
+          { text: "とうしか (tōshika)", value: "B", correct: false },
+          { text: "エンジニア (enjinia)", value: "C", correct: false },
+          { text: "かんごし (kangoshi)", value: "D", correct: true },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `听一下自我介绍。他的职业是什么？
+        <br><audio controls>
+           <source src="/components/ja_level/d1_test17.mp3" type="audio/mpeg">
+           您的浏览器不支持音频元素。
+         </audio>`,
+        options: [
+          { text: "doctor", value: "A", correct: false },
+          { text: "investor", value: "B", correct: true },
+          { text: "nurse", value: "C", correct: false },
+          { text: "engineer", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `一位日本学生桥本花（Hana Hashimoto）做自我介绍。她说：<br>
+        はじめまして。はしもとはな です。よろしくおねがいします。<br>
+        Hajimemashite. Hashimoto Hana desu. Yoroshiku onegai shimasu.<br>
+        杰克·琼斯（Jack Jones）对Hana的国籍感到好奇。他怎么问她是否是日本人？`,
+        options: [
+          { text: "にほんじんですか。 (Nihon-jin desu ka.)", value: "A", correct: true },
+          { text: "にほんからきましたか。 (Nihon kara kimashita ka.)", value: "B", correct: false },
+          { text: "にほんですか。 (Nihon desu ka.)", value: "C", correct: false },
+          { text: "しゅっしんはどこですか。 (Shusshin wa doko desu ka.)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `以下哪种是说“早上好”更正式的方式？`,
+        options: [
+          { text: "おはようございます。 (Ohayō gozaimasu.)", value: "A", correct: true },
+          { text: "おはよう。 (Ohayō.)", value: "B", correct: false },
+          { text: "Both are equally formal.", value: "C", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `想象一下你是一名高中生，你正在上晚课。向你的老师问好。`,
+        options: [
+          { text: "おはようございます (Ohayō gozaimasu.)", value: "A", correct: false },
+          { text: "こんばんは (Konbanwa.)", value: "B", correct: true },
+          { text: "こんにちは (Kon'nichiwa.)", value: "C", correct: false },
+          { text: "おはよう (Ohayō.)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `想象一下，下午 1 点左右你回家时碰到了邻居。`,
+        options: [
+          { text: "おはよう。 (Ohayo.)", value: "A", correct: false },
+          { text: "こんばんは。 (Konbanwa.)", value: "B", correct: false },
+          { text: "こんにちは。 (Kon'nichiwa.)", value: "C", correct: true },
+          { text: "おやすみなさい。 (Oyasumi nasai.)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `听演讲者说。现在是什么时间？
+        <br><audio controls>
+           <source src="/components/ja_level/d1_test22.mp3" type="audio/mpeg">
+           您的浏览器不支持音频元素。
+         </audio>`,
+        options: [
+          { text: "afternoon", value: "A", correct: false },
+          { text: "evening", value: "B", correct: false },
+          { text: "morining", value: "C", correct: true },
+          { text: "It's impossible to say from the information given.", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `日语中“你好吗”怎么问？`,
+        options: [
+          { text: "げんきですか。 (Genki desu ka.)", value: "A", correct: true },
+          { text: "げんきです。 (Genki desu.)", value: "B", correct: false },
+          { text: "けんこうですか。 (Kenkō desu ka)", value: "C", correct: false },
+          { text: "けんこうです。 (Kenkō desu.)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `听听对话。这个人感觉如何？
+        <br><audio controls>
+           <source src="/components/ja_level/d1_test24.mp3" type="audio/mpeg">
+           您的浏览器不支持音频元素。
+         </audio>`,
+        options: [
+          { text: "He is doing good.", value: "A", correct: false },
+          { text: "He is doing fantastic.", value: "B", correct: true },
+          { text: "He is so-so.", value: "C", correct: false },
+          { text: "It's impossible to tell from the given information.", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `澳大利亚学生米娅·马丁 (Mia Martin) 自我介绍说：<br>
+        はじめまして。マーティンミアです。オーストラリア ( ) です。よろしくおねがいします。<br>
+        Hajimemashite. Mātin Mia desu. Ōsutoraria ( ) desu. Yoroshiku onegai shimasu.`,
+        options: [
+          { text: "しん (shin)", value: "A", correct: false },
+          { text: "じん (jin)", value: "B", correct: true },
+          { text: "にん (nin)", value: "C", correct: false },
+          { text: "のひと (no hito)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `在日语中，‘well’（像在‘I’m well’中那样）怎么说？`,
+        options: [
+          { text: "けんき (kenki)", value: "A", correct: false },
+          { text: "げんき (genki)", value: "B", correct: true },
+          { text: "きけん (kiken)", value: "C", correct: false },
+          { text: "きげん (kigen)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `わたしは　やました（　）。<br>
+        Watashi wa Yamashita (   ).`,
+        options: [
+          { text: "てす (tesu)", value: "A", correct: false },
+          { text: "でず (dezu)", value: "B", correct: false },
+          { text: "ですか (desu ka)", value: "C", correct: false },
+          { text: "です (desu)", value: "D", correct: true },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `当谈论自己的职业时，日语中‘教师’怎么说？`,
+        options: [
+          { text: "わた (sensei)", value: "A", correct: false },
+          { text: "わした (kyōshi)", value: "B", correct: true },
+          { text: "Both are correct.", value: "C", correct: false },
+          { text: "Both are incorrect.", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `你怎么用日语说‘不，我不是医生。我是工程师。’？`,
+        options: [
+          { text: "いいえ、いしゃではありません。かんごしです。 (Iie, isha dewa arimasen. Kangoshi desu.)", value: "A", correct: false },
+          { text: "いいえ、いしゃです。エンジニアではありません。 (Iie, isha desu. Enjinia dewa arimasen.)", value: "B", correct: false },
+          { text: "いいえ、いしゃではありません。エンジニアです。 (Iie, isha dewa arimasen. Enjinia desu.)", value: "C", correct: true },
+          { text: "いいえ、かんごしです。いしゃではありません。 (Iie, kangoshi desu. Isha dewa arimasen.)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `按照顺序排列单词，组成句子。然后，选择占据星号标记位置的单词。<br>
+        田中老师问你一个问题<br>
+        田中老师：[_] [_] [★] [_][_]？<br>
+        １）は、２）どこ、３）です、４）しゅっしん、５）か<br>
+        1) wa, 2) doko, 3) desu, 4) shusshin, 5) ka`,
+        options: [
+          { text: "1) は (wa)", value: "A", correct: false },
+          { text: "2) どこ (doko)", value: "B", correct: true },
+          { text: "3) です (desu)", value: "C", correct: false },
+          { text: "4) しゅっしん (shusshin)", value: "D", correct: false },
+          { text: "5) か (ka)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `选择最能完整对话的答案。<br>
+        たなか　ともこ: げんきですか。<br>
+        マーク　リー: ( )です。<br>
+        Tomoko Tanaka: Genki desu ka.<br>
+        Mark Lee: ( ) desu.`,
+        options: [
+          { text: "げんきじゃ (genki ja)", value: "A", correct: false },
+          { text: "まま (mama)", value: "B", correct: false },
+          { text: "まあまあ (māmā)", value: "C", correct: true },
+          { text: "すごく (sugoku)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      },
+      {
+        text: `选择最能补全句子的答案。<br>
+        はじめまして。（　）リーマークです。<br>
+        Hajimemashite. (     ) Rī Māku desu.`,
+        options: [
+          { text: "わたしは (Watashi wa)", value: "A", correct: true },
+          { text: "わたし (Watashi)", value: "B", correct: false },
+          { text: "よろしくおねがいします。 (Yoroshiku onegai shimasu.)", value: "C", correct: false },
+          { text: "は (wa)", value: "D", correct: false },
+          { text: "不确定 / 跳过问题", value: "skip", correct: false }
+        ]
+      }
+    ];
+
+
+    function createProgressDots() {
+      progressBar.innerHTML = '<div id="progress-bar-line"></div>'; // 重置进度条
+      questions.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.className = 'progress-dot';
+        if (index === currentQuestionIndex) {
+          dot.classList.add('active');
+        }
+        progressBar.appendChild(dot);
+      });
+    }
+
+    function showQuestion() {
+      const question = questions[currentQuestionIndex];
+      questionText.innerHTML = question.text;
+
+      // 清空音频容器和选项容器
+      audioContainer.innerHTML = '';
+      optionsContainer.innerHTML = '';
+
+      question.options.forEach(option => {
+        const button = document.createElement('div');
+        button.textContent = option.text;
+        button.className = 'option';
+        button.dataset.value = option.value;
+        button.addEventListener('click', selectOption);
+        optionsContainer.appendChild(button);
+      });
+
+      nextButton.disabled = true; // 禁用“下一题”按钮
+      resultContainer.textContent = '';
+      createProgressDots(); // 更新进度条
+    }
+
+    function selectOption(event) {
+      const selectedButton = event.target;
+
+      // 清除其他选项的选中状态
+      document.querySelectorAll('.option').forEach(option => {
+        option.classList.remove('selected');
+      });
+
+      // 标记当前选中选项
+      selectedButton.classList.add('selected');
+
+      const selectedValue = selectedButton.dataset.value;
+      const question = questions[currentQuestionIndex];
+      const selectedOption = question.options.find(option => option.value === selectedValue);
+
+      // 清除结果容器的所有样式
+      resultContainer.className = '';
+
+      if (selectedValue === 'skip') {
+        resultContainer.textContent = '跳过此题';
+        resultContainer.classList.add('result-skip'); // 跳过的样式
+      } else if (selectedOption.correct) {
+        resultContainer.textContent = '正确！';
+        resultContainer.classList.add('result-correct'); // 正确的样式
+        score++;
+      } else {
+        resultContainer.textContent = '错误！';
+        resultContainer.classList.add('result-wrong'); // 错误的样式
+      }
+
+      nextButton.disabled = false; // 启用“下一题”按钮
+    }
+
+
+
+    function showNextQuestion() {
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
+        showQuestion();
+      } else {
+        endQuiz();
+      }
+    }
+
+    function endQuiz() {
+      questionText.textContent = `Quiz结束！你的得分是 ${score} / ${questions.length}`;
+      optionsContainer.innerHTML = '';
+      audioContainer.innerHTML = '';
+      progressBar.innerHTML = ''; // 清空进度条
+      nextButton.style.display = 'none';
+      resultContainer.textContent = '';
+    }
+
+    nextButton.addEventListener('click', showNextQuestion);
+
+    showQuestion();
+  </script>
+</body>
+
+</html>
