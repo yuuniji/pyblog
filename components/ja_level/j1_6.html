@@ -282,8 +282,8 @@
         text: '“我” 这个在 日语 里怎么说？',
         options: [
           { text: "わた (wata)", value: "A", correct: false },
-          { text: "わした (washita)", value: "B", correct: true },
-          { text: "わたし (watashi)", value: "C", correct: false },
+          { text: "わした (washita)", value: "B", correct: false },
+          { text: "わたし (watashi)", value: "C", correct: true },
           { text: "わがし (wagashi)", value: "D", correct: false },
           { text: "不确定 / 跳过问题", value: "skip", correct: false }
         ]
@@ -302,8 +302,8 @@
         text: '英国学生杰克·琼斯做了自我介绍。他说，<br>はじめまして。ジョーンズ ジャックです。(     ) よろしくおねがいします。<br>Hajimemashite. Jōnzu Jakku desu. (      ) Yoroshiku onegai shimasu.',
         options: [
           { text: "イギリスにんです。 (Igirisu-nin desu.)", value: "A", correct: false },
-          { text: "イギリスです。 (Igirisu desu.)", value: "B", correct: true },
-          { text: "イギリスからきました。 (Igirisu kara kimashita.)", value: "C", correct: false },
+          { text: "イギリスです。 (Igirisu desu.)", value: "B", correct: false },
+          { text: "イギリスからきました。 (Igirisu kara kimashita.)", value: "C", correct: true },
           { text: "イギリスじんからきました。 (Igirisu-jin kara kimashita.)", value: "D", correct: false },
           { text: "不确定 / 跳过问题", value: "skip", correct: false }
         ]
@@ -311,8 +311,8 @@
       {
         text: '你可以省略 わたしは (Watashi wa) 在 わたしは　こばやしです (Watashi wa Kobayashi desu.) 中。',
         options: [
-          { text: "True.", value: "T", correct: false },
-          { text: "False.", value: "F", correct: true },
+          { text: "True.", value: "T", correct: true },
+          { text: "False.", value: "F", correct: false },
           { text: "不确定 / 跳过问题", value: "skip", correct: false }
         ]
       },
@@ -580,52 +580,63 @@
         ]
       },
       {
-        text: `28`,
+        text: `当谈论自己的职业时，日语中‘教师’怎么说？`,
         options: [
-          { text: "わた (wata)", value: "A", correct: false },
-          { text: "わした (washita)", value: "B", correct: true },
-          { text: "わたし (watashi)", value: "C", correct: false },
-          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "わた (sensei)", value: "A", correct: false },
+          { text: "わした (kyōshi)", value: "B", correct: true },
+          { text: "Both are correct.", value: "C", correct: false },
+          { text: "Both are incorrect.", value: "D", correct: false },
           { text: "不确定 / 跳过问题", value: "skip", correct: false }
         ]
       },
       {
-        text: `29`,
+        text: `你怎么用日语说‘不，我不是医生。我是工程师。’？`,
         options: [
-          { text: "わた (wata)", value: "A", correct: false },
-          { text: "わした (washita)", value: "B", correct: true },
-          { text: "わたし (watashi)", value: "C", correct: false },
-          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "いいえ、いしゃではありません。かんごしです。 (Iie, isha dewa arimasen. Kangoshi desu.)", value: "A", correct: false },
+          { text: "いいえ、いしゃです。エンジニアではありません。 (Iie, isha desu. Enjinia dewa arimasen.)", value: "B", correct: true },
+          { text: "いいえ、いしゃではありません。エンジニアです。 (Iie, isha dewa arimasen. Enjinia desu.)", value: "C", correct: false },
+          { text: "いいえ、かんごしです。いしゃではありません。 (Iie, kangoshi desu. Isha dewa arimasen.)", value: "D", correct: false },
           { text: "不确定 / 跳过问题", value: "skip", correct: false }
         ]
       },
       {
-        text: `30`,
+        text: `按照顺序排列单词，组成句子。然后，选择占据星号标记位置的单词。<br>
+        田中老师问你一个问题<br>
+        田中老师：[_] [_] [★] [_][_]？<br>
+        １）は、２）どこ、３）です、４）しゅっしん、５）か<br>
+        1) wa, 2) doko, 3) desu, 4) shusshin, 5) ka`,
         options: [
-          { text: "わた (wata)", value: "A", correct: false },
-          { text: "わした (washita)", value: "B", correct: true },
-          { text: "わたし (watashi)", value: "C", correct: false },
-          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "1) は (wa)", value: "A", correct: false },
+          { text: "2) どこ (doko)", value: "B", correct: true },
+          { text: "3) です (desu)", value: "C", correct: false },
+          { text: "4) しゅっしん (shusshin)", value: "D", correct: false },
+          { text: "5) か (ka)", value: "D", correct: false },
           { text: "不确定 / 跳过问题", value: "skip", correct: false }
         ]
       },
       {
-        text: `31`,
+        text: `选择最能完整对话的答案。<br>
+        たなか　ともこ: げんきですか。<br>
+        マーク　リー: ( )です。<br>
+        Tomoko Tanaka: Genki desu ka.<br>
+        Mark Lee: ( ) desu.`,
         options: [
-          { text: "わた (wata)", value: "A", correct: false },
-          { text: "わした (washita)", value: "B", correct: true },
-          { text: "わたし (watashi)", value: "C", correct: false },
-          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "げんきじゃ (genki ja)", value: "A", correct: false },
+          { text: "まま (mama)", value: "B", correct: true },
+          { text: "まあまあ (māmā)", value: "C", correct: false },
+          { text: "すごく (sugoku)", value: "D", correct: false },
           { text: "不确定 / 跳过问题", value: "skip", correct: false }
         ]
       },
       {
-        text: `32`,
+        text: `选择最能补全句子的答案。<br>
+        はじめまして。（　）リーマークです。<br>
+        Hajimemashite. (     ) Rī Māku desu.`,
         options: [
-          { text: "わた (wata)", value: "A", correct: false },
-          { text: "わした (washita)", value: "B", correct: true },
-          { text: "わたし (watashi)", value: "C", correct: false },
-          { text: "わがし (wagashi)", value: "D", correct: false },
+          { text: "わたしは (Watashi wa)", value: "A", correct: false },
+          { text: "わたし (Watashi)", value: "B", correct: true },
+          { text: "よろしくおねがいします。 (Yoroshiku onegai shimasu.)", value: "C", correct: false },
+          { text: "は (wa)", value: "D", correct: false },
           { text: "不确定 / 跳过问题", value: "skip", correct: false }
         ]
       }
