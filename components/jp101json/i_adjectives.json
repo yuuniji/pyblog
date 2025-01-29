@@ -4,7 +4,7 @@
             "flashcardId": "2331793",
             "en_audio": "/components/jp101json/i_a/87815.mp3",
             "kana": "\u3046\u308c\u3057\u3044",
-            "audio": "https://d1pra95f92lrn3.cloudfront.net/audio/549398.mp3",
+            "audio": "/components/jp101json/i_a/549398.mp3",
             "word": "\u3046\u308c\u3057\u3044",
             "class": "i-adjective",
             "examples": [
@@ -12,7 +12,7 @@
                     "en_audio": "",
                     "kana": "\u3042\u3057\u305f\u306f\u304d\u3085\u3046\u308a\u3087\u3046\u3073\u3067\u3059\u3002\u3046\u308c\u3057\u3044\uff01",
                     "romaji": "Ashita wa ky\u016bry\u014dbi desu. Ureshii!",
-                    "audio": "https://d1pra95f92lrn3.cloudfront.net/audio/549400.mp3",
+                    "audio": "/components/jp101json/i_a/549400.mp3",
                     "english": "Tomorrow is pay day! I'm happy!",
                     "text": "\u660e\u65e5\u306f\u7d66\u6599\u65e5\u3067\u3059\u3002\u3046\u308c\u3057\u3044\uff01"
                 },
@@ -20,7 +20,7 @@
                     "en_audio": "",
                     "kana": "\u304a\u305b\u3044\u307c\u3067\u30d3\u30fc\u30eb\u304c\u3068\u3069\u3044\u305f\u306e\u3067\u3001\u3068\u3066\u3082\u3046\u308c\u3057\u3044\u3067\u3059\u3002",
                     "romaji": "Oseibo de b\u012bru ga todoita node, totemo ureshii desu.",
-                    "audio": "https://d1pra95f92lrn3.cloudfront.net/audio/549399.mp3",
+                    "audio": "/components/jp101json/i_a/549399.mp3",
                     "english": "I\u2019m really happy because I received beer as an o-seibo gift.",
                     "text": "\u304a\u6b73\u66ae\u3067\u30d3\u30fc\u30eb\u304c\u5c4a\u3044\u305f\u306e\u3067\u3001\u3068\u3066\u3082\u3046\u308c\u3057\u3044\u3067\u3059\u3002"
                 }
