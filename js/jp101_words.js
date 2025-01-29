@@ -15,7 +15,10 @@ categories.forEach((category, index) => {
     const tab = document.createElement('div');
     tab.className = 'tab';
     tab.textContent = category.name;
-    tab.onclick = () => showCategory(index);
+    tab.addEventListener('click', (e) => {
+        e.preventDefault(); // 防止页面刷新
+        showCategory(index);
+    });
     tabsContainer.appendChild(tab);
 
     // 创建分类容器
@@ -77,9 +80,11 @@ function showCategory(index) {
     const tabs = document.querySelectorAll('.tab');
     const categories = document.querySelectorAll('.category-container');
 
+    // 隐藏所有分类，移除激活样式
     tabs.forEach(tab => tab.classList.remove('active'));
     categories.forEach(category => category.classList.remove('active'));
 
+    // 激活当前分类及对应选项卡
     tabs[index].classList.add('active');
     categories[index].classList.add('active');
 }
