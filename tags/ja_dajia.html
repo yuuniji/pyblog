@@ -97,16 +97,20 @@
                     <button id="back-to-top" onclick="scrollToTop()">↑</button>
                     <label for="content-select">选择内容：</label>
                     <select id="content-select" onchange="switchContent()">
-                        <option value="ja_dajia">大家</option>
-                        <option value="ja_dajia_Characters">大家角色</option>
+                        <option value="ja_dajia_study">有效的使用方法</option>
+                        <option value="ja_dajia">词汇</option>
+                        <option value="ja_dajia_Characters">登场人物</option>
                         <!-- 未来可以继续添加更多选项 -->
                     </select>
 
+                    <div id="ja_dajia_study-container" data-content class="active">
+                        <p>这里是该书籍的使用方法的内容。</p>
+                    </div>
                     <div id="ja_dajia-container" data-content class="active">
-                        <p>这里是大家的内容。</p>
+                        <p>这里是词汇的内容。</p>
                     </div>
                     <div id="ja_dajia_Characters-container" data-content>
-                        <p>这里是大家角色的内容。</p>
+                        <p>这里是登场人物的内容。</p>
                     </div>
                 </div>
             </div>
