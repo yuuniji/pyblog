@@ -49,6 +49,7 @@ categories.forEach((category, index) => {
                 wordDiv.innerHTML = `
                     <h3>${word.word} (${word.romaji})</h3>
                     <p><strong>Meaning:</strong> ${word.english}</p>
+                    <audio controls src="${word.en_audio}">Your browser does not support the audio element.</audio>
                     <p><strong>Kana:</strong> ${word.kana}</p>
                     <audio controls src="${word.audio}">Your browser does not support the audio element.</audio>
 
