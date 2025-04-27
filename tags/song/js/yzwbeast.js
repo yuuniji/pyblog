@@ -393,609 +393,609 @@ let curr_track = document.createElement('audio');
 let track_list = [{
         name: "7 rings",
         artist: "Ariana Grande",
-        image: "https://pylove.us.kg/comfort-zone/7-rings.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        image: "https://yuuniji.github.io/comfort-zone/7-rings.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
         // image: "https://images.pexels.com/photos/2264753/pexels-photo-2264753.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/7-rings.mp3"
+        path: "https://yuuniji.github.io/comfort-zone/7-rings.mp3"
     },
     {
         name: "7 Years",
         artist: "Lukas Graham",
-        image: "https://pylove.us.kg/comfort-zone/7-Years.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/7-Years.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/7-Years.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/7-Years.mp3"
     },
     {
         name: "2002",
         artist: "Anne-Marie",
-        image: "https://pylove.us.kg/comfort-zone/2002.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/2002.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/2002.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/2002.mp3"
     },
     {
         name: "A Thousand Miles",
         artist: "Vanessa Carlton",
-        image: "https://pylove.us.kg/comfort-zone/A-Thousand-Miles.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/A Thousand Miles.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/A-Thousand-Miles.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/A Thousand Miles.mp3"
     },
     {
         name: "Adore You",
         artist: "Harry Styles",
-        image: "https://pylove.us.kg/comfort-zone/Adore-You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Adore You.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Adore-You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Adore You.mp3"
     },
     {
         name: "All of Me",
         artist: "John Legend",
-        image: "https://pylove.us.kg/comfort-zone/All-of-Me.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/All of Me.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/All-of-Me.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/All of Me.mp3"
     },
     {
         name: "Another Love",
         artist: "Tom Odell",
-        image: "https://pylove.us.kg/comfort-zone/Another-Love.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Another Love.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Another-Love.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Another Love.mp3"
     },
     {
         name: "Arcade",
         artist: "Duncan Laurence",
-        image: "https://pylove.us.kg/comfort-zone/Arcade.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Arcade.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Arcade.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Arcade.mp3"
     },
     {
         name: "Attention",
         artist: "Charlie Puth",
-        image: "https://pylove.us.kg/comfort-zone/Attention.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Attention.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Attention.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Attention.mp3"
     },
     {
         name: "august",
         artist: "Taylor Swift",
-        image: "https://pylove.us.kg/comfort-zone/august.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/august.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/august.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/august.mp3"
     },
     {
         name: "Be Alright",
         artist: "Dean Lewis",
-        image: "https://pylove.us.kg/comfort-zone/Be-Alright.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Be Alright.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Be-Alright.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Be Alright.mp3"
     },
     {
         name: "Beautiful Mistakes (feat. Megan Thee Stallion)",
         artist: "Maroon 5/Megan Thee Stallion",
-        image: "https://pylove.us.kg/comfort-zone/Beautiful-Mistakes.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Beautiful Mistakes (feat. Megan Thee Stallion).mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Beautiful-Mistakes.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Beautiful Mistakes (feat. Megan Thee Stallion).mp3"
     },
     {
         name: "Bruises",
         artist: "Lewis Capaldi",
-        image: "https://pylove.us.kg/comfort-zone/Bruises.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Bruises.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Bruises.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Bruises.mp3"
     },
     {
         name: "Budapest",
         artist: "George Ezra",
-        image: "https://pylove.us.kg/comfort-zone/Budapest.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Budapest.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Budapest.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Budapest.mp3"
     },
     {
         name: "Chasing Cars",
         artist: "Snow Patrol",
-        image: "https://pylove.us.kg/comfort-zone/Chasing-Cars.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Chasing Cars.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Chasing-Cars.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Chasing Cars.mp3"
     },
     {
         name: "Circles",
         artist: "Post Malone",
-        image: "https://pylove.us.kg/comfort-zone/Circles.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Circles.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Circles.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Circles.mp3"
     },
     {
         name: "Closer",
         artist: "Ane",
-        image: "https://pylove.us.kg/comfort-zone/Closer.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Closer.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Closer.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Closer.mp3"
     },
     {
         name: "Dancing On My Own",
         artist: "Calum Scott",
-        image: "https://pylove.us.kg/comfort-zone/Dancing-On-My-Own.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Dancing On My Own.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Dancing-On-My-Own.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Dancing On My Own.mp3"
     },
     {
         name: "Die For You (with Ariana Grande) - Remix",
         artist: "The Weeknd/Ariana Grande",
-        image: "https://pylove.us.kg/comfort-zone/Die-For-You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Die For You (with Ariana Grande) - Remix.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Die-For-You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Die For You (with Ariana Grande) - Remix.mp3"
     },
     {
         name: "drivers license",
         artist: "Olivia Rodrigo",
-        image: "https://pylove.us.kg/comfort-zone/drivers-license.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/drivers license.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/drivers-license.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/drivers license.mp3"
     },
     {
         name: "Drops of Jupiter (Tell Me)",
         artist: "Train",
-        image: "https://pylove.us.kg/comfort-zone/Drops-of-Jupiter.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Drops of Jupiter (Tell Me).mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Drops-of-Jupiter.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Drops of Jupiter (Tell Me).mp3"
     },
     {
         name: "Eastside (with Halsey & Khalid)",
         artist: "benny blanco/Halsey/Khalid",
-        image: "https://pylove.us.kg/comfort-zone/Eastside.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Eastside (with Halsey & Khalid).mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Eastside.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Eastside (with Halsey & Khalid).mp3"
     },
     {
         name: "everything i wanted",
         artist: "Billie Eilish",
-        image: "https://pylove.us.kg/comfort-zone/everything-i-wanted.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/everything i wanted.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/everything-i-wanted.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/everything i wanted.mp3"
     },
     {
         name: "Faded",
         artist: "Alan Walker",
-        image: "https://pylove.us.kg/comfort-zone/Faded.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Faded.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Faded.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Faded.mp3"
     },
     {
         name: "Falling",
         artist: "Harry Styles",
-        image: "https://pylove.us.kg/comfort-zone/Falling.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Falling.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Falling.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Falling.mp3"
     },
     {
         name: "Fireflies",
         artist: "Owl City",
-        image: "https://pylove.us.kg/comfort-zone/Fireflies.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Fireflies.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Fireflies.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Fireflies.mp3"
     },
     {
         name: "Firestone",
         artist: "Kygo/Conrad Sewell",
-        image: "https://pylove.us.kg/comfort-zone/Firestone.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Firestone.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Firestone.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Firestone.mp3"
     },
     {
         name: "Flowers",
         artist: "Miley Cyrus",
-        image: "https://pylove.us.kg/comfort-zone/Flowers.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Flowers.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Flowers.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Flowers.mp3"
     },
     {
         name: "FourFiveSeconds",
         artist: "Rihanna/Kanye West/Paul McCartney",
-        image: "https://pylove.us.kg/comfort-zone/FourFiveSeconds.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/FourFiveSeconds.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/FourFiveSeconds.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/FourFiveSeconds.mp3"
     },
     {
         name: "Grenade",
         artist: "Bruno Mars",
-        image: "https://pylove.us.kg/comfort-zone/Grenade.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Grenade.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Grenade.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Grenade.mp3"
     },
     {
         name: "Happier",
         artist: "Ed Sheeran",
-        image: "https://pylove.us.kg/comfort-zone/Happier.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Happier.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Happier.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Happier.mp3"
     },
     {
         name: "Havana (feat. Young Thug)",
         artist: "Camila Cabello/Young Thug",
-        image: "https://pylove.us.kg/comfort-zone/Havana.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Havana (feat. Young Thug).mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Havana.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Havana (feat. Young Thug).mp3"
     },
     {
         name: "Hey There Delilah",
         artist: "Plain White T's",
-        image: "https://pylove.us.kg/comfort-zone/Hey-There-Delilah.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Hey There Delilah.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Hey-There-Delilah.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Hey There Delilah.mp3"
     },
     {
         name: "Hey, Soul Sister",
         artist: "Train",
-        image: "https://pylove.us.kg/comfort-zone/Hey-Soul-Sister.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Hey, Soul Sister.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Hey-Soul-Sister.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Hey, Soul Sister.mp3"
     },
     {
         name: "Ho Hey",
         artist: "The Lumineers",
-        image: "https://pylove.us.kg/comfort-zone/Ho-Hey.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Ho Hey.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Ho-Hey.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Ho Hey.mp3"
     },
     {
         name: "Hold Me While You Wait",
         artist: "Lewis Capaldi",
-        image: "https://pylove.us.kg/comfort-zone/Hold-Me-While-You-Wait.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Hold Me While You Wait.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Hold-Me-While-You-Wait.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Hold Me While You Wait.mp3"
     },
     {
         name: "How to Save a Life",
         artist: "The Fray",
-        image: "https://pylove.us.kg/comfort-zone/How-to-Save-a-Life.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/How to Save a Life.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/How-to-Save-a-Life.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/How to Save a Life.mp3"
     },
     {
         name: "Human",
         artist: "Rag'n'Bone Man",
-        image: "https://pylove.us.kg/comfort-zone/Human.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Human.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Human.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Human.mp3"
     },
     {
         name: "I Don’t Wanna Live Forever (Fifty Shades Darker)",
         artist: "ZAYN/Taylor Swift",
-        image: "https://pylove.us.kg/comfort-zone/I-Dont-Wanna-Live-Forever.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/I Don’t Wanna Live Forever (Fifty Shades Darker).mp3"
+        image: "https://yuuniji.github.io/comfort-zone/I-Dont-Wanna-Live-Forever.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/I Don’t Wanna Live Forever (Fifty Shades Darker).mp3"
     },
     {
         name: "I Feel It Coming",
         artist: "The Weeknd/Daft Punk",
-        image: "https://pylove.us.kg/comfort-zone/I-Feel-It-Coming.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/I Feel It Coming.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/I-Feel-It-Coming.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/I Feel It Coming.mp3"
     },
     {
         name: "i hate u, i love u (feat. olivia o'brien)",
         artist: "gnash/Olivia O'Brien",
-        image: "https://pylove.us.kg/comfort-zone/i-hate-u-i-love-u.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/i hate u, i love u (feat. olivia o'brien).mp3"
+        image: "https://yuuniji.github.io/comfort-zone/i-hate-u-i-love-u.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/i hate u, i love u (feat. olivia o'brien).mp3"
     },
     {
         name: "I Like Me Better",
         artist: "Lauv",
-        image: "https://pylove.us.kg/comfort-zone/I-Like-Me-Better.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/I Like Me Better.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/I-Like-Me-Better.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/I Like Me Better.mp3"
     },
     {
         name: "I Want It That Way",
         artist: "Backstreet Boys",
-        image: "https://pylove.us.kg/comfort-zone/I-Want-It-That-Way.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/I Want It That Way.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/I-Want-It-That-Way.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/I Want It That Way.mp3"
     },
     {
         name: "I'm Not The Only One",
         artist: "Sam Smith",
-        image: "https://pylove.us.kg/comfort-zone/I-m-Not-The-Only-One.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/I'm Not The Only One.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/I-m-Not-The-Only-One.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/I'm Not The Only One.mp3"
     },
     {
         name: "I'm Yours",
         artist: "Jason Mraz",
-        image: "https://pylove.us.kg/comfort-zone/I-m-Yours.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/I'm Yours.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/I-m-Yours.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/I'm Yours.mp3"
     },
     {
         name: "IDGAF",
         artist: "Dua Lipa",
-        image: "https://pylove.us.kg/comfort-zone/IDGAF.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/IDGAF.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/IDGAF.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/IDGAF.mp3"
     },
     {
         name: "If I Ain't Got You",
         artist: "Alicia Keys",
-        image: "https://pylove.us.kg/comfort-zone/If-I-Ain-t-Got-You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/If I Ain't Got You.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/If-I-Ain-t-Got-You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/If I Ain't Got You.mp3"
     },
     {
         name: "It Must Have Been Love - From the Film 'Pretty Woman'",
         artist: "Roxette",
-        image: "https://pylove.us.kg/comfort-zone/It-Must-Have-Been-Love.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/It Must Have Been Love - From the Film 'Pretty Woman'.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/It-Must-Have-Been-Love.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/It Must Have Been Love - From the Film 'Pretty Woman'.mp3"
     },
     {
         name: "Just Give Me a Reason",
         artist: "P!nk/Nate Ruess",
-        image: "https://pylove.us.kg/comfort-zone/Just-Give-Me-a-Reason.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Just Give Me a Reason.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Just-Give-Me-a-Reason.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Just Give Me a Reason.mp3"
     },
     {
         name: "Just the Way You Are",
         artist: "Bruno Mars",
-        image: "https://pylove.us.kg/comfort-zone/Just-the-Way-You-Are.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Just the Way You Are.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Just-the-Way-You-Are.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Just the Way You Are.mp3"
     },
     {
         name: "Lavender Haze",
         artist: "Taylor Swift",
-        image: "https://pylove.us.kg/comfort-zone/Lavender-Haze.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Lavender Haze.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Lavender-Haze.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Lavender Haze.mp3"
     },
     {
         name: "Let Me Down Slowly",
         artist: "Alec Benjamin",
-        image: "https://pylove.us.kg/comfort-zone/Let-Me-Down-Slowly.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Let Me Down Slowly.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Let-Me-Down-Slowly.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Let Me Down Slowly.mp3"
     },
     {
         name: "Let Me Love You",
         artist: "DJ Snake/Justin Bieber",
-        image: "https://pylove.us.kg/comfort-zone/Let-Me-Love-You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Let Me Love You.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Let-Me-Love-You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Let Me Love You.mp3"
     },
     {
         name: "Let You Down",
         artist: "NF",
-        image: "https://pylove.us.kg/comfort-zone/Let-You-Down.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Let You Down.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Let-You-Down.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Let You Down.mp3"
     },
     {
         name: "Lose You To Love Me",
         artist: "Selena Gomez",
-        image: "https://pylove.us.kg/comfort-zone/Lose-You-To-Love-Me.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Lose You To Love Me.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Lose-You-To-Love-Me.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Lose You To Love Me.mp3"
     },
     {
         name: "Love Me Like You Do - From ‘Fifty Shades Of Grey’",
         artist: "Ellie Goulding",
-        image: "https://pylove.us.kg/comfort-zone/Love-Me-Like-You-Do---From--Fifty-Shades-Of-Grey-.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Love Me Like You Do - From ‘Fifty Shades Of Grey’.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Love-Me-Like-You-Do---From--Fifty-Shades-Of-Grey-.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Love Me Like You Do - From ‘Fifty Shades Of Grey’.mp3"
     },
     {
         name: "Love On The Brain",
         artist: "Rihanna",
-        image: "https://pylove.us.kg/comfort-zone/Love-On-The-Brain.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Love On The Brain.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Love-On-The-Brain.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Love On The Brain.mp3"
     },
     {
         name: "Love Yourself",
         artist: "Justin Bieber",
-        image: "https://pylove.us.kg/comfort-zone/Love-Yourself.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Love Yourself.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Love-Yourself.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Love Yourself.mp3"
     },
     {
         name: "lovely (with Khalid)",
         artist: "Billie Eilish/Khalid",
-        image: "https://pylove.us.kg/comfort-zone/lovely-with-Khalid.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/lovely (with Khalid).mp3"
+        image: "https://yuuniji.github.io/comfort-zone/lovely-with-Khalid.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/lovely (with Khalid).mp3"
     },
     {
         name: "Lover",
         artist: "Taylor Swift",
-        image: "https://pylove.us.kg/comfort-zone/Lover.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Lover.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Lover.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Lover.mp3"
     },
     {
         name: "Memories",
         artist: "Maroon 5",
-        image: "https://pylove.us.kg/comfort-zone/Memories.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Memories.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Memories.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Memories.mp3"
     },
     {
         name: "Night Changes",
         artist: "One Direction",
-        image: "https://pylove.us.kg/comfort-zone/Night-Changes.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Night Changes.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Night-Changes.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Night Changes.mp3"
     },
     {
         name: "Paradise",
         artist: "Coldplay",
-        image: "https://pylove.us.kg/comfort-zone/Paradise.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Paradise.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Paradise.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Paradise.mp3"
     },
     {
         name: "Perfect",
         artist: "Ed Sheeran",
-        image: "https://pylove.us.kg/comfort-zone/Perfect.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Perfect.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Perfect.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Perfect.mp3"
     },
     {
         name: "Photograph",
         artist: "Ed Sheeran",
-        image: "https://pylove.us.kg/comfort-zone/Photograph.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Photograph.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Photograph.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Photograph.mp3"
     },
     {
         name: "PILLOWTALK",
         artist: "ZAYN",
-        image: "https://pylove.us.kg/comfort-zone/PILLOWTALK.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/PILLOWTALK.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/PILLOWTALK.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/PILLOWTALK.mp3"
     },
     {
         name: "Rewrite The Stars (with James Arthur & Anne-Marie)",
         artist: "James Arthur/Anne-Marie",
-        image: "https://pylove.us.kg/comfort-zone/Rewrite-The-Stars-with-James-Arthur-Anne-Marie.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Rewrite The Stars (with James Arthur & Anne-Marie).mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Rewrite-The-Stars-with-James-Arthur-Anne-Marie.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Rewrite The Stars (with James Arthur & Anne-Marie).mp3"
     },
     {
         name: "Riptide",
         artist: "Vance Joy",
-        image: "https://pylove.us.kg/comfort-zone/Riptide.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Riptide.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Riptide.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Riptide.mp3"
     },
     {
         name: "Royals",
         artist: "Lorde",
-        image: "https://pylove.us.kg/comfort-zone/Royals.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Royals.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Royals.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Royals.mp3"
     },
     {
         name: "Rude",
         artist: "MAGIC!",
-        image: "https://pylove.us.kg/comfort-zone/Rude.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Rude.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Rude.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Rude.mp3"
     },
     {
         name: "Say You Won't Let Go",
         artist: "James Arthur",
-        image: "https://pylove.us.kg/comfort-zone/Say-You-Won-t-Let-Go.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Say You Won't Let Go.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Say-You-Won-t-Let-Go.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Say You Won't Let Go.mp3"
     },
     {
         name: "Scared to Be Lonely",
         artist: "Martin Garrix/Dua Lipa",
-        image: "https://pylove.us.kg/comfort-zone/Scared-to-Be-Lonely.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Scared to Be Lonely.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Scared-to-Be-Lonely.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Scared to Be Lonely.mp3"
     },
     {
         name: "See You Again (feat. Charlie Puth)",
         artist: "Wiz Khalifa/Charlie Puth",
-        image: "https://pylove.us.kg/comfort-zone/See-You-Again-feat-Charlie-Puth.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/See You Again (feat. Charlie Puth).mp3"
+        image: "https://yuuniji.github.io/comfort-zone/See-You-Again-feat-Charlie-Puth.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/See You Again (feat. Charlie Puth).mp3"
     },
     {
         name: "Señorita",
         artist: "Shawn Mendes/Camila Cabello",
-        image: "https://pylove.us.kg/comfort-zone/Señorita.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Señorita.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Señorita.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Señorita.mp3"
     },
     {
         name: "Sign of the Times",
         artist: "Harry Styles",
-        image: "https://pylove.us.kg/comfort-zone/Sign-of-the-Times.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Sign of the Times.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Sign-of-the-Times.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Sign of the Times.mp3"
     },
     {
         name: "Silence",
         artist: "Marshmello/Khalid",
-        image: "https://pylove.us.kg/comfort-zone/Silence.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Silence.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Silence.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Silence.mp3"
     },
     {
         name: "Slow Hands",
         artist: "Niall Horan",
-        image: "https://pylove.us.kg/comfort-zone/Slow-Hands.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Slow Hands.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Slow-Hands.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Slow Hands.mp3"
     },
     {
         name: "Someone Like You",
         artist: "Adele",
-        image: "https://pylove.us.kg/comfort-zone/Someone-Like-You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Someone Like You.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Someone-Like-You.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Someone Like You.mp3"
     },
     {
         name: "Someone You Loved",
         artist: "Lewis Capaldi",
-        image: "https://pylove.us.kg/comfort-zone/Someone-You-Loved.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Someone You Loved.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Someone-You-Loved.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Someone You Loved.mp3"
     },
     {
         name: "Stay With Me",
         artist: "Sam Smith",
-        image: "https://pylove.us.kg/comfort-zone/Stay-With-Me.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Stay With Me.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Stay-With-Me.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Stay With Me.mp3"
     },
     {
         name: "Story of My Life",
         artist: "One Direction",
-        image: "https://pylove.us.kg/comfort-zone/Story-of-My-Life.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Story of My Life.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Story-of-My-Life.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Story of My Life.mp3"
     },
     {
         name: "Stuck with U (with Justin Bieber)",
         artist: "Ariana Grande/Justin Bieber",
-        image: "https://pylove.us.kg/comfort-zone/Stuck-with-U-with-Justin-Bieber.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Stuck with U (with Justin Bieber).mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Stuck-with-U-with-Justin-Bieber.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Stuck with U (with Justin Bieber).mp3"
     },
     {
         name: "Sugar",
         artist: "Maroon 5",
-        image: "https://pylove.us.kg/comfort-zone/Sugar.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Sugar.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Sugar.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Sugar.mp3"
     },
     {
         name: "Sunflower - Spider-Man: Into the Spider-Verse",
         artist: "Post Malone/Swae Lee",
-        image: "https://pylove.us.kg/comfort-zone/Sunflower---Spider-Man--Into-the-Spider-Verse.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Sunflower - Spider-Man: Into the Spider-Verse.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Sunflower---Spider-Man--Into-the-Spider-Verse.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Sunflower - Spider-Man: Into the Spider-Verse.mp3"
     },
     {
         name: "The Scientist",
         artist: "Coldplay",
-        image: "https://pylove.us.kg/comfort-zone/The-Scientist.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/The Scientist.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/The-Scientist.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/The Scientist.mp3"
     },
     {
         name: "Thinking out Loud",
         artist: "Ed Sheeran",
-        image: "https://pylove.us.kg/comfort-zone/Thinking-out-Loud.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Thinking out Loud.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Thinking-out-Loud.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Thinking out Loud.mp3"
     },
     {
         name: "Too Good At Goodbyes",
         artist: "Sam Smith",
-        image: "https://pylove.us.kg/comfort-zone/Too-Good-At-Goodbyes.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Too Good At Goodbyes.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Too-Good-At-Goodbyes.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Too Good At Goodbyes.mp3"
     },
     {
         name: "Until I Found You (with Em Beihold) - Em Beihold Version",
         artist: "Stephen Sanchez/Em Beihold",
-        image: "https://pylove.us.kg/comfort-zone/Until-I-Found-You-with-Em-Beihold-Em-Beihold-Version.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Until I Found You (with Em Beihold) - Em Beihold Version.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Until-I-Found-You-with-Em-Beihold-Em-Beihold-Version.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Until I Found You (with Em Beihold) - Em Beihold Version.mp3"
     },
     {
         name: "Watermelon Sugar",
         artist: "Harry Styles",
-        image: "https://pylove.us.kg/comfort-zone/Watermelon-Sugar.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Watermelon Sugar.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Watermelon-Sugar.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Watermelon Sugar.mp3"
     },
     {
         name: "What A Time (feat. Niall Horan)",
         artist: "Julia Michaels/Niall Horan",
-        image: "https://pylove.us.kg/comfort-zone/What-A-Time-feat-Niall-Horan.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/What A Time (feat. Niall Horan).mp3"
+        image: "https://yuuniji.github.io/comfort-zone/What-A-Time-feat-Niall-Horan.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/What A Time (feat. Niall Horan).mp3"
     },
     {
         name: "When I Was Your Man",
         artist: "Bruno Mars",
-        image: "https://pylove.us.kg/comfort-zone/When-I-Was-Your-Man.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/When I Was Your Man.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/When-I-Was-Your-Man.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/When I Was Your Man.mp3"
     },
     {
         name: "when the party's over",
         artist: "Billie Eilish",
-        image: "https://pylove.us.kg/comfort-zone/when-the-party-s-over.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/when the party's over.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/when-the-party-s-over.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/when the party's over.mp3"
     },
     {
         name: "Where Is The Love?",
         artist: "Black Eyed Peas",
-        image: "https://pylove.us.kg/comfort-zone/Where-Is-The-Love.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Where Is The Love?.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Where-Is-The-Love.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Where Is The Love?.mp3"
     },
     {
         name: "willow",
         artist: "Taylor Swift",
-        image: "https://pylove.us.kg/comfort-zone/willow.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/willow.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/willow.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/willow.mp3"
     },
     {
         name: "Wish You The Best",
         artist: "Lewis Capaldi",
-        image: "https://pylove.us.kg/comfort-zone/Wish-You-The-Best.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Wish You The Best.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Wish-You-The-Best.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Wish You The Best.mp3"
     },
     {
         name: "Wolves",
         artist: "Selena Gomez/Marshmello",
-        image: "https://pylove.us.kg/comfort-zone/Wolves.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Wolves.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Wolves.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Wolves.mp3"
     },
     {
         name: "Wrecking Ball",
         artist: "Miley Cyrus",
-        image: "https://pylove.us.kg/comfort-zone/Wrecking-Ball.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Wrecking Ball.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Wrecking-Ball.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Wrecking Ball.mp3"
     },
     {
         name: "Yellow",
         artist: "Coldplay",
-        image: "https://pylove.us.kg/comfort-zone/Yellow.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Yellow.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Yellow.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Yellow.mp3"
     },
     {
         name: "you broke me first",
         artist: "Tate McRae",
-        image: "https://pylove.us.kg/comfort-zone/you-broke-me-first.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/you broke me first.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/you-broke-me-first.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/you broke me first.mp3"
     },
     {
         name: "Young Dumb & Broke",
         artist: "Khalid",
-        image: "https://pylove.us.kg/comfort-zone/Young-Dumb-&-Broke.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-        path: "https://pylove.us.kg/comfort-zone/Young Dumb & Broke.mp3"
+        image: "https://yuuniji.github.io/comfort-zone/Young-Dumb-&-Broke.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+        path: "https://yuuniji.github.io/comfort-zone/Young Dumb & Broke.mp3"
     },
     // {
     //   name: "2002",
     //   artist: "2002",
-    //   image: "https://pylove.us.kg/comfort-zone/2002.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
-    //   path: "https://pylove.us.kg/comfort-zone/2002.mp3"
+    //   image: "https://yuuniji.github.io/comfort-zone/2002.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    //   path: "https://yuuniji.github.io/comfort-zone/2002.mp3"
     // },
 
 
